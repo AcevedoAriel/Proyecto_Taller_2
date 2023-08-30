@@ -6,5 +6,18 @@ namespace ProyectoTaller2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (TUsuario.Text == "Admin" && TContraseña.Text == "123")
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                LError.Visible = true;
+                this.DialogResult = DialogResult.None;
+            }
+        }
     }
 }

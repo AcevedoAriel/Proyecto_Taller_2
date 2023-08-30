@@ -1,0 +1,17 @@
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.exe
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.deps.json
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.runtimeconfig.json
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.dll
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.pdb
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Form1.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.GenerateResource.cache
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.AssemblyInfoInputs.cache
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.AssemblyInfo.cs
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.CoreCompileInputs.cache
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.dll
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\refint\ProyectoTaller2.dll
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.pdb
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.genruntimeconfig.cache
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ref\ProyectoTaller2.dll
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Properties.Resources.resources
