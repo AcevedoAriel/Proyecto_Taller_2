@@ -15,3 +15,4 @@ C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-win
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.genruntimeconfig.cache
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ref\ProyectoTaller2.dll
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Properties.Resources.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.RegistrarUsuario.resources

@@ -107,7 +107,7 @@
             BLogin.TabIndex = 6;
             BLogin.Text = "Iniciar Sesion";
             BLogin.UseVisualStyleBackColor = true;
-            BLogin.Click += button1_Click;
+            BLogin.Click += Button1_Click;
             // 
             // LError
             // 

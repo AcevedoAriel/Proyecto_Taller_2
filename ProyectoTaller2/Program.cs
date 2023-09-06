@@ -1,3 +1,5 @@
+using ProyectoTaller2.Administrador;
+
 namespace ProyectoTaller2
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace ProyectoTaller2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new RegistrarUsuario());
         }
     }
 }
