@@ -39,7 +39,6 @@
             textBox4 = new TextBox();
             comboBox1 = new ComboBox();
             dataGridView1 = new DataGridView();
-            BRegistrar = new Button();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -47,6 +46,7 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
+            BRegistrar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -142,15 +142,6 @@
             dataGridView1.Size = new Size(724, 129);
             dataGridView1.TabIndex = 10;
             // 
-            // BRegistrar
-            // 
-            BRegistrar.Location = new Point(183, 192);
-            BRegistrar.Name = "BRegistrar";
-            BRegistrar.Size = new Size(91, 55);
-            BRegistrar.TabIndex = 11;
-            BRegistrar.Text = "Registrar Usuario";
-            BRegistrar.UseVisualStyleBackColor = true;
-            // 
             // Column1
             // 
             Column1.HeaderText = "ID_Usuario";
@@ -185,6 +176,15 @@
             // 
             Column7.HeaderText = "Eliminar";
             Column7.Name = "Column7";
+            // 
+            // BRegistrar
+            // 
+            BRegistrar.Location = new Point(183, 192);
+            BRegistrar.Name = "BRegistrar";
+            BRegistrar.Size = new Size(91, 55);
+            BRegistrar.TabIndex = 11;
+            BRegistrar.Text = "Registrar Usuario";
+            BRegistrar.UseVisualStyleBackColor = true;
             // 
             // RegistrarUsuario
             // 
