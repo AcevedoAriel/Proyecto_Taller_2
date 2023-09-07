@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoTaller2.Administrador
 {
-    public partial class PantallaPrincipal : Form
+    public partial class FMInicio : Form
     {
-        public PantallaPrincipal()
+        public FMInicio()
         {
             InitializeComponent();
         }
