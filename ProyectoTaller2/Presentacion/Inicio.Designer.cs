@@ -34,12 +34,13 @@
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
             usuarioToolStripMenuItem = new ToolStripMenuItem();
+            registrarUsuarioToolStripMenuItem = new ToolStripMenuItem();
+            consultarUsuarioToolStripMenuItem = new ToolStripMenuItem();
             habitacionesToolStripMenuItem = new ToolStripMenuItem();
             agregarHabitacionToolStripMenuItem = new ToolStripMenuItem();
             reservasToolStripMenuItem = new ToolStripMenuItem();
             pagosToolStripMenuItem = new ToolStripMenuItem();
-            registrarUsuarioToolStripMenuItem = new ToolStripMenuItem();
-            consultarUsuarioToolStripMenuItem = new ToolStripMenuItem();
+            panelPrincipal = new Panel();
             Menu1.SuspendLayout();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -57,6 +58,7 @@
             Menu1.Size = new Size(800, 55);
             Menu1.TabIndex = 0;
             Menu1.Text = "Menu1";
+            Menu1.ItemClicked += Menu1_ItemClicked;
             // 
             // sISTEMADEGESIONHOTELERAToolStripMenuItem
             // 
@@ -68,6 +70,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(panelPrincipal);
             panel1.Controls.Add(menuStrip1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 55);
@@ -101,18 +104,31 @@
             usuarioToolStripMenuItem.Size = new Size(137, 19);
             usuarioToolStripMenuItem.Text = "Usuario";
             // 
+            // registrarUsuarioToolStripMenuItem
+            // 
+            registrarUsuarioToolStripMenuItem.Name = "registrarUsuarioToolStripMenuItem";
+            registrarUsuarioToolStripMenuItem.Size = new Size(180, 22);
+            registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";
+            // 
+            // consultarUsuarioToolStripMenuItem
+            // 
+            consultarUsuarioToolStripMenuItem.Name = "consultarUsuarioToolStripMenuItem";
+            consultarUsuarioToolStripMenuItem.Size = new Size(180, 22);
+            consultarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
+            // 
             // habitacionesToolStripMenuItem
             // 
             habitacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarHabitacionToolStripMenuItem });
             habitacionesToolStripMenuItem.Name = "habitacionesToolStripMenuItem";
             habitacionesToolStripMenuItem.Size = new Size(137, 19);
-            habitacionesToolStripMenuItem.Text = "Habitaciones";
+            habitacionesToolStripMenuItem.Text = "Habitación";
             // 
             // agregarHabitacionToolStripMenuItem
             // 
             agregarHabitacionToolStripMenuItem.Name = "agregarHabitacionToolStripMenuItem";
             agregarHabitacionToolStripMenuItem.Size = new Size(180, 22);
             agregarHabitacionToolStripMenuItem.Text = "Agregar Habitacion";
+            agregarHabitacionToolStripMenuItem.Click += agregarHabitacionToolStripMenuItem_Click;
             // 
             // reservasToolStripMenuItem
             // 
@@ -126,17 +142,13 @@
             pagosToolStripMenuItem.Size = new Size(137, 19);
             pagosToolStripMenuItem.Text = "Pagos";
             // 
-            // registrarUsuarioToolStripMenuItem
+            // panelPrincipal
             // 
-            registrarUsuarioToolStripMenuItem.Name = "registrarUsuarioToolStripMenuItem";
-            registrarUsuarioToolStripMenuItem.Size = new Size(180, 22);
-            registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";
-            // 
-            // consultarUsuarioToolStripMenuItem
-            // 
-            consultarUsuarioToolStripMenuItem.Name = "consultarUsuarioToolStripMenuItem";
-            consultarUsuarioToolStripMenuItem.Size = new Size(180, 22);
-            consultarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
+            panelPrincipal.Dock = DockStyle.Fill;
+            panelPrincipal.Location = new Point(144, 0);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(656, 395);
+            panelPrincipal.TabIndex = 1;
             // 
             // FMInicio
             // 
@@ -169,5 +181,6 @@
         private ToolStripMenuItem pagosToolStripMenuItem;
         private ToolStripMenuItem registrarUsuarioToolStripMenuItem;
         private ToolStripMenuItem consultarUsuarioToolStripMenuItem;
+        private Panel panelPrincipal;
     }
 }

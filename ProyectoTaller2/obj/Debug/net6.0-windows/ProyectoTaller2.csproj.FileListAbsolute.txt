@@ -22,7 +22,6 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.dll
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.pdb
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.ConsularUsuario.resources
-C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.PantallaPrincipal.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.RegistrarUsuario.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Form1.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Properties.Resources.resources
@@ -36,3 +35,7 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.pdb
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.genruntimeconfig.cache
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ref\ProyectoTaller2.dll
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.Habitacion.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.FMInicio.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.RegistrarReserva.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.Reservas.resources

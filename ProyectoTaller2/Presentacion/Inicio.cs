@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTaller2.Presentacion.Administrador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace ProyectoTaller2.Administrador
         public FMInicio()
         {
             InitializeComponent();
+        }
+
+        private void Menu1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void agregarHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Habitacion hab = new Habitacion();
+            hab.ShowDialog();
+
+
         }
     }
 }
