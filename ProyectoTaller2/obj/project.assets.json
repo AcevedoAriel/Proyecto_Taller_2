@@ -1,26 +1,57 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "FontAwesome.Sharp/6.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FontAwesome.Sharp/6.3.0": {
+      "sha512": "3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.3.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "FontAwesome.Sharp >= 6.3.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\Juanma\\.nuget\\packages\\": {}
+    "C:\\Users\\ariel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Juanma\\source\\repos\\Proyecto_Taller_2\\ProyectoTaller2\\ProyectoTaller2.csproj",
+      "projectUniqueName": "C:\\Users\\ariel\\source\\repos\\ProyectoTaller2\\ProyectoTaller2\\ProyectoTaller2.csproj",
       "projectName": "ProyectoTaller2",
-      "projectPath": "C:\\Users\\Juanma\\source\\repos\\Proyecto_Taller_2\\ProyectoTaller2\\ProyectoTaller2.csproj",
-      "packagesPath": "C:\\Users\\Juanma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Juanma\\source\\repos\\Proyecto_Taller_2\\ProyectoTaller2\\obj\\",
+      "projectPath": "C:\\Users\\ariel\\source\\repos\\ProyectoTaller2\\ProyectoTaller2\\ProyectoTaller2.csproj",
+      "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ariel\\source\\repos\\ProyectoTaller2\\ProyectoTaller2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Juanma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -45,6 +76,12 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.3.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

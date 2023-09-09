@@ -4,7 +4,7 @@
     <Compile Update="Presentacion\RegistrarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Habitacion.cs">
+    <Compile Update="Presentacion\AgregarHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\ConsultarUsuario.cs">

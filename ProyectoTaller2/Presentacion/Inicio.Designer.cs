@@ -28,159 +28,228 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Menu1 = new MenuStrip();
+            MenuIzquierdo = new MenuStrip();
+            MenuInicio = new FontAwesome.Sharp.IconMenuItem();
+            MenuUsuario = new FontAwesome.Sharp.IconMenuItem();
+            SubMenuAgregarUsuario = new FontAwesome.Sharp.IconMenuItem();
+            SubMenuConsultarUsuario = new FontAwesome.Sharp.IconMenuItem();
+            MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
+            SubMenuAgregarHabitacion = new ToolStripMenuItem();
+            MenuReserva = new FontAwesome.Sharp.IconMenuItem();
+            MenuPagos = new FontAwesome.Sharp.IconMenuItem();
+            MenuTitulo = new MenuStrip();
             sISTEMADEGESIONHOTELERAToolStripMenuItem = new ToolStripMenuItem();
-            panel1 = new Panel();
-            menuStrip1 = new MenuStrip();
-            inicioToolStripMenuItem = new ToolStripMenuItem();
-            usuarioToolStripMenuItem = new ToolStripMenuItem();
-            registrarUsuarioToolStripMenuItem = new ToolStripMenuItem();
-            consultarUsuarioToolStripMenuItem = new ToolStripMenuItem();
-            habitacionesToolStripMenuItem = new ToolStripMenuItem();
-            agregarHabitacionToolStripMenuItem = new ToolStripMenuItem();
-            reservasToolStripMenuItem = new ToolStripMenuItem();
-            pagosToolStripMenuItem = new ToolStripMenuItem();
-            panelPrincipal = new Panel();
-            Menu1.SuspendLayout();
-            panel1.SuspendLayout();
-            menuStrip1.SuspendLayout();
+            MenuSalir = new FontAwesome.Sharp.IconMenuItem();
+            perfilToolStripMenuItem = new ToolStripMenuItem();
+            iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            Contenedor = new Panel();
+            MenuIzquierdo.SuspendLayout();
+            MenuTitulo.SuspendLayout();
             SuspendLayout();
             // 
-            // Menu1
+            // MenuIzquierdo
             // 
-            Menu1.AllowDrop = true;
-            Menu1.AutoSize = false;
-            Menu1.BackColor = Color.SteelBlue;
-            Menu1.Items.AddRange(new ToolStripItem[] { sISTEMADEGESIONHOTELERAToolStripMenuItem });
-            Menu1.Location = new Point(0, 0);
-            Menu1.Name = "Menu1";
-            Menu1.RightToLeft = RightToLeft.No;
-            Menu1.Size = new Size(800, 55);
-            Menu1.TabIndex = 0;
-            Menu1.Text = "Menu1";
-            Menu1.ItemClicked += Menu1_ItemClicked;
+            MenuIzquierdo.AutoSize = false;
+            MenuIzquierdo.BackColor = Color.White;
+            MenuIzquierdo.Dock = DockStyle.Left;
+            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuPagos });
+            MenuIzquierdo.Location = new Point(0, 60);
+            MenuIzquierdo.Name = "MenuIzquierdo";
+            MenuIzquierdo.Size = new Size(152, 387);
+            MenuIzquierdo.TabIndex = 0;
+            MenuIzquierdo.Text = "menuStrip1";
+            // 
+            // MenuInicio
+            // 
+            MenuInicio.AutoSize = false;
+            MenuInicio.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuInicio.IconChar = FontAwesome.Sharp.IconChar.House;
+            MenuInicio.IconColor = Color.Black;
+            MenuInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuInicio.IconSize = 45;
+            MenuInicio.ImageScaling = ToolStripItemImageScaling.None;
+            MenuInicio.Name = "MenuInicio";
+            MenuInicio.Size = new Size(80, 60);
+            MenuInicio.Text = "Inicio";
+            MenuInicio.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // MenuUsuario
+            // 
+            MenuUsuario.AutoSize = false;
+            MenuUsuario.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAgregarUsuario, SubMenuConsultarUsuario });
+            MenuUsuario.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuUsuario.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            MenuUsuario.IconColor = Color.Black;
+            MenuUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuUsuario.IconSize = 45;
+            MenuUsuario.ImageScaling = ToolStripItemImageScaling.None;
+            MenuUsuario.Name = "MenuUsuario";
+            MenuUsuario.Size = new Size(80, 60);
+            MenuUsuario.Text = "Usuario";
+            MenuUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // SubMenuAgregarUsuario
+            // 
+            SubMenuAgregarUsuario.IconChar = FontAwesome.Sharp.IconChar.None;
+            SubMenuAgregarUsuario.IconColor = Color.Black;
+            SubMenuAgregarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            SubMenuAgregarUsuario.Name = "SubMenuAgregarUsuario";
+            SubMenuAgregarUsuario.Size = new Size(180, 22);
+            SubMenuAgregarUsuario.Text = "Agregar Usuario";
+            SubMenuAgregarUsuario.Click += SubMenuAgregarUsuario_Click;
+            // 
+            // SubMenuConsultarUsuario
+            // 
+            SubMenuConsultarUsuario.IconChar = FontAwesome.Sharp.IconChar.None;
+            SubMenuConsultarUsuario.IconColor = Color.Black;
+            SubMenuConsultarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            SubMenuConsultarUsuario.Name = "SubMenuConsultarUsuario";
+            SubMenuConsultarUsuario.Size = new Size(180, 22);
+            SubMenuConsultarUsuario.Text = "Consultar Usuario";
+            SubMenuConsultarUsuario.Click += SubMenuConsultarUsuario_Click;
+            // 
+            // MenuHabitacion
+            // 
+            MenuHabitacion.AutoSize = false;
+            MenuHabitacion.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAgregarHabitacion });
+            MenuHabitacion.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuHabitacion.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            MenuHabitacion.IconColor = Color.Black;
+            MenuHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuHabitacion.IconSize = 45;
+            MenuHabitacion.ImageScaling = ToolStripItemImageScaling.None;
+            MenuHabitacion.Name = "MenuHabitacion";
+            MenuHabitacion.Size = new Size(80, 60);
+            MenuHabitacion.Text = "Habitacion";
+            MenuHabitacion.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // SubMenuAgregarHabitacion
+            // 
+            SubMenuAgregarHabitacion.Name = "SubMenuAgregarHabitacion";
+            SubMenuAgregarHabitacion.Size = new Size(180, 22);
+            SubMenuAgregarHabitacion.Text = "Agregar Habitacion";
+            SubMenuAgregarHabitacion.Click += SubMenuAgregarHabitacion_Click;
+            // 
+            // MenuReserva
+            // 
+            MenuReserva.AutoSize = false;
+            MenuReserva.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuReserva.IconChar = FontAwesome.Sharp.IconChar.Researchgate;
+            MenuReserva.IconColor = Color.Black;
+            MenuReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuReserva.IconSize = 45;
+            MenuReserva.ImageScaling = ToolStripItemImageScaling.None;
+            MenuReserva.Name = "MenuReserva";
+            MenuReserva.Size = new Size(80, 60);
+            MenuReserva.Text = "Reservas";
+            MenuReserva.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuReserva.Click += MenuReserva_Click;
+            // 
+            // MenuPagos
+            // 
+            MenuPagos.AutoSize = false;
+            MenuPagos.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuPagos.IconChar = FontAwesome.Sharp.IconChar.Pager;
+            MenuPagos.IconColor = Color.Black;
+            MenuPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuPagos.IconSize = 45;
+            MenuPagos.ImageScaling = ToolStripItemImageScaling.None;
+            MenuPagos.Name = "MenuPagos";
+            MenuPagos.Size = new Size(80, 60);
+            MenuPagos.Text = "Pagos";
+            MenuPagos.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // MenuTitulo
+            // 
+            MenuTitulo.AutoSize = false;
+            MenuTitulo.BackColor = Color.SteelBlue;
+            MenuTitulo.Items.AddRange(new ToolStripItem[] { sISTEMADEGESIONHOTELERAToolStripMenuItem, MenuSalir, perfilToolStripMenuItem });
+            MenuTitulo.Location = new Point(0, 0);
+            MenuTitulo.Name = "MenuTitulo";
+            MenuTitulo.Size = new Size(815, 60);
+            MenuTitulo.TabIndex = 1;
+            MenuTitulo.Text = "menuStrip2";
             // 
             // sISTEMADEGESIONHOTELERAToolStripMenuItem
             // 
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.ForeColor = Color.Gainsboro;
+            sISTEMADEGESIONHOTELERAToolStripMenuItem.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            sISTEMADEGESIONHOTELERAToolStripMenuItem.ForeColor = SystemColors.GradientInactiveCaption;
             sISTEMADEGESIONHOTELERAToolStripMenuItem.Name = "sISTEMADEGESIONHOTELERAToolStripMenuItem";
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.Size = new Size(274, 51);
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.Text = "SISTEMA DE GESTION HOTELERA";
+            sISTEMADEGESIONHOTELERAToolStripMenuItem.Size = new Size(208, 56);
+            sISTEMADEGESIONHOTELERAToolStripMenuItem.Text = "SISTEMA DE GESION HOTELERA";
             // 
-            // panel1
+            // MenuSalir
             // 
-            panel1.Controls.Add(panelPrincipal);
-            panel1.Controls.Add(menuStrip1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 55);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 395);
-            panel1.TabIndex = 1;
+            MenuSalir.Alignment = ToolStripItemAlignment.Right;
+            MenuSalir.AutoSize = false;
+            MenuSalir.IconChar = FontAwesome.Sharp.IconChar.SignIn;
+            MenuSalir.IconColor = Color.Black;
+            MenuSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuSalir.IconSize = 40;
+            MenuSalir.ImageScaling = ToolStripItemImageScaling.None;
+            MenuSalir.Name = "MenuSalir";
+            MenuSalir.Size = new Size(80, 56);
+            MenuSalir.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
-            // menuStrip1
+            // perfilToolStripMenuItem
             // 
-            menuStrip1.AutoSize = false;
-            menuStrip1.BackColor = Color.SteelBlue;
-            menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, usuarioToolStripMenuItem, habitacionesToolStripMenuItem, reservasToolStripMenuItem, pagosToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.RightToLeft = RightToLeft.Yes;
-            menuStrip1.Size = new Size(144, 395);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            perfilToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
+            perfilToolStripMenuItem.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
+            perfilToolStripMenuItem.Size = new Size(49, 56);
+            perfilToolStripMenuItem.Text = "Perfil";
             // 
-            // inicioToolStripMenuItem
+            // iconMenuItem1
             // 
-            inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            inicioToolStripMenuItem.Size = new Size(137, 19);
-            inicioToolStripMenuItem.Text = "Inicio";
+            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconMenuItem1.IconColor = Color.Black;
+            iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItem1.Name = "iconMenuItem1";
+            iconMenuItem1.Size = new Size(32, 19);
+            iconMenuItem1.Text = "iconMenuItem1";
             // 
-            // usuarioToolStripMenuItem
+            // Contenedor
             // 
-            usuarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { registrarUsuarioToolStripMenuItem, consultarUsuarioToolStripMenuItem });
-            usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            usuarioToolStripMenuItem.Size = new Size(137, 19);
-            usuarioToolStripMenuItem.Text = "Usuario";
-            // 
-            // registrarUsuarioToolStripMenuItem
-            // 
-            registrarUsuarioToolStripMenuItem.Name = "registrarUsuarioToolStripMenuItem";
-            registrarUsuarioToolStripMenuItem.Size = new Size(180, 22);
-            registrarUsuarioToolStripMenuItem.Text = "Registrar Usuario";
-            // 
-            // consultarUsuarioToolStripMenuItem
-            // 
-            consultarUsuarioToolStripMenuItem.Name = "consultarUsuarioToolStripMenuItem";
-            consultarUsuarioToolStripMenuItem.Size = new Size(180, 22);
-            consultarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
-            // 
-            // habitacionesToolStripMenuItem
-            // 
-            habitacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarHabitacionToolStripMenuItem });
-            habitacionesToolStripMenuItem.Name = "habitacionesToolStripMenuItem";
-            habitacionesToolStripMenuItem.Size = new Size(137, 19);
-            habitacionesToolStripMenuItem.Text = "Habitación";
-            // 
-            // agregarHabitacionToolStripMenuItem
-            // 
-            agregarHabitacionToolStripMenuItem.Name = "agregarHabitacionToolStripMenuItem";
-            agregarHabitacionToolStripMenuItem.Size = new Size(180, 22);
-            agregarHabitacionToolStripMenuItem.Text = "Agregar Habitacion";
-            agregarHabitacionToolStripMenuItem.Click += agregarHabitacionToolStripMenuItem_Click;
-            // 
-            // reservasToolStripMenuItem
-            // 
-            reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-            reservasToolStripMenuItem.Size = new Size(137, 19);
-            reservasToolStripMenuItem.Text = "Reservas";
-            // 
-            // pagosToolStripMenuItem
-            // 
-            pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            pagosToolStripMenuItem.Size = new Size(137, 19);
-            pagosToolStripMenuItem.Text = "Pagos";
-            // 
-            // panelPrincipal
-            // 
-            panelPrincipal.Dock = DockStyle.Fill;
-            panelPrincipal.Location = new Point(144, 0);
-            panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(656, 395);
-            panelPrincipal.TabIndex = 1;
+            Contenedor.Dock = DockStyle.Fill;
+            Contenedor.Location = new Point(152, 60);
+            Contenedor.Name = "Contenedor";
+            Contenedor.Size = new Size(663, 387);
+            Contenedor.TabIndex = 2;
             // 
             // FMInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
-            Controls.Add(Menu1);
+            ClientSize = new Size(815, 447);
+            Controls.Add(Contenedor);
+            Controls.Add(MenuIzquierdo);
+            Controls.Add(MenuTitulo);
+            MainMenuStrip = MenuIzquierdo;
             Name = "FMInicio";
-            Text = "Inicio";
-            Menu1.ResumeLayout(false);
-            Menu1.PerformLayout();
-            panel1.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Text = "Sistema G. Hotelera";
+            MenuIzquierdo.ResumeLayout(false);
+            MenuIzquierdo.PerformLayout();
+            MenuTitulo.ResumeLayout(false);
+            MenuTitulo.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private MenuStrip Menu1;
+        private MenuStrip MenuIzquierdo;
+        private MenuStrip MenuTitulo;
+        private FontAwesome.Sharp.IconMenuItem MenuPagos;
         private ToolStripMenuItem sISTEMADEGESIONHOTELERAToolStripMenuItem;
-        private Panel panel1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem inicioToolStripMenuItem;
-        private ToolStripMenuItem usuarioToolStripMenuItem;
-        private ToolStripMenuItem habitacionesToolStripMenuItem;
-        private ToolStripMenuItem agregarHabitacionToolStripMenuItem;
-        private ToolStripMenuItem reservasToolStripMenuItem;
-        private ToolStripMenuItem pagosToolStripMenuItem;
-        private ToolStripMenuItem registrarUsuarioToolStripMenuItem;
-        private ToolStripMenuItem consultarUsuarioToolStripMenuItem;
-        private Panel panelPrincipal;
+        private FontAwesome.Sharp.IconMenuItem MenuInicio;
+        private FontAwesome.Sharp.IconMenuItem MenuUsuario;
+        private FontAwesome.Sharp.IconMenuItem MenuHabitacion;
+        private FontAwesome.Sharp.IconMenuItem MenuReserva;
+        private FontAwesome.Sharp.IconMenuItem MenuSalir;
+        private ToolStripMenuItem SubMenuAgregarHabitacion;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private ToolStripMenuItem perfilToolStripMenuItem;
+        private Panel Contenedor;
+        private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
+        private FontAwesome.Sharp.IconMenuItem SubMenuConsultarUsuario;
     }
 }

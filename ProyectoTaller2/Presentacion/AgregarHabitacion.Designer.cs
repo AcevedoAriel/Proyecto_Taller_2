@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTaller2.Presentacion.Administrador
 {
-    partial class Habitacion
+    partial class AgregarHabitacion
     {
         /// <summary>
         /// Required designer variable.

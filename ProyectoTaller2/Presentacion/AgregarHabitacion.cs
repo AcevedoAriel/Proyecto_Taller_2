@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoTaller2.Presentacion.Administrador
 {
-    public partial class Habitacion : Form
+    public partial class AgregarHabitacion : Form
     {
-        public Habitacion()
+        public AgregarHabitacion()
         {
             InitializeComponent();
         }
