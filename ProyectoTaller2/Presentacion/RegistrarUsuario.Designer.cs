@@ -189,6 +189,7 @@
             BRegistrar.TabIndex = 11;
             BRegistrar.Text = "Registrar Usuario";
             BRegistrar.UseVisualStyleBackColor = true;
+            BRegistrar.Click += BRegistrar_Click;
             // 
             // RegistrarUsuario
             // 
@@ -208,7 +209,8 @@
             Controls.Add(LApellido);
             Controls.Add(LNombre);
             Name = "RegistrarUsuario";
-            Text = "Form3";
+            Text = "Registrar Usuario";
+            Load += RegistrarUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

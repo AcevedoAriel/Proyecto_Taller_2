@@ -50,5 +50,15 @@ namespace ProyectoTaller2.Administrador
         {
 
         }
+
+        private void RegistrarUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

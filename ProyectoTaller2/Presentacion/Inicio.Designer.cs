@@ -37,13 +37,13 @@
             SubMenuAgregarHabitacion = new FontAwesome.Sharp.IconMenuItem();
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
             MenuPagos = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuTitulo = new MenuStrip();
             sISTEMADEGESIONHOTELERAToolStripMenuItem = new ToolStripMenuItem();
             MenuSalir = new FontAwesome.Sharp.IconMenuItem();
             perfilToolStripMenuItem = new ToolStripMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             Contenedor = new Panel();
-            iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuIzquierdo.SuspendLayout();
             MenuTitulo.SuspendLayout();
             SuspendLayout();
@@ -130,7 +130,7 @@
             SubMenuAgregarHabitacion.IconColor = Color.Black;
             SubMenuAgregarHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuAgregarHabitacion.Name = "SubMenuAgregarHabitacion";
-            SubMenuAgregarHabitacion.Size = new Size(180, 22);
+            SubMenuAgregarHabitacion.Size = new Size(166, 22);
             SubMenuAgregarHabitacion.Text = "Agregar Habitacion";
             SubMenuAgregarHabitacion.Click += SubMenuAgregarHabitacion_Click_1;
             // 
@@ -162,6 +162,15 @@
             MenuPagos.Size = new Size(80, 60);
             MenuPagos.Text = "Pagos";
             MenuPagos.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // iconMenuItem2
+            // 
+            iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconMenuItem2.IconColor = Color.Black;
+            iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItem2.Name = "iconMenuItem2";
+            iconMenuItem2.Size = new Size(145, 20);
+            iconMenuItem2.Text = "Servicios";
             // 
             // MenuTitulo
             // 
@@ -219,15 +228,6 @@
             Contenedor.Name = "Contenedor";
             Contenedor.Size = new Size(663, 387);
             Contenedor.TabIndex = 2;
-            // 
-            // iconMenuItem2
-            // 
-            iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconMenuItem2.IconColor = Color.Black;
-            iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItem2.Name = "iconMenuItem2";
-            iconMenuItem2.Size = new Size(145, 20);
-            iconMenuItem2.Text = "Servicios";
             // 
             // FMInicio
             // 

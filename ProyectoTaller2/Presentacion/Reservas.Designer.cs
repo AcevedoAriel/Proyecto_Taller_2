@@ -43,7 +43,7 @@
             // LReservas
             // 
             LReservas.AutoEllipsis = true;
-            LReservas.Font = new Font("Times New Roman", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            LReservas.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             LReservas.Location = new Point(257, 9);
             LReservas.Name = "LReservas";
             LReservas.Size = new Size(272, 46);
@@ -57,7 +57,7 @@
             dataGridView1.Location = new Point(3, 72);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(991, 150);
+            dataGridView1.Size = new Size(766, 150);
             dataGridView1.TabIndex = 1;
             // 
             // ingreso
