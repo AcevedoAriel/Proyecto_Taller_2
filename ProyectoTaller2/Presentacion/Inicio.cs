@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using ProyectoTaller2.Presentacion;
 using ProyectoTaller2.Presentacion.Administrador;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,9 @@ namespace ProyectoTaller2.Administrador
     public partial class FMInicio : Form
     {
         //alcamena el menu que se encuentra activo
-        private static IconMenuItem MenuActivo = null;
+        private static IconMenuItem? MenuActivo;
         //ormulario que esta activo en el panel
-        private static Form FormularioActivo = null;
+        private static Form? FormularioActivo;
 
         public FMInicio()
         {
@@ -29,7 +30,7 @@ namespace ProyectoTaller2.Administrador
 
         }
 
-        private void agregarHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AgregarHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AgregarHabitacion hab = new AgregarHabitacion();
             hab.ShowDialog();
@@ -73,14 +74,14 @@ namespace ProyectoTaller2.Administrador
             AbrirFormulario((IconMenuItem)sender, new ConsularUsuario());
         }
 
-        private void SubMenuAgregarHabitacion_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new AgregarHabitacion());
-        }
-
         private void MenuReserva_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new Reservas());
+        }
+
+        private void SubMenuAgregarHabitacion_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new AgregarHabitacion());
         }
     }
 }

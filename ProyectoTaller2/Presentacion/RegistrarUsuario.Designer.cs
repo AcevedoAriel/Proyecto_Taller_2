@@ -33,10 +33,10 @@
             LNombreUsuario = new Label();
             LPerfil = new Label();
             LContraseña = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            TApellido = new TextBox();
+            TNombre = new TextBox();
+            TClave = new TextBox();
+            TNombreUsuario = new TextBox();
             comboBox1 = new ComboBox();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -95,33 +95,37 @@
             LContraseña.TabIndex = 4;
             LContraseña.Text = "Contraseña";
             // 
-            // textBox1
+            // TApellido
             // 
-            textBox1.Location = new Point(183, 64);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 23);
-            textBox1.TabIndex = 5;
+            TApellido.Location = new Point(183, 64);
+            TApellido.Name = "TApellido";
+            TApellido.Size = new Size(121, 23);
+            TApellido.TabIndex = 5;
+            TApellido.KeyPress += TApellido_KeyPress;
             // 
-            // textBox2
+            // TNombre
             // 
-            textBox2.Location = new Point(183, 28);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(121, 23);
-            textBox2.TabIndex = 6;
+            TNombre.Location = new Point(183, 28);
+            TNombre.Name = "TNombre";
+            TNombre.Size = new Size(121, 23);
+            TNombre.TabIndex = 6;
+            TNombre.KeyPress += TNombre_KeyPress;
             // 
-            // textBox3
+            // TClave
             // 
-            textBox3.Location = new Point(183, 127);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(121, 23);
-            textBox3.TabIndex = 7;
+            TClave.Location = new Point(183, 127);
+            TClave.Name = "TClave";
+            TClave.Size = new Size(121, 23);
+            TClave.TabIndex = 7;
+            TClave.KeyPress += TClave_KeyPress;
             // 
-            // textBox4
+            // TNombreUsuario
             // 
-            textBox4.Location = new Point(183, 98);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(121, 23);
-            textBox4.TabIndex = 8;
+            TNombreUsuario.Location = new Point(183, 98);
+            TNombreUsuario.Name = "TNombreUsuario";
+            TNombreUsuario.Size = new Size(121, 23);
+            TNombreUsuario.TabIndex = 8;
+            TNombreUsuario.KeyDown += TNombreUsuario_KeyDown;
             // 
             // comboBox1
             // 
@@ -194,10 +198,10 @@
             Controls.Add(BRegistrar);
             Controls.Add(dataGridView1);
             Controls.Add(comboBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TNombreUsuario);
+            Controls.Add(TClave);
+            Controls.Add(TNombre);
+            Controls.Add(TApellido);
             Controls.Add(LContraseña);
             Controls.Add(LPerfil);
             Controls.Add(LNombreUsuario);
@@ -217,10 +221,10 @@
         private Label LNombreUsuario;
         private Label LPerfil;
         private Label LContraseña;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox TApellido;
+        private TextBox TNombre;
+        private TextBox TClave;
+        private TextBox TNombreUsuario;
         private ComboBox comboBox1;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Column1;

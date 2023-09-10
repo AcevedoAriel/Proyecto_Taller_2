@@ -34,7 +34,7 @@
             SubMenuAgregarUsuario = new FontAwesome.Sharp.IconMenuItem();
             SubMenuConsultarUsuario = new FontAwesome.Sharp.IconMenuItem();
             MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuAgregarHabitacion = new ToolStripMenuItem();
+            SubMenuAgregarHabitacion = new FontAwesome.Sharp.IconMenuItem();
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
             MenuPagos = new FontAwesome.Sharp.IconMenuItem();
             MenuTitulo = new MenuStrip();
@@ -43,6 +43,7 @@
             perfilToolStripMenuItem = new ToolStripMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             Contenedor = new Panel();
+            iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuIzquierdo.SuspendLayout();
             MenuTitulo.SuspendLayout();
             SuspendLayout();
@@ -52,7 +53,7 @@
             MenuIzquierdo.AutoSize = false;
             MenuIzquierdo.BackColor = Color.White;
             MenuIzquierdo.Dock = DockStyle.Left;
-            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuPagos });
+            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuPagos, iconMenuItem2 });
             MenuIzquierdo.Location = new Point(0, 60);
             MenuIzquierdo.Name = "MenuIzquierdo";
             MenuIzquierdo.Size = new Size(152, 387);
@@ -94,7 +95,7 @@
             SubMenuAgregarUsuario.IconColor = Color.Black;
             SubMenuAgregarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuAgregarUsuario.Name = "SubMenuAgregarUsuario";
-            SubMenuAgregarUsuario.Size = new Size(180, 22);
+            SubMenuAgregarUsuario.Size = new Size(162, 22);
             SubMenuAgregarUsuario.Text = "Agregar Usuario";
             SubMenuAgregarUsuario.Click += SubMenuAgregarUsuario_Click;
             // 
@@ -104,7 +105,7 @@
             SubMenuConsultarUsuario.IconColor = Color.Black;
             SubMenuConsultarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuConsultarUsuario.Name = "SubMenuConsultarUsuario";
-            SubMenuConsultarUsuario.Size = new Size(180, 22);
+            SubMenuConsultarUsuario.Size = new Size(162, 22);
             SubMenuConsultarUsuario.Text = "Consultar Usuario";
             SubMenuConsultarUsuario.Click += SubMenuConsultarUsuario_Click;
             // 
@@ -125,10 +126,13 @@
             // 
             // SubMenuAgregarHabitacion
             // 
+            SubMenuAgregarHabitacion.IconChar = FontAwesome.Sharp.IconChar.None;
+            SubMenuAgregarHabitacion.IconColor = Color.Black;
+            SubMenuAgregarHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuAgregarHabitacion.Name = "SubMenuAgregarHabitacion";
             SubMenuAgregarHabitacion.Size = new Size(180, 22);
             SubMenuAgregarHabitacion.Text = "Agregar Habitacion";
-            SubMenuAgregarHabitacion.Click += SubMenuAgregarHabitacion_Click;
+            SubMenuAgregarHabitacion.Click += SubMenuAgregarHabitacion_Click_1;
             // 
             // MenuReserva
             // 
@@ -216,6 +220,15 @@
             Contenedor.Size = new Size(663, 387);
             Contenedor.TabIndex = 2;
             // 
+            // iconMenuItem2
+            // 
+            iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconMenuItem2.IconColor = Color.Black;
+            iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItem2.Name = "iconMenuItem2";
+            iconMenuItem2.Size = new Size(145, 20);
+            iconMenuItem2.Text = "Servicios";
+            // 
             // FMInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -245,11 +258,12 @@
         private FontAwesome.Sharp.IconMenuItem MenuHabitacion;
         private FontAwesome.Sharp.IconMenuItem MenuReserva;
         private FontAwesome.Sharp.IconMenuItem MenuSalir;
-        private ToolStripMenuItem SubMenuAgregarHabitacion;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private ToolStripMenuItem perfilToolStripMenuItem;
         private Panel Contenedor;
         private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
         private FontAwesome.Sharp.IconMenuItem SubMenuConsultarUsuario;
+        private FontAwesome.Sharp.IconMenuItem SubMenuAgregarHabitacion;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
     }
 }

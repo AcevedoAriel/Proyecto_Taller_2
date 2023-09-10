@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoTaller2.Presentacion.Administrador
+namespace ProyectoTaller2.Presentacion
 {
     public partial class AgregarHabitacion : Form
     {

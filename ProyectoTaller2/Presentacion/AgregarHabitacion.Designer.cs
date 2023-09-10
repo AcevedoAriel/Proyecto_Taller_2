@@ -1,4 +1,4 @@
-﻿namespace ProyectoTaller2.Presentacion.Administrador
+﻿namespace ProyectoTaller2.Presentacion
 {
     partial class AgregarHabitacion
     {
@@ -28,112 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
+            LTItuloHabitacion = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            numericUpDown1 = new NumericUpDown();
             textBox1 = new TextBox();
+            numericUpDown1 = new NumericUpDown();
             comboBox1 = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
+            // 
+            // LTItuloHabitacion
+            // 
+            LTItuloHabitacion.AutoSize = true;
+            LTItuloHabitacion.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            LTItuloHabitacion.Location = new Point(57, 37);
+            LTItuloHabitacion.Name = "LTItuloHabitacion";
+            LTItuloHabitacion.Size = new Size(218, 26);
+            LTItuloHabitacion.TabIndex = 0;
+            LTItuloHabitacion.Text = "Agregar Habitacion";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(89, 44);
+            label1.Location = new Point(57, 92);
             label1.Name = "label1";
-            label1.Size = new Size(286, 36);
-            label1.TabIndex = 0;
-            label1.Text = "Agregar Habitación";
+            label1.Size = new Size(29, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Piso";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(89, 119);
+            label2.Location = new Point(57, 141);
             label2.Name = "label2";
-            label2.Size = new Size(38, 19);
-            label2.TabIndex = 1;
-            label2.Text = "Piso:";
+            label2.Size = new Size(71, 15);
+            label2.TabIndex = 2;
+            label2.Text = "ID Aisgnado";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(89, 168);
+            label3.Location = new Point(57, 188);
             label3.Name = "label3";
-            label3.Size = new Size(85, 19);
-            label3.TabIndex = 2;
-            label3.Text = "ID asignado:";
+            label3.Size = new Size(58, 15);
+            label3.TabIndex = 3;
+            label3.Text = "Categoria";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(89, 220);
+            label4.Location = new Point(57, 247);
             label4.Name = "label4";
-            label4.Size = new Size(71, 19);
-            label4.TabIndex = 3;
-            label4.Text = "Categoría:";
+            label4.Size = new Size(104, 15);
+            label4.TabIndex = 4;
+            label4.Text = "Fecha Inaguración";
             // 
-            // label5
+            // textBox1
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(89, 268);
-            label5.Name = "label5";
-            label5.Size = new Size(130, 19);
-            label5.TabIndex = 4;
-            label5.Text = "Fecha Inauguración:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(255, 268);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 5;
+            textBox1.Location = new Point(176, 138);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(120, 23);
+            textBox1.TabIndex = 5;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(217, 120);
+            numericUpDown1.Location = new Point(176, 90);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 6;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(217, 168);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(120, 23);
-            textBox1.TabIndex = 7;
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(216, 220);
+            comboBox1.Location = new Point(176, 180);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 8;
+            comboBox1.TabIndex = 7;
             // 
-            // Habitacion
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(176, 241);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 9;
+            // 
+            // AgregarHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox1);
-            Controls.Add(numericUpDown1);
             Controls.Add(dateTimePicker1);
-            Controls.Add(label5);
+            Controls.Add(comboBox1);
+            Controls.Add(numericUpDown1);
+            Controls.Add(textBox1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Habitacion";
+            Controls.Add(LTItuloHabitacion);
+            Name = "AgregarHabitacion";
             Text = "AgregarHabitacion";
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
@@ -142,14 +138,14 @@
 
         #endregion
 
+        private Label LTItuloHabitacion;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private DateTimePicker dateTimePicker1;
-        private NumericUpDown numericUpDown1;
         private TextBox textBox1;
+        private NumericUpDown numericUpDown1;
         private ComboBox comboBox1;
+        private DateTimePicker dateTimePicker1;
     }
 }
