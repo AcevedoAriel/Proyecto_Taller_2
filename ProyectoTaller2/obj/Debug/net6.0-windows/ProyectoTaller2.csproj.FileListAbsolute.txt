@@ -47,3 +47,7 @@ C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-win
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.Reservas.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.CopyComplete
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarHabitacion.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Ingresos.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Pagos.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Servicio.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Inicio.resources

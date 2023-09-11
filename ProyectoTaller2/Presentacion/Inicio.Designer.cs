@@ -1,6 +1,6 @@
-﻿namespace ProyectoTaller2.Administrador
+﻿namespace ProyectoTaller2.Presentacion
 {
-    partial class FMInicio
+    partial class Inicio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,242 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MenuIzquierdo = new MenuStrip();
-            MenuInicio = new FontAwesome.Sharp.IconMenuItem();
-            MenuUsuario = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuAgregarUsuario = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuConsultarUsuario = new FontAwesome.Sharp.IconMenuItem();
-            MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuAgregarHabitacion = new FontAwesome.Sharp.IconMenuItem();
-            MenuReserva = new FontAwesome.Sharp.IconMenuItem();
-            MenuPagos = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
-            MenuTitulo = new MenuStrip();
-            sISTEMADEGESIONHOTELERAToolStripMenuItem = new ToolStripMenuItem();
-            MenuSalir = new FontAwesome.Sharp.IconMenuItem();
-            perfilToolStripMenuItem = new ToolStripMenuItem();
-            iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
-            Contenedor = new Panel();
-            MenuIzquierdo.SuspendLayout();
-            MenuTitulo.SuspendLayout();
+            button7 = new Button();
+            button6 = new Button();
+            button5 = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            BCama1 = new Button();
+            button11 = new Button();
+            button10 = new Button();
+            button9 = new Button();
+            button8 = new Button();
             SuspendLayout();
             // 
-            // MenuIzquierdo
+            // button7
             // 
-            MenuIzquierdo.AutoSize = false;
-            MenuIzquierdo.BackColor = Color.White;
-            MenuIzquierdo.Dock = DockStyle.Left;
-            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuPagos, iconMenuItem2 });
-            MenuIzquierdo.Location = new Point(0, 60);
-            MenuIzquierdo.Name = "MenuIzquierdo";
-            MenuIzquierdo.Size = new Size(152, 387);
-            MenuIzquierdo.TabIndex = 0;
-            MenuIzquierdo.Text = "menuStrip1";
+            button7.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Location = new Point(507, 242);
+            button7.Name = "button7";
+            button7.Size = new Size(103, 81);
+            button7.TabIndex = 15;
+            button7.Text = "107";
+            button7.UseVisualStyleBackColor = true;
             // 
-            // MenuInicio
+            // button6
             // 
-            MenuInicio.AutoSize = false;
-            MenuInicio.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuInicio.IconChar = FontAwesome.Sharp.IconChar.House;
-            MenuInicio.IconColor = Color.Black;
-            MenuInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuInicio.IconSize = 45;
-            MenuInicio.ImageScaling = ToolStripItemImageScaling.None;
-            MenuInicio.Name = "MenuInicio";
-            MenuInicio.Size = new Size(80, 60);
-            MenuInicio.Text = "Inicio";
-            MenuInicio.TextImageRelation = TextImageRelation.ImageAboveText;
+            button6.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.Location = new Point(382, 242);
+            button6.Name = "button6";
+            button6.Size = new Size(103, 81);
+            button6.TabIndex = 14;
+            button6.Text = "106";
+            button6.UseVisualStyleBackColor = true;
             // 
-            // MenuUsuario
+            // button5
             // 
-            MenuUsuario.AutoSize = false;
-            MenuUsuario.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAgregarUsuario, SubMenuConsultarUsuario });
-            MenuUsuario.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuUsuario.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            MenuUsuario.IconColor = Color.Black;
-            MenuUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuUsuario.IconSize = 45;
-            MenuUsuario.ImageScaling = ToolStripItemImageScaling.None;
-            MenuUsuario.Name = "MenuUsuario";
-            MenuUsuario.Size = new Size(80, 60);
-            MenuUsuario.Text = "Usuario";
-            MenuUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
+            button5.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(248, 242);
+            button5.Name = "button5";
+            button5.Size = new Size(103, 81);
+            button5.TabIndex = 13;
+            button5.Text = "105";
+            button5.UseVisualStyleBackColor = true;
             // 
-            // SubMenuAgregarUsuario
+            // button4
             // 
-            SubMenuAgregarUsuario.IconChar = FontAwesome.Sharp.IconChar.None;
-            SubMenuAgregarUsuario.IconColor = Color.Black;
-            SubMenuAgregarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            SubMenuAgregarUsuario.Name = "SubMenuAgregarUsuario";
-            SubMenuAgregarUsuario.Size = new Size(162, 22);
-            SubMenuAgregarUsuario.Text = "Agregar Usuario";
-            SubMenuAgregarUsuario.Click += SubMenuAgregarUsuario_Click;
+            button4.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(104, 242);
+            button4.Name = "button4";
+            button4.Size = new Size(103, 81);
+            button4.TabIndex = 12;
+            button4.Text = "104";
+            button4.UseVisualStyleBackColor = true;
             // 
-            // SubMenuConsultarUsuario
+            // button3
             // 
-            SubMenuConsultarUsuario.IconChar = FontAwesome.Sharp.IconChar.None;
-            SubMenuConsultarUsuario.IconColor = Color.Black;
-            SubMenuConsultarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            SubMenuConsultarUsuario.Name = "SubMenuConsultarUsuario";
-            SubMenuConsultarUsuario.Size = new Size(162, 22);
-            SubMenuConsultarUsuario.Text = "Consultar Usuario";
-            SubMenuConsultarUsuario.Click += SubMenuConsultarUsuario_Click;
+            button3.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(507, 125);
+            button3.Name = "button3";
+            button3.Size = new Size(103, 81);
+            button3.TabIndex = 11;
+            button3.Text = "103";
+            button3.UseVisualStyleBackColor = true;
             // 
-            // MenuHabitacion
+            // button2
             // 
-            MenuHabitacion.AutoSize = false;
-            MenuHabitacion.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAgregarHabitacion });
-            MenuHabitacion.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuHabitacion.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
-            MenuHabitacion.IconColor = Color.Black;
-            MenuHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuHabitacion.IconSize = 45;
-            MenuHabitacion.ImageScaling = ToolStripItemImageScaling.None;
-            MenuHabitacion.Name = "MenuHabitacion";
-            MenuHabitacion.Size = new Size(80, 60);
-            MenuHabitacion.Text = "Habitacion";
-            MenuHabitacion.TextImageRelation = TextImageRelation.ImageAboveText;
+            button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(382, 125);
+            button2.Name = "button2";
+            button2.Size = new Size(103, 81);
+            button2.TabIndex = 10;
+            button2.Text = "102";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // SubMenuAgregarHabitacion
+            // button1
             // 
-            SubMenuAgregarHabitacion.IconChar = FontAwesome.Sharp.IconChar.None;
-            SubMenuAgregarHabitacion.IconColor = Color.Black;
-            SubMenuAgregarHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            SubMenuAgregarHabitacion.Name = "SubMenuAgregarHabitacion";
-            SubMenuAgregarHabitacion.Size = new Size(166, 22);
-            SubMenuAgregarHabitacion.Text = "Agregar Habitacion";
-            SubMenuAgregarHabitacion.Click += SubMenuAgregarHabitacion_Click_1;
+            button1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(248, 125);
+            button1.Name = "button1";
+            button1.Size = new Size(103, 81);
+            button1.TabIndex = 9;
+            button1.Text = "101";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // MenuReserva
+            // BCama1
             // 
-            MenuReserva.AutoSize = false;
-            MenuReserva.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuReserva.IconChar = FontAwesome.Sharp.IconChar.Researchgate;
-            MenuReserva.IconColor = Color.Black;
-            MenuReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuReserva.IconSize = 45;
-            MenuReserva.ImageScaling = ToolStripItemImageScaling.None;
-            MenuReserva.Name = "MenuReserva";
-            MenuReserva.Size = new Size(80, 60);
-            MenuReserva.Text = "Reservas";
-            MenuReserva.TextImageRelation = TextImageRelation.ImageAboveText;
-            MenuReserva.Click += MenuReserva_Click;
+            BCama1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            BCama1.Location = new Point(104, 125);
+            BCama1.Name = "BCama1";
+            BCama1.Size = new Size(103, 81);
+            BCama1.TabIndex = 8;
+            BCama1.Text = "100";
+            BCama1.UseVisualStyleBackColor = true;
             // 
-            // MenuPagos
+            // button11
             // 
-            MenuPagos.AutoSize = false;
-            MenuPagos.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuPagos.IconChar = FontAwesome.Sharp.IconChar.Pager;
-            MenuPagos.IconColor = Color.Black;
-            MenuPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuPagos.IconSize = 45;
-            MenuPagos.ImageScaling = ToolStripItemImageScaling.None;
-            MenuPagos.Name = "MenuPagos";
-            MenuPagos.Size = new Size(80, 60);
-            MenuPagos.Text = "Pagos";
-            MenuPagos.TextImageRelation = TextImageRelation.ImageAboveText;
+            button11.Location = new Point(520, 47);
+            button11.Name = "button11";
+            button11.Size = new Size(75, 23);
+            button11.TabIndex = 19;
+            button11.Text = "Piso 4";
+            button11.UseVisualStyleBackColor = true;
             // 
-            // iconMenuItem2
+            // button10
             // 
-            iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconMenuItem2.IconColor = Color.Black;
-            iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItem2.Name = "iconMenuItem2";
-            iconMenuItem2.Size = new Size(145, 20);
-            iconMenuItem2.Text = "Servicios";
+            button10.Location = new Point(266, 47);
+            button10.Name = "button10";
+            button10.Size = new Size(75, 23);
+            button10.TabIndex = 18;
+            button10.Text = "Piso 2";
+            button10.UseVisualStyleBackColor = true;
             // 
-            // MenuTitulo
+            // button9
             // 
-            MenuTitulo.AutoSize = false;
-            MenuTitulo.BackColor = Color.SteelBlue;
-            MenuTitulo.Items.AddRange(new ToolStripItem[] { sISTEMADEGESIONHOTELERAToolStripMenuItem, MenuSalir, perfilToolStripMenuItem });
-            MenuTitulo.Location = new Point(0, 0);
-            MenuTitulo.Name = "MenuTitulo";
-            MenuTitulo.Size = new Size(815, 60);
-            MenuTitulo.TabIndex = 1;
-            MenuTitulo.Text = "menuStrip2";
+            button9.Location = new Point(395, 47);
+            button9.Name = "button9";
+            button9.Size = new Size(75, 23);
+            button9.TabIndex = 17;
+            button9.Text = "Piso 3";
+            button9.UseVisualStyleBackColor = true;
             // 
-            // sISTEMADEGESIONHOTELERAToolStripMenuItem
+            // button8
             // 
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.ForeColor = SystemColors.GradientInactiveCaption;
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.Name = "sISTEMADEGESIONHOTELERAToolStripMenuItem";
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.Size = new Size(208, 56);
-            sISTEMADEGESIONHOTELERAToolStripMenuItem.Text = "SISTEMA DE GESION HOTELERA";
+            button8.Location = new Point(118, 47);
+            button8.Name = "button8";
+            button8.Size = new Size(75, 23);
+            button8.TabIndex = 16;
+            button8.Text = "Piso 1";
+            button8.UseVisualStyleBackColor = true;
             // 
-            // MenuSalir
-            // 
-            MenuSalir.Alignment = ToolStripItemAlignment.Right;
-            MenuSalir.AutoSize = false;
-            MenuSalir.IconChar = FontAwesome.Sharp.IconChar.SignIn;
-            MenuSalir.IconColor = Color.Black;
-            MenuSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuSalir.IconSize = 40;
-            MenuSalir.ImageScaling = ToolStripItemImageScaling.None;
-            MenuSalir.Name = "MenuSalir";
-            MenuSalir.Size = new Size(80, 56);
-            MenuSalir.TextImageRelation = TextImageRelation.ImageAboveText;
-            // 
-            // perfilToolStripMenuItem
-            // 
-            perfilToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
-            perfilToolStripMenuItem.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-            perfilToolStripMenuItem.Size = new Size(49, 56);
-            perfilToolStripMenuItem.Text = "Perfil";
-            // 
-            // iconMenuItem1
-            // 
-            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconMenuItem1.IconColor = Color.Black;
-            iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItem1.Name = "iconMenuItem1";
-            iconMenuItem1.Size = new Size(32, 19);
-            iconMenuItem1.Text = "iconMenuItem1";
-            // 
-            // Contenedor
-            // 
-            Contenedor.Dock = DockStyle.Fill;
-            Contenedor.Location = new Point(152, 60);
-            Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(663, 387);
-            Contenedor.TabIndex = 2;
-            // 
-            // FMInicio
+            // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(815, 447);
-            Controls.Add(Contenedor);
-            Controls.Add(MenuIzquierdo);
-            Controls.Add(MenuTitulo);
-            MainMenuStrip = MenuIzquierdo;
-            Name = "FMInicio";
-            Text = "Sistema G. Hotelera";
-            MenuIzquierdo.ResumeLayout(false);
-            MenuIzquierdo.PerformLayout();
-            MenuTitulo.ResumeLayout(false);
-            MenuTitulo.PerformLayout();
+            ClientSize = new Size(713, 386);
+            Controls.Add(button11);
+            Controls.Add(button10);
+            Controls.Add(button9);
+            Controls.Add(button8);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(BCama1);
+            Name = "Inicio";
+            Text = "Inicio";
             ResumeLayout(false);
         }
 
         #endregion
 
-        private MenuStrip MenuIzquierdo;
-        private MenuStrip MenuTitulo;
-        private FontAwesome.Sharp.IconMenuItem MenuPagos;
-        private ToolStripMenuItem sISTEMADEGESIONHOTELERAToolStripMenuItem;
-        private FontAwesome.Sharp.IconMenuItem MenuInicio;
-        private FontAwesome.Sharp.IconMenuItem MenuUsuario;
-        private FontAwesome.Sharp.IconMenuItem MenuHabitacion;
-        private FontAwesome.Sharp.IconMenuItem MenuReserva;
-        private FontAwesome.Sharp.IconMenuItem MenuSalir;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
-        private ToolStripMenuItem perfilToolStripMenuItem;
-        private Panel Contenedor;
-        private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
-        private FontAwesome.Sharp.IconMenuItem SubMenuConsultarUsuario;
-        private FontAwesome.Sharp.IconMenuItem SubMenuAgregarHabitacion;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
+        private Button button7;
+        private Button button6;
+        private Button button5;
+        private Button button4;
+        private Button button3;
+        private Button button2;
+        private Button button1;
+        private Button BCama1;
+        private Button button11;
+        private Button button10;
+        private Button button9;
+        private Button button8;
     }
 }

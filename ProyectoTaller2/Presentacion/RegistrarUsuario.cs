@@ -48,7 +48,22 @@ namespace ProyectoTaller2.Administrador
 
         private void TClave_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Obtener la contraseña ingresada
+            string contraseña = TClave.Text + e.KeyChar;
 
+            // Verificar si tiene al menos 6 caracteres
+            if (contraseña.Length >= 6)
+            {
+                // Mostrar un mensaje de éxito
+                LMensaje.Text = "Contraseña válida";
+                LMensaje.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                // Mostrar un mensaje de error
+                LMensaje.Text = "Contraseña inválida";
+                LMensaje.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private void RegistrarUsuario_Load(object sender, EventArgs e)

@@ -47,6 +47,7 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             BRegistrar = new Button();
+            LMensaje = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -191,11 +192,20 @@
             BRegistrar.UseVisualStyleBackColor = true;
             BRegistrar.Click += BRegistrar_Click;
             // 
+            // LMensaje
+            // 
+            LMensaje.AutoSize = true;
+            LMensaje.Location = new Point(325, 101);
+            LMensaje.Name = "LMensaje";
+            LMensaje.Size = new Size(0, 15);
+            LMensaje.TabIndex = 12;
+            // 
             // RegistrarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(783, 415);
+            Controls.Add(LMensaje);
             Controls.Add(BRegistrar);
             Controls.Add(dataGridView1);
             Controls.Add(comboBox1);
@@ -237,5 +247,6 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private Button BRegistrar;
+        private Label LMensaje;
     }
 }

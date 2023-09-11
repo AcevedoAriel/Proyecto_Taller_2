@@ -4,6 +4,9 @@
     <Compile Update="Presentacion\AgregarHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\Pagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -16,7 +19,7 @@
     <Compile Update="Presentacion\ConsultarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Inicio.cs">
+    <Compile Update="Presentacion\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\RegistrarUsuario.cs">
@@ -26,6 +29,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\Reservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Servicio.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
