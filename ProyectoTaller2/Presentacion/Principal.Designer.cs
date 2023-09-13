@@ -57,7 +57,7 @@
             MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, iconMenuItem3, MenuServicios });
             MenuIzquierdo.Location = new Point(0, 60);
             MenuIzquierdo.Name = "MenuIzquierdo";
-            MenuIzquierdo.Size = new Size(152, 407);
+            MenuIzquierdo.Size = new Size(152, 466);
             MenuIzquierdo.TabIndex = 0;
             MenuIzquierdo.Text = "menuStrip1";
             // 
@@ -186,7 +186,7 @@
             MenuTitulo.Items.AddRange(new ToolStripItem[] { MenuSalir, perfilToolStripMenuItem, ICTitulo, hOTELDELPARANAToolStripMenuItem });
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
-            MenuTitulo.Size = new Size(840, 60);
+            MenuTitulo.Size = new Size(1035, 60);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             // 
@@ -244,14 +244,15 @@
             Contenedor.Dock = DockStyle.Fill;
             Contenedor.Location = new Point(152, 60);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(688, 407);
+            Contenedor.Size = new Size(883, 466);
             Contenedor.TabIndex = 2;
+            Contenedor.Paint += Contenedor_Paint;
             // 
             // FMInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(840, 467);
+            ClientSize = new Size(1035, 526);
             Controls.Add(Contenedor);
             Controls.Add(MenuIzquierdo);
             Controls.Add(MenuTitulo);
