@@ -32,14 +32,21 @@
             BBuscar = new Button();
             LDescripcionBusqueda = new Label();
             TBusqueda = new TextBox();
-            LListaUsuario = new Label();
+            BEditar = new Button();
+            BEliminar = new Button();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            sexo = new DataGridViewTextBoxColumn();
+            fechaNac = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
+            LListaUsuario = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -61,8 +68,10 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(LListaUsuario);
+            splitContainer1.Panel2.Controls.Add(BEditar);
+            splitContainer1.Panel2.Controls.Add(BEliminar);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
+            splitContainer1.Panel2.Controls.Add(LListaUsuario);
             splitContainer1.Size = new Size(873, 388);
             splitContainer1.SplitterDistance = 201;
             splitContainer1.TabIndex = 0;
@@ -94,6 +103,94 @@
             TBusqueda.TabIndex = 17;
             TBusqueda.TextAlign = HorizontalAlignment.Center;
             // 
+            // BEditar
+            // 
+            BEditar.Location = new Point(323, 78);
+            BEditar.Name = "BEditar";
+            BEditar.Size = new Size(125, 40);
+            BEditar.TabIndex = 33;
+            BEditar.Text = "Editar";
+            BEditar.UseVisualStyleBackColor = true;
+            BEditar.Click += BEditar_Click;
+            // 
+            // BEliminar
+            // 
+            BEliminar.Location = new Point(486, 78);
+            BEliminar.Name = "BEliminar";
+            BEliminar.Size = new Size(125, 40);
+            BEliminar.TabIndex = 32;
+            BEliminar.Text = "Eliminar";
+            BEliminar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column2, Column3, Column4, Column5, email, sexo, fechaNac, telefono, estado });
+            dataGridView1.Location = new Point(12, 150);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(783, 188);
+            dataGridView1.TabIndex = 28;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CurrentCellChanged += dataGridView1_CurrentCellChanged;
+            dataGridView1.DataBindingComplete += dataGridView1_DataBindingComplete;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID_Usuario";
+            Column1.Name = "Column1";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Tipo de Perfil";
+            Column6.Name = "Column6";
+            Column6.Width = 110;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Apellido";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Nombre";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Nombre Usuario";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Contraseña";
+            Column5.Name = "Column5";
+            // 
+            // email
+            // 
+            email.HeaderText = "Driección de Correo";
+            email.Name = "email";
+            // 
+            // sexo
+            // 
+            sexo.HeaderText = "Sexo";
+            sexo.Name = "sexo";
+            // 
+            // fechaNac
+            // 
+            fechaNac.HeaderText = "Fecha de Nacimiento";
+            fechaNac.Name = "fechaNac";
+            // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.Name = "telefono";
+            // 
+            // estado
+            // 
+            estado.HeaderText = "Estado";
+            estado.Name = "estado";
+            // 
             // LListaUsuario
             // 
             LListaUsuario.BackColor = Color.White;
@@ -103,54 +200,6 @@
             LListaUsuario.Size = new Size(285, 32);
             LListaUsuario.TabIndex = 19;
             LListaUsuario.Text = "Lista de Usuarios:";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column2, Column3, Column5, Column6 });
-            dataGridView1.Location = new Point(12, 69);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(644, 287);
-            dataGridView1.TabIndex = 15;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID_Usuario";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Nombre Usuario";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Apellido";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Nombre";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Clave";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Tipo de Perfil";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
             // 
             // ConsularUsuario
             // 
@@ -175,13 +224,20 @@
         private Button BBuscar;
         private Label LDescripcionBusqueda;
         private TextBox TBusqueda;
-        private DataGridView dataGridView1;
         private Label LListaUsuario;
+        private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn sexo;
+        private DataGridViewTextBoxColumn fechaNac;
+        private DataGridViewTextBoxColumn telefono;
+        private DataGridViewTextBoxColumn estado;
+        private Button BEditar;
+        private Button BEliminar;
     }
 }

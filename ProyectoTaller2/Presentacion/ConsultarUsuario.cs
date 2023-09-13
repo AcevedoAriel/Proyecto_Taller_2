@@ -16,5 +16,35 @@ namespace ProyectoTaller2.Administrador
         {
             InitializeComponent();
         }
+
+        private void BEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                BEditar.Visible = false;
+            }
+            else
+            {
+                BEditar.Visible = true;
+
+            }
+        }
     }
 }

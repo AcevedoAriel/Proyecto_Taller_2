@@ -103,6 +103,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Simple", "Doble", "Matrimonial", "Matrimonial Doble" });
             comboBox1.Location = new Point(176, 180);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
