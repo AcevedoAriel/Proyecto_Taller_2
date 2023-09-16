@@ -101,5 +101,10 @@ namespace ProyectoTaller2.Administrador
         {
 
         }
+
+        private void FMInicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

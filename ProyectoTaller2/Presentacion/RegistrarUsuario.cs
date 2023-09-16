@@ -85,5 +85,41 @@ namespace ProyectoTaller2.Administrador
         {
 
         }
+
+        private void BRegistrar_Click_1(object sender, EventArgs e)
+        {
+            DialogResult resultado;
+            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && TClave.Text != "" && TCorreo.Text != "" && CBPerfil.Text != "" && TSexo.Text != "" && DTFechaNac.Text != "" && TTelefono.Text != "")
+            {
+                resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    DateTime fecha = DTFechaNac.Value;
+                    string apellido = TApellido.Text;
+                    string nombre = TNombre.Text;
+                    string clave = TClave.Text;
+                    string correo = TCorreo.Text;
+                    string nombreUsuario = TNombreUsuario.Text;
+                    string telefono = TTelefono.Text;
+
+                    // Agregar una nueva fila al datagrid con los valores
+                    ConsularUsuario consularUsuario = new ConsularUsuario();
+                    //FALTA SOLUCIONAR
+                    //consultarUsuario.dataGridView1.Rows.Add(apellido, nombre, fecha, this.Tsexo(), saldo, imagen, TFoto.Text);
+                    MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+                }
+                // Limpiar formulario
+                /*TNombre.Clear();
+                TApellido.Clear();
+                TSaldo.Clear();
+                TFoto.Clear();
+                PBHombre.Image = null;
+                PBMujer.Image = null;*/
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error");
+            }
+        }
     }
 }

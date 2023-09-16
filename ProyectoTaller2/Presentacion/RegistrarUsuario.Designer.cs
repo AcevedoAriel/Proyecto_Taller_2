@@ -31,7 +31,7 @@
             panel1 = new Panel();
             DTFechaNac = new DateTimePicker();
             TSexo = new ComboBox();
-            textBox3 = new TextBox();
+            TTelefono = new TextBox();
             TCorreo = new TextBox();
             label4 = new Label();
             label3 = new Label();
@@ -39,7 +39,7 @@
             label1 = new Label();
             LMensaje = new Label();
             BRegistrar = new Button();
-            comboBox1 = new ComboBox();
+            CBPerfil = new ComboBox();
             TNombreUsuario = new TextBox();
             TClave = new TextBox();
             TNombre = new TextBox();
@@ -57,7 +57,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(DTFechaNac);
             panel1.Controls.Add(TSexo);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(TTelefono);
             panel1.Controls.Add(TCorreo);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -65,7 +65,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(LMensaje);
             panel1.Controls.Add(BRegistrar);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(CBPerfil);
             panel1.Controls.Add(TNombreUsuario);
             panel1.Controls.Add(TClave);
             panel1.Controls.Add(TNombre);
@@ -98,12 +98,12 @@
             TSexo.Size = new Size(194, 23);
             TSexo.TabIndex = 41;
             // 
-            // textBox3
+            // TTelefono
             // 
-            textBox3.Location = new Point(157, 352);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(194, 23);
-            textBox3.TabIndex = 39;
+            TTelefono.Location = new Point(157, 352);
+            TTelefono.Name = "TTelefono";
+            TTelefono.Size = new Size(194, 23);
+            TTelefono.TabIndex = 39;
             // 
             // TCorreo
             // 
@@ -167,15 +167,16 @@
             BRegistrar.TabIndex = 26;
             BRegistrar.Text = "Registrar Usuario";
             BRegistrar.UseVisualStyleBackColor = false;
+            BRegistrar.Click += BRegistrar_Click_1;
             // 
-            // comboBox1
+            // CBPerfil
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Super Usuario", "Administrador", "Recepcionista" });
-            comboBox1.Location = new Point(157, 184);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(194, 23);
-            comboBox1.TabIndex = 24;
+            CBPerfil.FormattingEnabled = true;
+            CBPerfil.Items.AddRange(new object[] { "Super Usuario", "Administrador", "Recepcionista" });
+            CBPerfil.Location = new Point(157, 184);
+            CBPerfil.Name = "CBPerfil";
+            CBPerfil.Size = new Size(194, 23);
+            CBPerfil.TabIndex = 24;
             // 
             // TNombreUsuario
             // 
@@ -272,7 +273,7 @@
         private Panel panel1;
         private Label LMensaje;
         private Button BRegistrar;
-        private ComboBox comboBox1;
+        private ComboBox CBPerfil;
         private TextBox TNombreUsuario;
         private TextBox TClave;
         private TextBox TNombre;
@@ -286,7 +287,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox3;
+        private TextBox TTelefono;
         private TextBox TCorreo;
         private ComboBox TSexo;
         private DateTimePicker DTFechaNac;

@@ -46,5 +46,11 @@ namespace ProyectoTaller2.Administrador
 
             }
         }
+
+        private void ConsularUsuario_Load(object sender, EventArgs e)
+        {
+            //cargar datos estáticos
+            dataGridView1.Rows.Add("01", "Administrador", "Pineyro", "Juan", "juanpineyro", "642312", "juan@gmail", "Hombre", "12/01/95", "6543234", "activo");
+        }
     }
 }

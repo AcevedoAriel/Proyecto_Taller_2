@@ -97,7 +97,7 @@
             SubMenuAgregarUsuario.IconColor = Color.Black;
             SubMenuAgregarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuAgregarUsuario.Name = "SubMenuAgregarUsuario";
-            SubMenuAgregarUsuario.Size = new Size(162, 22);
+            SubMenuAgregarUsuario.Size = new Size(180, 22);
             SubMenuAgregarUsuario.Text = "Agregar Usuario";
             SubMenuAgregarUsuario.Click += SubMenuAgregarUsuario_Click;
             // 
@@ -107,7 +107,7 @@
             SubMenuConsultarUsuario.IconColor = Color.Black;
             SubMenuConsultarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuConsultarUsuario.Name = "SubMenuConsultarUsuario";
-            SubMenuConsultarUsuario.Size = new Size(162, 22);
+            SubMenuConsultarUsuario.Size = new Size(180, 22);
             SubMenuConsultarUsuario.Text = "Consultar Usuario";
             SubMenuConsultarUsuario.Click += SubMenuConsultarUsuario_Click;
             // 
@@ -259,6 +259,7 @@
             MainMenuStrip = MenuIzquierdo;
             Name = "FMInicio";
             Text = "Sistema G. Hotelera";
+            Load += FMInicio_Load;
             MenuIzquierdo.ResumeLayout(false);
             MenuIzquierdo.PerformLayout();
             MenuTitulo.ResumeLayout(false);

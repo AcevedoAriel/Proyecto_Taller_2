@@ -126,10 +126,10 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column2, Column3, Column4, Column5, email, sexo, fechaNac, telefono, estado });
-            dataGridView1.Location = new Point(12, 150);
+            dataGridView1.Location = new Point(-6, 164);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(783, 188);
+            dataGridView1.Size = new Size(587, 188);
             dataGridView1.TabIndex = 28;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CurrentCellChanged += dataGridView1_CurrentCellChanged;
@@ -209,6 +209,7 @@
             Controls.Add(splitContainer1);
             Name = "ConsularUsuario";
             Text = "Consulta";
+            Load += ConsularUsuario_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
