@@ -3,7 +3,6 @@ C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-win
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.runtimeconfig.json
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.dll
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.pdb
-C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Form1.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.GenerateResource.cache
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.AssemblyInfoInputs.cache
@@ -41,13 +40,11 @@ C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-win
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.AssemblyReference.cache
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.ConsularUsuario.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.FMInicio.resources
-C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.RegistrarReserva.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.Reservas.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.CopyComplete
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarHabitacion.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Ingresos.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Pagos.resources
-C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Servicio.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Inicio.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.AssemblyReference.cache
@@ -57,3 +54,8 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Pagos.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Servicio.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.CopyComplete
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarPagos.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarServicios.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.RegistrarReserva.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.ServiciosAdicionales.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.FMIniciarSesion.resources

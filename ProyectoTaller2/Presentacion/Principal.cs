@@ -57,18 +57,16 @@ namespace ProyectoTaller2.Administrador
             }
 
             FormularioActivo = formulario;
-            //lo que indica que no es un formulario de nivel superior,
-            //sino un formulario secundario o hijo.
+            //indica que no es un formulario padre
             formulario.TopLevel = false;
-            //stilo de borde none.
             formulario.FormBorderStyle = FormBorderStyle.None;
-            //indica que el formulario se ajuste al contenedor o panel
+            //se ajusta al panel
             formulario.Dock = DockStyle.Fill;
 
             formulario.BackColor = Color.LightSkyBlue;
 
             //es el contenedor donde se mostrará el formulario hijo.
-            Contenedor.Controls.Add(formulario);
+            Panel1.Controls.Add(formulario);
             formulario.Show();
         }
 
@@ -95,16 +93,6 @@ namespace ProyectoTaller2.Administrador
         private void MenuInicio_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new Inicio());
-        }
-
-        private void Contenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FMInicio_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
