@@ -15,7 +15,9 @@ namespace ProyectoTaller2.Administrador
         public RegistrarUsuario()
         {
             InitializeComponent();
+            BEditar.Enabled = false;
         }
+
 
         //Validaciones en los campos
         private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -121,5 +123,18 @@ namespace ProyectoTaller2.Administrador
                 MessageBox.Show("Debe completar todos los campos", "Error");
             }
         }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verifica si al menos una fila está seleccionada
+            BEditar.Enabled = dataGridView1.SelectedRows.Count > 0;
+        }
+
+
+        private void BEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

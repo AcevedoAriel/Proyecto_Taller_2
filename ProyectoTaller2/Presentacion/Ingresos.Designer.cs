@@ -153,7 +153,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(719, 363);
+            ClientSize = new Size(730, 363);
             Controls.Add(btnBuscar);
             Controls.Add(panel1);
             Controls.Add(Tbuscar);

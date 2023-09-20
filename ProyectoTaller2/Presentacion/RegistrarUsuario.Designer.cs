@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BEditar = new Button();
+            panel2 = new Panel();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            sexo = new DataGridViewTextBoxColumn();
+            fechaNac = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
             DTFechaNac = new DateTimePicker();
             TSexo = new ComboBox();
             TTelefono = new TextBox();
@@ -49,19 +63,6 @@
             LNombreUsuario = new Label();
             LApellido = new Label();
             LNombre = new Label();
-            panel2 = new Panel();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            sexo = new DataGridViewTextBoxColumn();
-            fechaNac = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            estado = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -70,6 +71,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(BEditar);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(DTFechaNac);
             panel1.Controls.Add(TSexo);
@@ -94,9 +96,95 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(770, 503);
+            panel1.Size = new Size(816, 515);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // BEditar
+            // 
+            BEditar.Location = new Point(157, 242);
+            BEditar.Name = "BEditar";
+            BEditar.Size = new Size(108, 25);
+            BEditar.TabIndex = 44;
+            BEditar.Text = "Editar";
+            BEditar.UseVisualStyleBackColor = true;
+            BEditar.Click += BEditar_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(dataGridView1);
+            panel2.Location = new Point(-17, 287);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(786, 215);
+            panel2.TabIndex = 43;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column2, Column3, Column4, Column5, email, sexo, fechaNac, telefono, estado });
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(786, 215);
+            dataGridView1.TabIndex = 44;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID_Usuario";
+            Column1.Name = "Column1";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Tipo de Perfil";
+            Column6.Name = "Column6";
+            Column6.Width = 110;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Apellido";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Nombre";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Nombre Usuario";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Contraseña";
+            Column5.Name = "Column5";
+            // 
+            // email
+            // 
+            email.HeaderText = "Driección de Correo";
+            email.Name = "email";
+            // 
+            // sexo
+            // 
+            sexo.HeaderText = "Sexo";
+            sexo.Name = "sexo";
+            // 
+            // fechaNac
+            // 
+            fechaNac.HeaderText = "Fecha de Nacimiento";
+            fechaNac.Name = "fechaNac";
+            // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.Name = "telefono";
+            // 
+            // estado
+            // 
+            estado.HeaderText = "Estado";
+            estado.Name = "estado";
             // 
             // DTFechaNac
             // 
@@ -270,86 +358,11 @@
             LNombre.TabIndex = 15;
             LNombre.Text = "Nombre";
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(dataGridView1);
-            panel2.Location = new Point(-17, 287);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(786, 215);
-            panel2.TabIndex = 43;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column2, Column3, Column4, Column5, email, sexo, fechaNac, telefono, estado });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(786, 215);
-            dataGridView1.TabIndex = 44;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID_Usuario";
-            Column1.Name = "Column1";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Tipo de Perfil";
-            Column6.Name = "Column6";
-            Column6.Width = 110;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Apellido";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Nombre";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Nombre Usuario";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Contraseña";
-            Column5.Name = "Column5";
-            // 
-            // email
-            // 
-            email.HeaderText = "Driección de Correo";
-            email.Name = "email";
-            // 
-            // sexo
-            // 
-            sexo.HeaderText = "Sexo";
-            sexo.Name = "sexo";
-            // 
-            // fechaNac
-            // 
-            fechaNac.HeaderText = "Fecha de Nacimiento";
-            fechaNac.Name = "fechaNac";
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Telefono";
-            telefono.Name = "telefono";
-            // 
-            // estado
-            // 
-            estado.HeaderText = "Estado";
-            estado.Name = "estado";
-            // 
             // RegistrarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(770, 503);
+            ClientSize = new Size(816, 515);
             Controls.Add(panel1);
             Name = "RegistrarUsuario";
             Text = "Registrar Usuario";
@@ -397,5 +410,6 @@
         private DataGridViewTextBoxColumn fechaNac;
         private DataGridViewTextBoxColumn telefono;
         private DataGridViewTextBoxColumn estado;
+        private Button BEditar;
     }
 }
