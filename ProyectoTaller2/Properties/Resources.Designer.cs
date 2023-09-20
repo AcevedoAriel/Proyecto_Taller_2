@@ -59,5 +59,15 @@ namespace ProyectoTaller2.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HotelParana {
+            get {
+                object obj = ResourceManager.GetObject("HotelParana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTaller2.Presentacion
 {
-    partial class Servicio
+    partial class ServiciosAdicionales
     {
         /// <summary>
         /// Required designer variable.

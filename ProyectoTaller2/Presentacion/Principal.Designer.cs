@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTaller2.Administrador
 {
-    partial class FMInicio
+    partial class FMPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@
             ICTitulo = new FontAwesome.Sharp.IconMenuItem();
             hOTELDELPARANAToolStripMenuItem = new ToolStripMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
-            Contenedor = new Panel();
+            Panel1 = new Panel();
             MenuIzquierdo.SuspendLayout();
             MenuTitulo.SuspendLayout();
             SuspendLayout();
@@ -57,7 +57,7 @@
             MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, iconMenuItem3, MenuServicios });
             MenuIzquierdo.Location = new Point(0, 60);
             MenuIzquierdo.Name = "MenuIzquierdo";
-            MenuIzquierdo.Size = new Size(152, 317);
+            MenuIzquierdo.Size = new Size(152, 421);
             MenuIzquierdo.TabIndex = 0;
             MenuIzquierdo.Text = "menuStrip1";
             // 
@@ -97,7 +97,7 @@
             SubMenuAgregarUsuario.IconColor = Color.Black;
             SubMenuAgregarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuAgregarUsuario.Name = "SubMenuAgregarUsuario";
-            SubMenuAgregarUsuario.Size = new Size(180, 22);
+            SubMenuAgregarUsuario.Size = new Size(162, 22);
             SubMenuAgregarUsuario.Text = "Agregar Usuario";
             SubMenuAgregarUsuario.Click += SubMenuAgregarUsuario_Click;
             // 
@@ -107,7 +107,7 @@
             SubMenuConsultarUsuario.IconColor = Color.Black;
             SubMenuConsultarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             SubMenuConsultarUsuario.Name = "SubMenuConsultarUsuario";
-            SubMenuConsultarUsuario.Size = new Size(180, 22);
+            SubMenuConsultarUsuario.Size = new Size(162, 22);
             SubMenuConsultarUsuario.Text = "Consultar Usuario";
             SubMenuConsultarUsuario.Click += SubMenuConsultarUsuario_Click;
             // 
@@ -186,7 +186,7 @@
             MenuTitulo.Items.AddRange(new ToolStripItem[] { MenuSalir, perfilToolStripMenuItem, ICTitulo, hOTELDELPARANAToolStripMenuItem });
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
-            MenuTitulo.Size = new Size(866, 60);
+            MenuTitulo.Size = new Size(912, 60);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             // 
@@ -202,6 +202,7 @@
             MenuSalir.Name = "MenuSalir";
             MenuSalir.Size = new Size(80, 56);
             MenuSalir.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuSalir.Click += MenuSalir_Click;
             // 
             // perfilToolStripMenuItem
             // 
@@ -214,12 +215,13 @@
             // ICTitulo
             // 
             ICTitulo.AutoSize = false;
+            ICTitulo.BackgroundImageLayout = ImageLayout.Center;
             ICTitulo.IconChar = FontAwesome.Sharp.IconChar.Hotel;
             ICTitulo.IconColor = Color.Black;
             ICTitulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ICTitulo.ImageScaling = ToolStripItemImageScaling.None;
             ICTitulo.Name = "ICTitulo";
-            ICTitulo.Size = new Size(122, 56);
+            ICTitulo.Size = new Size(60, 56);
             ICTitulo.TextAlign = ContentAlignment.BottomCenter;
             ICTitulo.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
@@ -239,25 +241,24 @@
             iconMenuItem1.Size = new Size(32, 19);
             iconMenuItem1.Text = "iconMenuItem1";
             // 
-            // Contenedor
+            // Panel1
             // 
-            Contenedor.Dock = DockStyle.Fill;
-            Contenedor.Location = new Point(152, 60);
-            Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(714, 317);
-            Contenedor.TabIndex = 2;
-            Contenedor.Paint += Contenedor_Paint;
+            Panel1.Dock = DockStyle.Fill;
+            Panel1.Location = new Point(152, 60);
+            Panel1.Name = "Panel1";
+            Panel1.Size = new Size(760, 421);
+            Panel1.TabIndex = 2;
             // 
-            // FMInicio
+            // FMPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(866, 377);
-            Controls.Add(Contenedor);
+            ClientSize = new Size(912, 481);
+            Controls.Add(Panel1);
             Controls.Add(MenuIzquierdo);
             Controls.Add(MenuTitulo);
             MainMenuStrip = MenuIzquierdo;
-            Name = "FMInicio";
+            Name = "FMPrincipal";
             Text = "Sistema G. Hotelera";
             Load += FMInicio_Load;
             MenuIzquierdo.ResumeLayout(false);
@@ -279,7 +280,7 @@
         private FontAwesome.Sharp.IconMenuItem MenuSalir;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private ToolStripMenuItem perfilToolStripMenuItem;
-        private Panel Contenedor;
+        private Panel Panel1;
         private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
         private FontAwesome.Sharp.IconMenuItem SubMenuConsultarUsuario;
         private FontAwesome.Sharp.IconMenuItem SubMenuAgregarHabitacion;
