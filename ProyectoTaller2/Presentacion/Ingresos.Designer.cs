@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            label1 = new Label();
-            Bbuscar = new Button();
-            Tbuscar = new TextBox();
             nombre = new DataGridViewTextBoxColumn();
             medioPago = new DataGridViewTextBoxColumn();
             fechaPago = new DataGridViewTextBoxColumn();
@@ -41,6 +38,9 @@
             subtotal = new DataGridViewTextBoxColumn();
             descuento = new DataGridViewTextBoxColumn();
             total = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            Bbuscar = new Button();
+            Tbuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -53,34 +53,6 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(1044, 150);
             dataGridView1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(37, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(252, 31);
-            label1.TabIndex = 1;
-            label1.Text = "Registro de Ingresos";
-            // 
-            // Bbuscar
-            // 
-            Bbuscar.Location = new Point(874, 86);
-            Bbuscar.Name = "Bbuscar";
-            Bbuscar.Size = new Size(75, 23);
-            Bbuscar.TabIndex = 2;
-            Bbuscar.Text = "Buscar";
-            Bbuscar.UseVisualStyleBackColor = true;
-            Bbuscar.Click += Bbuscar_Click;
-            // 
-            // Tbuscar
-            // 
-            Tbuscar.Location = new Point(636, 86);
-            Tbuscar.Name = "Tbuscar";
-            Tbuscar.Size = new Size(198, 23);
-            Tbuscar.TabIndex = 3;
-            Tbuscar.TextChanged += Tbuscar_TextChanged;
             // 
             // nombre
             // 
@@ -128,11 +100,39 @@
             total.HeaderText = "Monto Total";
             total.Name = "total";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(37, 65);
+            label1.Name = "label1";
+            label1.Size = new Size(252, 31);
+            label1.TabIndex = 1;
+            label1.Text = "Registro de Ingresos";
+            // 
+            // Bbuscar
+            // 
+            Bbuscar.Location = new Point(874, 86);
+            Bbuscar.Name = "Bbuscar";
+            Bbuscar.Size = new Size(75, 23);
+            Bbuscar.TabIndex = 2;
+            Bbuscar.Text = "Buscar";
+            Bbuscar.UseVisualStyleBackColor = true;
+            Bbuscar.Click += Bbuscar_Click;
+            // 
+            // Tbuscar
+            // 
+            Tbuscar.Location = new Point(636, 86);
+            Tbuscar.Name = "Tbuscar";
+            Tbuscar.Size = new Size(198, 23);
+            Tbuscar.TabIndex = 3;
+            Tbuscar.TextChanged += Tbuscar_TextChanged;
+            // 
             // Ingresos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1050, 450);
+            ClientSize = new Size(744, 382);
             Controls.Add(Tbuscar);
             Controls.Add(Bbuscar);
             Controls.Add(label1);

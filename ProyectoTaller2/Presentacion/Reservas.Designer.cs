@@ -106,7 +106,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1006, 450);
+            ClientSize = new Size(744, 382);
             Controls.Add(dataGridView1);
             Controls.Add(LReservas);
             Name = "Reservas";

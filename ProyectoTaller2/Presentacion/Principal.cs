@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace ProyectoTaller2.Administrador
 {
-    public partial class FMInicio : Form
+    public partial class FMPrincipal : Form
     {
         //alcamena el menu que se encuentra activo
         private static IconMenuItem? MenuActivo;
         //ormulario que esta activo en el panel
         private static Form? FormularioActivo;
 
-        public FMInicio()
+        public FMPrincipal()
         {
             InitializeComponent();
         }
@@ -93,6 +93,21 @@ namespace ProyectoTaller2.Administrador
         private void MenuInicio_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new Inicio());
+        }
+
+        private void FMInicio_Load(object sender, EventArgs e)
+        {
+            FMIniciarSesion login = new();
+
+            if (login.ShowDialog() != DialogResult.OK)
+            {
+                Close();
+            }
+        }
+
+        private void MenuSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

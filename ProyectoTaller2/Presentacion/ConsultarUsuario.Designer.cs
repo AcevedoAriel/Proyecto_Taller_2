@@ -72,8 +72,8 @@
             splitContainer1.Panel2.Controls.Add(BEliminar);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Controls.Add(LListaUsuario);
-            splitContainer1.Size = new Size(873, 388);
-            splitContainer1.SplitterDistance = 201;
+            splitContainer1.Size = new Size(744, 382);
+            splitContainer1.SplitterDistance = 189;
             splitContainer1.TabIndex = 0;
             // 
             // BBuscar
@@ -205,7 +205,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(873, 388);
+            ClientSize = new Size(744, 382);
             Controls.Add(splitContainer1);
             Name = "ConsularUsuario";
             Text = "Consulta";

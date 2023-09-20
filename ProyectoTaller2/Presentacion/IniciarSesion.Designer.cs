@@ -28,183 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            splitContainer1 = new SplitContainer();
-            labelError = new Label();
+            picboxLogoHOTEL = new PictureBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
-            txtClave = new TextBox();
+            labelTituloSesion = new Label();
+            label2 = new Label();
+            labelUsuario = new Label();
+            labelClave = new Label();
             txtUsuario = new TextBox();
-            LBCLave = new Label();
-            LBUsuario = new Label();
-            InicioDeSesion = new Label();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            txtClave = new TextBox();
+            labelError = new Label();
+            ((System.ComponentModel.ISupportInitialize)picboxLogoHOTEL).BeginInit();
             SuspendLayout();
             // 
-            // splitContainer1
+            // picboxLogoHOTEL
             // 
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.BackColor = Color.White;
-            splitContainer1.Panel1.Controls.Add(labelError);
-            splitContainer1.Panel1.Controls.Add(btnAceptar);
-            splitContainer1.Panel1.Controls.Add(btnCancelar);
-            splitContainer1.Panel1.Controls.Add(txtClave);
-            splitContainer1.Panel1.Controls.Add(txtUsuario);
-            splitContainer1.Panel1.Controls.Add(LBCLave);
-            splitContainer1.Panel1.Controls.Add(LBUsuario);
-            splitContainer1.Panel1.Controls.Add(InicioDeSesion);
-            splitContainer1.Panel1.Controls.Add(label1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            splitContainer1.Panel2.Controls.Add(pictureBox1);
-            splitContainer1.Size = new Size(594, 293);
-            splitContainer1.SplitterDistance = 306;
-            splitContainer1.TabIndex = 0;
-            // 
-            // labelError
-            // 
-            labelError.AutoSize = true;
-            labelError.Font = new Font("Californian FB", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelError.ForeColor = Color.Red;
-            labelError.Location = new Point(64, 208);
-            labelError.Name = "labelError";
-            labelError.Size = new Size(174, 14);
-            labelError.TabIndex = 8;
-            labelError.Text = "El Usuario y/o Contraseña Incorrecta";
-            labelError.Visible = false;
+            picboxLogoHOTEL.Dock = DockStyle.Right;
+            picboxLogoHOTEL.Image = Properties.Resources.HotelParana;
+            picboxLogoHOTEL.Location = new Point(271, 0);
+            picboxLogoHOTEL.Name = "picboxLogoHOTEL";
+            picboxLogoHOTEL.Size = new Size(271, 270);
+            picboxLogoHOTEL.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogoHOTEL.TabIndex = 0;
+            picboxLogoHOTEL.TabStop = false;
             // 
             // btnAceptar
             // 
-            btnAceptar.Font = new Font("Californian FB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAceptar.Location = new Point(48, 242);
+            btnAceptar.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAceptar.Location = new Point(38, 219);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(101, 30);
-            btnAceptar.TabIndex = 7;
+            btnAceptar.Size = new Size(91, 30);
+            btnAceptar.TabIndex = 1;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Font = new Font("Californian FB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(155, 242);
+            btnCancelar.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(150, 219);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(100, 30);
-            btnCancelar.TabIndex = 6;
+            btnCancelar.Size = new Size(91, 30);
+            btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // txtClave
+            // labelTituloSesion
             // 
-            txtClave.Location = new Point(64, 172);
-            txtClave.Name = "txtClave";
-            txtClave.Size = new Size(174, 23);
-            txtClave.TabIndex = 5;
-            txtClave.UseSystemPasswordChar = true;
+            labelTituloSesion.AutoSize = true;
+            labelTituloSesion.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTituloSesion.ForeColor = Color.DodgerBlue;
+            labelTituloSesion.Location = new Point(58, 21);
+            labelTituloSesion.Name = "labelTituloSesion";
+            labelTituloSesion.Size = new Size(164, 28);
+            labelTituloSesion.TabIndex = 3;
+            labelTituloSesion.Text = "Iniciar Sesion";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(67, 49);
+            label2.Name = "label2";
+            label2.Size = new Size(142, 15);
+            label2.TabIndex = 4;
+            label2.Text = "___________________________";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labelUsuario
+            // 
+            labelUsuario.AutoSize = true;
+            labelUsuario.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelUsuario.Location = new Point(48, 78);
+            labelUsuario.Name = "labelUsuario";
+            labelUsuario.Size = new Size(67, 20);
+            labelUsuario.TabIndex = 5;
+            labelUsuario.Text = "Usuario:";
+            // 
+            // labelClave
+            // 
+            labelClave.AutoSize = true;
+            labelClave.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelClave.Location = new Point(48, 141);
+            labelClave.Name = "labelClave";
+            labelClave.Size = new Size(99, 20);
+            labelClave.TabIndex = 6;
+            labelClave.Text = "Contraseña:";
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(64, 110);
+            txtUsuario.Location = new Point(48, 101);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(174, 23);
-            txtUsuario.TabIndex = 4;
+            txtUsuario.Size = new Size(193, 23);
+            txtUsuario.TabIndex = 7;
             // 
-            // LBCLave
+            // txtClave
             // 
-            LBCLave.AutoSize = true;
-            LBCLave.Font = new Font("Californian FB", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LBCLave.Location = new Point(64, 151);
-            LBCLave.Name = "LBCLave";
-            LBCLave.Size = new Size(85, 18);
-            LBCLave.TabIndex = 3;
-            LBCLave.Text = "Contraseña:";
+            txtClave.Location = new Point(48, 164);
+            txtClave.Name = "txtClave";
+            txtClave.Size = new Size(193, 23);
+            txtClave.TabIndex = 8;
+            txtClave.UseSystemPasswordChar = true;
             // 
-            // LBUsuario
+            // labelError
             // 
-            LBUsuario.AutoSize = true;
-            LBUsuario.Font = new Font("Californian FB", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LBUsuario.Location = new Point(64, 89);
-            LBUsuario.Name = "LBUsuario";
-            LBUsuario.Size = new Size(63, 18);
-            LBUsuario.TabIndex = 2;
-            LBUsuario.Text = "Usuario:";
-            // 
-            // InicioDeSesion
-            // 
-            InicioDeSesion.AutoSize = true;
-            InicioDeSesion.Font = new Font("Californian FB", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            InicioDeSesion.ForeColor = Color.DodgerBlue;
-            InicioDeSesion.Location = new Point(73, 28);
-            InicioDeSesion.Name = "InicioDeSesion";
-            InicioDeSesion.Size = new Size(139, 27);
-            InicioDeSesion.TabIndex = 0;
-            InicioDeSesion.Text = "Iniciar Sesion";
-            InicioDeSesion.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(64, 44);
-            label1.Name = "label1";
-            label1.Size = new Size(164, 21);
-            label1.TabIndex = 1;
-            label1.Text = "______________________";
-            label1.TextAlign = ContentAlignment.BottomCenter;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.HotelParana;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(284, 293);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            labelError.AutoSize = true;
+            labelError.ForeColor = Color.Red;
+            labelError.Location = new Point(48, 190);
+            labelError.Name = "labelError";
+            labelError.Size = new Size(185, 15);
+            labelError.TabIndex = 9;
+            labelError.Text = "Usuario y/o contraseña Incorrecta";
+            labelError.Visible = false;
             // 
             // FMIniciarSesion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(594, 293);
-            Controls.Add(splitContainer1);
+            BackColor = Color.White;
+            CancelButton = btnCancelar;
+            ClientSize = new Size(542, 270);
+            Controls.Add(labelError);
+            Controls.Add(txtClave);
+            Controls.Add(txtUsuario);
+            Controls.Add(labelClave);
+            Controls.Add(labelUsuario);
+            Controls.Add(label2);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnAceptar);
+            Controls.Add(picboxLogoHOTEL);
+            Controls.Add(labelTituloSesion);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FMIniciarSesion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "IniciarSesion";
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel1.PerformLayout();
-            splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picboxLogoHOTEL).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private SplitContainer splitContainer1;
-        private PictureBox pictureBox1;
-        private Label InicioDeSesion;
-        private Label label1;
-        private Label LBCLave;
-        private Label LBUsuario;
-        private TextBox txtClave;
-        private TextBox txtUsuario;
-        private Button btnCancelar;
+        private PictureBox picboxLogoHOTEL;
         private Button btnAceptar;
+        private Button btnCancelar;
+        private Label labelTituloSesion;
+        private Label label2;
+        private Label labelUsuario;
+        private Label labelClave;
+        private TextBox txtUsuario;
+        private TextBox txtClave;
         private Label labelError;
     }
 }

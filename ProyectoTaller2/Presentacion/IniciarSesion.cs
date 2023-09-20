@@ -17,20 +17,6 @@ namespace ProyectoTaller2.Presentacion
             InitializeComponent();
         }
 
-        /*private void BtnAceptar_Click(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "Admin" && txtClave.Text == "123")
-            {
-                this.DialogResult = DialogResult.OK;
-
-            }
-            else
-            {
-                labelError.Visible = true;
-                this.DialogResult = DialogResult.None;
-            }
-        }*/
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -38,11 +24,12 @@ namespace ProyectoTaller2.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(txtUsuario.Text != "" && txtClave.Text != "")
+            if (txtUsuario.Text == "Admin" && txtClave.Text == "123")
             {
                 this.DialogResult = DialogResult.OK;
+
             }
-            else
+            else if (txtUsuario.Text == "" && txtClave.Text == "")
             {
                 labelError.Visible = true;
                 this.DialogResult = DialogResult.None;

@@ -39,7 +39,6 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.AssemblyReference.cache
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.ConsularUsuario.resources
-C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.FMInicio.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.Reservas.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.CopyComplete
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarHabitacion.resources
@@ -59,3 +58,5 @@ C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-win
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.RegistrarReserva.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.ServiciosAdicionales.resources
 C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.FMIniciarSesion.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.DetalleHabitacion.resources
+C:\Users\ariel\source\repos\ProyectoTaller2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.FMPrincipal.resources

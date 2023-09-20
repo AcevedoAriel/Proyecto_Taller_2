@@ -78,7 +78,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(843, 415);
+            panel1.Size = new Size(744, 382);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -161,7 +161,7 @@
             // 
             BRegistrar.BackColor = Color.FromArgb(0, 192, 0);
             BRegistrar.FlatStyle = FlatStyle.System;
-            BRegistrar.Location = new Point(425, 342);
+            BRegistrar.Location = new Point(410, 329);
             BRegistrar.Name = "BRegistrar";
             BRegistrar.Size = new Size(125, 40);
             BRegistrar.TabIndex = 26;
@@ -258,7 +258,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(843, 415);
+            ClientSize = new Size(744, 382);
             Controls.Add(panel1);
             Name = "RegistrarUsuario";
             Text = "Registrar Usuario";
