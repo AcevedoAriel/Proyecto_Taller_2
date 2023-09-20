@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
+            Bbuscar = new Button();
+            Tbuscar = new TextBox();
+            panel1 = new Panel();
             dataGridView1 = new DataGridView();
             nombre = new DataGridViewTextBoxColumn();
             medioPago = new DataGridViewTextBoxColumn();
@@ -38,21 +42,57 @@
             subtotal = new DataGridViewTextBoxColumn();
             descuento = new DataGridViewTextBoxColumn();
             total = new DataGridViewTextBoxColumn();
-            label1 = new Label();
-            Bbuscar = new Button();
-            Tbuscar = new TextBox();
+            btnBuscar = new Button();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(252, 31);
+            label1.TabIndex = 1;
+            label1.Text = "Registro de Ingresos";
+            // 
+            // Bbuscar
+            // 
+            Bbuscar.Location = new Point(874, 86);
+            Bbuscar.Name = "Bbuscar";
+            Bbuscar.Size = new Size(75, 23);
+            Bbuscar.TabIndex = 2;
+            Bbuscar.Text = "Buscar";
+            Bbuscar.UseVisualStyleBackColor = true;
+            Bbuscar.Click += Bbuscar_Click;
+            // 
+            // Tbuscar
+            // 
+            Tbuscar.Location = new Point(401, 129);
+            Tbuscar.Name = "Tbuscar";
+            Tbuscar.Size = new Size(198, 23);
+            Tbuscar.TabIndex = 3;
+            Tbuscar.TextChanged += Tbuscar_TextChanged;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(dataGridView1);
+            panel1.Location = new Point(3, 169);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(718, 193);
+            panel1.TabIndex = 4;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nombre, medioPago, fechaPago, cuotas, costoServ, costoHab, subtotal, descuento, total });
-            dataGridView1.Location = new Point(3, 133);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1044, 150);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.Size = new Size(718, 193);
+            dataGridView1.TabIndex = 1;
             // 
             // nombre
             // 
@@ -100,57 +140,40 @@
             total.HeaderText = "Monto Total";
             total.Name = "total";
             // 
-            // label1
+            // btnBuscar
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(37, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(252, 31);
-            label1.TabIndex = 1;
-            label1.Text = "Registro de Ingresos";
-            // 
-            // Bbuscar
-            // 
-            Bbuscar.Location = new Point(874, 86);
-            Bbuscar.Name = "Bbuscar";
-            Bbuscar.Size = new Size(75, 23);
-            Bbuscar.TabIndex = 2;
-            Bbuscar.Text = "Buscar";
-            Bbuscar.UseVisualStyleBackColor = true;
-            Bbuscar.Click += Bbuscar_Click;
-            // 
-            // Tbuscar
-            // 
-            Tbuscar.Location = new Point(636, 86);
-            Tbuscar.Name = "Tbuscar";
-            Tbuscar.Size = new Size(198, 23);
-            Tbuscar.TabIndex = 3;
-            Tbuscar.TextChanged += Tbuscar_TextChanged;
+            btnBuscar.Location = new Point(620, 128);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 5;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
             // Ingresos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 382);
+            ClientSize = new Size(719, 363);
+            Controls.Add(btnBuscar);
+            Controls.Add(panel1);
             Controls.Add(Tbuscar);
             Controls.Add(Bbuscar);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
             Name = "Ingresos";
             Text = "Ingresos";
             Load += Ingresos_Load;
+            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private Label label1;
         private Button Bbuscar;
         private TextBox Tbuscar;
+        private Panel panel1;
+        private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn medioPago;
         private DataGridViewTextBoxColumn fechaPago;
@@ -160,5 +183,6 @@
         private DataGridViewTextBoxColumn subtotal;
         private DataGridViewTextBoxColumn descuento;
         private DataGridViewTextBoxColumn total;
+        private Button btnBuscar;
     }
 }

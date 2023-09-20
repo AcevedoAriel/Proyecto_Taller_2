@@ -49,12 +49,28 @@
             LNombreUsuario = new Label();
             LApellido = new Label();
             LNombre = new Label();
+            panel2 = new Panel();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            sexo = new DataGridViewTextBoxColumn();
+            fechaNac = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(DTFechaNac);
             panel1.Controls.Add(TSexo);
             panel1.Controls.Add(TTelefono);
@@ -78,13 +94,13 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(744, 382);
+            panel1.Size = new Size(770, 503);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // DTFechaNac
             // 
-            DTFechaNac.Location = new Point(157, 319);
+            DTFechaNac.Location = new Point(525, 111);
             DTFechaNac.Name = "DTFechaNac";
             DTFechaNac.Size = new Size(194, 23);
             DTFechaNac.TabIndex = 42;
@@ -93,21 +109,21 @@
             // 
             TSexo.FormattingEnabled = true;
             TSexo.Items.AddRange(new object[] { "Masculino", "Femenino" });
-            TSexo.Location = new Point(157, 276);
+            TSexo.Location = new Point(525, 63);
             TSexo.Name = "TSexo";
             TSexo.Size = new Size(194, 23);
             TSexo.TabIndex = 41;
             // 
             // TTelefono
             // 
-            TTelefono.Location = new Point(157, 352);
+            TTelefono.Location = new Point(525, 154);
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(194, 23);
             TTelefono.TabIndex = 39;
             // 
             // TCorreo
             // 
-            TCorreo.Location = new Point(157, 227);
+            TCorreo.Location = new Point(525, 24);
             TCorreo.Name = "TCorreo";
             TCorreo.Size = new Size(194, 23);
             TCorreo.TabIndex = 37;
@@ -115,7 +131,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(30, 352);
+            label4.Location = new Point(425, 154);
             label4.Name = "label4";
             label4.Size = new Size(52, 15);
             label4.TabIndex = 36;
@@ -124,7 +140,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(30, 319);
+            label3.Location = new Point(381, 111);
             label3.Name = "label3";
             label3.Size = new Size(119, 15);
             label3.TabIndex = 35;
@@ -133,7 +149,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(31, 279);
+            label2.Location = new Point(393, 66);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
             label2.TabIndex = 34;
@@ -142,7 +158,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 235);
+            label1.Location = new Point(381, 27);
             label1.Name = "label1";
             label1.Size = new Size(112, 15);
             label1.TabIndex = 33;
@@ -161,7 +177,7 @@
             // 
             BRegistrar.BackColor = Color.FromArgb(0, 192, 0);
             BRegistrar.FlatStyle = FlatStyle.System;
-            BRegistrar.Location = new Point(410, 329);
+            BRegistrar.Location = new Point(525, 214);
             BRegistrar.Name = "BRegistrar";
             BRegistrar.Size = new Size(125, 40);
             BRegistrar.TabIndex = 26;
@@ -254,17 +270,94 @@
             LNombre.TabIndex = 15;
             LNombre.Text = "Nombre";
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(dataGridView1);
+            panel2.Location = new Point(-17, 287);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(786, 215);
+            panel2.TabIndex = 43;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column2, Column3, Column4, Column5, email, sexo, fechaNac, telefono, estado });
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(786, 215);
+            dataGridView1.TabIndex = 44;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID_Usuario";
+            Column1.Name = "Column1";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Tipo de Perfil";
+            Column6.Name = "Column6";
+            Column6.Width = 110;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Apellido";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Nombre";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Nombre Usuario";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Contraseña";
+            Column5.Name = "Column5";
+            // 
+            // email
+            // 
+            email.HeaderText = "Driección de Correo";
+            email.Name = "email";
+            // 
+            // sexo
+            // 
+            sexo.HeaderText = "Sexo";
+            sexo.Name = "sexo";
+            // 
+            // fechaNac
+            // 
+            fechaNac.HeaderText = "Fecha de Nacimiento";
+            fechaNac.Name = "fechaNac";
+            // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.Name = "telefono";
+            // 
+            // estado
+            // 
+            estado.HeaderText = "Estado";
+            estado.Name = "estado";
+            // 
             // RegistrarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 382);
+            ClientSize = new Size(770, 503);
             Controls.Add(panel1);
             Name = "RegistrarUsuario";
             Text = "Registrar Usuario";
             Load += RegistrarUsuario_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -291,5 +384,18 @@
         private TextBox TCorreo;
         private ComboBox TSexo;
         private DateTimePicker DTFechaNac;
+        private Panel panel2;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn sexo;
+        private DataGridViewTextBoxColumn fechaNac;
+        private DataGridViewTextBoxColumn telefono;
+        private DataGridViewTextBoxColumn estado;
     }
 }
