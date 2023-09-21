@@ -265,7 +265,7 @@
             // 
             BRegistrar.BackColor = Color.FromArgb(0, 192, 0);
             BRegistrar.FlatStyle = FlatStyle.System;
-            BRegistrar.Location = new Point(525, 214);
+            BRegistrar.Location = new Point(550, 199);
             BRegistrar.Name = "BRegistrar";
             BRegistrar.Size = new Size(125, 40);
             BRegistrar.TabIndex = 26;

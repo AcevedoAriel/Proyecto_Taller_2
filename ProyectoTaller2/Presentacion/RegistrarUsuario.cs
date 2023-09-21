@@ -16,6 +16,32 @@ namespace ProyectoTaller2.Administrador
         {
             InitializeComponent();
             BEditar.Enabled = false;
+            BRegistrar.Enabled = false;
+
+            TNombre.TextChanged += CamposTextChanged;
+            TApellido.TextChanged += CamposTextChanged;
+            TNombreUsuario.TextChanged += CamposTextChanged;
+            TClave.TextChanged += CamposTextChanged;
+            TCorreo.TextChanged += CamposTextChanged;
+            TTelefono.TextChanged += CamposTextChanged;
+            TSexo.TextChanged += CamposTextChanged;
+            CBPerfil.TextChanged += CamposTextChanged;
+
+        }
+
+        private void CamposTextChanged(object sender, EventArgs e)
+        {
+            // Verifica si todos los TextBoxes tienen datos no vacíos
+            bool todosCamposLlenos = !string.IsNullOrWhiteSpace(TNombre.Text)
+                                   && !string.IsNullOrWhiteSpace(TApellido.Text)
+                                   && !string.IsNullOrWhiteSpace(TNombreUsuario.Text)
+                                   && !string.IsNullOrWhiteSpace(TClave.Text)
+                                   && !string.IsNullOrWhiteSpace(TCorreo.Text)
+                                   && !string.IsNullOrWhiteSpace(TTelefono.Text);
+            // Agrega más validaciones para otros TextBoxes si es necesario
+
+            // Habilita o deshabilita el botón de guardar en función de la validación
+            BRegistrar.Enabled = todosCamposLlenos;
         }
 
 
