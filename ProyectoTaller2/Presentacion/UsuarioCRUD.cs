@@ -18,6 +18,7 @@ namespace ProyectoTaller2.Administrador
             InitializeComponent();
             BEditar.Enabled = false;
             BRegistrar.Enabled = false;
+            BGuardar.Visible = false;
 
             TNombre.TextChanged += CamposTextChanged;
             TApellido.TextChanged += CamposTextChanged;
@@ -94,11 +95,16 @@ namespace ProyectoTaller2.Administrador
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
             }
         }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private DataGridViewRow filaSeleccionada = null;
+        private void dataGridUsuario_SelectionChanged(object sender, EventArgs e)
         {
             // Verifica si al menos una fila está seleccionada
             BEditar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
+            if (dataGridUsuario.SelectedRows.Count > 0)
+            {
+                // Almacena la fila seleccionada en la variable
+                filaSeleccionada = dataGridUsuario.SelectedRows[0];
+            }
         }
 
         private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -137,7 +143,6 @@ namespace ProyectoTaller2.Administrador
                 dataGridUsuario.Rows.Add(CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
                 MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
 
-
                 limpiarFormulario();
 
             }
@@ -154,9 +159,87 @@ namespace ProyectoTaller2.Administrador
             TCorreo.Clear();
             DTFechaNac.ResetText();
             //DTFechaNac = null;
+            CBPerfil.DataSource = null;
             CBPerfil.Items.Clear();
+            TSexo.DataSource = null;
             TSexo.Items.Clear();
         }
 
+        private void BEditar_Click(object sender, EventArgs e)
+        {
+
+            if (filaSeleccionada != null)
+            {
+                BGuardar.Visible = true;
+                BRegistrar.Visible = false;
+                string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
+                string apellido = filaSeleccionada.Cells["apellido"].Value.ToString();
+                string usuario = filaSeleccionada.Cells["usuario"].Value.ToString();
+                string perfil = filaSeleccionada.Cells["Perfil"].Value.ToString();
+                string clave = filaSeleccionada.Cells["clave"].Value.ToString();
+                string sexo = filaSeleccionada.Cells["sexo"].Value.ToString();
+                string email = filaSeleccionada.Cells["email"].Value.ToString();
+                string nac = filaSeleccionada.Cells["fechaNac"].Value.ToString();
+                string telefono = filaSeleccionada.Cells["telefono"].Value.ToString();
+                // Reemplaza "Columna1" con el nombre de tu columna
+
+                TNombre.Text = nombre;
+                TApellido.Text = apellido;
+                TNombreUsuario.Text = usuario;
+                CBPerfil.Text = perfil;
+                TClave.Text = clave;
+                TSexo.Text = sexo;
+                TCorreo.Text = email;
+                DTFechaNac.Text = nac;
+                TTelefono.Text = telefono;
+
+            }
+        }
+
+        private void BGuardar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado;
+            resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+
+                string apellido = TApellido.Text;
+                string nombre = TNombre.Text;
+                string nombreUsuario = TNombreUsuario.Text;
+                string clave = TClave.Text;
+                long telefono = long.Parse(TTelefono.Text);
+                string correo = TCorreo.Text;
+                DateTime fecha = DTFechaNac.Value;
+
+                // Agregar una nueva fila al datagrid con los valores
+                if (filaSeleccionada != null)
+                {
+                    filaSeleccionada.Cells["nombre"].Value = nombre;
+                    filaSeleccionada.Cells["apellido"].Value = apellido;
+                    filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
+                    filaSeleccionada.Cells["Perfil"].Value = CBPerfil.Text;
+                    filaSeleccionada.Cells["clave"].Value = clave;
+                    filaSeleccionada.Cells["sexo"].Value = TSexo.Text;
+                    filaSeleccionada.Cells["email"].Value = correo;
+                    filaSeleccionada.Cells["fechaNac"].Value = fecha;
+                    filaSeleccionada.Cells["telefono"].Value = telefono;
+                }
+
+                MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
+                limpiarFormulario();
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+            if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminaci�n", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (filaSeleccionada != null) { 
+                    dataGridUsuario.Rows.Remove(filaSeleccionada);
+                }
+            }
+        }
     }
 }
