@@ -72,7 +72,7 @@ namespace ProyectoTaller2.Administrador
 
         private void SubMenuAgregarUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(MenuUsuario, new RegistrarUsuario());
+            AbrirFormulario(MenuUsuario, new UsuarioCRUD());
         }
 
         private void SubMenuConsultarUsuario_Click(object sender, EventArgs e)

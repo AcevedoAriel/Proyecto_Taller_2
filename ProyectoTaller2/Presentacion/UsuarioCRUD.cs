@@ -4,15 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoTaller2.Administrador
 {
-    public partial class RegistrarUsuario : Form
+    public partial class UsuarioCRUD : Form
     {
-        public RegistrarUsuario()
+        public UsuarioCRUD()
         {
             InitializeComponent();
             BEditar.Enabled = false;
@@ -83,83 +84,78 @@ namespace ProyectoTaller2.Administrador
             if (contraseña.Length >= 6)
             {
                 // Mostrar un mensaje de éxito
-                LMensaje.Text = "Contraseña válida";
-                LMensaje.ForeColor = System.Drawing.Color.Green;
+                lblMensaje.Text = "Contraseña válida";
+                lblMensaje.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 // Mostrar un mensaje de error
-                LMensaje.Text = "Contraseña inválida";
-                LMensaje.ForeColor = System.Drawing.Color.Red;
-            }
-        }
-
-        private void RegistrarUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BRegistrar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BRegistrar_Click_1(object sender, EventArgs e)
-        {
-            DialogResult resultado;
-            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && TClave.Text != "" && TCorreo.Text != "" && CBPerfil.Text != "" && TSexo.Text != "" && DTFechaNac.Text != "" && TTelefono.Text != "")
-            {
-                resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
-                if (resultado == DialogResult.Yes)
-                {
-                    DateTime fecha = DTFechaNac.Value;
-                    string apellido = TApellido.Text;
-                    string nombre = TNombre.Text;
-                    string clave = TClave.Text;
-                    string correo = TCorreo.Text;
-                    string nombreUsuario = TNombreUsuario.Text;
-                    string telefono = TTelefono.Text;
-
-                    // Agregar una nueva fila al datagrid con los valores
-                    ConsularUsuario consularUsuario = new ConsularUsuario();
-                    //FALTA SOLUCIONAR
-                    //consultarUsuario.dataGridView1.Rows.Add(apellido, nombre, fecha, this.Tsexo(), saldo, imagen, TFoto.Text);
-                    MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
-                }
-                // Limpiar formulario
-                /*TNombre.Clear();
-                TApellido.Clear();
-                TSaldo.Clear();
-                TFoto.Clear();
-                PBHombre.Image = null;
-                PBMujer.Image = null;*/
-            }
-            else
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error");
+                lblMensaje.Text = "Ingrese al menos 6 caracteres";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
             }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             // Verifica si al menos una fila está seleccionada
-            BEditar.Enabled = dataGridView1.SelectedRows.Count > 0;
+            BEditar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
         }
 
-
-        private void BEditar_Click(object sender, EventArgs e)
+        private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsPunctuation(e.KeyChar)) // Comparas si la tecla presionada corresponde a un signo de puntuación
+            {
+                e.Handled = true; // Si coincide, se controla el evento, es decir, no se escribe el carácter
+            }
+            if (Char.IsSymbol(e.KeyChar)) // Comparas si la tecla presionada corresponde a un símbolo
+            {
+                e.Handled = true;
+            }
+            if (Char.IsLetter(e.KeyChar)) // Comparas si la tecla presionada corresponde a una letra
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void BRegistrar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado;
+            resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+
+                string apellido = TApellido.Text;
+                string nombre = TNombre.Text;
+                string nombreUsuario = TNombreUsuario.Text;
+                string clave = TClave.Text;
+                long telefono = long.Parse(TTelefono.Text);
+                string correo = TCorreo.Text;
+                DateTime fecha = DTFechaNac.Value;
+
+                // Agregar una nueva fila al datagrid con los valores
+                dataGridUsuario.Rows.Add(CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
+                MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+
+
+                limpiarFormulario();
+
+            }
+        }
+
+        public void limpiarFormulario()
+        {
+            // Limpiar formulario
+            TNombre.Clear();
+            TApellido.Clear();
+            TNombreUsuario.Clear();
+            TClave.Clear();
+            TTelefono.Clear();
+            TCorreo.Clear();
+            DTFechaNac.ResetText();
+            //DTFechaNac = null;
+            CBPerfil.Items.Clear();
+            TSexo.Items.Clear();
         }
 
     }

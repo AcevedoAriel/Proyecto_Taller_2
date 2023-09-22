@@ -47,30 +47,30 @@
             // LTItuloHabitacion
             // 
             LTItuloHabitacion.AutoSize = true;
-            LTItuloHabitacion.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            LTItuloHabitacion.Location = new Point(176, 23);
+            LTItuloHabitacion.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            LTItuloHabitacion.Location = new Point(98, 21);
             LTItuloHabitacion.Name = "LTItuloHabitacion";
-            LTItuloHabitacion.Size = new Size(218, 26);
+            LTItuloHabitacion.Size = new Size(243, 28);
             LTItuloHabitacion.TabIndex = 0;
             LTItuloHabitacion.Text = "Agregar Habitacion";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(70, 98);
             label1.Name = "label1";
-            label1.Size = new Size(35, 17);
+            label1.Size = new Size(34, 17);
             label1.TabIndex = 1;
             label1.Text = "Piso:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(70, 135);
             label2.Name = "label2";
-            label2.Size = new Size(103, 17);
+            label2.Size = new Size(104, 17);
             label2.TabIndex = 2;
             label2.Text = "Nro. Habitación:";
             label2.Click += label2_Click;
@@ -78,20 +78,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(70, 188);
             label3.Name = "label3";
-            label3.Size = new Size(68, 17);
+            label3.Size = new Size(72, 17);
             label3.TabIndex = 3;
             label3.Text = "Categoria:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(70, 229);
             label4.Name = "label4";
-            label4.Size = new Size(116, 17);
+            label4.Size = new Size(122, 17);
             label4.TabIndex = 4;
             label4.Text = "Fecha Inaguración:";
             // 
@@ -112,7 +112,7 @@
             // txtCategoria
             // 
             txtCategoria.FormattingEnabled = true;
-            txtCategoria.Items.AddRange(new object[] { "Simple", "Doble", "Matrimonial", "Matrimonial Doble" });
+            txtCategoria.Items.AddRange(new object[] { "Simple", "Doble", "Matrimonial" });
             txtCategoria.Location = new Point(193, 182);
             txtCategoria.Name = "txtCategoria";
             txtCategoria.Size = new Size(167, 23);
@@ -128,10 +128,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(70, 276);
             label5.Name = "label5";
-            label5.Size = new Size(47, 17);
+            label5.Size = new Size(49, 17);
             label5.TabIndex = 10;
             label5.Text = "Precio:";
             // 
@@ -145,7 +145,9 @@
             // btnAgregarHabitacion
             // 
             btnAgregarHabitacion.BackColor = Color.Lime;
-            btnAgregarHabitacion.Location = new Point(197, 325);
+            btnAgregarHabitacion.FlatStyle = FlatStyle.Popup;
+            btnAgregarHabitacion.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregarHabitacion.Location = new Point(155, 322);
             btnAgregarHabitacion.Name = "btnAgregarHabitacion";
             btnAgregarHabitacion.Size = new Size(168, 35);
             btnAgregarHabitacion.TabIndex = 12;
@@ -155,17 +157,17 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(193, 49);
+            label6.Location = new Point(121, 49);
             label6.Name = "label6";
-            label6.Size = new Size(172, 15);
+            label6.Size = new Size(202, 15);
             label6.TabIndex = 13;
-            label6.Text = "_________________________________";
+            label6.Text = "_______________________________________";
             // 
             // AgregarHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(559, 372);
+            ClientSize = new Size(458, 378);
             Controls.Add(label6);
             Controls.Add(btnAgregarHabitacion);
             Controls.Add(txtPrecio);

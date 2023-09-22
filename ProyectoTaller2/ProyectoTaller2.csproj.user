@@ -34,7 +34,7 @@
     <Compile Update="Presentacion\RegistrarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\RegistrarUsuario.cs">
+    <Compile Update="Presentacion\UsuarioCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\Reservas.cs">
