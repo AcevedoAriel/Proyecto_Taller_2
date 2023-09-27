@@ -10,7 +10,7 @@
     <Compile Update="Presentacion\AgregarServicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\DetalleHabitacion.cs">
+    <Compile Update="Presentacion\Habitacion CRUD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\IniciarSesion.cs">
