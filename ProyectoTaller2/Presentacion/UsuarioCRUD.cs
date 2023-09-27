@@ -39,11 +39,16 @@ namespace ProyectoTaller2.Administrador
                                    && !string.IsNullOrWhiteSpace(TNombreUsuario.Text)
                                    && !string.IsNullOrWhiteSpace(TClave.Text)
                                    && !string.IsNullOrWhiteSpace(TCorreo.Text)
-                                   && !string.IsNullOrWhiteSpace(TTelefono.Text);
+                                   && !string.IsNullOrWhiteSpace(TTelefono.Text)
+                                   && !string.IsNullOrWhiteSpace(CBPerfil.Text)
+                                   && !string.IsNullOrWhiteSpace(TSexo.Text)
+                                   && !string.IsNullOrWhiteSpace(DTFechaNac.Text);
+
             // Agrega más validaciones para otros TextBoxes si es necesario
 
             // Habilita o deshabilita el botón de guardar en función de la validación
             BRegistrar.Enabled = todosCamposLlenos;
+            BGuardar.Enabled = todosCamposLlenos;
         }
 
 
@@ -172,6 +177,7 @@ namespace ProyectoTaller2.Administrador
             {
                 BGuardar.Visible = true;
                 BRegistrar.Visible = false;
+                btnEliminar.Visible = false;
                 string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
                 string apellido = filaSeleccionada.Cells["apellido"].Value.ToString();
                 string usuario = filaSeleccionada.Cells["usuario"].Value.ToString();
@@ -214,6 +220,7 @@ namespace ProyectoTaller2.Administrador
                 // Agregar una nueva fila al datagrid con los valores
                 if (filaSeleccionada != null)
                 {
+                    btnEliminar.Visible = true;
                     filaSeleccionada.Cells["nombre"].Value = nombre;
                     filaSeleccionada.Cells["apellido"].Value = apellido;
                     filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
@@ -233,10 +240,11 @@ namespace ProyectoTaller2.Administrador
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+
             if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminaci�n", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (filaSeleccionada != null) { 
+                if (filaSeleccionada != null)
+                {
                     dataGridUsuario.Rows.Remove(filaSeleccionada);
                 }
             }
