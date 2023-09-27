@@ -74,7 +74,6 @@ C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-w
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarPagos.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarServicios.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.ConsularUsuario.resources
-C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.DetalleHabitacion.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Ingresos.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.FMIniciarSesion.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Inicio.resources
@@ -97,3 +96,4 @@ C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-w
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ref\ProyectoTaller2.dll
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.UsuarioCRUD.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.UsuarioCRUD.resources
+C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.CRUDHabitacion.resources

@@ -34,7 +34,6 @@
             SubMenuAgregarUsuario = new FontAwesome.Sharp.IconMenuItem();
             SubMenuConsultarUsuario = new FontAwesome.Sharp.IconMenuItem();
             MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuAgregarHabitacion = new FontAwesome.Sharp.IconMenuItem();
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
             MenuServicios = new FontAwesome.Sharp.IconMenuItem();
@@ -114,7 +113,6 @@
             // MenuHabitacion
             // 
             MenuHabitacion.AutoSize = false;
-            MenuHabitacion.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAgregarHabitacion });
             MenuHabitacion.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
             MenuHabitacion.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             MenuHabitacion.IconColor = Color.Black;
@@ -125,16 +123,7 @@
             MenuHabitacion.Size = new Size(80, 60);
             MenuHabitacion.Text = "Habitacion";
             MenuHabitacion.TextImageRelation = TextImageRelation.ImageAboveText;
-            // 
-            // SubMenuAgregarHabitacion
-            // 
-            SubMenuAgregarHabitacion.IconChar = FontAwesome.Sharp.IconChar.None;
-            SubMenuAgregarHabitacion.IconColor = Color.Black;
-            SubMenuAgregarHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            SubMenuAgregarHabitacion.Name = "SubMenuAgregarHabitacion";
-            SubMenuAgregarHabitacion.Size = new Size(166, 22);
-            SubMenuAgregarHabitacion.Text = "Agregar Habitacion";
-            SubMenuAgregarHabitacion.Click += SubMenuAgregarHabitacion_Click_1;
+            MenuHabitacion.Click += MenuHabitacion_Click;
             // 
             // MenuReserva
             // 
@@ -283,7 +272,6 @@
         private Panel Panel1;
         private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
         private FontAwesome.Sharp.IconMenuItem SubMenuConsultarUsuario;
-        private FontAwesome.Sharp.IconMenuItem SubMenuAgregarHabitacion;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem3;
         private FontAwesome.Sharp.IconMenuItem ICTitulo;
         private ToolStripMenuItem hOTELDELPARANAToolStripMenuItem;

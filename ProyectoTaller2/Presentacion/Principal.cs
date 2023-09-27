@@ -30,14 +30,6 @@ namespace ProyectoTaller2.Administrador
 
         }
 
-        private void AgregarHabitacionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AgregarHabitacion hab = new AgregarHabitacion();
-            hab.ShowDialog();
-
-
-        }
-
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             //si hay un menu activo anteriormente que se regrese al color blanco
@@ -85,11 +77,6 @@ namespace ProyectoTaller2.Administrador
             AbrirFormulario((IconMenuItem)sender, new Reservas());
         }
 
-        private void SubMenuAgregarHabitacion_Click_1(object sender, EventArgs e)
-        {
-            AbrirFormulario(MenuHabitacion, new AgregarHabitacion());
-        }
-
         private void MenuInicio_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new Inicio());
@@ -108,6 +95,11 @@ namespace ProyectoTaller2.Administrador
         private void MenuSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MenuHabitacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new CRUDHabitacion());
         }
     }
 }
