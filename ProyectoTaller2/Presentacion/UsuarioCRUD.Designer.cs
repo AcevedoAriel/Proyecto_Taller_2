@@ -171,11 +171,12 @@ namespace ProyectoTaller2.Administrador
             // 
             TSexo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TSexo.FormattingEnabled = true;
-            TSexo.Items.AddRange(new object[] { "Masculino", "Femenino" });
+            TSexo.Items.AddRange(new object[] { "[Seleccione Sexo]", "Hombre", "Mujer", "Otros", "Prefiero no decirlo" });
             TSexo.Location = new Point(485, 153);
             TSexo.Name = "TSexo";
             TSexo.Size = new Size(174, 23);
             TSexo.TabIndex = 63;
+            TSexo.TextChanged += CamposTextChanged;
             // 
             // TTelefono
             // 
@@ -185,6 +186,7 @@ namespace ProyectoTaller2.Administrador
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(174, 21);
             TTelefono.TabIndex = 62;
+            TTelefono.TextChanged += CamposTextChanged;
             TTelefono.KeyPress += TTelefono_KeyPress;
             // 
             // TCorreo
@@ -194,6 +196,7 @@ namespace ProyectoTaller2.Administrador
             TCorreo.Name = "TCorreo";
             TCorreo.Size = new Size(174, 21);
             TCorreo.TabIndex = 61;
+            TCorreo.TextChanged += CamposTextChanged;
             // 
             // label4
             // 
@@ -252,11 +255,12 @@ namespace ProyectoTaller2.Administrador
             // 
             CBPerfil.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             CBPerfil.FormattingEnabled = true;
-            CBPerfil.Items.AddRange(new object[] { "Super Usuario", "Administrador", "Recepcionista" });
+            CBPerfil.Items.AddRange(new object[] { "[Seleccione el tipo de usuario]", "Super Usuario", "Administrador", "Recepcionista" });
             CBPerfil.Location = new Point(485, 84);
             CBPerfil.Name = "CBPerfil";
             CBPerfil.Size = new Size(174, 23);
             CBPerfil.TabIndex = 54;
+            CBPerfil.TextChanged += CamposTextChanged;
             // 
             // TNombreUsuario
             // 
@@ -265,6 +269,7 @@ namespace ProyectoTaller2.Administrador
             TNombreUsuario.Name = "TNombreUsuario";
             TNombreUsuario.Size = new Size(175, 21);
             TNombreUsuario.TabIndex = 53;
+            TNombreUsuario.TextChanged += CamposTextChanged;
             TNombreUsuario.KeyDown += TNombreUsuario_KeyDown;
             // 
             // TClave
@@ -274,6 +279,7 @@ namespace ProyectoTaller2.Administrador
             TClave.Name = "TClave";
             TClave.Size = new Size(175, 21);
             TClave.TabIndex = 52;
+            TClave.TextChanged += CamposTextChanged;
             TClave.KeyPress += TClave_KeyPress;
             // 
             // TNombre
@@ -283,6 +289,7 @@ namespace ProyectoTaller2.Administrador
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(175, 21);
             TNombre.TabIndex = 51;
+            TNombre.TextChanged += CamposTextChanged;
             TNombre.KeyPress += TNombre_KeyPress;
             // 
             // TApellido
@@ -292,6 +299,7 @@ namespace ProyectoTaller2.Administrador
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(175, 21);
             TApellido.TabIndex = 50;
+            TApellido.TextChanged += CamposTextChanged;
             TApellido.KeyPress += TApellido_KeyPress;
             // 
             // LContraseña
@@ -447,6 +455,7 @@ namespace ProyectoTaller2.Administrador
         }
 
         #endregion
+        private DataGridViewRow filaSeleccionada = null;
 
         private Button BEditar;
         private Panel panel2;

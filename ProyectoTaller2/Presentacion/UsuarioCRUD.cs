@@ -19,16 +19,7 @@ namespace ProyectoTaller2.Administrador
             BEditar.Enabled = false;
             BRegistrar.Enabled = false;
             BGuardar.Visible = false;
-
-            TNombre.TextChanged += CamposTextChanged;
-            TApellido.TextChanged += CamposTextChanged;
-            TNombreUsuario.TextChanged += CamposTextChanged;
-            TClave.TextChanged += CamposTextChanged;
-            TCorreo.TextChanged += CamposTextChanged;
-            TTelefono.TextChanged += CamposTextChanged;
-            TSexo.TextChanged += CamposTextChanged;
-            CBPerfil.TextChanged += CamposTextChanged;
-
+            btnEliminar.Enabled = false;
         }
 
         private void CamposTextChanged(object sender, EventArgs e)
@@ -100,11 +91,12 @@ namespace ProyectoTaller2.Administrador
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
             }
         }
-        private DataGridViewRow filaSeleccionada = null;
+
         private void dataGridUsuario_SelectionChanged(object sender, EventArgs e)
         {
             // Verifica si al menos una fila está seleccionada
             BEditar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
+            btnEliminar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
             if (dataGridUsuario.SelectedRows.Count > 0)
             {
                 // Almacena la fila seleccionada en la variable
@@ -163,11 +155,8 @@ namespace ProyectoTaller2.Administrador
             TTelefono.Clear();
             TCorreo.Clear();
             DTFechaNac.ResetText();
-            //DTFechaNac = null;
-            CBPerfil.DataSource = null;
-            CBPerfil.Items.Clear();
-            TSexo.DataSource = null;
-            TSexo.Items.Clear();
+            CBPerfil.SelectedIndex = 0;
+            TSexo.SelectedIndex = 0;
         }
 
         private void BEditar_Click(object sender, EventArgs e)
@@ -178,26 +167,17 @@ namespace ProyectoTaller2.Administrador
                 BGuardar.Visible = true;
                 BRegistrar.Visible = false;
                 btnEliminar.Visible = false;
-                string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
-                string apellido = filaSeleccionada.Cells["apellido"].Value.ToString();
-                string usuario = filaSeleccionada.Cells["usuario"].Value.ToString();
-                string perfil = filaSeleccionada.Cells["Perfil"].Value.ToString();
-                string clave = filaSeleccionada.Cells["clave"].Value.ToString();
-                string sexo = filaSeleccionada.Cells["sexo"].Value.ToString();
-                string email = filaSeleccionada.Cells["email"].Value.ToString();
-                string nac = filaSeleccionada.Cells["fechaNac"].Value.ToString();
-                string telefono = filaSeleccionada.Cells["telefono"].Value.ToString();
-                // Reemplaza "Columna1" con el nombre de tu columna
 
-                TNombre.Text = nombre;
-                TApellido.Text = apellido;
-                TNombreUsuario.Text = usuario;
-                CBPerfil.Text = perfil;
-                TClave.Text = clave;
-                TSexo.Text = sexo;
-                TCorreo.Text = email;
-                DTFechaNac.Text = nac;
-                TTelefono.Text = telefono;
+                // Reemplaza "Columna1" con el nombre de tu columna  
+                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString(); ;
+                TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString(); ;
+                TNombreUsuario.Text = filaSeleccionada.Cells["usuario"].Value.ToString();
+                CBPerfil.Text = filaSeleccionada.Cells["Perfil"].Value.ToString();
+                TClave.Text = filaSeleccionada.Cells["clave"].Value.ToString();
+                TSexo.Text = filaSeleccionada.Cells["sexo"].Value.ToString();
+                TCorreo.Text = filaSeleccionada.Cells["email"].Value.ToString();
+                DTFechaNac.Text = filaSeleccionada.Cells["fechaNac"].Value.ToString();
+                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
 
             }
         }
