@@ -17,7 +17,7 @@ namespace ProyectoTaller2.Administrador
         public UsuarioCRUD()
         {
             InitializeComponent();
-            //BEditar.Enabled = false;
+            BEditar.Enabled = false;
             //BRegistrar.Enabled = false;
             BGuardar.Visible = false;
             btnEliminar.Enabled = false;
