@@ -17,8 +17,8 @@ namespace ProyectoTaller2.Administrador
         public UsuarioCRUD()
         {
             InitializeComponent();
-            BEditar.Enabled = false;
-            BRegistrar.Enabled = false;
+            //BEditar.Enabled = false;
+            //BRegistrar.Enabled = false;
             BGuardar.Visible = false;
             btnEliminar.Enabled = false;
         }
@@ -39,8 +39,8 @@ namespace ProyectoTaller2.Administrador
             // Agrega más validaciones para otros TextBoxes si es necesario
 
             // Habilita o deshabilita el botón de guardar en función de la validación
-            BRegistrar.Enabled = todosCamposLlenos;
-            BGuardar.Enabled = todosCamposLlenos;
+            //BRegistrar.Enabled = todosCamposLlenos;
+            //BGuardar.Enabled = todosCamposLlenos;
         }
 
 
@@ -124,26 +124,34 @@ namespace ProyectoTaller2.Administrador
         private void BRegistrar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
-
-            if (resultado == DialogResult.Yes)
+            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && TClave.Text != "" && TTelefono.Text != "" && TCorreo.Text != "" && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
+                resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
-                string apellido = TApellido.Text;
-                string nombre = TNombre.Text;
-                string nombreUsuario = TNombreUsuario.Text;
-                string clave = TClave.Text;
-                long telefono = long.Parse(TTelefono.Text);
-                string correo = TCorreo.Text;
-                DateTime fecha = DTFechaNac.Value;
+                if (resultado == DialogResult.Yes)
+                {
 
-                // Agregar una nueva fila al datagrid con los valores
-                dataGridUsuario.Rows.Add(CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
-                MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+                    string apellido = TApellido.Text;
+                    string nombre = TNombre.Text;
+                    string nombreUsuario = TNombreUsuario.Text;
+                    string clave = TClave.Text;
+                    long telefono = long.Parse(TTelefono.Text);
+                    string correo = TCorreo.Text;
+                    DateTime fecha = DTFechaNac.Value;
 
-                limpiarFormulario();
+                    // Agregar una nueva fila al datagrid con los valores
+                    dataGridUsuario.Rows.Add(CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
+                    MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
 
+                    limpiarFormulario();
+
+                }
             }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error");
+            }
+
         }
 
         public void limpiarFormulario()
@@ -181,42 +189,50 @@ namespace ProyectoTaller2.Administrador
                 TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
 
             }
+            BRegistrar.Visible = true;
         }
 
         private void BGuardar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes)
+            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && TClave.Text != "" && TTelefono.Text != "" && TCorreo.Text != "" && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
-
-                string apellido = TApellido.Text;
-                string nombre = TNombre.Text;
-                string nombreUsuario = TNombreUsuario.Text;
-                string clave = TClave.Text;
-                long telefono = long.Parse(TTelefono.Text);
-                string correo = TCorreo.Text;
-                DateTime fecha = DTFechaNac.Value;
-
-                // Agregar una nueva fila al datagrid con los valores
-                if (filaSeleccionada != null)
+                resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
                 {
-                    btnEliminar.Visible = true;
-                    filaSeleccionada.Cells["nombre"].Value = nombre;
-                    filaSeleccionada.Cells["apellido"].Value = apellido;
-                    filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
-                    filaSeleccionada.Cells["Perfil"].Value = CBPerfil.Text;
-                    filaSeleccionada.Cells["clave"].Value = clave;
-                    filaSeleccionada.Cells["sexo"].Value = TSexo.Text;
-                    filaSeleccionada.Cells["email"].Value = correo;
-                    filaSeleccionada.Cells["fechaNac"].Value = fecha;
-                    filaSeleccionada.Cells["telefono"].Value = telefono;
+                    string apellido = TApellido.Text;
+                    string nombre = TNombre.Text;
+                    string nombreUsuario = TNombreUsuario.Text;
+                    string clave = TClave.Text;
+                    long telefono = long.Parse(TTelefono.Text);
+                    string correo = TCorreo.Text;
+                    DateTime fecha = DTFechaNac.Value;
+
+                    // Agregar una nueva fila al datagrid con los valores
+                    if (filaSeleccionada != null)
+                    {
+                        btnEliminar.Visible = true;
+                        filaSeleccionada.Cells["nombre"].Value = nombre;
+                        filaSeleccionada.Cells["apellido"].Value = apellido;
+                        filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
+                        filaSeleccionada.Cells["Perfil"].Value = CBPerfil.Text;
+                        filaSeleccionada.Cells["clave"].Value = clave;
+                        filaSeleccionada.Cells["sexo"].Value = TSexo.Text;
+                        filaSeleccionada.Cells["email"].Value = correo;
+                        filaSeleccionada.Cells["fechaNac"].Value = fecha;
+                        filaSeleccionada.Cells["telefono"].Value = telefono;
+                    }
+
+                    MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
+                    limpiarFormulario();
+                    BGuardar.Visible = false;
                 }
-
-                MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
-                limpiarFormulario();
-
             }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error");
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -239,7 +255,7 @@ namespace ProyectoTaller2.Administrador
 
         private void TCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string correo = "ejemplo@dominio.com"; // Aquí debes obtener el correo del formulario
+            string correo = TCorreo.Text; // Aquí debes obtener el correo del formulario
 
             if (ValidarCorreo(correo))
             {

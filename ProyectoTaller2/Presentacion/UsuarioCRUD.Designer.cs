@@ -370,11 +370,11 @@ namespace ProyectoTaller2.Administrador
             // lblTituloUsuario
             // 
             lblTituloUsuario.AutoSize = true;
-            lblTituloUsuario.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            lblTituloUsuario.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             lblTituloUsuario.ForeColor = Color.FloralWhite;
             lblTituloUsuario.Location = new Point(12, 23);
             lblTituloUsuario.Name = "lblTituloUsuario";
-            lblTituloUsuario.Size = new Size(135, 37);
+            lblTituloUsuario.Size = new Size(144, 39);
             lblTituloUsuario.TabIndex = 68;
             lblTituloUsuario.Text = "Usuario";
             // 
@@ -382,7 +382,7 @@ namespace ProyectoTaller2.Administrador
             // 
             btnBuscar.BackColor = Color.White;
             btnBuscar.FlatStyle = FlatStyle.Popup;
-            btnBuscar.Location = new Point(532, 14);
+            btnBuscar.Location = new Point(520, 14);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(77, 38);
             btnBuscar.TabIndex = 69;
