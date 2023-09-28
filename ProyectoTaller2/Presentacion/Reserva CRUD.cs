@@ -11,9 +11,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ProyectoTaller2.Presentacion.Administrador
 {
-    public partial class Reservas : Form
+    public partial class ReservaCRUD : Form
     {
-        public Reservas()
+        public ReservaCRUD()
         {
             InitializeComponent();
             BEditar.Enabled = false;

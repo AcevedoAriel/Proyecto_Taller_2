@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTaller2.Presentacion.Administrador
 {
-    partial class Reservas
+    partial class ReservaCRUD
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,6 @@
             TBuscar = new TextBox();
             panel1 = new Panel();
             dataGridReserva = new DataGridView();
-            BGuardar = new Button();
             ingreso = new DataGridViewTextBoxColumn();
             retiro = new DataGridViewTextBoxColumn();
             habitacion = new DataGridViewTextBoxColumn();
@@ -64,6 +63,7 @@
             telefono = new DataGridViewTextBoxColumn();
             personas = new DataGridViewTextBoxColumn();
             servicio = new DataGridViewTextBoxColumn();
+            BGuardar = new Button();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).BeginInit();
@@ -78,7 +78,7 @@
             LReservas.Name = "LReservas";
             LReservas.Size = new Size(275, 46);
             LReservas.TabIndex = 0;
-            LReservas.Text = "Reserva CRUD";
+            LReservas.Text = "Reserva";
             // 
             // BRegistrar
             // 
@@ -313,19 +313,6 @@
             dataGridReserva.TabIndex = 2;
             dataGridReserva.SelectionChanged += dataGridReserva_SelectionChanged;
             // 
-            // BGuardar
-            // 
-            BGuardar.BackColor = Color.Lime;
-            BGuardar.FlatStyle = FlatStyle.Popup;
-            BGuardar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BGuardar.Location = new Point(703, 81);
-            BGuardar.Name = "BGuardar";
-            BGuardar.Size = new Size(113, 44);
-            BGuardar.TabIndex = 26;
-            BGuardar.Text = "Guardar Cambios";
-            BGuardar.UseVisualStyleBackColor = false;
-            BGuardar.Click += BGuardar_Click;
-            // 
             // ingreso
             // 
             ingreso.HeaderText = "Fecha de Ingreso";
@@ -378,11 +365,24 @@
             servicio.Name = "servicio";
             servicio.Width = 60;
             // 
-            // Reservas
+            // BGuardar
+            // 
+            BGuardar.BackColor = Color.Lime;
+            BGuardar.FlatStyle = FlatStyle.Popup;
+            BGuardar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BGuardar.Location = new Point(703, 81);
+            BGuardar.Name = "BGuardar";
+            BGuardar.Size = new Size(113, 44);
+            BGuardar.TabIndex = 26;
+            BGuardar.Text = "Guardar Cambios";
+            BGuardar.UseVisualStyleBackColor = false;
+            BGuardar.Click += BGuardar_Click;
+            // 
+            // ReservaCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(833, 390);
+            ClientSize = new Size(827, 465);
             Controls.Add(BGuardar);
             Controls.Add(panel1);
             Controls.Add(TBuscar);
@@ -409,7 +409,7 @@
             Controls.Add(BEditar);
             Controls.Add(BRegistrar);
             Controls.Add(LReservas);
-            Name = "Reservas";
+            Name = "ReservaCRUD";
             Text = "Reservas";
             Load += Reservas_Load;
             ((System.ComponentModel.ISupportInitialize)NCantidad).EndInit();

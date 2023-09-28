@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "h5kVsL2mDRjBgyeJYTmNarpnytPQn/bgOQ8zCyPpN1KI0YKLvbwTrEDWDatRIEISp7M7DvK4rlAqz1RHjuGREQ==",
+  "dgSpecHash": "Vmz6y+KcYT5G9iYKFkhvKftj3LUEcojI6tHW/sKLHjauqex9aJVb6Xqm8x73T552Y/NU63wGvi3tCcZfdbHFYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Juanma\\source\\repos\\Proyecto_Taller_2\\ProyectoTaller2\\ProyectoTaller2.csproj",
+  "projectFilePath": "C:\\Users\\ariel\\source\\repos\\Proyecto_Taller_2\\ProyectoTaller2\\ProyectoTaller2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Juanma\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+    "C:\\Users\\ariel\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
   ],
   "logs": []
 }

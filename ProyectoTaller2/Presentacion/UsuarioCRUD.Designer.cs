@@ -197,6 +197,7 @@ namespace ProyectoTaller2.Administrador
             TCorreo.Size = new Size(174, 21);
             TCorreo.TabIndex = 61;
             TCorreo.TextChanged += CamposTextChanged;
+            TCorreo.KeyPress += TCorreo_KeyPress;
             // 
             // label4
             // 
@@ -279,6 +280,7 @@ namespace ProyectoTaller2.Administrador
             TClave.Name = "TClave";
             TClave.Size = new Size(175, 21);
             TClave.TabIndex = 52;
+            TClave.UseSystemPasswordChar = true;
             TClave.TextChanged += CamposTextChanged;
             TClave.KeyPress += TClave_KeyPress;
             // 
@@ -372,9 +374,9 @@ namespace ProyectoTaller2.Administrador
             lblTituloUsuario.ForeColor = Color.FloralWhite;
             lblTituloUsuario.Location = new Point(12, 23);
             lblTituloUsuario.Name = "lblTituloUsuario";
-            lblTituloUsuario.Size = new Size(240, 37);
+            lblTituloUsuario.Size = new Size(135, 37);
             lblTituloUsuario.TabIndex = 68;
-            lblTituloUsuario.Text = "Usuario CRUD";
+            lblTituloUsuario.Text = "Usuario";
             // 
             // btnBuscar
             // 
@@ -397,7 +399,7 @@ namespace ProyectoTaller2.Administrador
             // lblMensaje
             // 
             lblMensaje.AutoSize = true;
-            lblMensaje.Location = new Point(139, 230);
+            lblMensaje.Location = new Point(139, 240);
             lblMensaje.Name = "lblMensaje";
             lblMensaje.Size = new Size(0, 15);
             lblMensaje.TabIndex = 71;
@@ -448,6 +450,7 @@ namespace ProyectoTaller2.Administrador
             Controls.Add(LNombre);
             Name = "UsuarioCRUD";
             Text = "Usuario CRUD";
+            Load += UsuarioCRUD_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).EndInit();
             ResumeLayout(false);

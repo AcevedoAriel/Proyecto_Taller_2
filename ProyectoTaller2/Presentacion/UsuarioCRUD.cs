@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -229,5 +230,33 @@ namespace ProyectoTaller2.Administrador
                 }
             }
         }
+
+        private void UsuarioCRUD_Load(object sender, EventArgs e)
+        {
+            CBPerfil.SelectedIndex = 0;
+            TSexo.SelectedIndex = 0;
+        }
+
+        private void TCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string correo = "ejemplo@dominio.com"; // Aquí debes obtener el correo del formulario
+
+            if (ValidarCorreo(correo))
+            {
+                Console.WriteLine("El correo electrónico es válido.");
+            }
+            else
+            {
+                Console.WriteLine("El correo electrónico no es válido.");
+            }
+        }
+
+        static bool ValidarCorreo(string correo)
+        {
+            string patron = @"^[\w-]+(\.[\w-]+)*@([a-z0-9-]+\.)+[a-z]{2,7}$";
+            Regex regex = new Regex(patron, RegexOptions.IgnoreCase);
+            return regex.IsMatch(correo);
+        }
+
     }
 }
