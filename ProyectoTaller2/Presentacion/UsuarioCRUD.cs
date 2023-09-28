@@ -259,19 +259,21 @@ namespace ProyectoTaller2.Administrador
 
             if (ValidarCorreo(correo))
             {
-                Console.WriteLine("El correo electrónico es válido.");
+                lblMensaje2.Text = "Dirección de Correo válida";
+                lblMensaje2.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                Console.WriteLine("El correo electrónico no es válido.");
+                lblMensaje2.Text = "Dirección de Correo no válida";
+                lblMensaje2.ForeColor = System.Drawing.Color.Red;
             }
         }
 
         static bool ValidarCorreo(string correo)
         {
             string patron = @"^[\w-]+(\.[\w-]+)*@([a-z0-9-]+\.)+[a-z]{2,7}$";
-            Regex regex = new Regex(patron, RegexOptions.IgnoreCase);
-            return regex.IsMatch(correo);
+            //Regex regex = new Regex(patron, RegexOptions.IgnoreCase);
+            return Regex.IsMatch(correo, patron);
         }
 
     }

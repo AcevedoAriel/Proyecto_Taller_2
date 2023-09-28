@@ -67,6 +67,7 @@ namespace ProyectoTaller2.Administrador
             btnBuscar = new Button();
             txtBuscar = new TextBox();
             lblMensaje = new Label();
+            lblMensaje2 = new Label();
             BGuardar = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
@@ -162,7 +163,7 @@ namespace ProyectoTaller2.Administrador
             // DTFechaNac
             // 
             DTFechaNac.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DTFechaNac.Location = new Point(485, 219);
+            DTFechaNac.Location = new Point(485, 232);
             DTFechaNac.Name = "DTFechaNac";
             DTFechaNac.Size = new Size(174, 21);
             DTFechaNac.TabIndex = 64;
@@ -213,7 +214,7 @@ namespace ProyectoTaller2.Administrador
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(342, 219);
+            label3.Location = new Point(342, 237);
             label3.Name = "label3";
             label3.Size = new Size(124, 15);
             label3.TabIndex = 59;
@@ -404,6 +405,14 @@ namespace ProyectoTaller2.Administrador
             lblMensaje.Size = new Size(0, 15);
             lblMensaje.TabIndex = 71;
             // 
+            // lblMensaje2
+            // 
+            lblMensaje2.AutoSize = true;
+            lblMensaje2.Location = new Point(485, 213);
+            lblMensaje2.Name = "lblMensaje2";
+            lblMensaje2.Size = new Size(0, 15);
+            lblMensaje2.TabIndex = 71;
+            // 
             // BGuardar
             // 
             BGuardar.BackColor = Color.Lime;
@@ -423,6 +432,7 @@ namespace ProyectoTaller2.Administrador
             ClientSize = new Size(827, 465);
             Controls.Add(BGuardar);
             Controls.Add(lblMensaje);
+            Controls.Add(lblMensaje2);
             Controls.Add(txtBuscar);
             Controls.Add(btnBuscar);
             Controls.Add(lblTituloUsuario);
@@ -487,6 +497,7 @@ namespace ProyectoTaller2.Administrador
         private Button btnBuscar;
         private TextBox txtBuscar;
         private Label lblMensaje;
+        private Label lblMensaje2;
         private DataGridViewTextBoxColumn Perfil;
         private DataGridViewTextBoxColumn apellido;
         private DataGridViewTextBoxColumn nombre;
