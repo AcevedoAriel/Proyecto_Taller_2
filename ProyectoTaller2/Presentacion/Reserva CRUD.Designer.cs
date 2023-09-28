@@ -64,6 +64,10 @@
             personas = new DataGridViewTextBoxColumn();
             servicio = new DataGridViewTextBoxColumn();
             BGuardar = new Button();
+            LHIngreso = new Label();
+            LHRetiro = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).BeginInit();
@@ -128,7 +132,7 @@
             // LFechaRet
             // 
             LFechaRet.AutoSize = true;
-            LFechaRet.Location = new Point(25, 107);
+            LFechaRet.Location = new Point(24, 160);
             LFechaRet.Name = "LFechaRet";
             LFechaRet.Size = new Size(94, 15);
             LFechaRet.TabIndex = 6;
@@ -137,7 +141,7 @@
             // LHab
             // 
             LHab.AutoSize = true;
-            LHab.Location = new Point(25, 147);
+            LHab.Location = new Point(25, 250);
             LHab.Name = "LHab";
             LHab.Size = new Size(71, 15);
             LHab.TabIndex = 7;
@@ -146,7 +150,7 @@
             // LNombre
             // 
             LNombre.AutoSize = true;
-            LNombre.Location = new Point(25, 193);
+            LNombre.Location = new Point(355, 219);
             LNombre.Name = "LNombre";
             LNombre.Size = new Size(116, 15);
             LNombre.TabIndex = 8;
@@ -155,7 +159,7 @@
             // LApellido
             // 
             LApellido.AutoSize = true;
-            LApellido.Location = new Point(25, 234);
+            LApellido.Location = new Point(355, 267);
             LApellido.Name = "LApellido";
             LApellido.Size = new Size(116, 15);
             LApellido.TabIndex = 9;
@@ -163,7 +167,7 @@
             // 
             // TApellido
             // 
-            TApellido.Location = new Point(157, 231);
+            TApellido.Location = new Point(505, 267);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(160, 23);
             TApellido.TabIndex = 10;
@@ -172,7 +176,7 @@
             // 
             // TNombre
             // 
-            TNombre.Location = new Point(157, 190);
+            TNombre.Location = new Point(505, 219);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(160, 23);
             TNombre.TabIndex = 11;
@@ -181,7 +185,7 @@
             // 
             // THabitacion
             // 
-            THabitacion.Location = new Point(157, 144);
+            THabitacion.Location = new Point(157, 247);
             THabitacion.Name = "THabitacion";
             THabitacion.Size = new Size(160, 23);
             THabitacion.TabIndex = 12;
@@ -195,6 +199,7 @@
             TDNI.Size = new Size(160, 23);
             TDNI.TabIndex = 13;
             TDNI.TextChanged += CamposTextChanged;
+            TDNI.KeyPress += TDNI_KeyPress;
             // 
             // LDNI
             // 
@@ -217,7 +222,7 @@
             // LCantidad
             // 
             LCantidad.AutoSize = true;
-            LCantidad.Location = new Point(354, 175);
+            LCantidad.Location = new Point(24, 287);
             LCantidad.Name = "LCantidad";
             LCantidad.Size = new Size(127, 15);
             LCantidad.TabIndex = 16;
@@ -226,7 +231,7 @@
             // LServicio
             // 
             LServicio.AutoSize = true;
-            LServicio.Location = new Point(354, 215);
+            LServicio.Location = new Point(354, 175);
             LServicio.Name = "LServicio";
             LServicio.Size = new Size(105, 15);
             LServicio.TabIndex = 17;
@@ -251,7 +256,7 @@
             // 
             // DTRetiro
             // 
-            DTRetiro.Location = new Point(157, 102);
+            DTRetiro.Location = new Point(157, 154);
             DTRetiro.Name = "DTRetiro";
             DTRetiro.Size = new Size(160, 23);
             DTRetiro.TabIndex = 20;
@@ -261,7 +266,7 @@
             // 
             CBServicio.FormattingEnabled = true;
             CBServicio.Items.AddRange(new object[] { "Desayuno", "Televisión", "Despertador" });
-            CBServicio.Location = new Point(505, 212);
+            CBServicio.Location = new Point(505, 175);
             CBServicio.Name = "CBServicio";
             CBServicio.Size = new Size(160, 23);
             CBServicio.TabIndex = 21;
@@ -269,9 +274,9 @@
             // 
             // NCantidad
             // 
-            NCantidad.Location = new Point(505, 173);
+            NCantidad.Location = new Point(200, 282);
             NCantidad.Name = "NCantidad";
-            NCantidad.Size = new Size(160, 23);
+            NCantidad.Size = new Size(117, 23);
             NCantidad.TabIndex = 22;
             NCantidad.TextChanged += CamposTextChanged;
             // 
@@ -296,7 +301,7 @@
             // panel1
             // 
             panel1.Controls.Add(dataGridReserva);
-            panel1.Location = new Point(0, 270);
+            panel1.Location = new Point(1, 313);
             panel1.Name = "panel1";
             panel1.Size = new Size(833, 149);
             panel1.TabIndex = 25;
@@ -378,11 +383,48 @@
             BGuardar.UseVisualStyleBackColor = false;
             BGuardar.Click += BGuardar_Click;
             // 
+            // LHIngreso
+            // 
+            LHIngreso.AutoSize = true;
+            LHIngreso.Location = new Point(25, 110);
+            LHIngreso.Name = "LHIngreso";
+            LHIngreso.Size = new Size(94, 15);
+            LHIngreso.TabIndex = 27;
+            LHIngreso.Text = "Hora de Ingreso:";
+            // 
+            // LHRetiro
+            // 
+            LHRetiro.AutoSize = true;
+            LHRetiro.Location = new Point(25, 203);
+            LHRetiro.Name = "LHRetiro";
+            LHRetiro.Size = new Size(86, 15);
+            LHRetiro.TabIndex = 28;
+            LHRetiro.Text = "Hora de Retiro:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(157, 110);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(160, 23);
+            dateTimePicker1.TabIndex = 29;
+            dateTimePicker1.Value = new DateTime(2023, 9, 28, 19, 26, 0, 0);
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(157, 203);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(160, 23);
+            dateTimePicker2.TabIndex = 30;
+            // 
             // ReservaCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(LHRetiro);
+            Controls.Add(LHIngreso);
             Controls.Add(BGuardar);
             Controls.Add(panel1);
             Controls.Add(TBuscar);
@@ -458,5 +500,9 @@
         private DataGridViewTextBoxColumn telefono;
         private DataGridViewTextBoxColumn personas;
         private DataGridViewTextBoxColumn servicio;
+        private Label LHIngreso;
+        private Label LHRetiro;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
     }
 }
