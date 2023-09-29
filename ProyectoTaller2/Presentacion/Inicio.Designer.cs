@@ -33,30 +33,30 @@
             button9 = new Button();
             button8 = new Button();
             panel1 = new Panel();
-            BCama1 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            button1 = new Button();
-            label5 = new Label();
-            label6 = new Label();
-            button2 = new Button();
-            label7 = new Label();
-            label8 = new Label();
-            button3 = new Button();
-            label9 = new Label();
-            label10 = new Label();
-            button4 = new Button();
-            label11 = new Label();
-            label12 = new Label();
-            button5 = new Button();
-            label13 = new Label();
-            label14 = new Label();
-            button6 = new Button();
             label15 = new Label();
             label16 = new Label();
             button7 = new Button();
+            label13 = new Label();
+            label14 = new Label();
+            button6 = new Button();
+            label11 = new Label();
+            label12 = new Label();
+            button5 = new Button();
+            label9 = new Label();
+            label10 = new Label();
+            button4 = new Button();
+            label7 = new Label();
+            label8 = new Label();
+            button3 = new Button();
+            label5 = new Label();
+            label6 = new Label();
+            button2 = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            button1 = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            BCama1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -147,203 +147,38 @@
             panel1.Size = new Size(714, 318);
             panel1.TabIndex = 21;
             // 
-            // BCama1
+            // label15
             // 
-            BCama1.BackColor = Color.Chartreuse;
-            BCama1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            BCama1.Location = new Point(83, 51);
-            BCama1.Name = "BCama1";
-            BCama1.Size = new Size(103, 90);
-            BCama1.TabIndex = 16;
-            BCama1.Text = "100";
-            BCama1.UseVisualStyleBackColor = false;
+            label15.AutoSize = true;
+            label15.BackColor = Color.White;
+            label15.Location = new Point(548, 180);
+            label15.Name = "label15";
+            label15.Size = new Size(33, 15);
+            label15.TabIndex = 46;
+            label15.Text = "Libre";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // label16
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(105, 115);
-            label1.Name = "label1";
-            label1.Size = new Size(56, 15);
-            label1.TabIndex = 24;
-            label1.Text = "Ocupado";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Visible = false;
+            label16.AutoSize = true;
+            label16.Location = new Point(538, 233);
+            label16.Name = "label16";
+            label16.Size = new Size(56, 15);
+            label16.TabIndex = 45;
+            label16.Text = "Ocupado";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            label16.Visible = false;
             // 
-            // label2
+            // button7
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.White;
-            label2.Location = new Point(115, 62);
-            label2.Name = "label2";
-            label2.Size = new Size(33, 15);
-            label2.TabIndex = 25;
-            label2.Text = "Libre";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Location = new Point(257, 62);
-            label3.Name = "label3";
-            label3.Size = new Size(33, 15);
-            label3.TabIndex = 28;
-            label3.Text = "Libre";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(247, 115);
-            label4.Name = "label4";
-            label4.Size = new Size(56, 15);
-            label4.TabIndex = 27;
-            label4.Text = "Ocupado";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            label4.Visible = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Chartreuse;
-            button1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(225, 51);
-            button1.Name = "button1";
-            button1.Size = new Size(103, 90);
-            button1.TabIndex = 26;
-            button1.Text = "100";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.White;
-            label5.Location = new Point(394, 62);
-            label5.Name = "label5";
-            label5.Size = new Size(33, 15);
-            label5.TabIndex = 31;
-            label5.Text = "Libre";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(384, 115);
-            label6.Name = "label6";
-            label6.Size = new Size(56, 15);
-            label6.TabIndex = 30;
-            label6.Text = "Ocupado";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            label6.Visible = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Chartreuse;
-            button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(362, 51);
-            button2.Name = "button2";
-            button2.Size = new Size(103, 90);
-            button2.TabIndex = 29;
-            button2.Text = "100";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.White;
-            label7.Location = new Point(548, 62);
-            label7.Name = "label7";
-            label7.Size = new Size(33, 15);
-            label7.TabIndex = 34;
-            label7.Text = "Libre";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(538, 115);
-            label8.Name = "label8";
-            label8.Size = new Size(56, 15);
-            label8.TabIndex = 33;
-            label8.Text = "Ocupado";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
-            label8.Visible = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Chartreuse;
-            button3.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(516, 51);
-            button3.Name = "button3";
-            button3.Size = new Size(103, 90);
-            button3.TabIndex = 32;
-            button3.Text = "100";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.White;
-            label9.Location = new Point(115, 180);
-            label9.Name = "label9";
-            label9.Size = new Size(33, 15);
-            label9.TabIndex = 37;
-            label9.Text = "Libre";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(105, 233);
-            label10.Name = "label10";
-            label10.Size = new Size(56, 15);
-            label10.TabIndex = 36;
-            label10.Text = "Ocupado";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
-            label10.Visible = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.Chartreuse;
-            button4.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(83, 169);
-            button4.Name = "button4";
-            button4.Size = new Size(103, 90);
-            button4.TabIndex = 35;
-            button4.Text = "100";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.White;
-            label11.Location = new Point(257, 180);
-            label11.Name = "label11";
-            label11.Size = new Size(33, 15);
-            label11.TabIndex = 40;
-            label11.Text = "Libre";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(247, 233);
-            label12.Name = "label12";
-            label12.Size = new Size(56, 15);
-            label12.TabIndex = 39;
-            label12.Text = "Ocupado";
-            label12.TextAlign = ContentAlignment.MiddleCenter;
-            label12.Visible = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.Chartreuse;
-            button5.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(225, 169);
-            button5.Name = "button5";
-            button5.Size = new Size(103, 90);
-            button5.TabIndex = 38;
-            button5.Text = "100";
-            button5.UseVisualStyleBackColor = false;
+            button7.BackColor = Color.Chartreuse;
+            button7.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Location = new Point(516, 169);
+            button7.Name = "button7";
+            button7.Size = new Size(103, 90);
+            button7.TabIndex = 44;
+            button7.Text = "100";
+            button7.UseVisualStyleBackColor = false;
             // 
             // label13
             // 
@@ -378,38 +213,203 @@
             button6.Text = "100";
             button6.UseVisualStyleBackColor = false;
             // 
-            // label15
+            // label11
             // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.White;
-            label15.Location = new Point(548, 180);
-            label15.Name = "label15";
-            label15.Size = new Size(33, 15);
-            label15.TabIndex = 46;
-            label15.Text = "Libre";
-            label15.TextAlign = ContentAlignment.MiddleCenter;
+            label11.AutoSize = true;
+            label11.BackColor = Color.White;
+            label11.Location = new Point(257, 180);
+            label11.Name = "label11";
+            label11.Size = new Size(33, 15);
+            label11.TabIndex = 40;
+            label11.Text = "Libre";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // label12
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(538, 233);
-            label16.Name = "label16";
-            label16.Size = new Size(56, 15);
-            label16.TabIndex = 45;
-            label16.Text = "Ocupado";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
-            label16.Visible = false;
+            label12.AutoSize = true;
+            label12.Location = new Point(247, 233);
+            label12.Name = "label12";
+            label12.Size = new Size(56, 15);
+            label12.TabIndex = 39;
+            label12.Text = "Ocupado";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
+            label12.Visible = false;
             // 
-            // button7
+            // button5
             // 
-            button7.BackColor = Color.Chartreuse;
-            button7.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(516, 169);
-            button7.Name = "button7";
-            button7.Size = new Size(103, 90);
-            button7.TabIndex = 44;
-            button7.Text = "100";
-            button7.UseVisualStyleBackColor = false;
+            button5.BackColor = Color.Chartreuse;
+            button5.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(225, 169);
+            button5.Name = "button5";
+            button5.Size = new Size(103, 90);
+            button5.TabIndex = 38;
+            button5.Text = "100";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.White;
+            label9.Location = new Point(115, 180);
+            label9.Name = "label9";
+            label9.Size = new Size(33, 15);
+            label9.TabIndex = 37;
+            label9.Text = "Libre";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(105, 233);
+            label10.Name = "label10";
+            label10.Size = new Size(56, 15);
+            label10.TabIndex = 36;
+            label10.Text = "Ocupado";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            label10.Visible = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Chartreuse;
+            button4.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(83, 169);
+            button4.Name = "button4";
+            button4.Size = new Size(103, 90);
+            button4.TabIndex = 35;
+            button4.Text = "100";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.White;
+            label7.Location = new Point(548, 62);
+            label7.Name = "label7";
+            label7.Size = new Size(33, 15);
+            label7.TabIndex = 34;
+            label7.Text = "Libre";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(538, 115);
+            label8.Name = "label8";
+            label8.Size = new Size(56, 15);
+            label8.TabIndex = 33;
+            label8.Text = "Ocupado";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.Visible = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Chartreuse;
+            button3.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(516, 51);
+            button3.Name = "button3";
+            button3.Size = new Size(103, 90);
+            button3.TabIndex = 32;
+            button3.Text = "100";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.White;
+            label5.Location = new Point(394, 62);
+            label5.Name = "label5";
+            label5.Size = new Size(33, 15);
+            label5.TabIndex = 31;
+            label5.Text = "Libre";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(384, 115);
+            label6.Name = "label6";
+            label6.Size = new Size(56, 15);
+            label6.TabIndex = 30;
+            label6.Text = "Ocupado";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            label6.Visible = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Chartreuse;
+            button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(362, 51);
+            button2.Name = "button2";
+            button2.Size = new Size(103, 90);
+            button2.TabIndex = 29;
+            button2.Text = "100";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Location = new Point(257, 62);
+            label3.Name = "label3";
+            label3.Size = new Size(33, 15);
+            label3.TabIndex = 28;
+            label3.Text = "Libre";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(247, 115);
+            label4.Name = "label4";
+            label4.Size = new Size(56, 15);
+            label4.TabIndex = 27;
+            label4.Text = "Ocupado";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            label4.Visible = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Chartreuse;
+            button1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(225, 51);
+            button1.Name = "button1";
+            button1.Size = new Size(103, 90);
+            button1.TabIndex = 26;
+            button1.Text = "100";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.Location = new Point(115, 62);
+            label2.Name = "label2";
+            label2.Size = new Size(33, 15);
+            label2.TabIndex = 25;
+            label2.Text = "Libre";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(105, 115);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 15);
+            label1.TabIndex = 24;
+            label1.Text = "Ocupado";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Visible = false;
+            // 
+            // BCama1
+            // 
+            BCama1.BackColor = Color.Chartreuse;
+            BCama1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            BCama1.Location = new Point(83, 51);
+            BCama1.Name = "BCama1";
+            BCama1.Size = new Size(103, 90);
+            BCama1.TabIndex = 16;
+            BCama1.Text = "100";
+            BCama1.UseVisualStyleBackColor = false;
             // 
             // Inicio
             // 

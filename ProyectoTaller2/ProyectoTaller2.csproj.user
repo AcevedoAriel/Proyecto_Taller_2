@@ -7,7 +7,7 @@
     <Compile Update="Presentacion\AgregarServicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Habitacion CRUD.cs">
+    <Compile Update="Presentacion\Administrador\Habitacion CRUD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\IniciarSesion.cs">
@@ -22,22 +22,25 @@
     <Compile Update="Presentacion\Ingresos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\ConsultarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Presentacion\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\RegistrarReserva.cs">
+    <Compile Update="Presentacion\Administrador\ListaReservas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\UsuarioCRUD.cs">
+    <Compile Update="Presentacion\Administrador\UsuarioCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Reserva CRUD.cs">
+    <Compile Update="Presentacion\Recepcionista\Asignar Reserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\ServiciosAdicionales.cs">
+    <Compile Update="Presentacion\Recepcionista\Cobrar Habitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Recepcionista\Reserva CRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Recepcionista\ServiciosAdicionales.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
