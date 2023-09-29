@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -82,14 +83,14 @@ namespace ProyectoTaller2.Administrador
             if (contraseña.Length >= 6)
             {
                 // Mostrar un mensaje de éxito
-                lblMensaje.Text = "Contraseña válida";
-                lblMensaje.ForeColor = System.Drawing.Color.Green;
+                lblMensajeClave.Text = "Contraseña válida";
+                lblMensajeClave.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 // Mostrar un mensaje de error
-                lblMensaje.Text = "Ingrese al menos 6 caracteres";
-                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                lblMensajeClave.Text = "Ingrese al menos 6 caracteres";
+                lblMensajeClave.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -124,7 +125,7 @@ namespace ProyectoTaller2.Administrador
         private void BRegistrar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && TClave.Text != "" && TTelefono.Text != "" && TCorreo.Text != "" && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
+            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
@@ -166,6 +167,8 @@ namespace ProyectoTaller2.Administrador
             DTFechaNac.ResetText();
             CBPerfil.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
+            lblMensajeClave.ResetText();
+            lblMensajeCorreo.ResetText();
         }
 
         private void BEditar_Click(object sender, EventArgs e)
@@ -195,7 +198,7 @@ namespace ProyectoTaller2.Administrador
         private void BGuardar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && TClave.Text != "" && TTelefono.Text != "" && TCorreo.Text != "" && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
+            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
                 resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
@@ -238,7 +241,7 @@ namespace ProyectoTaller2.Administrador
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminaci�n", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (filaSeleccionada != null)
                 {
@@ -259,13 +262,13 @@ namespace ProyectoTaller2.Administrador
 
             if (ValidarCorreo(correo))
             {
-                lblMensaje2.Text = "Dirección de Correo válida";
-                lblMensaje2.ForeColor = System.Drawing.Color.Green;
+                lblMensajeCorreo.Text = "Dirección de Correo válida";
+                lblMensajeCorreo.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                lblMensaje2.Text = "Dirección de Correo no válida";
-                lblMensaje2.ForeColor = System.Drawing.Color.Red;
+                lblMensajeCorreo.Text = "Dirección de Correo no válida";
+                lblMensajeCorreo.ForeColor = System.Drawing.Color.Red;
             }
         }
 

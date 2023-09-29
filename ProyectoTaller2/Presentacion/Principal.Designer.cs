@@ -248,6 +248,7 @@
             Controls.Add(MenuTitulo);
             MainMenuStrip = MenuIzquierdo;
             Name = "FMPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema G. Hotelera";
             Load += FMInicio_Load;
             MenuIzquierdo.ResumeLayout(false);

@@ -63,14 +63,15 @@ namespace ProyectoTaller2.Administrador
             LApellido = new Label();
             LNombre = new Label();
             btnEliminar = new Button();
-            lblTituloUsuario = new Label();
             btnBuscar = new Button();
             txtBuscar = new TextBox();
-            lblMensaje = new Label();
-            lblMensaje2 = new Label();
+            lblMensajeClave = new Label();
+            lblMensajeCorreo = new Label();
             BGuardar = new Button();
+            pictureBox1 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // BEditar
@@ -368,17 +369,6 @@ namespace ProyectoTaller2.Administrador
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // lblTituloUsuario
-            // 
-            lblTituloUsuario.AutoSize = true;
-            lblTituloUsuario.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            lblTituloUsuario.ForeColor = Color.FloralWhite;
-            lblTituloUsuario.Location = new Point(12, 23);
-            lblTituloUsuario.Name = "lblTituloUsuario";
-            lblTituloUsuario.Size = new Size(144, 39);
-            lblTituloUsuario.TabIndex = 68;
-            lblTituloUsuario.Text = "Usuario";
-            // 
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.White;
@@ -392,32 +382,32 @@ namespace ProyectoTaller2.Administrador
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(358, 23);
+            txtBuscar.Location = new Point(320, 23);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(156, 23);
+            txtBuscar.Size = new Size(194, 23);
             txtBuscar.TabIndex = 70;
             // 
-            // lblMensaje
+            // lblMensajeClave
             // 
-            lblMensaje.AutoSize = true;
-            lblMensaje.Location = new Point(139, 240);
-            lblMensaje.Name = "lblMensaje";
-            lblMensaje.Size = new Size(0, 15);
-            lblMensaje.TabIndex = 71;
+            lblMensajeClave.AutoSize = true;
+            lblMensajeClave.Location = new Point(139, 240);
+            lblMensajeClave.Name = "lblMensajeClave";
+            lblMensajeClave.Size = new Size(0, 15);
+            lblMensajeClave.TabIndex = 71;
             // 
-            // lblMensaje2
+            // lblMensajeCorreo
             // 
-            lblMensaje2.AutoSize = true;
-            lblMensaje2.Location = new Point(485, 213);
-            lblMensaje2.Name = "lblMensaje2";
-            lblMensaje2.Size = new Size(0, 15);
-            lblMensaje2.TabIndex = 71;
+            lblMensajeCorreo.AutoSize = true;
+            lblMensajeCorreo.Location = new Point(485, 213);
+            lblMensajeCorreo.Name = "lblMensajeCorreo";
+            lblMensajeCorreo.Size = new Size(0, 15);
+            lblMensajeCorreo.TabIndex = 71;
             // 
             // BGuardar
             // 
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
-            BGuardar.Location = new Point(694, 71);
+            BGuardar.Location = new Point(694, 72);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(110, 47);
             BGuardar.TabIndex = 72;
@@ -425,17 +415,27 @@ namespace ProyectoTaller2.Administrador
             BGuardar.UseVisualStyleBackColor = false;
             BGuardar.Click += BGuardar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.perfiil;
+            pictureBox1.Location = new Point(12, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(127, 95);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 73;
+            pictureBox1.TabStop = false;
+            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(pictureBox1);
             Controls.Add(BGuardar);
-            Controls.Add(lblMensaje);
-            Controls.Add(lblMensaje2);
+            Controls.Add(lblMensajeClave);
+            Controls.Add(lblMensajeCorreo);
             Controls.Add(txtBuscar);
             Controls.Add(btnBuscar);
-            Controls.Add(lblTituloUsuario);
             Controls.Add(btnEliminar);
             Controls.Add(BEditar);
             Controls.Add(panel2);
@@ -463,6 +463,7 @@ namespace ProyectoTaller2.Administrador
             Load += UsuarioCRUD_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -493,11 +494,10 @@ namespace ProyectoTaller2.Administrador
         private Label LApellido;
         private Label LNombre;
         private Button btnEliminar;
-        private Label lblTituloUsuario;
         private Button btnBuscar;
         private TextBox txtBuscar;
-        private Label lblMensaje;
-        private Label lblMensaje2;
+        private Label lblMensajeClave;
+        private Label lblMensajeCorreo;
         private DataGridViewTextBoxColumn Perfil;
         private DataGridViewTextBoxColumn apellido;
         private DataGridViewTextBoxColumn nombre;
@@ -509,5 +509,6 @@ namespace ProyectoTaller2.Administrador
         private DataGridViewTextBoxColumn telefono;
         private DataGridViewTextBoxColumn estado;
         private Button BGuardar;
+        private PictureBox pictureBox1;
     }
 }
