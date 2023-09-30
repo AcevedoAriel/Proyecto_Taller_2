@@ -193,6 +193,7 @@
             Controls.Add(lblPagoTotal);
             Controls.Add(label2);
             Name = "Cobrar_Habitacion";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cobrar_Habitacion";
             ResumeLayout(false);
             PerformLayout();

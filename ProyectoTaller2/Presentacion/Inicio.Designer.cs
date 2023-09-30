@@ -37,6 +37,7 @@
             button6 = new Button();
             label26 = new Label();
             label27 = new Label();
+            button5 = new Button();
             label22 = new Label();
             label23 = new Label();
             button4 = new Button();
@@ -48,6 +49,7 @@
             button2 = new Button();
             label5 = new Label();
             label6 = new Label();
+            button1 = new Button();
             label2 = new Label();
             label1 = new Label();
             BCama1 = new Button();
@@ -56,8 +58,6 @@
             label19 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
-            button1 = new Button();
-            button5 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -102,6 +102,7 @@
             label34.TabIndex = 81;
             label34.Text = "Libre";
             label34.TextAlign = ContentAlignment.MiddleCenter;
+            label34.Visible = false;
             // 
             // label35
             // 
@@ -112,11 +113,10 @@
             label35.TabIndex = 80;
             label35.Text = "Ocupado";
             label35.TextAlign = ContentAlignment.MiddleCenter;
-            label35.Visible = false;
             // 
             // button7
             // 
-            button7.BackColor = Color.Chartreuse;
+            button7.BackColor = Color.Red;
             button7.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
             button7.Location = new Point(537, 158);
             button7.Name = "button7";
@@ -124,6 +124,7 @@
             button7.TabIndex = 79;
             button7.Text = "100";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // label30
             // 
@@ -135,6 +136,7 @@
             label30.TabIndex = 76;
             label30.Text = "Libre";
             label30.TextAlign = ContentAlignment.MiddleCenter;
+            label30.Visible = false;
             // 
             // label31
             // 
@@ -145,11 +147,10 @@
             label31.TabIndex = 75;
             label31.Text = "Ocupado";
             label31.TextAlign = ContentAlignment.MiddleCenter;
-            label31.Visible = false;
             // 
             // button6
             // 
-            button6.BackColor = Color.Chartreuse;
+            button6.BackColor = Color.Red;
             button6.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
             button6.Location = new Point(372, 158);
             button6.Name = "button6";
@@ -157,6 +158,7 @@
             button6.TabIndex = 74;
             button6.Text = "100";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // label26
             // 
@@ -168,6 +170,7 @@
             label26.TabIndex = 71;
             label26.Text = "Libre";
             label26.TextAlign = ContentAlignment.MiddleCenter;
+            label26.Visible = false;
             // 
             // label27
             // 
@@ -178,7 +181,18 @@
             label27.TabIndex = 70;
             label27.Text = "Ocupado";
             label27.TextAlign = ContentAlignment.MiddleCenter;
-            label27.Visible = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.Red;
+            button5.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(204, 158);
+            button5.Name = "button5";
+            button5.Size = new Size(138, 131);
+            button5.TabIndex = 69;
+            button5.Text = "100";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // label22
             // 
@@ -190,6 +204,7 @@
             label22.TabIndex = 66;
             label22.Text = "Libre";
             label22.TextAlign = ContentAlignment.MiddleCenter;
+            label22.Visible = false;
             // 
             // label23
             // 
@@ -200,11 +215,10 @@
             label23.TabIndex = 65;
             label23.Text = "Ocupado";
             label23.TextAlign = ContentAlignment.MiddleCenter;
-            label23.Visible = false;
             // 
             // button4
             // 
-            button4.BackColor = Color.Chartreuse;
+            button4.BackColor = Color.Red;
             button4.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
             button4.Location = new Point(47, 158);
             button4.Name = "button4";
@@ -212,6 +226,7 @@
             button4.TabIndex = 64;
             button4.Text = "100";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label15
             // 
@@ -245,6 +260,7 @@
             button3.TabIndex = 59;
             button3.Text = "100";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label11
             // 
@@ -278,6 +294,7 @@
             button2.TabIndex = 54;
             button2.Text = "100";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label5
             // 
@@ -300,6 +317,18 @@
             label6.Text = "Ocupado";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             label6.Visible = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Chartreuse;
+            button1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(204, 10);
+            button1.Name = "button1";
+            button1.Size = new Size(138, 131);
+            button1.TabIndex = 49;
+            button1.Text = "100";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -382,28 +411,6 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(124, 23);
             comboBox2.TabIndex = 26;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Chartreuse;
-            button1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(204, 10);
-            button1.Name = "button1";
-            button1.Size = new Size(138, 131);
-            button1.TabIndex = 49;
-            button1.Text = "100";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.Chartreuse;
-            button5.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(204, 158);
-            button5.Name = "button5";
-            button5.Size = new Size(138, 131);
-            button5.TabIndex = 69;
-            button5.Text = "100";
-            button5.UseVisualStyleBackColor = false;
             // 
             // Inicio
             // 
