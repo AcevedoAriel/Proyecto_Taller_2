@@ -113,5 +113,11 @@ namespace ProyectoTaller2.Administrador
         {
             AbrirFormulario(MenuUsuario, new UsuarioCRUD());
         }
+
+        private void MenuPagos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuPagos, new Ingresos());
+
+        }
     }
 }

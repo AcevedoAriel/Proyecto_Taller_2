@@ -41,6 +41,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            label8 = new Label();
             SuspendLayout();
             // 
             // label2
@@ -56,7 +57,7 @@
             // 
             lblPagoTotal.AutoSize = true;
             lblPagoTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPagoTotal.Location = new Point(276, 189);
+            lblPagoTotal.Location = new Point(277, 200);
             lblPagoTotal.Name = "lblPagoTotal";
             lblPagoTotal.Size = new Size(48, 20);
             lblPagoTotal.TabIndex = 2;
@@ -118,7 +119,7 @@
             // 
             lblSubTotal.AutoSize = true;
             lblSubTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSubTotal.Location = new Point(59, 189);
+            lblSubTotal.Location = new Point(59, 200);
             lblSubTotal.Name = "lblSubTotal";
             lblSubTotal.Size = new Size(78, 20);
             lblSubTotal.TabIndex = 11;
@@ -174,11 +175,22 @@
             label7.TabIndex = 16;
             label7.Text = "Precio por servicios :";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(59, 169);
+            label8.Name = "label8";
+            label8.Size = new Size(109, 15);
+            label8.TabIndex = 17;
+            label8.Text = "Taza de Intereses :";
+            // 
             // Cobrar_Habitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(480, 405);
+            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -213,5 +225,6 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private Label label8;
     }
 }

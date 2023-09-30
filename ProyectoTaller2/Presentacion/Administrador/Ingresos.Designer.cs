@@ -33,7 +33,6 @@
             Tbuscar = new TextBox();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
-            btnBuscar = new Button();
             nombre = new DataGridViewTextBoxColumn();
             medioPago = new DataGridViewTextBoxColumn();
             fechaPago = new DataGridViewTextBoxColumn();
@@ -41,7 +40,9 @@
             costoServ = new DataGridViewTextBoxColumn();
             costoHab = new DataGridViewTextBoxColumn();
             subtotal = new DataGridViewTextBoxColumn();
+            interes = new DataGridViewTextBoxColumn();
             total = new DataGridViewTextBoxColumn();
+            btnBuscar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             // Tbuscar
             // 
-            Tbuscar.Location = new Point(374, 78);
+            Tbuscar.Location = new Point(398, 78);
             Tbuscar.Name = "Tbuscar";
             Tbuscar.Size = new Size(198, 23);
             Tbuscar.TabIndex = 3;
@@ -77,30 +78,21 @@
             // panel1
             // 
             panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(3, 169);
+            panel1.Location = new Point(3, 119);
             panel1.Name = "panel1";
-            panel1.Size = new Size(718, 193);
+            panel1.Size = new Size(826, 351);
             panel1.TabIndex = 4;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nombre, medioPago, fechaPago, cuotas, costoServ, costoHab, subtotal, total });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nombre, medioPago, fechaPago, cuotas, costoServ, costoHab, subtotal, interes, total });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(718, 193);
+            dataGridView1.Size = new Size(826, 351);
             dataGridView1.TabIndex = 1;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(615, 78);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
-            btnBuscar.TabIndex = 5;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
             // 
             // nombre
             // 
@@ -135,19 +127,33 @@
             // 
             // subtotal
             // 
-            subtotal.HeaderText = "Subtotal ";
+            subtotal.HeaderText = "SubTotal";
             subtotal.Name = "subtotal";
+            // 
+            // interes
+            // 
+            interes.HeaderText = "Interes";
+            interes.Name = "interes";
             // 
             // total
             // 
-            total.HeaderText = "Monto Total";
+            total.HeaderText = "Total";
             total.Name = "total";
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(650, 78);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 5;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
             // Ingresos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(730, 363);
+            ClientSize = new Size(827, 465);
             Controls.Add(btnBuscar);
             Controls.Add(panel1);
             Controls.Add(Tbuscar);
@@ -176,6 +182,7 @@
         private DataGridViewTextBoxColumn costoServ;
         private DataGridViewTextBoxColumn costoHab;
         private DataGridViewTextBoxColumn subtotal;
+        private DataGridViewTextBoxColumn interes;
         private DataGridViewTextBoxColumn total;
     }
 }
