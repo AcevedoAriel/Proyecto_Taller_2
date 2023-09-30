@@ -19,9 +19,6 @@
     <Compile Update="Presentacion\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Administrador\ListaReservas.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Presentacion\Administrador\UsuarioCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -35,6 +32,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\Recepcionista\ServiciosAdicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperUsuario\Backup.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

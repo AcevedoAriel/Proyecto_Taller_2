@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            Bbuscar = new Button();
             Tbuscar = new TextBox();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
@@ -50,26 +49,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 24);
             label1.Name = "label1";
-            label1.Size = new Size(252, 31);
+            label1.Size = new Size(280, 37);
             label1.TabIndex = 1;
             label1.Text = "Registro de Ingresos";
             // 
-            // Bbuscar
-            // 
-            Bbuscar.Location = new Point(874, 86);
-            Bbuscar.Name = "Bbuscar";
-            Bbuscar.Size = new Size(75, 23);
-            Bbuscar.TabIndex = 2;
-            Bbuscar.Text = "Buscar";
-            Bbuscar.UseVisualStyleBackColor = true;
-            Bbuscar.Click += Bbuscar_Click;
-            // 
             // Tbuscar
             // 
-            Tbuscar.Location = new Point(398, 78);
+            Tbuscar.Location = new Point(399, 24);
             Tbuscar.Name = "Tbuscar";
             Tbuscar.Size = new Size(198, 23);
             Tbuscar.TabIndex = 3;
@@ -142,12 +131,15 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(650, 78);
+            btnBuscar.BackColor = Color.White;
+            btnBuscar.FlatStyle = FlatStyle.Popup;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(614, 17);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.Size = new Size(78, 34);
             btnBuscar.TabIndex = 5;
             btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             // 
             // Ingresos
             // 
@@ -157,7 +149,6 @@
             Controls.Add(btnBuscar);
             Controls.Add(panel1);
             Controls.Add(Tbuscar);
-            Controls.Add(Bbuscar);
             Controls.Add(label1);
             Name = "Ingresos";
             Text = "Ingresos";
@@ -170,7 +161,6 @@
 
         #endregion
         private Label label1;
-        private Button Bbuscar;
         private TextBox Tbuscar;
         private Panel panel1;
         private DataGridView dataGridView1;

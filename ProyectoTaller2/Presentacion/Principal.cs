@@ -1,6 +1,8 @@
 ﻿using FontAwesome.Sharp;
 using ProyectoTaller2.Presentacion;
 using ProyectoTaller2.Presentacion.Administrador;
+using ProyectoTaller2.Presentacion.Recepcionista;
+using ProyectoTaller2.Presentacion.SuperUsuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +20,7 @@ namespace ProyectoTaller2.Administrador
     {
         //alcamena el menu que se encuentra activo
         private static IconMenuItem? MenuActivo;
-        //ormulario que esta activo en el panel
+        //Formulario que esta activo en el panel
         public static Form? FormularioActivo;
 
         public FMPrincipal()
@@ -84,6 +86,8 @@ namespace ProyectoTaller2.Administrador
         }
 
 
+
+
         /* public void MostrarFormularioInicio()
          {
              Inicio formInicio = new Inicio();
@@ -118,6 +122,11 @@ namespace ProyectoTaller2.Administrador
         {
             AbrirFormulario(MenuPagos, new Ingresos());
 
+        }
+
+        private void SubMenuAjusteBackup_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)MenuAjusteAvanzado, new FMBackup());
         }
     }
 }

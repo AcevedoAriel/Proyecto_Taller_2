@@ -34,7 +34,9 @@
             MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
             MenuPagos = new FontAwesome.Sharp.IconMenuItem();
-            MenuServicios = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
+            MenuAjusteAvanzado = new FontAwesome.Sharp.IconMenuItem();
+            SubMenuAjusteBackup = new ToolStripMenuItem();
             MenuTitulo = new MenuStrip();
             MenuSalir = new FontAwesome.Sharp.IconMenuItem();
             perfilToolStripMenuItem = new ToolStripMenuItem();
@@ -51,7 +53,7 @@
             MenuIzquierdo.AutoSize = false;
             MenuIzquierdo.BackColor = Color.White;
             MenuIzquierdo.Dock = DockStyle.Left;
-            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuPagos, MenuServicios });
+            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuPagos, iconMenuItem3, MenuAjusteAvanzado });
             MenuIzquierdo.Location = new Point(0, 60);
             MenuIzquierdo.Name = "MenuIzquierdo";
             MenuIzquierdo.Size = new Size(152, 504);
@@ -133,20 +135,42 @@
             MenuPagos.TextImageRelation = TextImageRelation.ImageAboveText;
             MenuPagos.Click += MenuPagos_Click;
             // 
-            // MenuServicios
+            // iconMenuItem3
             // 
-            MenuServicios.AutoSize = false;
-            MenuServicios.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuServicios.IconChar = FontAwesome.Sharp.IconChar.Server;
-            MenuServicios.IconColor = Color.Black;
-            MenuServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuServicios.IconSize = 45;
-            MenuServicios.ImageScaling = ToolStripItemImageScaling.None;
-            MenuServicios.Name = "MenuServicios";
-            MenuServicios.Size = new Size(80, 60);
-            MenuServicios.Text = "Servicios";
-            MenuServicios.TextImageRelation = TextImageRelation.ImageAboveText;
-            MenuServicios.Click += MenuServicios_Click;
+            iconMenuItem3.AutoSize = false;
+            iconMenuItem3.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            iconMenuItem3.IconChar = FontAwesome.Sharp.IconChar.Server;
+            iconMenuItem3.IconColor = Color.Black;
+            iconMenuItem3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItem3.IconSize = 45;
+            iconMenuItem3.ImageScaling = ToolStripItemImageScaling.None;
+            iconMenuItem3.Name = "iconMenuItem3";
+            iconMenuItem3.Size = new Size(80, 60);
+            iconMenuItem3.Text = "Servicios";
+            iconMenuItem3.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconMenuItem3.Click += MenuServicios_Click;
+            // 
+            // MenuAjusteAvanzado
+            // 
+            MenuAjusteAvanzado.AutoSize = false;
+            MenuAjusteAvanzado.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAjusteBackup });
+            MenuAjusteAvanzado.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuAjusteAvanzado.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            MenuAjusteAvanzado.IconColor = Color.Black;
+            MenuAjusteAvanzado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuAjusteAvanzado.IconSize = 45;
+            MenuAjusteAvanzado.ImageScaling = ToolStripItemImageScaling.None;
+            MenuAjusteAvanzado.Name = "MenuAjusteAvanzado";
+            MenuAjusteAvanzado.Size = new Size(80, 60);
+            MenuAjusteAvanzado.Text = "Ajustes";
+            MenuAjusteAvanzado.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // SubMenuAjusteBackup
+            // 
+            SubMenuAjusteBackup.Name = "SubMenuAjusteBackup";
+            SubMenuAjusteBackup.Size = new Size(111, 22);
+            SubMenuAjusteBackup.Text = "Backup";
+            SubMenuAjusteBackup.Click += SubMenuAjusteBackup_Click;
             // 
             // MenuTitulo
             // 
@@ -226,6 +250,7 @@
             Controls.Add(PanelPrincipal);
             Controls.Add(MenuIzquierdo);
             Controls.Add(MenuTitulo);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             MainMenuStrip = MenuIzquierdo;
             Name = "FMPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
@@ -242,7 +267,6 @@
 
         private MenuStrip MenuIzquierdo;
         private MenuStrip MenuTitulo;
-        private FontAwesome.Sharp.IconMenuItem MenuServicios;
         private FontAwesome.Sharp.IconMenuItem MenuInicio;
         private FontAwesome.Sharp.IconMenuItem MenuUsuario;
         private FontAwesome.Sharp.IconMenuItem MenuHabitacion;
@@ -254,5 +278,8 @@
         private FontAwesome.Sharp.IconMenuItem MenuPagos;
         private FontAwesome.Sharp.IconMenuItem ICTitulo;
         private ToolStripMenuItem hOTELDELPARANAToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem MenuAjusteAvanzado;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem3;
+        private ToolStripMenuItem SubMenuAjusteBackup;
     }
 }

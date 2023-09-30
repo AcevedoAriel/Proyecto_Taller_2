@@ -262,6 +262,7 @@
             // 
             // dataGridReserva
             // 
+            dataGridReserva.AllowUserToAddRows = false;
             dataGridReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridReserva.Columns.AddRange(new DataGridViewColumn[] { ingreso, retiro, habitacion, nombre, apellido, dni, telefono, personas, servicio });
             dataGridReserva.Dock = DockStyle.Fill;
@@ -329,7 +330,7 @@
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
             BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BGuardar.Location = new Point(702, 79);
+            BGuardar.Location = new Point(703, 79);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(113, 44);
             BGuardar.TabIndex = 26;

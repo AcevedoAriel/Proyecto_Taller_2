@@ -35,6 +35,7 @@ namespace ProyectoTaller2.Administrador
                                    && !string.IsNullOrWhiteSpace(TTelefono.Text)
                                    && !string.IsNullOrWhiteSpace(CBPerfil.Text)
                                    && !string.IsNullOrWhiteSpace(TSexo.Text)
+                                   && !string.IsNullOrWhiteSpace(txtDNI.Text)
                                    && !string.IsNullOrWhiteSpace(DTFechaNac.Text);
 
             // Agrega más validaciones para otros TextBoxes si es necesario
@@ -125,13 +126,13 @@ namespace ProyectoTaller2.Administrador
         private void BRegistrar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
+            if (txtDNI.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
-
+                    string dni = txtDNI.Text;
                     string apellido = TApellido.Text;
                     string nombre = TNombre.Text;
                     string nombreUsuario = TNombreUsuario.Text;
@@ -141,7 +142,7 @@ namespace ProyectoTaller2.Administrador
                     DateTime fecha = DTFechaNac.Value;
 
                     // Agregar una nueva fila al datagrid con los valores
-                    dataGridUsuario.Rows.Add(CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
+                    dataGridUsuario.Rows.Add(dni, CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
                     MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
 
                     limpiarFormulario();
@@ -158,6 +159,7 @@ namespace ProyectoTaller2.Administrador
         public void limpiarFormulario()
         {
             // Limpiar formulario
+            txtDNI.Clear();
             TNombre.Clear();
             TApellido.Clear();
             TNombreUsuario.Clear();
@@ -181,8 +183,9 @@ namespace ProyectoTaller2.Administrador
                 btnEliminar.Visible = false;
 
                 // Reemplaza "Columna1" con el nombre de tu columna  
-                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString(); ;
-                TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString(); ;
+                txtDNI.Text = filaSeleccionada.Cells["DNI_colum1"].Value.ToString();
+                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
+                TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
                 TNombreUsuario.Text = filaSeleccionada.Cells["usuario"].Value.ToString();
                 CBPerfil.Text = filaSeleccionada.Cells["Perfil"].Value.ToString();
                 TClave.Text = filaSeleccionada.Cells["clave"].Value.ToString();
@@ -198,11 +201,12 @@ namespace ProyectoTaller2.Administrador
         private void BGuardar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
+            if (txtDNI.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
                 resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
+                    string dni = txtDNI.Text;
                     string apellido = TApellido.Text;
                     string nombre = TNombre.Text;
                     string nombreUsuario = TNombreUsuario.Text;
@@ -215,6 +219,7 @@ namespace ProyectoTaller2.Administrador
                     if (filaSeleccionada != null)
                     {
                         btnEliminar.Visible = true;
+                        filaSeleccionada.Cells["DNI_colum1"].Value = dni; 
                         filaSeleccionada.Cells["nombre"].Value = nombre;
                         filaSeleccionada.Cells["apellido"].Value = apellido;
                         filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
@@ -279,5 +284,14 @@ namespace ProyectoTaller2.Administrador
             return Regex.IsMatch(correo, patron);
         }
 
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

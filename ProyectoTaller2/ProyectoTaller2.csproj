@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="CEntidad\" />
-    <Folder Include="Presentacion\SuperUsuario\" />
   </ItemGroup>
 
 </Project>

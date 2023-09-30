@@ -33,16 +33,6 @@ namespace ProyectoTaller2.Administrador
             BEditar = new Button();
             panel2 = new Panel();
             dataGridUsuario = new DataGridView();
-            Perfil = new DataGridViewTextBoxColumn();
-            apellido = new DataGridViewTextBoxColumn();
-            nombre = new DataGridViewTextBoxColumn();
-            usuario = new DataGridViewTextBoxColumn();
-            clave = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            sexo = new DataGridViewTextBoxColumn();
-            fechaNac = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            estado = new DataGridViewTextBoxColumn();
             DTFechaNac = new DateTimePicker();
             TSexo = new ComboBox();
             TTelefono = new TextBox();
@@ -69,6 +59,19 @@ namespace ProyectoTaller2.Administrador
             lblMensajeCorreo = new Label();
             BGuardar = new Button();
             pictureBox1 = new PictureBox();
+            txtDNI = new TextBox();
+            lblDniUsuario = new Label();
+            DNI_colum1 = new DataGridViewTextBoxColumn();
+            Perfil = new DataGridViewTextBoxColumn();
+            apellido = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            usuario = new DataGridViewTextBoxColumn();
+            clave = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            sexo = new DataGridViewTextBoxColumn();
+            fechaNac = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -99,7 +102,7 @@ namespace ProyectoTaller2.Administrador
             // 
             dataGridUsuario.AllowUserToAddRows = false;
             dataGridUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { Perfil, apellido, nombre, usuario, clave, email, sexo, fechaNac, telefono, estado });
+            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { DNI_colum1, Perfil, apellido, nombre, usuario, clave, email, sexo, fechaNac, telefono, estado });
             dataGridUsuario.Dock = DockStyle.Fill;
             dataGridUsuario.Location = new Point(0, 0);
             dataGridUsuario.Name = "dataGridUsuario";
@@ -107,59 +110,6 @@ namespace ProyectoTaller2.Administrador
             dataGridUsuario.Size = new Size(827, 185);
             dataGridUsuario.TabIndex = 44;
             dataGridUsuario.SelectionChanged += dataGridUsuario_SelectionChanged;
-            // 
-            // Perfil
-            // 
-            Perfil.HeaderText = "Tipo de Perfil";
-            Perfil.Name = "Perfil";
-            Perfil.Resizable = DataGridViewTriState.True;
-            Perfil.Width = 110;
-            // 
-            // apellido
-            // 
-            apellido.HeaderText = "Apellido";
-            apellido.Name = "apellido";
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "Nombre";
-            nombre.Name = "nombre";
-            // 
-            // usuario
-            // 
-            usuario.HeaderText = "Nombre Usuario";
-            usuario.Name = "usuario";
-            // 
-            // clave
-            // 
-            clave.HeaderText = "Contraseña";
-            clave.Name = "clave";
-            // 
-            // email
-            // 
-            email.HeaderText = "Driección de Correo";
-            email.Name = "email";
-            // 
-            // sexo
-            // 
-            sexo.HeaderText = "Sexo";
-            sexo.Name = "sexo";
-            sexo.Resizable = DataGridViewTriState.True;
-            // 
-            // fechaNac
-            // 
-            fechaNac.HeaderText = "Fecha de Nacimiento";
-            fechaNac.Name = "fechaNac";
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Telefono";
-            telefono.Name = "telefono";
-            // 
-            // estado
-            // 
-            estado.HeaderText = "Estado";
-            estado.Name = "estado";
             // 
             // DTFechaNac
             // 
@@ -268,7 +218,7 @@ namespace ProyectoTaller2.Administrador
             // TNombreUsuario
             // 
             TNombreUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TNombreUsuario.Location = new Point(139, 184);
+            TNombreUsuario.Location = new Point(139, 204);
             TNombreUsuario.Name = "TNombreUsuario";
             TNombreUsuario.Size = new Size(175, 21);
             TNombreUsuario.TabIndex = 53;
@@ -278,7 +228,7 @@ namespace ProyectoTaller2.Administrador
             // TClave
             // 
             TClave.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TClave.Location = new Point(139, 216);
+            TClave.Location = new Point(139, 231);
             TClave.Name = "TClave";
             TClave.Size = new Size(175, 21);
             TClave.TabIndex = 52;
@@ -289,7 +239,7 @@ namespace ProyectoTaller2.Administrador
             // TNombre
             // 
             TNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TNombre.Location = new Point(139, 120);
+            TNombre.Location = new Point(139, 140);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(175, 21);
             TNombre.TabIndex = 51;
@@ -299,7 +249,7 @@ namespace ProyectoTaller2.Administrador
             // TApellido
             // 
             TApellido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TApellido.Location = new Point(139, 153);
+            TApellido.Location = new Point(139, 172);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(175, 21);
             TApellido.TabIndex = 50;
@@ -310,7 +260,7 @@ namespace ProyectoTaller2.Administrador
             // 
             LContraseña.AutoSize = true;
             LContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LContraseña.Location = new Point(13, 219);
+            LContraseña.Location = new Point(13, 232);
             LContraseña.Name = "LContraseña";
             LContraseña.Size = new Size(69, 15);
             LContraseña.TabIndex = 49;
@@ -330,7 +280,7 @@ namespace ProyectoTaller2.Administrador
             // 
             LNombreUsuario.AutoSize = true;
             LNombreUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombreUsuario.Location = new Point(12, 187);
+            LNombreUsuario.Location = new Point(12, 206);
             LNombreUsuario.Name = "LNombreUsuario";
             LNombreUsuario.Size = new Size(115, 15);
             LNombreUsuario.TabIndex = 47;
@@ -340,7 +290,7 @@ namespace ProyectoTaller2.Administrador
             // 
             LApellido.AutoSize = true;
             LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LApellido.Location = new Point(14, 156);
+            LApellido.Location = new Point(13, 178);
             LApellido.Name = "LApellido";
             LApellido.Size = new Size(52, 15);
             LApellido.TabIndex = 46;
@@ -350,7 +300,7 @@ namespace ProyectoTaller2.Administrador
             // 
             LNombre.AutoSize = true;
             LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombre.Location = new Point(13, 120);
+            LNombre.Location = new Point(13, 144);
             LNombre.Name = "LNombre";
             LNombre.Size = new Size(53, 15);
             LNombre.TabIndex = 45;
@@ -427,11 +377,90 @@ namespace ProyectoTaller2.Administrador
             pictureBox1.TabIndex = 73;
             pictureBox1.TabStop = false;
             // 
+            // txtDNI
+            // 
+            txtDNI.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDNI.Location = new Point(139, 110);
+            txtDNI.Name = "txtDNI";
+            txtDNI.Size = new Size(175, 21);
+            txtDNI.TabIndex = 75;
+            txtDNI.KeyPress += txtDNI_KeyPress;
+            // 
+            // lblDniUsuario
+            // 
+            lblDniUsuario.AutoSize = true;
+            lblDniUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDniUsuario.Location = new Point(13, 116);
+            lblDniUsuario.Name = "lblDniUsuario";
+            lblDniUsuario.Size = new Size(29, 15);
+            lblDniUsuario.TabIndex = 74;
+            lblDniUsuario.Text = "DNI";
+            // 
+            // DNI_colum1
+            // 
+            DNI_colum1.HeaderText = "DNI";
+            DNI_colum1.Name = "DNI_colum1";
+            // 
+            // Perfil
+            // 
+            Perfil.HeaderText = "Tipo de Perfil";
+            Perfil.Name = "Perfil";
+            Perfil.Resizable = DataGridViewTriState.True;
+            Perfil.Width = 110;
+            // 
+            // apellido
+            // 
+            apellido.HeaderText = "Apellido";
+            apellido.Name = "apellido";
+            // 
+            // nombre
+            // 
+            nombre.HeaderText = "Nombre";
+            nombre.Name = "nombre";
+            // 
+            // usuario
+            // 
+            usuario.HeaderText = "Nombre Usuario";
+            usuario.Name = "usuario";
+            // 
+            // clave
+            // 
+            clave.HeaderText = "Contraseña";
+            clave.Name = "clave";
+            // 
+            // email
+            // 
+            email.HeaderText = "Driección de Correo";
+            email.Name = "email";
+            // 
+            // sexo
+            // 
+            sexo.HeaderText = "Sexo";
+            sexo.Name = "sexo";
+            sexo.Resizable = DataGridViewTriState.True;
+            // 
+            // fechaNac
+            // 
+            fechaNac.HeaderText = "Fecha de Nacimiento";
+            fechaNac.Name = "fechaNac";
+            // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.Name = "telefono";
+            // 
+            // estado
+            // 
+            estado.HeaderText = "Estado";
+            estado.Name = "estado";
+            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(txtDNI);
+            Controls.Add(lblDniUsuario);
             Controls.Add(pictureBox1);
             Controls.Add(BGuardar);
             Controls.Add(lblMensajeClave);
@@ -500,6 +529,11 @@ namespace ProyectoTaller2.Administrador
         private TextBox txtBuscar;
         private Label lblMensajeClave;
         private Label lblMensajeCorreo;
+        private Button BGuardar;
+        private PictureBox pictureBox1;
+        private TextBox txtDNI;
+        private Label lblDniUsuario;
+        private DataGridViewTextBoxColumn DNI_colum1;
         private DataGridViewTextBoxColumn Perfil;
         private DataGridViewTextBoxColumn apellido;
         private DataGridViewTextBoxColumn nombre;
@@ -510,7 +544,5 @@ namespace ProyectoTaller2.Administrador
         private DataGridViewTextBoxColumn fechaNac;
         private DataGridViewTextBoxColumn telefono;
         private DataGridViewTextBoxColumn estado;
-        private Button BGuardar;
-        private PictureBox pictureBox1;
     }
 }
