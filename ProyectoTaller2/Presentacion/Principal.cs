@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,12 +19,11 @@ namespace ProyectoTaller2.Administrador
         //alcamena el menu que se encuentra activo
         private static IconMenuItem? MenuActivo;
         //ormulario que esta activo en el panel
-        private static Form? FormularioActivo;
+        public static Form? FormularioActivo;
 
         public FMPrincipal()
         {
             InitializeComponent();
-
         }
 
         private void Menu1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -31,7 +31,7 @@ namespace ProyectoTaller2.Administrador
 
         }
 
-        private void AbrirFormulario(IconMenuItem menu, Form formulario)
+        public void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             //si hay un menu activo anteriormente que se regrese al color blanco
             if (MenuActivo != null)
@@ -61,11 +61,6 @@ namespace ProyectoTaller2.Administrador
             //es el contenedor donde se mostrará el formulario hijo.
             PanelPrincipal.Controls.Add(formulario);
             formulario.Show();
-        }
-
-        private void SubMenuAgregarUsuario_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(MenuUsuario, new UsuarioCRUD());
         }
 
         private void MenuReserva_Click(object sender, EventArgs e)
@@ -112,6 +107,11 @@ namespace ProyectoTaller2.Administrador
         private void MenuServicios_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new ServiciosCrud());
+        }
+
+        private void MenuUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuUsuario, new UsuarioCRUD());
         }
     }
 }

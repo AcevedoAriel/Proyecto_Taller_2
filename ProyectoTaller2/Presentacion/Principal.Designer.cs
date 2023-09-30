@@ -31,8 +31,6 @@
             MenuIzquierdo = new MenuStrip();
             MenuInicio = new FontAwesome.Sharp.IconMenuItem();
             MenuUsuario = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuAgregarUsuario = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuConsultarUsuario = new FontAwesome.Sharp.IconMenuItem();
             MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
@@ -78,7 +76,6 @@
             // MenuUsuario
             // 
             MenuUsuario.AutoSize = false;
-            MenuUsuario.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAgregarUsuario, SubMenuConsultarUsuario });
             MenuUsuario.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
             MenuUsuario.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
             MenuUsuario.IconColor = Color.Black;
@@ -89,25 +86,7 @@
             MenuUsuario.Size = new Size(80, 60);
             MenuUsuario.Text = "Usuario";
             MenuUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
-            // 
-            // SubMenuAgregarUsuario
-            // 
-            SubMenuAgregarUsuario.IconChar = FontAwesome.Sharp.IconChar.None;
-            SubMenuAgregarUsuario.IconColor = Color.Black;
-            SubMenuAgregarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            SubMenuAgregarUsuario.Name = "SubMenuAgregarUsuario";
-            SubMenuAgregarUsuario.Size = new Size(162, 22);
-            SubMenuAgregarUsuario.Text = "Agregar Usuario";
-            SubMenuAgregarUsuario.Click += SubMenuAgregarUsuario_Click;
-            // 
-            // SubMenuConsultarUsuario
-            // 
-            SubMenuConsultarUsuario.IconChar = FontAwesome.Sharp.IconChar.None;
-            SubMenuConsultarUsuario.IconColor = Color.Black;
-            SubMenuConsultarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            SubMenuConsultarUsuario.Name = "SubMenuConsultarUsuario";
-            SubMenuConsultarUsuario.Size = new Size(162, 22);
-            SubMenuConsultarUsuario.Text = "Consultar Usuario";
+            MenuUsuario.Click += MenuUsuario_Click;
             // 
             // MenuHabitacion
             // 
@@ -271,8 +250,6 @@
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private ToolStripMenuItem perfilToolStripMenuItem;
         private Panel PanelPrincipal;
-        private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
-        private FontAwesome.Sharp.IconMenuItem SubMenuConsultarUsuario;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem3;
         private FontAwesome.Sharp.IconMenuItem ICTitulo;
         private ToolStripMenuItem hOTELDELPARANAToolStripMenuItem;
