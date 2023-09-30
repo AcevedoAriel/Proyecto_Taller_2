@@ -81,6 +81,7 @@
             // 
             BEditar.BackColor = Color.DodgerBlue;
             BEditar.FlatStyle = FlatStyle.Popup;
+            BEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             BEditar.Location = new Point(703, 144);
             BEditar.Name = "BEditar";
             BEditar.Size = new Size(113, 46);
@@ -93,6 +94,7 @@
             // 
             BEliminar.BackColor = Color.Red;
             BEliminar.FlatStyle = FlatStyle.Popup;
+            BEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             BEliminar.Location = new Point(703, 208);
             BEliminar.Name = "BEliminar";
             BEliminar.Size = new Size(113, 46);
@@ -104,36 +106,40 @@
             // LFechaIng
             // 
             LFechaIng.AutoSize = true;
+            LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaIng.Location = new Point(24, 91);
             LFechaIng.Name = "LFechaIng";
-            LFechaIng.Size = new Size(102, 15);
+            LFechaIng.Size = new Size(107, 15);
             LFechaIng.TabIndex = 5;
             LFechaIng.Text = "Fecha de Ingreso :";
             // 
             // LFechaRet
             // 
             LFechaRet.AutoSize = true;
+            LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaRet.Location = new Point(24, 133);
             LFechaRet.Name = "LFechaRet";
-            LFechaRet.Size = new Size(94, 15);
+            LFechaRet.Size = new Size(100, 15);
             LFechaRet.TabIndex = 6;
             LFechaRet.Text = "Fecha de Retiro :";
             // 
             // LNombre
             // 
             LNombre.AutoSize = true;
+            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LNombre.Location = new Point(24, 195);
             LNombre.Name = "LNombre";
-            LNombre.Size = new Size(116, 15);
+            LNombre.Size = new Size(121, 15);
             LNombre.TabIndex = 8;
             LNombre.Text = "Nombre del Cliente :";
             // 
             // LApellido
             // 
             LApellido.AutoSize = true;
+            LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LApellido.Location = new Point(24, 248);
             LApellido.Name = "LApellido";
-            LApellido.Size = new Size(116, 15);
+            LApellido.Size = new Size(120, 15);
             LApellido.TabIndex = 9;
             LApellido.Text = "Apellido del Cliente :";
             // 
@@ -167,27 +173,30 @@
             // LDNI
             // 
             LDNI.AutoSize = true;
+            LDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LDNI.Location = new Point(354, 91);
             LDNI.Name = "LDNI";
-            LDNI.Size = new Size(92, 15);
+            LDNI.Size = new Size(97, 15);
             LDNI.TabIndex = 14;
             LDNI.Text = "DNI del Cliente :";
             // 
             // LTel
             // 
             LTel.AutoSize = true;
+            LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LTel.Location = new Point(354, 139);
             LTel.Name = "LTel";
-            LTel.Size = new Size(117, 15);
+            LTel.Size = new Size(124, 15);
             LTel.TabIndex = 15;
             LTel.Text = "Telefono del Cliente :";
             // 
             // LCantidad
             // 
             LCantidad.AutoSize = true;
+            LCantidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LCantidad.Location = new Point(354, 250);
             LCantidad.Name = "LCantidad";
-            LCantidad.Size = new Size(127, 15);
+            LCantidad.Size = new Size(130, 15);
             LCantidad.TabIndex = 16;
             LCantidad.Text = "Cantidad de Personas :";
             // 
@@ -228,6 +237,7 @@
             // 
             BBuscar.BackColor = Color.White;
             BBuscar.FlatStyle = FlatStyle.Popup;
+            BBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             BBuscar.Location = new Point(582, 12);
             BBuscar.Name = "BBuscar";
             BBuscar.Size = new Size(83, 38);
@@ -318,8 +328,8 @@
             // 
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
-            BGuardar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BGuardar.Location = new Point(703, 81);
+            BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            BGuardar.Location = new Point(702, 79);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(113, 44);
             BGuardar.TabIndex = 26;
@@ -330,9 +340,10 @@
             // LServicio
             // 
             LServicio.AutoSize = true;
+            LServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LServicio.Location = new Point(354, 192);
             LServicio.Name = "LServicio";
-            LServicio.Size = new Size(105, 15);
+            LServicio.Size = new Size(110, 15);
             LServicio.TabIndex = 17;
             LServicio.Text = "Servicio al Cuarto :";
             // 
@@ -374,6 +385,7 @@
             Controls.Add(BEliminar);
             Controls.Add(BEditar);
             Controls.Add(LReservas);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "GestionReserva";
             Text = "Gestionar Reservas";
             Load += Reservas_Load;

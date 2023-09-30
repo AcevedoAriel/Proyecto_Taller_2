@@ -23,7 +23,7 @@ namespace ProyectoTaller2.Administrador
         public FMPrincipal()
         {
             InitializeComponent();
-    
+
         }
 
         private void Menu1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -59,7 +59,7 @@ namespace ProyectoTaller2.Administrador
             formulario.BackColor = Color.LightSkyBlue;
 
             //es el contenedor donde se mostrará el formulario hijo.
-            Panel1.Controls.Add(formulario);
+            PanelPrincipal.Controls.Add(formulario);
             formulario.Show();
         }
 
@@ -89,15 +89,15 @@ namespace ProyectoTaller2.Administrador
         }
 
 
-       /* public void MostrarFormularioInicio()
-        {
-            Inicio formInicio = new Inicio();
-            formInicio.TopLevel = false;
-            formInicio.Dock = DockStyle.Fill;
-            Panel1.Controls.Clear();
-            Panel1.Controls.Add(formInicio);
-            formInicio.Show();
-        }*/
+        /* public void MostrarFormularioInicio()
+         {
+             Inicio formInicio = new Inicio();
+             formInicio.TopLevel = false;
+             formInicio.Dock = DockStyle.Fill;
+             Panel1.Controls.Clear();
+             Panel1.Controls.Add(formInicio);
+             formInicio.Show();
+         }*/
 
         private void MenuSalir_Click(object sender, EventArgs e)
         {
@@ -107,6 +107,11 @@ namespace ProyectoTaller2.Administrador
         private void MenuHabitacion_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new CRUDHabitacion());
+        }
+
+        private void MenuServicios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new ServiciosCrud());
         }
     }
 }

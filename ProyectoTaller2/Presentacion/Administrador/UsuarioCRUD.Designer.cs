@@ -78,7 +78,7 @@ namespace ProyectoTaller2.Administrador
             // 
             BEditar.BackColor = Color.DodgerBlue;
             BEditar.FlatStyle = FlatStyle.Popup;
-            BEditar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             BEditar.Location = new Point(694, 140);
             BEditar.Name = "BEditar";
             BEditar.Size = new Size(110, 47);
@@ -204,27 +204,27 @@ namespace ProyectoTaller2.Administrador
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(342, 126);
             label4.Name = "label4";
-            label4.Size = new Size(55, 15);
+            label4.Size = new Size(56, 15);
             label4.TabIndex = 60;
             label4.Text = "Teléfono";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(342, 237);
             label3.Name = "label3";
-            label3.Size = new Size(124, 15);
+            label3.Size = new Size(123, 15);
             label3.TabIndex = 59;
             label3.Text = "Fecha de Nacimiento";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(342, 161);
             label2.Name = "label2";
             label2.Size = new Size(35, 15);
@@ -234,10 +234,10 @@ namespace ProyectoTaller2.Administrador
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(342, 190);
             label1.Name = "label1";
-            label1.Size = new Size(116, 15);
+            label1.Size = new Size(118, 15);
             label1.TabIndex = 57;
             label1.Text = "Dirección de Correo";
             // 
@@ -245,7 +245,7 @@ namespace ProyectoTaller2.Administrador
             // 
             BRegistrar.BackColor = Color.Lime;
             BRegistrar.FlatStyle = FlatStyle.Popup;
-            BRegistrar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             BRegistrar.Location = new Point(694, 72);
             BRegistrar.Name = "BRegistrar";
             BRegistrar.Size = new Size(110, 46);
@@ -309,27 +309,27 @@ namespace ProyectoTaller2.Administrador
             // LContraseña
             // 
             LContraseña.AutoSize = true;
-            LContraseña.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            LContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LContraseña.Location = new Point(13, 219);
             LContraseña.Name = "LContraseña";
-            LContraseña.Size = new Size(70, 15);
+            LContraseña.Size = new Size(69, 15);
             LContraseña.TabIndex = 49;
             LContraseña.Text = "Contraseña";
             // 
             // LPerfil
             // 
             LPerfil.AutoSize = true;
-            LPerfil.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            LPerfil.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LPerfil.Location = new Point(342, 92);
             LPerfil.Name = "LPerfil";
-            LPerfil.Size = new Size(62, 15);
+            LPerfil.Size = new Size(64, 15);
             LPerfil.TabIndex = 48;
             LPerfil.Text = "Tipo Perfil";
             // 
             // LNombreUsuario
             // 
             LNombreUsuario.AutoSize = true;
-            LNombreUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            LNombreUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LNombreUsuario.Location = new Point(12, 187);
             LNombreUsuario.Name = "LNombreUsuario";
             LNombreUsuario.Size = new Size(115, 15);
@@ -339,20 +339,20 @@ namespace ProyectoTaller2.Administrador
             // LApellido
             // 
             LApellido.AutoSize = true;
-            LApellido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LApellido.Location = new Point(14, 156);
             LApellido.Name = "LApellido";
-            LApellido.Size = new Size(51, 15);
+            LApellido.Size = new Size(52, 15);
             LApellido.TabIndex = 46;
             LApellido.Text = "Apellido";
             // 
             // LNombre
             // 
             LNombre.AutoSize = true;
-            LNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LNombre.Location = new Point(13, 120);
             LNombre.Name = "LNombre";
-            LNombre.Size = new Size(52, 15);
+            LNombre.Size = new Size(53, 15);
             LNombre.TabIndex = 45;
             LNombre.Text = "Nombre";
             // 
@@ -360,7 +360,7 @@ namespace ProyectoTaller2.Administrador
             // 
             btnEliminar.BackColor = Color.Red;
             btnEliminar.FlatStyle = FlatStyle.Popup;
-            btnEliminar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.Location = new Point(694, 206);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(110, 47);
@@ -373,6 +373,7 @@ namespace ProyectoTaller2.Administrador
             // 
             btnBuscar.BackColor = Color.White;
             btnBuscar.FlatStyle = FlatStyle.Popup;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.Location = new Point(520, 14);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(77, 38);
@@ -407,7 +408,8 @@ namespace ProyectoTaller2.Administrador
             // 
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
-            BGuardar.Location = new Point(694, 72);
+            BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            BGuardar.Location = new Point(694, 71);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(110, 47);
             BGuardar.TabIndex = 72;

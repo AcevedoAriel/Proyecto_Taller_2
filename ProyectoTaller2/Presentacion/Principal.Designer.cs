@@ -43,7 +43,7 @@
             ICTitulo = new FontAwesome.Sharp.IconMenuItem();
             hOTELDELPARANAToolStripMenuItem = new ToolStripMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
-            Panel1 = new Panel();
+            PanelPrincipal = new Panel();
             MenuIzquierdo.SuspendLayout();
             MenuTitulo.SuspendLayout();
             SuspendLayout();
@@ -166,6 +166,7 @@
             MenuServicios.Size = new Size(80, 60);
             MenuServicios.Text = "Servicios";
             MenuServicios.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuServicios.Click += MenuServicios_Click;
             // 
             // MenuTitulo
             // 
@@ -229,20 +230,20 @@
             iconMenuItem1.Size = new Size(32, 19);
             iconMenuItem1.Text = "iconMenuItem1";
             // 
-            // Panel1
+            // PanelPrincipal
             // 
-            Panel1.Dock = DockStyle.Fill;
-            Panel1.Location = new Point(152, 60);
-            Panel1.Name = "Panel1";
-            Panel1.Size = new Size(843, 504);
-            Panel1.TabIndex = 2;
+            PanelPrincipal.Dock = DockStyle.Fill;
+            PanelPrincipal.Location = new Point(152, 60);
+            PanelPrincipal.Name = "PanelPrincipal";
+            PanelPrincipal.Size = new Size(843, 504);
+            PanelPrincipal.TabIndex = 2;
             // 
             // FMPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(995, 564);
-            Controls.Add(Panel1);
+            Controls.Add(PanelPrincipal);
             Controls.Add(MenuIzquierdo);
             Controls.Add(MenuTitulo);
             MainMenuStrip = MenuIzquierdo;
@@ -269,7 +270,7 @@
         private FontAwesome.Sharp.IconMenuItem MenuSalir;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private ToolStripMenuItem perfilToolStripMenuItem;
-        private Panel Panel1;
+        private Panel PanelPrincipal;
         private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
         private FontAwesome.Sharp.IconMenuItem SubMenuConsultarUsuario;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem3;

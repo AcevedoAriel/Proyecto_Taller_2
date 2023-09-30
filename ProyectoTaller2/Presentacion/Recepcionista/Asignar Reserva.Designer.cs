@@ -97,9 +97,10 @@
             // LServicio
             // 
             LServicio.AutoSize = true;
+            LServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LServicio.Location = new Point(369, 337);
             LServicio.Name = "LServicio";
-            LServicio.Size = new Size(105, 15);
+            LServicio.Size = new Size(110, 15);
             LServicio.TabIndex = 34;
             LServicio.Text = "Servicio al Cuarto :";
             // 
@@ -108,25 +109,27 @@
             LCantidad.AutoSize = true;
             LCantidad.Location = new Point(369, 400);
             LCantidad.Name = "LCantidad";
-            LCantidad.Size = new Size(127, 15);
+            LCantidad.Size = new Size(130, 15);
             LCantidad.TabIndex = 33;
             LCantidad.Text = "Cantidad de Personas :";
             // 
             // LTel
             // 
             LTel.AutoSize = true;
+            LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LTel.Location = new Point(369, 285);
             LTel.Name = "LTel";
-            LTel.Size = new Size(117, 15);
+            LTel.Size = new Size(124, 15);
             LTel.TabIndex = 32;
             LTel.Text = "Telefono del Cliente :";
             // 
             // LDNI
             // 
             LDNI.AutoSize = true;
+            LDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LDNI.Location = new Point(369, 237);
             LDNI.Name = "LDNI";
-            LDNI.Size = new Size(92, 15);
+            LDNI.Size = new Size(97, 15);
             LDNI.TabIndex = 31;
             LDNI.Text = "DNI del Cliente :";
             // 
@@ -159,34 +162,37 @@
             LApellido.AutoSize = true;
             LApellido.Location = new Point(12, 400);
             LApellido.Name = "LApellido";
-            LApellido.Size = new Size(116, 15);
+            LApellido.Size = new Size(120, 15);
             LApellido.TabIndex = 27;
             LApellido.Text = "Apellido del Cliente :";
             // 
             // LNombre
             // 
             LNombre.AutoSize = true;
+            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LNombre.Location = new Point(12, 337);
             LNombre.Name = "LNombre";
-            LNombre.Size = new Size(116, 15);
+            LNombre.Size = new Size(121, 15);
             LNombre.TabIndex = 26;
             LNombre.Text = "Nombre del Cliente :";
             // 
             // LFechaRet
             // 
             LFechaRet.AutoSize = true;
+            LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaRet.Location = new Point(12, 279);
             LFechaRet.Name = "LFechaRet";
-            LFechaRet.Size = new Size(94, 15);
+            LFechaRet.Size = new Size(100, 15);
             LFechaRet.TabIndex = 25;
             LFechaRet.Text = "Fecha de Retiro :";
             // 
             // LFechaIng
             // 
             LFechaIng.AutoSize = true;
+            LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaIng.Location = new Point(12, 229);
             LFechaIng.Name = "LFechaIng";
-            LFechaIng.Size = new Size(102, 15);
+            LFechaIng.Size = new Size(107, 15);
             LFechaIng.TabIndex = 24;
             LFechaIng.Text = "Fecha de Ingreso :";
             // 
@@ -194,7 +200,8 @@
             // 
             BReservar.BackColor = Color.Lime;
             BReservar.FlatStyle = FlatStyle.Popup;
-            BReservar.Location = new Point(258, 462);
+            BReservar.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            BReservar.Location = new Point(284, 463);
             BReservar.Name = "BReservar";
             BReservar.Size = new Size(113, 44);
             BReservar.TabIndex = 23;
@@ -218,44 +225,48 @@
             // lblDetalleHabitacion
             // 
             lblDetalleHabitacion.AutoSize = true;
-            lblDetalleHabitacion.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDetalleHabitacion.Location = new Point(31, 9);
+            lblDetalleHabitacion.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDetalleHabitacion.Location = new Point(3, 67);
             lblDetalleHabitacion.Name = "lblDetalleHabitacion";
-            lblDetalleHabitacion.Size = new Size(184, 30);
+            lblDetalleHabitacion.Size = new Size(225, 32);
             lblDetalleHabitacion.TabIndex = 53;
             lblDetalleHabitacion.Text = "Detalle Habitacion";
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(35, 133);
+            lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCategoria.Location = new Point(284, 84);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(64, 15);
+            lblCategoria.Size = new Size(66, 15);
             lblCategoria.TabIndex = 52;
             lblCategoria.Text = "Categoria :";
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.Location = new Point(173, 133);
+            lblPrecio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPrecio.Location = new Point(284, 150);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(46, 15);
+            lblPrecio.Size = new Size(48, 15);
             lblPrecio.TabIndex = 51;
             lblPrecio.Text = "Precio :";
             // 
             // lblNroHabitacion
             // 
             lblNroHabitacion.AutoSize = true;
-            lblNroHabitacion.Location = new Point(328, 67);
+            lblNroHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNroHabitacion.Location = new Point(284, 54);
             lblNroHabitacion.Name = "lblNroHabitacion";
-            lblNroHabitacion.Size = new Size(94, 15);
+            lblNroHabitacion.Size = new Size(96, 15);
             lblNroHabitacion.TabIndex = 49;
             lblNroHabitacion.Text = "Nro Habitacion :";
             // 
             // lblPiso
             // 
             lblPiso.AutoSize = true;
-            lblPiso.Location = new Point(173, 67);
+            lblPiso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPiso.Location = new Point(284, 114);
             lblPiso.Name = "lblPiso";
             lblPiso.Size = new Size(35, 15);
             lblPiso.TabIndex = 48;
@@ -264,9 +275,10 @@
             // lblIDHabitacion
             // 
             lblIDHabitacion.AutoSize = true;
-            lblIDHabitacion.Location = new Point(31, 67);
+            lblIDHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblIDHabitacion.Location = new Point(284, 20);
             lblIDHabitacion.Name = "lblIDHabitacion";
-            lblIDHabitacion.Size = new Size(85, 15);
+            lblIDHabitacion.Size = new Size(88, 15);
             lblIDHabitacion.TabIndex = 47;
             lblIDHabitacion.Text = "ID Habitacion :";
             // 
@@ -293,6 +305,7 @@
             Controls.Add(LFechaRet);
             Controls.Add(LFechaIng);
             Controls.Add(BReservar);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "Asignar_Reserva";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Asignar_Reserva";

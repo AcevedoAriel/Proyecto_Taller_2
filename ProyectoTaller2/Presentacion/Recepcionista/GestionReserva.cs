@@ -16,8 +16,8 @@ namespace ProyectoTaller2.Presentacion.Administrador
         public GestionReserva()
         {
             InitializeComponent();
+            BGuardar.Enabled = false;
             BEditar.Enabled = false;
-            BGuardar.Visible = false;
             BEliminar.Enabled = false;
 
         }
@@ -141,7 +141,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
                 string nombre = TNombre.Text;
 
                 string dni = TDNI.Text;
-                long telefono = long.Parse(TTelefono.Text);
+                string telefono = TTelefono.Text;
                 string cantidad = NCantidad.Text;
 
                 // Agregar una nueva fila al datagrid con los valores

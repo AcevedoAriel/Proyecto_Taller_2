@@ -113,15 +113,17 @@
             // lblIDHabitacion
             // 
             lblIDHabitacion.AutoSize = true;
+            lblIDHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblIDHabitacion.Location = new Point(304, 35);
             lblIDHabitacion.Name = "lblIDHabitacion";
-            lblIDHabitacion.Size = new Size(79, 15);
+            lblIDHabitacion.Size = new Size(82, 15);
             lblIDHabitacion.TabIndex = 2;
             lblIDHabitacion.Text = "ID Habitacion";
             // 
             // lblPiso
             // 
             lblPiso.AutoSize = true;
+            lblPiso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblPiso.Location = new Point(304, 75);
             lblPiso.Name = "lblPiso";
             lblPiso.Size = new Size(29, 15);
@@ -131,15 +133,17 @@
             // lblNroHabitacion
             // 
             lblNroHabitacion.AutoSize = true;
+            lblNroHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblNroHabitacion.Location = new Point(304, 115);
             lblNroHabitacion.Name = "lblNroHabitacion";
-            lblNroHabitacion.Size = new Size(88, 15);
+            lblNroHabitacion.Size = new Size(90, 15);
             lblNroHabitacion.TabIndex = 4;
             lblNroHabitacion.Text = "Nro Habitacion";
             // 
             // lblCantidadCama
             // 
             lblCantidadCama.AutoSize = true;
+            lblCantidadCama.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblCantidadCama.Location = new Point(304, 236);
             lblCantidadCama.Name = "lblCantidadCama";
             lblCantidadCama.Size = new Size(110, 15);
@@ -149,18 +153,20 @@
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
+            lblPrecio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblPrecio.Location = new Point(304, 156);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(40, 15);
+            lblPrecio.Size = new Size(42, 15);
             lblPrecio.TabIndex = 6;
             lblPrecio.Text = "Precio";
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
+            lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblCategoria.Location = new Point(304, 197);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(58, 15);
+            lblCategoria.Size = new Size(60, 15);
             lblCategoria.TabIndex = 7;
             lblCategoria.Text = "Categoria";
             // 
@@ -168,7 +174,8 @@
             // 
             btnAgregarHabitacion.BackColor = Color.Lime;
             btnAgregarHabitacion.FlatStyle = FlatStyle.Popup;
-            btnAgregarHabitacion.Location = new Point(641, 40);
+            btnAgregarHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregarHabitacion.Location = new Point(642, 35);
             btnAgregarHabitacion.Name = "btnAgregarHabitacion";
             btnAgregarHabitacion.Size = new Size(134, 40);
             btnAgregarHabitacion.TabIndex = 8;
@@ -204,7 +211,8 @@
             // 
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.FlatStyle = FlatStyle.Popup;
-            btnEditar.Location = new Point(641, 118);
+            btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditar.Location = new Point(642, 113);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(134, 40);
             btnEditar.TabIndex = 13;
@@ -216,7 +224,8 @@
             // 
             btnEliminar.BackColor = Color.Red;
             btnEliminar.FlatStyle = FlatStyle.Popup;
-            btnEliminar.Location = new Point(641, 200);
+            btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.Location = new Point(642, 195);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(134, 40);
             btnEliminar.TabIndex = 14;
@@ -263,7 +272,8 @@
             // 
             btnGuardarCambios.BackColor = Color.Lime;
             btnGuardarCambios.FlatStyle = FlatStyle.Popup;
-            btnGuardarCambios.Location = new Point(641, 40);
+            btnGuardarCambios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardarCambios.Location = new Point(642, 35);
             btnGuardarCambios.Name = "btnGuardarCambios";
             btnGuardarCambios.Size = new Size(134, 40);
             btnGuardarCambios.TabIndex = 20;

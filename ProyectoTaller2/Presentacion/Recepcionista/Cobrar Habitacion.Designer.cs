@@ -64,12 +64,16 @@
             // 
             // btnCobrarHabitacion
             // 
+            btnCobrarHabitacion.BackColor = Color.Lime;
+            btnCobrarHabitacion.FlatStyle = FlatStyle.Popup;
+            btnCobrarHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCobrarHabitacion.ForeColor = SystemColors.ActiveCaptionText;
             btnCobrarHabitacion.Location = new Point(334, 302);
             btnCobrarHabitacion.Name = "btnCobrarHabitacion";
             btnCobrarHabitacion.Size = new Size(104, 59);
             btnCobrarHabitacion.TabIndex = 4;
             btnCobrarHabitacion.Text = "Cobrar Habitacion";
-            btnCobrarHabitacion.UseVisualStyleBackColor = true;
+            btnCobrarHabitacion.UseVisualStyleBackColor = false;
             btnCobrarHabitacion.Click += btnCobrarHabitacion_Click;
             // 
             // CBMetodoPago
@@ -93,18 +97,20 @@
             // lblCantidadDeCuota
             // 
             lblCantidadDeCuota.AutoSize = true;
+            lblCantidadDeCuota.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblCantidadDeCuota.Location = new Point(59, 311);
             lblCantidadDeCuota.Name = "lblCantidadDeCuota";
-            lblCantidadDeCuota.Size = new Size(111, 15);
+            lblCantidadDeCuota.Size = new Size(112, 15);
             lblCantidadDeCuota.TabIndex = 9;
             lblCantidadDeCuota.Text = "Cantidad de Cuotas";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(59, 242);
             label1.Name = "label1";
-            label1.Size = new Size(98, 15);
+            label1.Size = new Size(101, 15);
             label1.TabIndex = 10;
             label1.Text = "Metodo de Pago:";
             // 
