@@ -167,13 +167,13 @@
             panel1.Size = new Size(304, 287);
             panel1.TabIndex = 11;
             // 
-            // Servicio
+            // ServiciosAdicionales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(408, 375);
+            ClientSize = new Size(415, 386);
             Controls.Add(panel1);
-            Name = "Servicio";
+            Name = "ServiciosAdicionales";
             Text = "Servicio";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 382);
+            ClientSize = new Size(495, 349);
             Name = "AgregarPagos";
             Text = "AgregarPagos";
             ResumeLayout(false);

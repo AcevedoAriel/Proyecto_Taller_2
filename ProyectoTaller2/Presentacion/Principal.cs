@@ -67,14 +67,9 @@ namespace ProyectoTaller2.Administrador
             AbrirFormulario(MenuUsuario, new UsuarioCRUD());
         }
 
-        private void SubMenuConsultarUsuario_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new ConsularUsuario());
-        }
-
         private void MenuReserva_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new ReservaCRUD());
+            AbrirFormulario((IconMenuItem)sender, new GestionReserva());
         }
 
         private void MenuInicio_Click(object sender, EventArgs e)

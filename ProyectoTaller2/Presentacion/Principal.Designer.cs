@@ -108,7 +108,6 @@
             SubMenuConsultarUsuario.Name = "SubMenuConsultarUsuario";
             SubMenuConsultarUsuario.Size = new Size(162, 22);
             SubMenuConsultarUsuario.Text = "Consultar Usuario";
-            SubMenuConsultarUsuario.Click += SubMenuConsultarUsuario_Click;
             // 
             // MenuHabitacion
             // 

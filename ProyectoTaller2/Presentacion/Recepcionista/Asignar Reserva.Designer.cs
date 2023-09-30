@@ -45,43 +45,50 @@
             LFechaRet = new Label();
             LFechaIng = new Label();
             BReservar = new Button();
-            label1 = new Label();
+            panel1 = new Panel();
+            lblDetalleHabitacion = new Label();
+            lblCategoria = new Label();
+            lblPrecio = new Label();
+            lblNroHabitacion = new Label();
+            lblPiso = new Label();
+            lblIDHabitacion = new Label();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // NCantidad
             // 
-            NCantidad.Location = new Point(490, 258);
+            NCantidad.Location = new Point(502, 397);
             NCantidad.Name = "NCantidad";
-            NCantidad.Size = new Size(118, 23);
+            NCantidad.Size = new Size(160, 23);
             NCantidad.TabIndex = 39;
             // 
             // CBServicio
             // 
             CBServicio.FormattingEnabled = true;
             CBServicio.Items.AddRange(new object[] { "[Seleccione]", "Desayuno", "Televisión", "Despertador" });
-            CBServicio.Location = new Point(472, 178);
+            CBServicio.Location = new Point(502, 337);
             CBServicio.Name = "CBServicio";
             CBServicio.Size = new Size(160, 23);
             CBServicio.TabIndex = 38;
             // 
             // DTRetiro
             // 
-            DTRetiro.Location = new Point(152, 123);
+            DTRetiro.Location = new Point(159, 279);
             DTRetiro.Name = "DTRetiro";
             DTRetiro.Size = new Size(160, 23);
             DTRetiro.TabIndex = 37;
             // 
             // DTIngreso
             // 
-            DTIngreso.Location = new Point(152, 74);
+            DTIngreso.Location = new Point(159, 229);
             DTIngreso.Name = "DTIngreso";
             DTIngreso.Size = new Size(160, 23);
             DTIngreso.TabIndex = 36;
             // 
             // TTelefono
             // 
-            TTelefono.Location = new Point(490, 115);
+            TTelefono.Location = new Point(502, 279);
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(160, 23);
             TTelefono.TabIndex = 35;
@@ -89,7 +96,7 @@
             // LServicio
             // 
             LServicio.AutoSize = true;
-            LServicio.Location = new Point(348, 186);
+            LServicio.Location = new Point(369, 337);
             LServicio.Name = "LServicio";
             LServicio.Size = new Size(105, 15);
             LServicio.TabIndex = 34;
@@ -98,7 +105,7 @@
             // LCantidad
             // 
             LCantidad.AutoSize = true;
-            LCantidad.Location = new Point(357, 230);
+            LCantidad.Location = new Point(369, 400);
             LCantidad.Name = "LCantidad";
             LCantidad.Size = new Size(127, 15);
             LCantidad.TabIndex = 33;
@@ -107,7 +114,7 @@
             // LTel
             // 
             LTel.AutoSize = true;
-            LTel.Location = new Point(357, 123);
+            LTel.Location = new Point(369, 285);
             LTel.Name = "LTel";
             LTel.Size = new Size(117, 15);
             LTel.TabIndex = 32;
@@ -116,7 +123,7 @@
             // LDNI
             // 
             LDNI.AutoSize = true;
-            LDNI.Location = new Point(361, 74);
+            LDNI.Location = new Point(369, 237);
             LDNI.Name = "LDNI";
             LDNI.Size = new Size(92, 15);
             LDNI.TabIndex = 31;
@@ -124,21 +131,21 @@
             // 
             // TDNI
             // 
-            TDNI.Location = new Point(472, 71);
+            TDNI.Location = new Point(502, 232);
             TDNI.Name = "TDNI";
             TDNI.Size = new Size(160, 23);
             TDNI.TabIndex = 30;
             // 
             // TNombre
             // 
-            TNombre.Location = new Point(152, 170);
+            TNombre.Location = new Point(159, 334);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(160, 23);
             TNombre.TabIndex = 29;
             // 
             // TApellido
             // 
-            TApellido.Location = new Point(152, 222);
+            TApellido.Location = new Point(159, 397);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(160, 23);
             TApellido.TabIndex = 28;
@@ -146,7 +153,7 @@
             // LApellido
             // 
             LApellido.AutoSize = true;
-            LApellido.Location = new Point(10, 225);
+            LApellido.Location = new Point(12, 400);
             LApellido.Name = "LApellido";
             LApellido.Size = new Size(116, 15);
             LApellido.TabIndex = 27;
@@ -155,7 +162,7 @@
             // LNombre
             // 
             LNombre.AutoSize = true;
-            LNombre.Location = new Point(10, 173);
+            LNombre.Location = new Point(12, 337);
             LNombre.Name = "LNombre";
             LNombre.Size = new Size(116, 15);
             LNombre.TabIndex = 26;
@@ -164,7 +171,7 @@
             // LFechaRet
             // 
             LFechaRet.AutoSize = true;
-            LFechaRet.Location = new Point(10, 129);
+            LFechaRet.Location = new Point(12, 279);
             LFechaRet.Name = "LFechaRet";
             LFechaRet.Size = new Size(94, 15);
             LFechaRet.TabIndex = 25;
@@ -173,7 +180,7 @@
             // LFechaIng
             // 
             LFechaIng.AutoSize = true;
-            LFechaIng.Location = new Point(10, 80);
+            LFechaIng.Location = new Point(12, 229);
             LFechaIng.Name = "LFechaIng";
             LFechaIng.Size = new Size(102, 15);
             LFechaIng.TabIndex = 24;
@@ -183,28 +190,87 @@
             // 
             BReservar.BackColor = Color.Lime;
             BReservar.FlatStyle = FlatStyle.Popup;
-            BReservar.Location = new Point(126, 313);
+            BReservar.Location = new Point(258, 462);
             BReservar.Name = "BReservar";
             BReservar.Size = new Size(113, 44);
             BReservar.TabIndex = 23;
             BReservar.Text = "Reservar";
             BReservar.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // panel1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(82, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(127, 15);
-            label1.TabIndex = 40;
-            label1.Text = "falta detalle habitacion";
+            panel1.Controls.Add(lblDetalleHabitacion);
+            panel1.Controls.Add(lblCategoria);
+            panel1.Controls.Add(lblPrecio);
+            panel1.Controls.Add(lblNroHabitacion);
+            panel1.Controls.Add(lblPiso);
+            panel1.Controls.Add(lblIDHabitacion);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(698, 189);
+            panel1.TabIndex = 40;
+            // 
+            // lblDetalleHabitacion
+            // 
+            lblDetalleHabitacion.AutoSize = true;
+            lblDetalleHabitacion.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDetalleHabitacion.Location = new Point(31, 9);
+            lblDetalleHabitacion.Name = "lblDetalleHabitacion";
+            lblDetalleHabitacion.Size = new Size(184, 30);
+            lblDetalleHabitacion.TabIndex = 53;
+            lblDetalleHabitacion.Text = "Detalle Habitacion";
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(35, 133);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(58, 15);
+            lblCategoria.TabIndex = 52;
+            lblCategoria.Text = "Categoria";
+            // 
+            // lblPrecio
+            // 
+            lblPrecio.AutoSize = true;
+            lblPrecio.Location = new Point(173, 133);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(40, 15);
+            lblPrecio.TabIndex = 51;
+            lblPrecio.Text = "Precio";
+            // 
+            // lblNroHabitacion
+            // 
+            lblNroHabitacion.AutoSize = true;
+            lblNroHabitacion.Location = new Point(328, 67);
+            lblNroHabitacion.Name = "lblNroHabitacion";
+            lblNroHabitacion.Size = new Size(88, 15);
+            lblNroHabitacion.TabIndex = 49;
+            lblNroHabitacion.Text = "Nro Habitacion";
+            // 
+            // lblPiso
+            // 
+            lblPiso.AutoSize = true;
+            lblPiso.Location = new Point(173, 67);
+            lblPiso.Name = "lblPiso";
+            lblPiso.Size = new Size(29, 15);
+            lblPiso.TabIndex = 48;
+            lblPiso.Text = "Piso";
+            // 
+            // lblIDHabitacion
+            // 
+            lblIDHabitacion.AutoSize = true;
+            lblIDHabitacion.Location = new Point(31, 67);
+            lblIDHabitacion.Name = "lblIDHabitacion";
+            lblIDHabitacion.Size = new Size(79, 15);
+            lblIDHabitacion.TabIndex = 47;
+            lblIDHabitacion.Text = "ID Habitacion";
             // 
             // Asignar_Reserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(636, 441);
-            Controls.Add(label1);
+            ClientSize = new Size(699, 531);
+            Controls.Add(panel1);
             Controls.Add(NCantidad);
             Controls.Add(CBServicio);
             Controls.Add(DTRetiro);
@@ -225,6 +291,8 @@
             Name = "Asignar_Reserva";
             Text = "Asignar_Reserva";
             ((System.ComponentModel.ISupportInitialize)NCantidad).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -248,6 +316,12 @@
         private Label LFechaRet;
         private Label LFechaIng;
         private Button BReservar;
-        private Label label1;
+        private Panel panel1;
+        private Label lblDetalleHabitacion;
+        private Label lblCategoria;
+        private Label lblPrecio;
+        private Label lblNroHabitacion;
+        private Label lblPiso;
+        private Label lblIDHabitacion;
     }
 }

@@ -16,7 +16,7 @@
     <Compile Update="Presentacion\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Pagos.cs">
+    <Compile Update="Presentacion\Administrador\Gastos del Hotel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\Ingresos.cs">
@@ -37,7 +37,7 @@
     <Compile Update="Presentacion\Recepcionista\Cobrar Habitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Recepcionista\Reserva CRUD.cs">
+    <Compile Update="Presentacion\Recepcionista\GestionReserva.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\Recepcionista\ServiciosAdicionales.cs">
