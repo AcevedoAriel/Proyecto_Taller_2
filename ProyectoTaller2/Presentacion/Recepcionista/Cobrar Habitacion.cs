@@ -15,6 +15,31 @@ namespace ProyectoTaller2.Presentacion.Recepcionista
         public Cobrar_Habitacion()
         {
             InitializeComponent();
+            CBCantidadCuota.SelectedIndex = 0;
+            CBMetodoPago.SelectedIndex = 0;
+        }
+
+        private void btnCobrarHabitacion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado;
+
+            if (CBCantidadCuota.SelectedIndex != 0 && CBMetodoPago.SelectedIndex != 0)
+            {
+                resultado = MessageBox.Show("Desea confirmar el Pago?", "Confirmar Pago", MessageBoxButtons.YesNo);
+
+                if (resultado == DialogResult.Yes)
+                {
+
+
+                    MessageBox.Show("Pago Guardado con exito", "Guardado");
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error");
+
+            }
         }
     }
 }

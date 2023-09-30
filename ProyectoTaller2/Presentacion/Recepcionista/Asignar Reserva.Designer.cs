@@ -92,6 +92,7 @@
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(160, 23);
             TTelefono.TabIndex = 35;
+            TTelefono.KeyPress += TTelefono_KeyPress;
             // 
             // LServicio
             // 
@@ -135,6 +136,7 @@
             TDNI.Name = "TDNI";
             TDNI.Size = new Size(160, 23);
             TDNI.TabIndex = 30;
+            TDNI.KeyPress += TDNI_KeyPress;
             // 
             // TNombre
             // 
@@ -142,6 +144,7 @@
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(160, 23);
             TNombre.TabIndex = 29;
+            TNombre.KeyPress += TNombre_KeyPress;
             // 
             // TApellido
             // 
@@ -149,6 +152,7 @@
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(160, 23);
             TApellido.TabIndex = 28;
+            TApellido.KeyPress += TApellido_KeyPress;
             // 
             // LApellido
             // 
@@ -196,6 +200,7 @@
             BReservar.TabIndex = 23;
             BReservar.Text = "Reservar";
             BReservar.UseVisualStyleBackColor = false;
+            BReservar.Click += BReservar_Click;
             // 
             // panel1
             // 
@@ -225,45 +230,45 @@
             lblCategoria.AutoSize = true;
             lblCategoria.Location = new Point(35, 133);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(58, 15);
+            lblCategoria.Size = new Size(64, 15);
             lblCategoria.TabIndex = 52;
-            lblCategoria.Text = "Categoria";
+            lblCategoria.Text = "Categoria :";
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Location = new Point(173, 133);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(40, 15);
+            lblPrecio.Size = new Size(46, 15);
             lblPrecio.TabIndex = 51;
-            lblPrecio.Text = "Precio";
+            lblPrecio.Text = "Precio :";
             // 
             // lblNroHabitacion
             // 
             lblNroHabitacion.AutoSize = true;
             lblNroHabitacion.Location = new Point(328, 67);
             lblNroHabitacion.Name = "lblNroHabitacion";
-            lblNroHabitacion.Size = new Size(88, 15);
+            lblNroHabitacion.Size = new Size(94, 15);
             lblNroHabitacion.TabIndex = 49;
-            lblNroHabitacion.Text = "Nro Habitacion";
+            lblNroHabitacion.Text = "Nro Habitacion :";
             // 
             // lblPiso
             // 
             lblPiso.AutoSize = true;
             lblPiso.Location = new Point(173, 67);
             lblPiso.Name = "lblPiso";
-            lblPiso.Size = new Size(29, 15);
+            lblPiso.Size = new Size(35, 15);
             lblPiso.TabIndex = 48;
-            lblPiso.Text = "Piso";
+            lblPiso.Text = "Piso :";
             // 
             // lblIDHabitacion
             // 
             lblIDHabitacion.AutoSize = true;
             lblIDHabitacion.Location = new Point(31, 67);
             lblIDHabitacion.Name = "lblIDHabitacion";
-            lblIDHabitacion.Size = new Size(79, 15);
+            lblIDHabitacion.Size = new Size(85, 15);
             lblIDHabitacion.TabIndex = 47;
-            lblIDHabitacion.Text = "ID Habitacion";
+            lblIDHabitacion.Text = "ID Habitacion :";
             // 
             // Asignar_Reserva
             // 
@@ -289,6 +294,7 @@
             Controls.Add(LFechaIng);
             Controls.Add(BReservar);
             Name = "Asignar_Reserva";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Asignar_Reserva";
             ((System.ComponentModel.ISupportInitialize)NCantidad).EndInit();
             panel1.ResumeLayout(false);

@@ -41,11 +41,9 @@
             LDNI = new Label();
             LTel = new Label();
             LCantidad = new Label();
-            LServicio = new Label();
             TTelefono = new TextBox();
             DTIngreso = new DateTimePicker();
             DTRetiro = new DateTimePicker();
-            CBServicio = new ComboBox();
             NCantidad = new NumericUpDown();
             BBuscar = new Button();
             TBuscar = new TextBox();
@@ -61,6 +59,8 @@
             personas = new DataGridViewTextBoxColumn();
             servicio = new DataGridViewTextBoxColumn();
             BGuardar = new Button();
+            LServicio = new Label();
+            CBServicio = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).BeginInit();
@@ -191,15 +191,6 @@
             LCantidad.TabIndex = 16;
             LCantidad.Text = "Cantidad de Personas :";
             // 
-            // LServicio
-            // 
-            LServicio.AutoSize = true;
-            LServicio.Location = new Point(354, 192);
-            LServicio.Name = "LServicio";
-            LServicio.Size = new Size(105, 15);
-            LServicio.TabIndex = 17;
-            LServicio.Text = "Servicio al Cuarto :";
-            // 
             // TTelefono
             // 
             TTelefono.Location = new Point(505, 136);
@@ -224,16 +215,6 @@
             DTRetiro.Size = new Size(160, 23);
             DTRetiro.TabIndex = 20;
             DTRetiro.TextChanged += CamposTextChanged;
-            // 
-            // CBServicio
-            // 
-            CBServicio.FormattingEnabled = true;
-            CBServicio.Items.AddRange(new object[] { "[Seleccione]", "Desayuno", "Televisión", "Despertador" });
-            CBServicio.Location = new Point(505, 189);
-            CBServicio.Name = "CBServicio";
-            CBServicio.Size = new Size(160, 23);
-            CBServicio.TabIndex = 21;
-            CBServicio.TextChanged += CamposTextChanged;
             // 
             // NCantidad
             // 
@@ -346,6 +327,25 @@
             BGuardar.UseVisualStyleBackColor = false;
             BGuardar.Click += BGuardar_Click;
             // 
+            // LServicio
+            // 
+            LServicio.AutoSize = true;
+            LServicio.Location = new Point(354, 192);
+            LServicio.Name = "LServicio";
+            LServicio.Size = new Size(105, 15);
+            LServicio.TabIndex = 17;
+            LServicio.Text = "Servicio al Cuarto :";
+            // 
+            // CBServicio
+            // 
+            CBServicio.FormattingEnabled = true;
+            CBServicio.Items.AddRange(new object[] { "[Seleccione]", "Desayuno", "Televisión", "Despertador" });
+            CBServicio.Location = new Point(505, 189);
+            CBServicio.Name = "CBServicio";
+            CBServicio.Size = new Size(160, 23);
+            CBServicio.TabIndex = 21;
+            CBServicio.TextChanged += CamposTextChanged;
+            // 
             // GestionReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -400,11 +400,9 @@
         private Label LDNI;
         private Label LTel;
         private Label LCantidad;
-        private Label LServicio;
         private TextBox TTelefono;
         private DateTimePicker DTIngreso;
         private DateTimePicker DTRetiro;
-        private ComboBox CBServicio;
         private NumericUpDown NCantidad;
         private Button BBuscar;
         private TextBox TBuscar;
@@ -420,5 +418,7 @@
         private DataGridViewTextBoxColumn telefono;
         private DataGridViewTextBoxColumn personas;
         private DataGridViewTextBoxColumn servicio;
+        private Label LServicio;
+        private ComboBox CBServicio;
     }
 }

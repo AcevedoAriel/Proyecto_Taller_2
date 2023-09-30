@@ -20,7 +20,6 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.runtimeconfig.json
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.dll
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.pdb
-C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.ConsularUsuario.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Properties.Resources.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.csproj.GenerateResource.cache
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.GeneratedMSBuildEditorConfig.editorconfig
@@ -58,7 +57,6 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.AgregarServicios.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.FMIniciarSesion.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Administrador.FMPrincipal.resources
-C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.RegistrarReserva.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.ServiciosAdicionales.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.exe
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.deps.json
@@ -92,7 +90,10 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.CRUDHabitacion.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.CRUDHabitacion.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.ReservaCRUD.resources
-C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.ReservaCRUD.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.ListaReservas.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Recepcionista.Asignar_Reserva.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Recepcionista.Cobrar_Habitacion.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.ListaReservas.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Recepcionista.Asignar_Reserva.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Recepcionista.Cobrar_Habitacion.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.Presentacion.Administrador.GestionReserva.resources

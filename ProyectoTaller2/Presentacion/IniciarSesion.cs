@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTaller2.Administrador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,13 +28,15 @@ namespace ProyectoTaller2.Presentacion
             if (txtUsuario.Text == "Admin" && txtClave.Text == "123")
             {
                 this.DialogResult = DialogResult.OK;
-
+                
             }
             else if (txtUsuario.Text == "" && txtClave.Text == "")
             {
                 labelError.Visible = true;
                 this.DialogResult = DialogResult.None;
             }
+            
+         
         }
     }
 }

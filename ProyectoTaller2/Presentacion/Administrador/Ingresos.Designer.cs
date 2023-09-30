@@ -33,6 +33,7 @@
             Tbuscar = new TextBox();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
+            btnBuscar = new Button();
             nombre = new DataGridViewTextBoxColumn();
             medioPago = new DataGridViewTextBoxColumn();
             fechaPago = new DataGridViewTextBoxColumn();
@@ -40,9 +41,7 @@
             costoServ = new DataGridViewTextBoxColumn();
             costoHab = new DataGridViewTextBoxColumn();
             subtotal = new DataGridViewTextBoxColumn();
-            descuento = new DataGridViewTextBoxColumn();
             total = new DataGridViewTextBoxColumn();
-            btnBuscar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -69,7 +68,7 @@
             // 
             // Tbuscar
             // 
-            Tbuscar.Location = new Point(401, 129);
+            Tbuscar.Location = new Point(374, 78);
             Tbuscar.Name = "Tbuscar";
             Tbuscar.Size = new Size(198, 23);
             Tbuscar.TabIndex = 3;
@@ -86,13 +85,22 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nombre, medioPago, fechaPago, cuotas, costoServ, costoHab, subtotal, descuento, total });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nombre, medioPago, fechaPago, cuotas, costoServ, costoHab, subtotal, total });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(718, 193);
             dataGridView1.TabIndex = 1;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(615, 78);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 5;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
             // nombre
             // 
@@ -130,24 +138,10 @@
             subtotal.HeaderText = "Subtotal ";
             subtotal.Name = "subtotal";
             // 
-            // descuento
-            // 
-            descuento.HeaderText = "Descuento";
-            descuento.Name = "descuento";
-            // 
             // total
             // 
             total.HeaderText = "Monto Total";
             total.Name = "total";
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(620, 128);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
-            btnBuscar.TabIndex = 5;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
             // 
             // Ingresos
             // 
@@ -174,6 +168,7 @@
         private TextBox Tbuscar;
         private Panel panel1;
         private DataGridView dataGridView1;
+        private Button btnBuscar;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn medioPago;
         private DataGridViewTextBoxColumn fechaPago;
@@ -181,8 +176,6 @@
         private DataGridViewTextBoxColumn costoServ;
         private DataGridViewTextBoxColumn costoHab;
         private DataGridViewTextBoxColumn subtotal;
-        private DataGridViewTextBoxColumn descuento;
         private DataGridViewTextBoxColumn total;
-        private Button btnBuscar;
     }
 }

@@ -227,7 +227,7 @@
             // CBCategoriaH
             // 
             CBCategoriaH.FormattingEnabled = true;
-            CBCategoriaH.Items.AddRange(new object[] { "[Seleccione la categoria]", "Simple", "Doble", "Matrimonial" });
+            CBCategoriaH.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
             CBCategoriaH.Location = new Point(435, 189);
             CBCategoriaH.Name = "CBCategoriaH";
             CBCategoriaH.Size = new Size(169, 23);
@@ -253,7 +253,7 @@
             // CBPiso
             // 
             CBPiso.FormattingEnabled = true;
-            CBPiso.Items.AddRange(new object[] { "[Seleccione el Nro de Piso]", "1", "2", "3" });
+            CBPiso.Items.AddRange(new object[] { "[Seleccione]", "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
             CBPiso.Location = new Point(435, 67);
             CBPiso.Name = "CBPiso";
             CBPiso.Size = new Size(169, 23);
