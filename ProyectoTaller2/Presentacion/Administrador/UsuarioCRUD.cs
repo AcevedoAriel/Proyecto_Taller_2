@@ -219,7 +219,7 @@ namespace ProyectoTaller2.Administrador
                     if (filaSeleccionada != null)
                     {
                         btnEliminar.Visible = true;
-                        filaSeleccionada.Cells["DNI_colum1"].Value = dni; 
+                        filaSeleccionada.Cells["DNI_colum1"].Value = dni;
                         filaSeleccionada.Cells["nombre"].Value = nombre;
                         filaSeleccionada.Cells["apellido"].Value = apellido;
                         filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
