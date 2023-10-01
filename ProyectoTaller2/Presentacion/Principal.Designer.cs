@@ -33,8 +33,8 @@
             MenuUsuario = new FontAwesome.Sharp.IconMenuItem();
             MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
-            MenuPagos = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
+            MenuPagos = new FontAwesome.Sharp.IconMenuItem();
             MenuAjusteAvanzado = new FontAwesome.Sharp.IconMenuItem();
             SubMenuAjusteBackup = new ToolStripMenuItem();
             MenuTitulo = new MenuStrip();
@@ -53,7 +53,7 @@
             MenuIzquierdo.AutoSize = false;
             MenuIzquierdo.BackColor = Color.White;
             MenuIzquierdo.Dock = DockStyle.Left;
-            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuPagos, iconMenuItem3, MenuAjusteAvanzado });
+            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, iconMenuItem3, MenuPagos, MenuAjusteAvanzado });
             MenuIzquierdo.Location = new Point(0, 60);
             MenuIzquierdo.Name = "MenuIzquierdo";
             MenuIzquierdo.Size = new Size(152, 504);
@@ -120,26 +120,11 @@
             MenuReserva.TextImageRelation = TextImageRelation.ImageAboveText;
             MenuReserva.Click += MenuReserva_Click;
             // 
-            // MenuPagos
-            // 
-            MenuPagos.AutoSize = false;
-            MenuPagos.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuPagos.IconChar = FontAwesome.Sharp.IconChar.Pager;
-            MenuPagos.IconColor = Color.Black;
-            MenuPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuPagos.IconSize = 45;
-            MenuPagos.ImageScaling = ToolStripItemImageScaling.None;
-            MenuPagos.Name = "MenuPagos";
-            MenuPagos.Size = new Size(80, 60);
-            MenuPagos.Text = "Pagos";
-            MenuPagos.TextImageRelation = TextImageRelation.ImageAboveText;
-            MenuPagos.Click += MenuPagos_Click;
-            // 
             // iconMenuItem3
             // 
             iconMenuItem3.AutoSize = false;
             iconMenuItem3.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            iconMenuItem3.IconChar = FontAwesome.Sharp.IconChar.Server;
+            iconMenuItem3.IconChar = FontAwesome.Sharp.IconChar.BellConcierge;
             iconMenuItem3.IconColor = Color.Black;
             iconMenuItem3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMenuItem3.IconSize = 45;
@@ -149,6 +134,21 @@
             iconMenuItem3.Text = "Servicios";
             iconMenuItem3.TextImageRelation = TextImageRelation.ImageAboveText;
             iconMenuItem3.Click += MenuServicios_Click;
+            // 
+            // MenuPagos
+            // 
+            MenuPagos.AutoSize = false;
+            MenuPagos.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            MenuPagos.IconColor = Color.Black;
+            MenuPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuPagos.IconSize = 45;
+            MenuPagos.ImageScaling = ToolStripItemImageScaling.None;
+            MenuPagos.Name = "MenuPagos";
+            MenuPagos.Size = new Size(80, 60);
+            MenuPagos.Text = "Ingresos";
+            MenuPagos.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuPagos.Click += MenuPagos_Click;
             // 
             // MenuAjusteAvanzado
             // 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             Tbuscar = new TextBox();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
@@ -42,25 +41,18 @@
             interes = new DataGridViewTextBoxColumn();
             total = new DataGridViewTextBoxColumn();
             btnBuscar = new Button();
+            label1 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(280, 37);
-            label1.TabIndex = 1;
-            label1.Text = "Registro de Ingresos";
             // 
             // Tbuscar
             // 
-            Tbuscar.Location = new Point(399, 24);
+            Tbuscar.Location = new Point(464, 32);
             Tbuscar.Name = "Tbuscar";
-            Tbuscar.Size = new Size(198, 23);
+            Tbuscar.Size = new Size(228, 23);
             Tbuscar.TabIndex = 3;
             Tbuscar.TextChanged += Tbuscar_TextChanged;
             // 
@@ -134,33 +126,60 @@
             btnBuscar.BackColor = Color.White;
             btnBuscar.FlatStyle = FlatStyle.Popup;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(614, 17);
+            btnBuscar.ForeColor = Color.Black;
+            btnBuscar.Location = new Point(717, 21);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(78, 34);
             btnBuscar.TabIndex = 5;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label1.Location = new Point(108, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(300, 37);
+            label1.TabIndex = 6;
+            label1.Text = "Ingresos de Pagos";
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.Control;
+            iconPictureBox1.ForeColor = Color.Black;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            iconPictureBox1.IconColor = Color.Black;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 100;
+            iconPictureBox1.Location = new Point(3, 3);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(100, 101);
+            iconPictureBox1.TabIndex = 7;
+            iconPictureBox1.TabStop = false;
+            // 
             // Ingresos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(iconPictureBox1);
+            Controls.Add(label1);
             Controls.Add(btnBuscar);
             Controls.Add(panel1);
             Controls.Add(Tbuscar);
-            Controls.Add(label1);
+            ForeColor = Color.White;
             Name = "Ingresos";
             Text = "Ingresos";
             Load += Ingresos_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label1;
         private TextBox Tbuscar;
         private Panel panel1;
         private DataGridView dataGridView1;
@@ -174,5 +193,7 @@
         private DataGridViewTextBoxColumn subtotal;
         private DataGridViewTextBoxColumn interes;
         private DataGridViewTextBoxColumn total;
+        private Label label1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

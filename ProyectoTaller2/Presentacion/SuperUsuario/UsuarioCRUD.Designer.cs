@@ -83,7 +83,7 @@ namespace ProyectoTaller2.Administrador
             BEditar.BackColor = Color.DodgerBlue;
             BEditar.FlatStyle = FlatStyle.Popup;
             BEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BEditar.Location = new Point(694, 140);
+            BEditar.Location = new Point(705, 141);
             BEditar.Name = "BEditar";
             BEditar.Size = new Size(110, 47);
             BEditar.TabIndex = 66;
@@ -173,7 +173,7 @@ namespace ProyectoTaller2.Administrador
             // DTFechaNac
             // 
             DTFechaNac.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DTFechaNac.Location = new Point(485, 232);
+            DTFechaNac.Location = new Point(510, 232);
             DTFechaNac.Name = "DTFechaNac";
             DTFechaNac.Size = new Size(174, 21);
             DTFechaNac.TabIndex = 64;
@@ -183,7 +183,7 @@ namespace ProyectoTaller2.Administrador
             TSexo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TSexo.FormattingEnabled = true;
             TSexo.Items.AddRange(new object[] { "[Seleccione Sexo]", "Hombre", "Mujer", "Otros", "Prefiero no decirlo" });
-            TSexo.Location = new Point(485, 153);
+            TSexo.Location = new Point(510, 153);
             TSexo.Name = "TSexo";
             TSexo.Size = new Size(174, 23);
             TSexo.TabIndex = 63;
@@ -192,7 +192,7 @@ namespace ProyectoTaller2.Administrador
             // TTelefono
             // 
             TTelefono.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TTelefono.Location = new Point(485, 120);
+            TTelefono.Location = new Point(510, 120);
             TTelefono.MaxLength = 10;
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(174, 21);
@@ -203,7 +203,7 @@ namespace ProyectoTaller2.Administrador
             // TCorreo
             // 
             TCorreo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TCorreo.Location = new Point(485, 190);
+            TCorreo.Location = new Point(510, 191);
             TCorreo.Name = "TCorreo";
             TCorreo.Size = new Size(174, 21);
             TCorreo.TabIndex = 61;
@@ -213,49 +213,49 @@ namespace ProyectoTaller2.Administrador
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(342, 126);
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(354, 123);
             label4.Name = "label4";
-            label4.Size = new Size(56, 15);
+            label4.Size = new Size(71, 15);
             label4.TabIndex = 60;
-            label4.Text = "Teléfono";
+            label4.Text = "Teléfono :";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(342, 237);
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(354, 236);
             label3.Name = "label3";
-            label3.Size = new Size(123, 15);
+            label3.Size = new Size(151, 15);
             label3.TabIndex = 59;
-            label3.Text = "Fecha de Nacimiento";
+            label3.Text = "Fecha de Nacimiento :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(342, 161);
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(354, 156);
             label2.Name = "label2";
-            label2.Size = new Size(35, 15);
+            label2.Size = new Size(47, 15);
             label2.TabIndex = 58;
-            label2.Text = "Sexo";
+            label2.Text = "Sexo :";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(342, 190);
+            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(354, 194);
             label1.Name = "label1";
-            label1.Size = new Size(118, 15);
+            label1.Size = new Size(143, 15);
             label1.TabIndex = 57;
-            label1.Text = "Dirección de Correo";
+            label1.Text = "Dirección de Correo :";
             // 
             // BRegistrar
             // 
             BRegistrar.BackColor = Color.Lime;
             BRegistrar.FlatStyle = FlatStyle.Popup;
             BRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BRegistrar.Location = new Point(694, 72);
+            BRegistrar.Location = new Point(705, 73);
             BRegistrar.Name = "BRegistrar";
             BRegistrar.Size = new Size(110, 46);
             BRegistrar.TabIndex = 55;
@@ -268,7 +268,7 @@ namespace ProyectoTaller2.Administrador
             CBPerfil.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             CBPerfil.FormattingEnabled = true;
             CBPerfil.Items.AddRange(new object[] { "[Seleccione el tipo de usuario]", "Super Usuario", "Administrador", "Recepcionista" });
-            CBPerfil.Location = new Point(485, 84);
+            CBPerfil.Location = new Point(510, 84);
             CBPerfil.Name = "CBPerfil";
             CBPerfil.Size = new Size(174, 23);
             CBPerfil.TabIndex = 54;
@@ -277,7 +277,7 @@ namespace ProyectoTaller2.Administrador
             // TNombreUsuario
             // 
             TNombreUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TNombreUsuario.Location = new Point(139, 204);
+            TNombreUsuario.Location = new Point(155, 206);
             TNombreUsuario.Name = "TNombreUsuario";
             TNombreUsuario.Size = new Size(175, 21);
             TNombreUsuario.TabIndex = 53;
@@ -287,7 +287,7 @@ namespace ProyectoTaller2.Administrador
             // TClave
             // 
             TClave.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TClave.Location = new Point(139, 231);
+            TClave.Location = new Point(155, 233);
             TClave.Name = "TClave";
             TClave.Size = new Size(175, 21);
             TClave.TabIndex = 52;
@@ -298,7 +298,7 @@ namespace ProyectoTaller2.Administrador
             // TNombre
             // 
             TNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TNombre.Location = new Point(139, 140);
+            TNombre.Location = new Point(155, 142);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(175, 21);
             TNombre.TabIndex = 51;
@@ -308,7 +308,7 @@ namespace ProyectoTaller2.Administrador
             // TApellido
             // 
             TApellido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TApellido.Location = new Point(139, 172);
+            TApellido.Location = new Point(155, 174);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(175, 21);
             TApellido.TabIndex = 50;
@@ -318,59 +318,59 @@ namespace ProyectoTaller2.Administrador
             // LContraseña
             // 
             LContraseña.AutoSize = true;
-            LContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LContraseña.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LContraseña.Location = new Point(13, 232);
             LContraseña.Name = "LContraseña";
-            LContraseña.Size = new Size(69, 15);
+            LContraseña.Size = new Size(88, 15);
             LContraseña.TabIndex = 49;
-            LContraseña.Text = "Contraseña";
+            LContraseña.Text = "Contraseña :";
             // 
             // LPerfil
             // 
             LPerfil.AutoSize = true;
-            LPerfil.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LPerfil.Location = new Point(342, 92);
+            LPerfil.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LPerfil.Location = new Point(354, 88);
             LPerfil.Name = "LPerfil";
-            LPerfil.Size = new Size(64, 15);
+            LPerfil.Size = new Size(81, 15);
             LPerfil.TabIndex = 48;
-            LPerfil.Text = "Tipo Perfil";
+            LPerfil.Text = "Tipo Perfil :";
             // 
             // LNombreUsuario
             // 
             LNombreUsuario.AutoSize = true;
-            LNombreUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LNombreUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LNombreUsuario.Location = new Point(12, 206);
             LNombreUsuario.Name = "LNombreUsuario";
-            LNombreUsuario.Size = new Size(115, 15);
+            LNombreUsuario.Size = new Size(140, 15);
             LNombreUsuario.TabIndex = 47;
-            LNombreUsuario.Text = "Nombre de Usuario";
+            LNombreUsuario.Text = "Nombre de Usuario :";
             // 
             // LApellido
             // 
             LApellido.AutoSize = true;
-            LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LApellido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LApellido.Location = new Point(13, 178);
             LApellido.Name = "LApellido";
-            LApellido.Size = new Size(52, 15);
+            LApellido.Size = new Size(67, 15);
             LApellido.TabIndex = 46;
-            LApellido.Text = "Apellido";
+            LApellido.Text = "Apellido :";
             // 
             // LNombre
             // 
             LNombre.AutoSize = true;
-            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LNombre.Location = new Point(13, 144);
             LNombre.Name = "LNombre";
-            LNombre.Size = new Size(53, 15);
+            LNombre.Size = new Size(66, 15);
             LNombre.TabIndex = 45;
-            LNombre.Text = "Nombre";
+            LNombre.Text = "Nombre :";
             // 
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.Red;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(694, 206);
+            btnEliminar.Location = new Point(705, 207);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(110, 47);
             btnEliminar.TabIndex = 67;
@@ -383,7 +383,7 @@ namespace ProyectoTaller2.Administrador
             btnBuscar.BackColor = Color.White;
             btnBuscar.FlatStyle = FlatStyle.Popup;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(727, 12);
+            btnBuscar.Location = new Point(738, 12);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(77, 38);
             btnBuscar.TabIndex = 69;
@@ -392,7 +392,7 @@ namespace ProyectoTaller2.Administrador
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(495, 21);
+            txtBuscar.Location = new Point(510, 21);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(194, 23);
             txtBuscar.TabIndex = 70;
@@ -418,7 +418,7 @@ namespace ProyectoTaller2.Administrador
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
             BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BGuardar.Location = new Point(694, 71);
+            BGuardar.Location = new Point(705, 72);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(110, 47);
             BGuardar.TabIndex = 72;
@@ -431,7 +431,7 @@ namespace ProyectoTaller2.Administrador
             pictureBox1.Image = Properties.Resources.perfiil;
             pictureBox1.Location = new Point(12, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(127, 95);
+            pictureBox1.Size = new Size(115, 95);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 73;
             pictureBox1.TabStop = false;
@@ -439,7 +439,7 @@ namespace ProyectoTaller2.Administrador
             // txtDNI
             // 
             txtDNI.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDNI.Location = new Point(139, 110);
+            txtDNI.Location = new Point(155, 112);
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(175, 21);
             txtDNI.TabIndex = 75;
@@ -448,21 +448,23 @@ namespace ProyectoTaller2.Administrador
             // lblDniUsuario
             // 
             lblDniUsuario.AutoSize = true;
-            lblDniUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDniUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblDniUsuario.Location = new Point(13, 116);
             lblDniUsuario.Name = "lblDniUsuario";
-            lblDniUsuario.Size = new Size(29, 15);
+            lblDniUsuario.Size = new Size(39, 15);
             lblDniUsuario.TabIndex = 74;
-            lblDniUsuario.Text = "DNI";
+            lblDniUsuario.Text = "DNI :";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(168, 24);
+            label5.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(133, 3);
             label5.Name = "label5";
-            label5.Size = new Size(38, 15);
+            label5.Size = new Size(326, 37);
             label5.TabIndex = 76;
-            label5.Text = "label5";
+            label5.Text = "Gestión de Usuarios";
             // 
             // UsuarioCRUD
             // 

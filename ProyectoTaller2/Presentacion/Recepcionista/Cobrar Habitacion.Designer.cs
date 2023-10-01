@@ -47,19 +47,19 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(137, 93);
             label2.Name = "label2";
-            label2.Size = new Size(0, 15);
+            label2.Size = new Size(0, 13);
             label2.TabIndex = 1;
             // 
             // lblPagoTotal
             // 
             lblPagoTotal.AutoSize = true;
-            lblPagoTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPagoTotal.Location = new Point(277, 200);
+            lblPagoTotal.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPagoTotal.Location = new Point(276, 206);
             lblPagoTotal.Name = "lblPagoTotal";
-            lblPagoTotal.Size = new Size(48, 20);
+            lblPagoTotal.Size = new Size(51, 18);
             lblPagoTotal.TabIndex = 2;
             lblPagoTotal.Text = "Total:";
             // 
@@ -98,90 +98,90 @@
             // lblCantidadDeCuota
             // 
             lblCantidadDeCuota.AutoSize = true;
-            lblCantidadDeCuota.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCantidadDeCuota.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblCantidadDeCuota.Location = new Point(59, 311);
             lblCantidadDeCuota.Name = "lblCantidadDeCuota";
-            lblCantidadDeCuota.Size = new Size(112, 15);
+            lblCantidadDeCuota.Size = new Size(132, 15);
             lblCantidadDeCuota.TabIndex = 9;
             lblCantidadDeCuota.Text = "Cantidad de Cuotas";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(59, 242);
             label1.Name = "label1";
-            label1.Size = new Size(101, 15);
+            label1.Size = new Size(116, 15);
             label1.TabIndex = 10;
             label1.Text = "Metodo de Pago:";
             // 
             // lblSubTotal
             // 
             lblSubTotal.AutoSize = true;
-            lblSubTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSubTotal.Location = new Point(59, 200);
+            lblSubTotal.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSubTotal.Location = new Point(58, 206);
             lblSubTotal.Name = "lblSubTotal";
-            lblSubTotal.Size = new Size(78, 20);
+            lblSubTotal.Size = new Size(85, 18);
             lblSubTotal.TabIndex = 11;
             lblSubTotal.Text = "Sub Total:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(59, 23);
             label3.Name = "label3";
-            label3.Size = new Size(72, 15);
+            label3.Size = new Size(84, 15);
             label3.TabIndex = 12;
             label3.Text = "Habitación :";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(59, 50);
             label4.Name = "label4";
-            label4.Size = new Size(87, 15);
+            label4.Size = new Size(98, 15);
             label4.TabIndex = 13;
             label4.Text = "A Nombre de :";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(59, 78);
             label5.Name = "label5";
-            label5.Size = new Size(132, 15);
+            label5.Size = new Size(155, 15);
             label5.TabIndex = 14;
             label5.Text = "Servicios Adicionados :";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(59, 108);
             label6.Name = "label6";
-            label6.Size = new Size(127, 15);
+            label6.Size = new Size(149, 15);
             label6.TabIndex = 15;
             label6.Text = "Precio de Habitación :";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(59, 141);
             label7.Name = "label7";
-            label7.Size = new Size(121, 15);
+            label7.Size = new Size(141, 15);
             label7.TabIndex = 16;
             label7.Text = "Precio por servicios :";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(59, 169);
             label8.Name = "label8";
-            label8.Size = new Size(109, 15);
+            label8.Size = new Size(129, 15);
             label8.TabIndex = 17;
             label8.Text = "Taza de Intereses :";
             // 

@@ -61,9 +61,11 @@
             BGuardar = new Button();
             LServicio = new Label();
             CBServicio = new ComboBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // LReservas
@@ -71,18 +73,18 @@
             LReservas.AutoEllipsis = true;
             LReservas.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             LReservas.ForeColor = Color.White;
-            LReservas.Location = new Point(25, 3);
+            LReservas.Location = new Point(103, 3);
             LReservas.Name = "LReservas";
-            LReservas.Size = new Size(275, 46);
+            LReservas.Size = new Size(340, 46);
             LReservas.TabIndex = 0;
-            LReservas.Text = "Reserva";
+            LReservas.Text = "Gestión de Reservas";
             // 
             // BEditar
             // 
             BEditar.BackColor = Color.DodgerBlue;
             BEditar.FlatStyle = FlatStyle.Popup;
             BEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BEditar.Location = new Point(703, 144);
+            BEditar.Location = new Point(703, 159);
             BEditar.Name = "BEditar";
             BEditar.Size = new Size(113, 46);
             BEditar.TabIndex = 3;
@@ -95,7 +97,7 @@
             BEliminar.BackColor = Color.Red;
             BEliminar.FlatStyle = FlatStyle.Popup;
             BEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BEliminar.Location = new Point(703, 208);
+            BEliminar.Location = new Point(703, 223);
             BEliminar.Name = "BEliminar";
             BEliminar.Size = new Size(113, 46);
             BEliminar.TabIndex = 4;
@@ -106,46 +108,46 @@
             // LFechaIng
             // 
             LFechaIng.AutoSize = true;
-            LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LFechaIng.Location = new Point(24, 91);
+            LFechaIng.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LFechaIng.Location = new Point(20, 96);
             LFechaIng.Name = "LFechaIng";
-            LFechaIng.Size = new Size(107, 15);
+            LFechaIng.Size = new Size(126, 15);
             LFechaIng.TabIndex = 5;
             LFechaIng.Text = "Fecha de Ingreso :";
             // 
             // LFechaRet
             // 
             LFechaRet.AutoSize = true;
-            LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LFechaRet.Location = new Point(24, 133);
+            LFechaRet.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LFechaRet.Location = new Point(20, 144);
             LFechaRet.Name = "LFechaRet";
-            LFechaRet.Size = new Size(100, 15);
+            LFechaRet.Size = new Size(117, 15);
             LFechaRet.TabIndex = 6;
             LFechaRet.Text = "Fecha de Retiro :";
             // 
             // LNombre
             // 
             LNombre.AutoSize = true;
-            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombre.Location = new Point(24, 195);
+            LNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LNombre.Location = new Point(20, 202);
             LNombre.Name = "LNombre";
-            LNombre.Size = new Size(121, 15);
+            LNombre.Size = new Size(139, 15);
             LNombre.TabIndex = 8;
             LNombre.Text = "Nombre del Cliente :";
             // 
             // LApellido
             // 
             LApellido.AutoSize = true;
-            LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LApellido.Location = new Point(24, 248);
+            LApellido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LApellido.Location = new Point(20, 256);
             LApellido.Name = "LApellido";
-            LApellido.Size = new Size(120, 15);
+            LApellido.Size = new Size(140, 15);
             LApellido.TabIndex = 9;
             LApellido.Text = "Apellido del Cliente :";
             // 
             // TApellido
             // 
-            TApellido.Location = new Point(157, 248);
+            TApellido.Location = new Point(167, 254);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(160, 23);
             TApellido.TabIndex = 10;
@@ -154,7 +156,7 @@
             // 
             // TNombre
             // 
-            TNombre.Location = new Point(157, 192);
+            TNombre.Location = new Point(167, 198);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(160, 23);
             TNombre.TabIndex = 11;
@@ -163,7 +165,7 @@
             // 
             // TDNI
             // 
-            TDNI.Location = new Point(505, 88);
+            TDNI.Location = new Point(516, 94);
             TDNI.Name = "TDNI";
             TDNI.Size = new Size(160, 23);
             TDNI.TabIndex = 13;
@@ -173,36 +175,36 @@
             // LDNI
             // 
             LDNI.AutoSize = true;
-            LDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LDNI.Location = new Point(354, 91);
+            LDNI.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LDNI.Location = new Point(354, 97);
             LDNI.Name = "LDNI";
-            LDNI.Size = new Size(97, 15);
+            LDNI.Size = new Size(112, 15);
             LDNI.TabIndex = 14;
             LDNI.Text = "DNI del Cliente :";
             // 
             // LTel
             // 
             LTel.AutoSize = true;
-            LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LTel.Location = new Point(354, 139);
+            LTel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LTel.Location = new Point(354, 145);
             LTel.Name = "LTel";
-            LTel.Size = new Size(124, 15);
+            LTel.Size = new Size(144, 15);
             LTel.TabIndex = 15;
             LTel.Text = "Telefono del Cliente :";
             // 
             // LCantidad
             // 
             LCantidad.AutoSize = true;
-            LCantidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LCantidad.Location = new Point(354, 250);
+            LCantidad.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LCantidad.Location = new Point(354, 256);
             LCantidad.Name = "LCantidad";
-            LCantidad.Size = new Size(130, 15);
+            LCantidad.Size = new Size(156, 15);
             LCantidad.TabIndex = 16;
             LCantidad.Text = "Cantidad de Personas :";
             // 
             // TTelefono
             // 
-            TTelefono.Location = new Point(505, 136);
+            TTelefono.Location = new Point(516, 142);
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(160, 23);
             TTelefono.TabIndex = 18;
@@ -211,7 +213,7 @@
             // 
             // DTIngreso
             // 
-            DTIngreso.Location = new Point(157, 88);
+            DTIngreso.Location = new Point(167, 94);
             DTIngreso.Name = "DTIngreso";
             DTIngreso.Size = new Size(160, 23);
             DTIngreso.TabIndex = 19;
@@ -219,7 +221,7 @@
             // 
             // DTRetiro
             // 
-            DTRetiro.Location = new Point(157, 133);
+            DTRetiro.Location = new Point(167, 139);
             DTRetiro.Name = "DTRetiro";
             DTRetiro.Size = new Size(160, 23);
             DTRetiro.TabIndex = 20;
@@ -227,7 +229,7 @@
             // 
             // NCantidad
             // 
-            NCantidad.Location = new Point(505, 248);
+            NCantidad.Location = new Point(516, 254);
             NCantidad.Name = "NCantidad";
             NCantidad.Size = new Size(160, 23);
             NCantidad.TabIndex = 22;
@@ -238,7 +240,7 @@
             BBuscar.BackColor = Color.White;
             BBuscar.FlatStyle = FlatStyle.Popup;
             BBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BBuscar.Location = new Point(582, 12);
+            BBuscar.Location = new Point(733, 17);
             BBuscar.Name = "BBuscar";
             BBuscar.Size = new Size(83, 38);
             BBuscar.TabIndex = 23;
@@ -247,9 +249,9 @@
             // 
             // TBuscar
             // 
-            TBuscar.Location = new Point(399, 17);
+            TBuscar.Location = new Point(505, 17);
             TBuscar.Name = "TBuscar";
-            TBuscar.Size = new Size(156, 23);
+            TBuscar.Size = new Size(192, 23);
             TBuscar.TabIndex = 24;
             // 
             // panel1
@@ -330,7 +332,7 @@
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
             BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BGuardar.Location = new Point(703, 79);
+            BGuardar.Location = new Point(703, 94);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(113, 44);
             BGuardar.TabIndex = 26;
@@ -341,10 +343,10 @@
             // LServicio
             // 
             LServicio.AutoSize = true;
-            LServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LServicio.Location = new Point(354, 192);
+            LServicio.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LServicio.Location = new Point(354, 198);
             LServicio.Name = "LServicio";
-            LServicio.Size = new Size(110, 15);
+            LServicio.Size = new Size(128, 15);
             LServicio.TabIndex = 17;
             LServicio.Text = "Servicio al Cuarto :";
             // 
@@ -352,17 +354,32 @@
             // 
             CBServicio.FormattingEnabled = true;
             CBServicio.Items.AddRange(new object[] { "[Seleccione]", "Desayuno", "Televisión", "Despertador" });
-            CBServicio.Location = new Point(505, 189);
+            CBServicio.Location = new Point(516, 195);
             CBServicio.Name = "CBServicio";
             CBServicio.Size = new Size(160, 23);
             CBServicio.TabIndex = 21;
             CBServicio.TextChanged += CamposTextChanged;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.Control;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 85;
+            iconPictureBox1.Location = new Point(12, 3);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(85, 85);
+            iconPictureBox1.TabIndex = 27;
+            iconPictureBox1.TabStop = false;
             // 
             // GestionReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(iconPictureBox1);
             Controls.Add(BGuardar);
             Controls.Add(panel1);
             Controls.Add(TBuscar);
@@ -393,6 +410,7 @@
             ((System.ComponentModel.ISupportInitialize)NCantidad).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -433,5 +451,6 @@
         private DataGridViewTextBoxColumn servicio;
         private Label LServicio;
         private ComboBox CBServicio;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

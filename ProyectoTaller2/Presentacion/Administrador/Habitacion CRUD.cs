@@ -172,5 +172,6 @@ namespace ProyectoTaller2.Presentacion
             }
             btnAgregarHabitacion.Visible = true;
         }
+
     }
 }

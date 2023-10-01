@@ -53,6 +53,9 @@
             numericCantCamas = new NumericUpDown();
             CBPiso = new ComboBox();
             btnGuardarCambios = new Button();
+            label1 = new Label();
+            btnBuscar = new Button();
+            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridListaHabitacion).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -68,7 +71,7 @@
             dataGridListaHabitacion.Location = new Point(0, 0);
             dataGridListaHabitacion.Name = "dataGridListaHabitacion";
             dataGridListaHabitacion.RowTemplate.Height = 25;
-            dataGridListaHabitacion.Size = new Size(645, 185);
+            dataGridListaHabitacion.Size = new Size(645, 165);
             dataGridListaHabitacion.TabIndex = 0;
             dataGridListaHabitacion.SelectionChanged += dataGridListaHabitacion_SelectionChanged;
             // 
@@ -105,16 +108,16 @@
             // panel1
             // 
             panel1.Controls.Add(dataGridListaHabitacion);
-            panel1.Location = new Point(108, 280);
+            panel1.Location = new Point(108, 300);
             panel1.Name = "panel1";
-            panel1.Size = new Size(645, 185);
+            panel1.Size = new Size(645, 165);
             panel1.TabIndex = 1;
             // 
             // lblIDHabitacion
             // 
             lblIDHabitacion.AutoSize = true;
             lblIDHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblIDHabitacion.Location = new Point(304, 35);
+            lblIDHabitacion.Location = new Point(89, 175);
             lblIDHabitacion.Name = "lblIDHabitacion";
             lblIDHabitacion.Size = new Size(82, 15);
             lblIDHabitacion.TabIndex = 2;
@@ -124,7 +127,7 @@
             // 
             lblPiso.AutoSize = true;
             lblPiso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPiso.Location = new Point(304, 75);
+            lblPiso.Location = new Point(89, 215);
             lblPiso.Name = "lblPiso";
             lblPiso.Size = new Size(29, 15);
             lblPiso.TabIndex = 3;
@@ -134,7 +137,7 @@
             // 
             lblNroHabitacion.AutoSize = true;
             lblNroHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNroHabitacion.Location = new Point(304, 115);
+            lblNroHabitacion.Location = new Point(89, 255);
             lblNroHabitacion.Name = "lblNroHabitacion";
             lblNroHabitacion.Size = new Size(90, 15);
             lblNroHabitacion.TabIndex = 4;
@@ -144,7 +147,7 @@
             // 
             lblCantidadCama.AutoSize = true;
             lblCantidadCama.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCantidadCama.Location = new Point(304, 236);
+            lblCantidadCama.Location = new Point(453, 254);
             lblCantidadCama.Name = "lblCantidadCama";
             lblCantidadCama.Size = new Size(110, 15);
             lblCantidadCama.TabIndex = 5;
@@ -154,7 +157,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(304, 156);
+            lblPrecio.Location = new Point(453, 174);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(42, 15);
             lblPrecio.TabIndex = 6;
@@ -164,7 +167,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCategoria.Location = new Point(304, 197);
+            lblCategoria.Location = new Point(453, 215);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(60, 15);
             lblCategoria.TabIndex = 7;
@@ -175,9 +178,9 @@
             btnAgregarHabitacion.BackColor = Color.Lime;
             btnAgregarHabitacion.FlatStyle = FlatStyle.Popup;
             btnAgregarHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregarHabitacion.Location = new Point(642, 35);
+            btnAgregarHabitacion.Location = new Point(168, 106);
             btnAgregarHabitacion.Name = "btnAgregarHabitacion";
-            btnAgregarHabitacion.Size = new Size(134, 40);
+            btnAgregarHabitacion.Size = new Size(117, 40);
             btnAgregarHabitacion.TabIndex = 8;
             btnAgregarHabitacion.Text = "Agregar Habitacion";
             btnAgregarHabitacion.UseVisualStyleBackColor = false;
@@ -185,7 +188,7 @@
             // 
             // TIDHabitacion
             // 
-            TIDHabitacion.Location = new Point(435, 27);
+            TIDHabitacion.Location = new Point(220, 167);
             TIDHabitacion.Name = "TIDHabitacion";
             TIDHabitacion.Size = new Size(169, 23);
             TIDHabitacion.TabIndex = 9;
@@ -193,7 +196,7 @@
             // 
             // TNroHabitacion
             // 
-            TNroHabitacion.Location = new Point(435, 107);
+            TNroHabitacion.Location = new Point(220, 247);
             TNroHabitacion.Name = "TNroHabitacion";
             TNroHabitacion.Size = new Size(169, 23);
             TNroHabitacion.TabIndex = 11;
@@ -201,7 +204,7 @@
             // 
             // TPrecio
             // 
-            TPrecio.Location = new Point(435, 148);
+            TPrecio.Location = new Point(584, 166);
             TPrecio.Name = "TPrecio";
             TPrecio.Size = new Size(169, 23);
             TPrecio.TabIndex = 12;
@@ -212,9 +215,9 @@
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEditar.Location = new Point(642, 113);
+            btnEditar.Location = new Point(388, 106);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(134, 40);
+            btnEditar.Size = new Size(117, 40);
             btnEditar.TabIndex = 13;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -225,9 +228,9 @@
             btnEliminar.BackColor = Color.Red;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(642, 195);
+            btnEliminar.Location = new Point(606, 106);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(134, 40);
+            btnEliminar.Size = new Size(117, 40);
             btnEliminar.TabIndex = 14;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -237,7 +240,7 @@
             // 
             CBCategoriaH.FormattingEnabled = true;
             CBCategoriaH.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
-            CBCategoriaH.Location = new Point(435, 189);
+            CBCategoriaH.Location = new Point(584, 207);
             CBCategoriaH.Name = "CBCategoriaH";
             CBCategoriaH.Size = new Size(169, 23);
             CBCategoriaH.TabIndex = 15;
@@ -247,14 +250,14 @@
             pictureBox1.Image = Properties.Resources.room_1;
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(266, 249);
+            pictureBox1.Size = new Size(109, 98);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 
             // numericCantCamas
             // 
-            numericCantCamas.Location = new Point(435, 228);
+            numericCantCamas.Location = new Point(584, 246);
             numericCantCamas.Name = "numericCantCamas";
             numericCantCamas.Size = new Size(169, 23);
             numericCantCamas.TabIndex = 18;
@@ -263,7 +266,7 @@
             // 
             CBPiso.FormattingEnabled = true;
             CBPiso.Items.AddRange(new object[] { "[Seleccione]", "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
-            CBPiso.Location = new Point(435, 67);
+            CBPiso.Location = new Point(220, 207);
             CBPiso.Name = "CBPiso";
             CBPiso.Size = new Size(169, 23);
             CBPiso.TabIndex = 19;
@@ -273,19 +276,51 @@
             btnGuardarCambios.BackColor = Color.Lime;
             btnGuardarCambios.FlatStyle = FlatStyle.Popup;
             btnGuardarCambios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGuardarCambios.Location = new Point(642, 35);
+            btnGuardarCambios.Location = new Point(168, 106);
             btnGuardarCambios.Name = "btnGuardarCambios";
-            btnGuardarCambios.Size = new Size(134, 40);
+            btnGuardarCambios.Size = new Size(117, 40);
             btnGuardarCambios.TabIndex = 20;
             btnGuardarCambios.Text = "Guardar Cambios";
             btnGuardarCambios.UseVisualStyleBackColor = false;
             btnGuardarCambios.Click += btnGuardarCambios_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(141, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(388, 37);
+            label1.TabIndex = 21;
+            label1.Text = "Gestión de Habitaciones";
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.White;
+            btnBuscar.FlatStyle = FlatStyle.Popup;
+            btnBuscar.Location = new Point(734, 21);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(81, 31);
+            btnBuscar.TabIndex = 22;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(584, 26);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(139, 23);
+            txtBuscar.TabIndex = 23;
             // 
             // CRUDHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(txtBuscar);
+            Controls.Add(btnBuscar);
+            Controls.Add(label1);
             Controls.Add(btnGuardarCambios);
             Controls.Add(CBPiso);
             Controls.Add(numericCantCamas);
@@ -342,5 +377,8 @@
         private DataGridViewTextBoxColumn Colum4Categoria;
         private DataGridViewTextBoxColumn Colum5CantidadDeCamas;
         private DataGridViewTextBoxColumn Colum6Precio;
+        private Label label1;
+        private Button btnBuscar;
+        private TextBox txtBuscar;
     }
 }

@@ -46,60 +46,60 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(55, 35);
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(33, 26);
             label1.Name = "label1";
-            label1.Size = new Size(196, 24);
+            label1.Size = new Size(238, 25);
             label1.TabIndex = 0;
             label1.Text = "Servicios Adicionales";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(82, 115);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(44, 16);
             label2.TabIndex = 1;
             label2.Text = "label2";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(82, 144);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(44, 16);
             label3.TabIndex = 2;
             label3.Text = "label3";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(82, 170);
             label4.Name = "label4";
-            label4.Size = new Size(38, 15);
+            label4.Size = new Size(44, 16);
             label4.TabIndex = 3;
             label4.Text = "label4";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(82, 195);
             label5.Name = "label5";
-            label5.Size = new Size(38, 15);
+            label5.Size = new Size(44, 16);
             label5.TabIndex = 4;
             label5.Text = "label5";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(82, 224);
             label6.Name = "label6";
-            label6.Size = new Size(38, 15);
+            label6.Size = new Size(44, 16);
             label6.TabIndex = 5;
             label6.Text = "label6";
             // 

@@ -58,7 +58,10 @@
             label19 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            label3 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -87,18 +90,18 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(BCama1);
-            panel1.Location = new Point(0, 91);
+            panel1.Location = new Point(2, 163);
             panel1.Name = "panel1";
-            panel1.Size = new Size(714, 296);
+            panel1.Size = new Size(827, 303);
             panel1.TabIndex = 21;
             // 
             // label34
             // 
             label34.AutoSize = true;
             label34.BackColor = Color.White;
-            label34.Location = new Point(590, 185);
+            label34.Location = new Point(590, 160);
             label34.Name = "label34";
-            label34.Size = new Size(33, 15);
+            label34.Size = new Size(35, 13);
             label34.TabIndex = 81;
             label34.Text = "Libre";
             label34.TextAlign = ContentAlignment.MiddleCenter;
@@ -107,9 +110,9 @@
             // label35
             // 
             label35.AutoSize = true;
-            label35.Location = new Point(577, 249);
+            label35.Location = new Point(577, 216);
             label35.Name = "label35";
-            label35.Size = new Size(56, 15);
+            label35.Size = new Size(58, 13);
             label35.TabIndex = 80;
             label35.Text = "Ocupado";
             label35.TextAlign = ContentAlignment.MiddleCenter;
@@ -118,9 +121,9 @@
             // 
             button7.BackColor = Color.Red;
             button7.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(537, 158);
+            button7.Location = new Point(537, 137);
             button7.Name = "button7";
-            button7.Size = new Size(138, 131);
+            button7.Size = new Size(138, 114);
             button7.TabIndex = 79;
             button7.Text = "100";
             button7.UseVisualStyleBackColor = false;
@@ -130,9 +133,9 @@
             // 
             label30.AutoSize = true;
             label30.BackColor = Color.White;
-            label30.Location = new Point(425, 185);
+            label30.Location = new Point(425, 160);
             label30.Name = "label30";
-            label30.Size = new Size(33, 15);
+            label30.Size = new Size(35, 13);
             label30.TabIndex = 76;
             label30.Text = "Libre";
             label30.TextAlign = ContentAlignment.MiddleCenter;
@@ -141,9 +144,9 @@
             // label31
             // 
             label31.AutoSize = true;
-            label31.Location = new Point(412, 249);
+            label31.Location = new Point(412, 216);
             label31.Name = "label31";
-            label31.Size = new Size(56, 15);
+            label31.Size = new Size(58, 13);
             label31.TabIndex = 75;
             label31.Text = "Ocupado";
             label31.TextAlign = ContentAlignment.MiddleCenter;
@@ -152,9 +155,9 @@
             // 
             button6.BackColor = Color.Red;
             button6.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(372, 158);
+            button6.Location = new Point(372, 137);
             button6.Name = "button6";
-            button6.Size = new Size(138, 131);
+            button6.Size = new Size(138, 114);
             button6.TabIndex = 74;
             button6.Text = "100";
             button6.UseVisualStyleBackColor = false;
@@ -164,9 +167,9 @@
             // 
             label26.AutoSize = true;
             label26.BackColor = Color.White;
-            label26.Location = new Point(257, 185);
+            label26.Location = new Point(257, 160);
             label26.Name = "label26";
-            label26.Size = new Size(33, 15);
+            label26.Size = new Size(35, 13);
             label26.TabIndex = 71;
             label26.Text = "Libre";
             label26.TextAlign = ContentAlignment.MiddleCenter;
@@ -175,9 +178,9 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(244, 249);
+            label27.Location = new Point(244, 216);
             label27.Name = "label27";
-            label27.Size = new Size(56, 15);
+            label27.Size = new Size(58, 13);
             label27.TabIndex = 70;
             label27.Text = "Ocupado";
             label27.TextAlign = ContentAlignment.MiddleCenter;
@@ -186,9 +189,9 @@
             // 
             button5.BackColor = Color.Red;
             button5.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(204, 158);
+            button5.Location = new Point(204, 137);
             button5.Name = "button5";
-            button5.Size = new Size(138, 131);
+            button5.Size = new Size(138, 114);
             button5.TabIndex = 69;
             button5.Text = "100";
             button5.UseVisualStyleBackColor = false;
@@ -198,9 +201,9 @@
             // 
             label22.AutoSize = true;
             label22.BackColor = Color.White;
-            label22.Location = new Point(100, 185);
+            label22.Location = new Point(100, 160);
             label22.Name = "label22";
-            label22.Size = new Size(33, 15);
+            label22.Size = new Size(35, 13);
             label22.TabIndex = 66;
             label22.Text = "Libre";
             label22.TextAlign = ContentAlignment.MiddleCenter;
@@ -209,9 +212,9 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(87, 249);
+            label23.Location = new Point(87, 216);
             label23.Name = "label23";
-            label23.Size = new Size(56, 15);
+            label23.Size = new Size(58, 13);
             label23.TabIndex = 65;
             label23.Text = "Ocupado";
             label23.TextAlign = ContentAlignment.MiddleCenter;
@@ -220,9 +223,9 @@
             // 
             button4.BackColor = Color.Red;
             button4.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(47, 158);
+            button4.Location = new Point(47, 137);
             button4.Name = "button4";
-            button4.Size = new Size(138, 131);
+            button4.Size = new Size(138, 114);
             button4.TabIndex = 64;
             button4.Text = "100";
             button4.UseVisualStyleBackColor = false;
@@ -232,9 +235,9 @@
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.White;
-            label15.Location = new Point(590, 37);
+            label15.Location = new Point(590, 32);
             label15.Name = "label15";
-            label15.Size = new Size(33, 15);
+            label15.Size = new Size(35, 13);
             label15.TabIndex = 61;
             label15.Text = "Libre";
             label15.TextAlign = ContentAlignment.MiddleCenter;
@@ -242,9 +245,9 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(577, 102);
+            label16.Location = new Point(577, 88);
             label16.Name = "label16";
-            label16.Size = new Size(56, 15);
+            label16.Size = new Size(58, 13);
             label16.TabIndex = 60;
             label16.Text = "Ocupado";
             label16.TextAlign = ContentAlignment.MiddleCenter;
@@ -254,9 +257,9 @@
             // 
             button3.BackColor = Color.Chartreuse;
             button3.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(537, 10);
+            button3.Location = new Point(537, 9);
             button3.Name = "button3";
-            button3.Size = new Size(138, 131);
+            button3.Size = new Size(138, 114);
             button3.TabIndex = 59;
             button3.Text = "100";
             button3.UseVisualStyleBackColor = false;
@@ -266,9 +269,9 @@
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.White;
-            label11.Location = new Point(425, 37);
+            label11.Location = new Point(425, 32);
             label11.Name = "label11";
-            label11.Size = new Size(33, 15);
+            label11.Size = new Size(35, 13);
             label11.TabIndex = 56;
             label11.Text = "Libre";
             label11.TextAlign = ContentAlignment.MiddleCenter;
@@ -276,9 +279,9 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(412, 102);
+            label12.Location = new Point(412, 88);
             label12.Name = "label12";
-            label12.Size = new Size(56, 15);
+            label12.Size = new Size(58, 13);
             label12.TabIndex = 55;
             label12.Text = "Ocupado";
             label12.TextAlign = ContentAlignment.MiddleCenter;
@@ -288,9 +291,9 @@
             // 
             button2.BackColor = Color.Chartreuse;
             button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(372, 10);
+            button2.Location = new Point(372, 9);
             button2.Name = "button2";
-            button2.Size = new Size(138, 131);
+            button2.Size = new Size(138, 114);
             button2.TabIndex = 54;
             button2.Text = "100";
             button2.UseVisualStyleBackColor = false;
@@ -300,9 +303,9 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.White;
-            label5.Location = new Point(257, 37);
+            label5.Location = new Point(257, 32);
             label5.Name = "label5";
-            label5.Size = new Size(33, 15);
+            label5.Size = new Size(35, 13);
             label5.TabIndex = 51;
             label5.Text = "Libre";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -310,9 +313,9 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(244, 102);
+            label6.Location = new Point(244, 88);
             label6.Name = "label6";
-            label6.Size = new Size(56, 15);
+            label6.Size = new Size(58, 13);
             label6.TabIndex = 50;
             label6.Text = "Ocupado";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -322,9 +325,9 @@
             // 
             button1.BackColor = Color.Chartreuse;
             button1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(204, 10);
+            button1.Location = new Point(204, 9);
             button1.Name = "button1";
-            button1.Size = new Size(138, 131);
+            button1.Size = new Size(138, 114);
             button1.TabIndex = 49;
             button1.Text = "100";
             button1.UseVisualStyleBackColor = false;
@@ -334,9 +337,9 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.White;
-            label2.Location = new Point(100, 37);
+            label2.Location = new Point(100, 32);
             label2.Name = "label2";
-            label2.Size = new Size(33, 15);
+            label2.Size = new Size(35, 13);
             label2.TabIndex = 25;
             label2.Text = "Libre";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -344,9 +347,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(87, 102);
+            label1.Location = new Point(87, 88);
             label1.Name = "label1";
-            label1.Size = new Size(56, 15);
+            label1.Size = new Size(58, 13);
             label1.TabIndex = 24;
             label1.Text = "Ocupado";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -356,9 +359,9 @@
             // 
             BCama1.BackColor = Color.Chartreuse;
             BCama1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            BCama1.Location = new Point(47, 10);
+            BCama1.Location = new Point(47, 9);
             BCama1.Name = "BCama1";
-            BCama1.Size = new Size(138, 131);
+            BCama1.Size = new Size(138, 114);
             BCama1.TabIndex = 16;
             BCama1.Text = "100";
             BCama1.UseVisualStyleBackColor = false;
@@ -367,30 +370,30 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(25, 31);
+            label17.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Location = new Point(12, 99);
             label17.Name = "label17";
-            label17.Size = new Size(129, 32);
+            label17.Size = new Size(142, 29);
             label17.TabIndex = 22;
             label17.Text = "Filtrar por :";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(219, 40);
+            label18.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Location = new Point(213, 108);
             label18.Name = "label18";
-            label18.Size = new Size(84, 21);
+            label18.Size = new Size(91, 18);
             label18.TabIndex = 23;
             label18.Text = "Categoría :";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(474, 42);
+            label19.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.Location = new Point(556, 109);
             label19.Name = "label19";
-            label19.Size = new Size(46, 21);
+            label19.Size = new Size(52, 18);
             label19.TabIndex = 24;
             label19.Text = "Piso :";
             // 
@@ -398,35 +401,64 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
-            comboBox1.Location = new Point(309, 44);
+            comboBox1.Location = new Point(310, 109);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(162, 21);
             comboBox1.TabIndex = 25;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "[Seleccione]", "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
-            comboBox2.Location = new Point(537, 42);
+            comboBox2.Location = new Point(614, 108);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(124, 23);
+            comboBox2.Size = new Size(124, 21);
             comboBox2.TabIndex = 26;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(97, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(478, 37);
+            label3.TabIndex = 27;
+            label3.Text = "Vista General de Habitaciones";
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.Control;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 78;
+            iconPictureBox1.Location = new Point(12, 9);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(79, 78);
+            iconPictureBox1.TabIndex = 28;
+            iconPictureBox1.TabStop = false;
             // 
             // Inicio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(713, 386);
+            ClientSize = new Size(827, 465);
+            Controls.Add(iconPictureBox1);
+            Controls.Add(label3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label19);
             Controls.Add(label18);
             Controls.Add(label17);
             Controls.Add(panel1);
+            Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "Inicio";
             Text = "Inicio";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -462,5 +494,7 @@
         private ComboBox comboBox2;
         private Button button5;
         private Button button1;
+        private Label label3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
