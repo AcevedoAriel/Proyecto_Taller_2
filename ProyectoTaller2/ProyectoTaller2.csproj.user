@@ -34,7 +34,7 @@
     <Compile Update="Presentacion\Recepcionista\ServiciosAdicionales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\SuperUsuario\Backup.cs">
+    <Compile Update="Presentacion\SuperUsuario\BackupRestore.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
