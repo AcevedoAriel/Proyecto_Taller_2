@@ -22,6 +22,7 @@ namespace ProyectoTaller2.Presentacion
         private void BCama1_Click(object sender, EventArgs e)
         {
             Asignar_Reserva fm = new Asignar_Reserva();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }

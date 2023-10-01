@@ -22,7 +22,6 @@ namespace ProyectoTaller2.Administrador
         private static IconMenuItem? MenuActivo;
         //Formulario que esta activo en el panel
         public static Form? FormularioActivo;
-
         public FMPrincipal()
         {
             InitializeComponent();
