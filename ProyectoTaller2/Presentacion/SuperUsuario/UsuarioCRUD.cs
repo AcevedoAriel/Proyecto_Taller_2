@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTaller2.CDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,18 +133,33 @@ namespace ProyectoTaller2.Administrador
 
                 if (resultado == DialogResult.Yes)
                 {
-                    string dni = txtDNI.Text;
-                    string apellido = TApellido.Text;
-                    string nombre = TNombre.Text;
-                    string nombreUsuario = TNombreUsuario.Text;
-                    string clave = TClave.Text;
-                    long telefono = long.Parse(TTelefono.Text);
-                    string correo = TCorreo.Text;
-                    DateTime fecha = DTFechaNac.Value;
-
                     // Agregar una nueva fila al datagrid con los valores
-                    dataGridUsuario.Rows.Add(dni, CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
-                    MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+                    //dataGridUsuario.Rows.Add(dni, CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
+                    
+                    //Crea un objeto Usuario con los valores ingresados
+                    Usuario usuario = new Usuario();
+                    usuario.dni = Convert.ToInt32(txtDNI.Text);
+                    usuario.apellido = TApellido.Text;
+                    usuario.nombre = TNombre.Text; 
+                    usuario.nombreUsuario = TNombreUsuario.Text;
+                    usuario.clave = TClave.Text;
+                    usuario.telefono = TTelefono.Text;
+                    usuario.usuario_perfil = CBPerfil.SelectedIndex;
+                    usuario.correo = TCorreo.Text;
+                    usuario.sexo = TSexo.Text;
+                    usuario.fechaNAc = DTFechaNac.Value;
+
+                    int result = UsuarioDAL.AgregarUsuario(usuario);
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo insertar", "Error", MessageBoxButtons.OK);
+                    }
 
                     limpiarFormulario();
 
@@ -257,6 +273,8 @@ namespace ProyectoTaller2.Administrador
 
         private void UsuarioCRUD_Load(object sender, EventArgs e)
         {
+
+            Conexion cnx = new Conexion();
             CBPerfil.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
         }
