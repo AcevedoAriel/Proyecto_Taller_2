@@ -123,9 +123,9 @@ namespace ProyectoTaller2.Administrador
 
         }
 
-        private void SubMenuAjusteBackup_Click(object sender, EventArgs e)
+        private void MenuAjusteAvanzado_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)MenuAjusteAvanzado, new FMBackupRestore());
+            AbrirFormulario(MenuAjusteAvanzado, new FMBackupRestore());
         }
     }
 }

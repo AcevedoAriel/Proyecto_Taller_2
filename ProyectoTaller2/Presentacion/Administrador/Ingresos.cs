@@ -31,5 +31,19 @@ namespace ProyectoTaller2.Presentacion
         {
 
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (btnBuscar.Text == "")
+            {
+
+                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Aqui va el codigo
+
+            }
+        }
     }
 }

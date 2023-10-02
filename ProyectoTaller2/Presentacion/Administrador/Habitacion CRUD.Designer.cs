@@ -305,12 +305,13 @@
             btnBuscar.TabIndex = 22;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(584, 26);
+            txtBuscar.Location = new Point(550, 26);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(139, 23);
+            txtBuscar.Size = new Size(173, 23);
             txtBuscar.TabIndex = 23;
             // 
             // CRUDHabitacion

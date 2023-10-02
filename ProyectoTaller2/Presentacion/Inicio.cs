@@ -19,7 +19,7 @@ namespace ProyectoTaller2.Presentacion
             InitializeComponent();
         }
 
-        private void BCama1_Click(object sender, EventArgs e)
+        private void btnHabitacion1_Click(object sender, EventArgs e)
         {
             Asignar_Reserva fm = new Asignar_Reserva();
             fm.BackColor = Color.LightSkyBlue;

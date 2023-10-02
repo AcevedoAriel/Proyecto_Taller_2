@@ -50,7 +50,7 @@
             // 
             // Tbuscar
             // 
-            Tbuscar.Location = new Point(464, 32);
+            Tbuscar.Location = new Point(171, 66);
             Tbuscar.Name = "Tbuscar";
             Tbuscar.Size = new Size(228, 23);
             Tbuscar.TabIndex = 3;
@@ -127,18 +127,19 @@
             btnBuscar.FlatStyle = FlatStyle.Popup;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = Color.Black;
-            btnBuscar.Location = new Point(717, 21);
+            btnBuscar.Location = new Point(421, 59);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(78, 34);
             btnBuscar.TabIndex = 5;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(108, 12);
+            label1.Location = new Point(515, 3);
             label1.Name = "label1";
             label1.Size = new Size(300, 37);
             label1.TabIndex = 6;

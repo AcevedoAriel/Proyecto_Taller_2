@@ -37,7 +37,6 @@
             labelClave = new Label();
             txtUsuario = new TextBox();
             txtClave = new TextBox();
-            labelError = new Label();
             ((System.ComponentModel.ISupportInitialize)picboxLogoHOTEL).BeginInit();
             SuspendLayout();
             // 
@@ -131,17 +130,6 @@
             txtClave.TabIndex = 8;
             txtClave.UseSystemPasswordChar = true;
             // 
-            // labelError
-            // 
-            labelError.AutoSize = true;
-            labelError.ForeColor = Color.Red;
-            labelError.Location = new Point(48, 190);
-            labelError.Name = "labelError";
-            labelError.Size = new Size(185, 15);
-            labelError.TabIndex = 9;
-            labelError.Text = "Usuario y/o contraseña Incorrecta";
-            labelError.Visible = false;
-            // 
             // FMIniciarSesion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -149,7 +137,6 @@
             BackColor = Color.White;
             CancelButton = btnCancelar;
             ClientSize = new Size(542, 270);
-            Controls.Add(labelError);
             Controls.Add(txtClave);
             Controls.Add(txtUsuario);
             Controls.Add(labelClave);
@@ -179,6 +166,5 @@
         private Label labelClave;
         private TextBox txtUsuario;
         private TextBox txtClave;
-        private Label labelError;
     }
 }

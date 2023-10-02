@@ -209,7 +209,7 @@
             BReservar.BackColor = Color.Lime;
             BReservar.FlatStyle = FlatStyle.Popup;
             BReservar.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BReservar.Location = new Point(284, 463);
+            BReservar.Location = new Point(206, 463);
             BReservar.Name = "BReservar";
             BReservar.Size = new Size(113, 44);
             BReservar.TabIndex = 23;
@@ -302,12 +302,15 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(493, 456);
+            btnCancelar.BackColor = Color.Red;
+            btnCancelar.FlatStyle = FlatStyle.Popup;
+            btnCancelar.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(374, 463);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(107, 44);
             btnCancelar.TabIndex = 42;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // Asignar_Reserva

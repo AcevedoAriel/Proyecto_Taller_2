@@ -28,15 +28,15 @@ namespace ProyectoTaller2.Presentacion
             if (txtUsuario.Text == "Admin" && txtClave.Text == "123")
             {
                 this.DialogResult = DialogResult.OK;
-                
+
             }
-            else if (txtUsuario.Text == "" && txtClave.Text == "")
+            else if (txtUsuario.Text == "" || txtClave.Text == "")
             {
-                labelError.Visible = true;
-                this.DialogResult = DialogResult.None;
+                //labelError.Visible = true;
+                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //this.DialogResult = DialogResult.None;
             }
-            
-         
+
         }
     }
 }

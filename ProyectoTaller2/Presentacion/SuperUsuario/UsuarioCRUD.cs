@@ -135,12 +135,12 @@ namespace ProyectoTaller2.Administrador
                 {
                     // Agregar una nueva fila al datagrid con los valores
                     //dataGridUsuario.Rows.Add(dni, CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
-                    
+
                     //Crea un objeto Usuario con los valores ingresados
                     Usuario usuario = new Usuario();
                     usuario.dni = Convert.ToInt32(txtDNI.Text);
                     usuario.apellido = TApellido.Text;
-                    usuario.nombre = TNombre.Text; 
+                    usuario.nombre = TNombre.Text;
                     usuario.nombreUsuario = TNombreUsuario.Text;
                     usuario.clave = TClave.Text;
                     usuario.telefono = TTelefono.Text;
@@ -309,6 +309,20 @@ namespace ProyectoTaller2.Administrador
             {
                 e.Handled = true; // Ignorar el carácter presionado
                 MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (btnBuscar.Text == "")
+            {
+
+                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Aqui va el codigo
+
             }
         }
     }

@@ -15,6 +15,7 @@ namespace ProyectoTaller2.Presentacion.Recepcionista
         public Asignar_Reserva()
         {
             InitializeComponent();
+            CBServicio.SelectedIndex = 0;
         }
 
         private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -73,7 +74,7 @@ namespace ProyectoTaller2.Presentacion.Recepcionista
         {
             DialogResult resultado;
 
-            if (TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && CBServicio.SelectedIndex != 0)
+            if (TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && CBServicio.SelectedIndex != 0 && NCantidad.Value != 0)
             {
                 resultado = MessageBox.Show("Confirma la Reserva Ingresada?", "Confirmar Reserva", MessageBoxButtons.YesNo);
 
@@ -84,7 +85,7 @@ namespace ProyectoTaller2.Presentacion.Recepcionista
                     string nombre = TNombre.Text;
                     string dni = TDNI.Text;
                     long telefono = long.Parse(TTelefono.Text);
-                    string cant = NCantidad.Text;
+                    NumericUpDown cantPersona = new NumericUpDown();
                     DateTime ingreso = DTIngreso.Value;
                     DateTime retiro = DTRetiro.Value;
                     MessageBox.Show("Reserva guardada con exito", "Guardado");

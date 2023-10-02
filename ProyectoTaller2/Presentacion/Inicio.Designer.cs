@@ -52,8 +52,7 @@
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
-            BCama1 = new Button();
-            label17 = new Label();
+            btnHabitacion1 = new Button();
             label18 = new Label();
             label19 = new Label();
             comboBox1 = new ComboBox();
@@ -89,7 +88,7 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(BCama1);
+            panel1.Controls.Add(btnHabitacion1);
             panel1.Location = new Point(2, 163);
             panel1.Name = "panel1";
             panel1.Size = new Size(827, 303);
@@ -99,7 +98,7 @@
             // 
             label34.AutoSize = true;
             label34.BackColor = Color.White;
-            label34.Location = new Point(590, 160);
+            label34.Location = new Point(630, 160);
             label34.Name = "label34";
             label34.Size = new Size(35, 13);
             label34.TabIndex = 81;
@@ -110,7 +109,7 @@
             // label35
             // 
             label35.AutoSize = true;
-            label35.Location = new Point(577, 216);
+            label35.Location = new Point(617, 216);
             label35.Name = "label35";
             label35.Size = new Size(58, 13);
             label35.TabIndex = 80;
@@ -121,7 +120,7 @@
             // 
             button7.BackColor = Color.Red;
             button7.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(537, 137);
+            button7.Location = new Point(577, 137);
             button7.Name = "button7";
             button7.Size = new Size(138, 114);
             button7.TabIndex = 79;
@@ -133,7 +132,7 @@
             // 
             label30.AutoSize = true;
             label30.BackColor = Color.White;
-            label30.Location = new Point(425, 160);
+            label30.Location = new Point(465, 160);
             label30.Name = "label30";
             label30.Size = new Size(35, 13);
             label30.TabIndex = 76;
@@ -144,7 +143,7 @@
             // label31
             // 
             label31.AutoSize = true;
-            label31.Location = new Point(412, 216);
+            label31.Location = new Point(452, 216);
             label31.Name = "label31";
             label31.Size = new Size(58, 13);
             label31.TabIndex = 75;
@@ -155,7 +154,7 @@
             // 
             button6.BackColor = Color.Red;
             button6.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(372, 137);
+            button6.Location = new Point(412, 137);
             button6.Name = "button6";
             button6.Size = new Size(138, 114);
             button6.TabIndex = 74;
@@ -167,7 +166,7 @@
             // 
             label26.AutoSize = true;
             label26.BackColor = Color.White;
-            label26.Location = new Point(257, 160);
+            label26.Location = new Point(297, 160);
             label26.Name = "label26";
             label26.Size = new Size(35, 13);
             label26.TabIndex = 71;
@@ -178,7 +177,7 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(244, 216);
+            label27.Location = new Point(284, 216);
             label27.Name = "label27";
             label27.Size = new Size(58, 13);
             label27.TabIndex = 70;
@@ -189,7 +188,7 @@
             // 
             button5.BackColor = Color.Red;
             button5.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(204, 137);
+            button5.Location = new Point(244, 137);
             button5.Name = "button5";
             button5.Size = new Size(138, 114);
             button5.TabIndex = 69;
@@ -201,7 +200,7 @@
             // 
             label22.AutoSize = true;
             label22.BackColor = Color.White;
-            label22.Location = new Point(100, 160);
+            label22.Location = new Point(140, 160);
             label22.Name = "label22";
             label22.Size = new Size(35, 13);
             label22.TabIndex = 66;
@@ -212,7 +211,7 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(87, 216);
+            label23.Location = new Point(127, 216);
             label23.Name = "label23";
             label23.Size = new Size(58, 13);
             label23.TabIndex = 65;
@@ -223,7 +222,7 @@
             // 
             button4.BackColor = Color.Red;
             button4.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(47, 137);
+            button4.Location = new Point(87, 137);
             button4.Name = "button4";
             button4.Size = new Size(138, 114);
             button4.TabIndex = 64;
@@ -235,7 +234,7 @@
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.White;
-            label15.Location = new Point(590, 32);
+            label15.Location = new Point(630, 40);
             label15.Name = "label15";
             label15.Size = new Size(35, 13);
             label15.TabIndex = 61;
@@ -245,7 +244,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(577, 88);
+            label16.Location = new Point(617, 96);
             label16.Name = "label16";
             label16.Size = new Size(58, 13);
             label16.TabIndex = 60;
@@ -257,7 +256,7 @@
             // 
             button3.BackColor = Color.Chartreuse;
             button3.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(537, 9);
+            button3.Location = new Point(577, 17);
             button3.Name = "button3";
             button3.Size = new Size(138, 114);
             button3.TabIndex = 59;
@@ -269,7 +268,7 @@
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.White;
-            label11.Location = new Point(425, 32);
+            label11.Location = new Point(465, 40);
             label11.Name = "label11";
             label11.Size = new Size(35, 13);
             label11.TabIndex = 56;
@@ -279,7 +278,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(412, 88);
+            label12.Location = new Point(452, 96);
             label12.Name = "label12";
             label12.Size = new Size(58, 13);
             label12.TabIndex = 55;
@@ -291,7 +290,7 @@
             // 
             button2.BackColor = Color.Chartreuse;
             button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(372, 9);
+            button2.Location = new Point(412, 17);
             button2.Name = "button2";
             button2.Size = new Size(138, 114);
             button2.TabIndex = 54;
@@ -303,7 +302,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.White;
-            label5.Location = new Point(257, 32);
+            label5.Location = new Point(297, 40);
             label5.Name = "label5";
             label5.Size = new Size(35, 13);
             label5.TabIndex = 51;
@@ -313,7 +312,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(244, 88);
+            label6.Location = new Point(284, 96);
             label6.Name = "label6";
             label6.Size = new Size(58, 13);
             label6.TabIndex = 50;
@@ -325,7 +324,7 @@
             // 
             button1.BackColor = Color.Chartreuse;
             button1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(204, 9);
+            button1.Location = new Point(244, 17);
             button1.Name = "button1";
             button1.Size = new Size(138, 114);
             button1.TabIndex = 49;
@@ -337,7 +336,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.White;
-            label2.Location = new Point(100, 32);
+            label2.Location = new Point(140, 40);
             label2.Name = "label2";
             label2.Size = new Size(35, 13);
             label2.TabIndex = 25;
@@ -347,7 +346,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(87, 88);
+            label1.Location = new Point(127, 96);
             label1.Name = "label1";
             label1.Size = new Size(58, 13);
             label1.TabIndex = 24;
@@ -355,45 +354,35 @@
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Visible = false;
             // 
-            // BCama1
+            // btnHabitacion1
             // 
-            BCama1.BackColor = Color.Chartreuse;
-            BCama1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            BCama1.Location = new Point(47, 9);
-            BCama1.Name = "BCama1";
-            BCama1.Size = new Size(138, 114);
-            BCama1.TabIndex = 16;
-            BCama1.Text = "100";
-            BCama1.UseVisualStyleBackColor = false;
-            BCama1.Click += BCama1_Click;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(12, 99);
-            label17.Name = "label17";
-            label17.Size = new Size(142, 29);
-            label17.TabIndex = 22;
-            label17.Text = "Filtrar por :";
+            btnHabitacion1.BackColor = Color.Chartreuse;
+            btnHabitacion1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHabitacion1.Location = new Point(87, 17);
+            btnHabitacion1.Name = "btnHabitacion1";
+            btnHabitacion1.Size = new Size(138, 114);
+            btnHabitacion1.TabIndex = 16;
+            btnHabitacion1.Text = "100";
+            btnHabitacion1.UseVisualStyleBackColor = false;
+            btnHabitacion1.Click += btnHabitacion1_Click;
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label18.Location = new Point(213, 108);
             label18.Name = "label18";
-            label18.Size = new Size(91, 18);
+            label18.Size = new Size(84, 20);
             label18.TabIndex = 23;
             label18.Text = "Categoría :";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label19.Location = new Point(556, 109);
             label19.Name = "label19";
-            label19.Size = new Size(52, 18);
+            label19.Size = new Size(46, 20);
             label19.TabIndex = 24;
             label19.Text = "Piso :";
             // 
@@ -420,7 +409,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(97, 9);
+            label3.Location = new Point(168, 9);
             label3.Name = "label3";
             label3.Size = new Size(478, 37);
             label3.TabIndex = 27;
@@ -433,10 +422,10 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Hotel;
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 78;
-            iconPictureBox1.Location = new Point(12, 9);
+            iconPictureBox1.IconSize = 105;
+            iconPictureBox1.Location = new Point(33, 52);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(79, 78);
+            iconPictureBox1.Size = new Size(105, 105);
             iconPictureBox1.TabIndex = 28;
             iconPictureBox1.TabStop = false;
             // 
@@ -451,7 +440,6 @@
             Controls.Add(comboBox1);
             Controls.Add(label19);
             Controls.Add(label18);
-            Controls.Add(label17);
             Controls.Add(panel1);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "Inicio";
@@ -465,10 +453,9 @@
 
         #endregion
         private Panel panel1;
-        private Button BCama1;
+        private Button btnHabitacion1;
         private Label label1;
         private Label label2;
-        private Label label17;
         private Label label18;
         private Label label19;
         private Label label34;

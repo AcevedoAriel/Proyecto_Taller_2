@@ -108,40 +108,40 @@
             // LFechaIng
             // 
             LFechaIng.AutoSize = true;
-            LFechaIng.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaIng.Location = new Point(20, 96);
             LFechaIng.Name = "LFechaIng";
-            LFechaIng.Size = new Size(126, 15);
+            LFechaIng.Size = new Size(107, 15);
             LFechaIng.TabIndex = 5;
             LFechaIng.Text = "Fecha de Ingreso :";
             // 
             // LFechaRet
             // 
             LFechaRet.AutoSize = true;
-            LFechaRet.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaRet.Location = new Point(20, 144);
             LFechaRet.Name = "LFechaRet";
-            LFechaRet.Size = new Size(117, 15);
+            LFechaRet.Size = new Size(100, 15);
             LFechaRet.TabIndex = 6;
             LFechaRet.Text = "Fecha de Retiro :";
             // 
             // LNombre
             // 
             LNombre.AutoSize = true;
-            LNombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LNombre.Location = new Point(20, 202);
             LNombre.Name = "LNombre";
-            LNombre.Size = new Size(139, 15);
+            LNombre.Size = new Size(121, 15);
             LNombre.TabIndex = 8;
             LNombre.Text = "Nombre del Cliente :";
             // 
             // LApellido
             // 
             LApellido.AutoSize = true;
-            LApellido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LApellido.Location = new Point(20, 256);
             LApellido.Name = "LApellido";
-            LApellido.Size = new Size(140, 15);
+            LApellido.Size = new Size(120, 15);
             LApellido.TabIndex = 9;
             LApellido.Text = "Apellido del Cliente :";
             // 
@@ -175,30 +175,30 @@
             // LDNI
             // 
             LDNI.AutoSize = true;
-            LDNI.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LDNI.Location = new Point(354, 97);
             LDNI.Name = "LDNI";
-            LDNI.Size = new Size(112, 15);
+            LDNI.Size = new Size(97, 15);
             LDNI.TabIndex = 14;
             LDNI.Text = "DNI del Cliente :";
             // 
             // LTel
             // 
             LTel.AutoSize = true;
-            LTel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LTel.Location = new Point(354, 145);
             LTel.Name = "LTel";
-            LTel.Size = new Size(144, 15);
+            LTel.Size = new Size(124, 15);
             LTel.TabIndex = 15;
             LTel.Text = "Telefono del Cliente :";
             // 
             // LCantidad
             // 
             LCantidad.AutoSize = true;
-            LCantidad.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LCantidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LCantidad.Location = new Point(354, 256);
             LCantidad.Name = "LCantidad";
-            LCantidad.Size = new Size(156, 15);
+            LCantidad.Size = new Size(130, 15);
             LCantidad.TabIndex = 16;
             LCantidad.Text = "Cantidad de Personas :";
             // 
@@ -343,10 +343,10 @@
             // LServicio
             // 
             LServicio.AutoSize = true;
-            LServicio.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LServicio.Location = new Point(354, 198);
             LServicio.Name = "LServicio";
-            LServicio.Size = new Size(128, 15);
+            LServicio.Size = new Size(110, 15);
             LServicio.TabIndex = 17;
             LServicio.Text = "Servicio al Cuarto :";
             // 

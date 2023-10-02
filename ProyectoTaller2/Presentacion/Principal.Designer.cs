@@ -36,7 +36,6 @@
             iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
             MenuPagos = new FontAwesome.Sharp.IconMenuItem();
             MenuAjusteAvanzado = new FontAwesome.Sharp.IconMenuItem();
-            SubMenuAjusteBackup = new ToolStripMenuItem();
             MenuTitulo = new MenuStrip();
             MenuSalir = new FontAwesome.Sharp.IconMenuItem();
             perfilToolStripMenuItem = new ToolStripMenuItem();
@@ -153,7 +152,6 @@
             // MenuAjusteAvanzado
             // 
             MenuAjusteAvanzado.AutoSize = false;
-            MenuAjusteAvanzado.DropDownItems.AddRange(new ToolStripItem[] { SubMenuAjusteBackup });
             MenuAjusteAvanzado.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
             MenuAjusteAvanzado.IconChar = FontAwesome.Sharp.IconChar.Wrench;
             MenuAjusteAvanzado.IconColor = Color.Black;
@@ -164,13 +162,7 @@
             MenuAjusteAvanzado.Size = new Size(80, 60);
             MenuAjusteAvanzado.Text = "Ajustes";
             MenuAjusteAvanzado.TextImageRelation = TextImageRelation.ImageAboveText;
-            // 
-            // SubMenuAjusteBackup
-            // 
-            SubMenuAjusteBackup.Name = "SubMenuAjusteBackup";
-            SubMenuAjusteBackup.Size = new Size(111, 22);
-            SubMenuAjusteBackup.Text = "Backup";
-            SubMenuAjusteBackup.Click += SubMenuAjusteBackup_Click;
+            MenuAjusteAvanzado.Click += MenuAjusteAvanzado_Click;
             // 
             // MenuTitulo
             // 
@@ -280,6 +272,5 @@
         private ToolStripMenuItem hOTELDELPARANAToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem MenuAjusteAvanzado;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem3;
-        private ToolStripMenuItem SubMenuAjusteBackup;
     }
 }

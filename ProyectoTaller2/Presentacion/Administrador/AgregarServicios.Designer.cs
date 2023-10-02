@@ -57,7 +57,7 @@
             btnGuardarCambios.BackColor = Color.Lime;
             btnGuardarCambios.FlatStyle = FlatStyle.Popup;
             btnGuardarCambios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGuardarCambios.Location = new Point(519, 127);
+            btnGuardarCambios.Location = new Point(579, 266);
             btnGuardarCambios.Name = "btnGuardarCambios";
             btnGuardarCambios.Size = new Size(134, 40);
             btnGuardarCambios.TabIndex = 24;
@@ -70,7 +70,7 @@
             btnEliminar.BackColor = Color.Red;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(519, 267);
+            btnEliminar.Location = new Point(579, 413);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(134, 40);
             btnEliminar.TabIndex = 23;
@@ -82,7 +82,7 @@
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEditar.Location = new Point(519, 197);
+            btnEditar.Location = new Point(579, 340);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(134, 40);
             btnEditar.TabIndex = 22;
@@ -95,7 +95,7 @@
             btnAgregarServicio.BackColor = Color.Lime;
             btnAgregarServicio.FlatStyle = FlatStyle.Popup;
             btnAgregarServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregarServicio.Location = new Point(519, 127);
+            btnAgregarServicio.Location = new Point(579, 266);
             btnAgregarServicio.Name = "btnAgregarServicio";
             btnAgregarServicio.Size = new Size(134, 40);
             btnAgregarServicio.TabIndex = 21;
@@ -127,7 +127,7 @@
             // 
             txtPrecio.Location = new Point(236, 217);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(164, 23);
+            txtPrecio.Size = new Size(229, 23);
             txtPrecio.TabIndex = 27;
             txtPrecio.KeyPress += txtPrecio_KeyPress;
             // 
@@ -135,7 +135,7 @@
             // 
             txtNombre.Location = new Point(236, 172);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(164, 23);
+            txtNombre.Size = new Size(229, 23);
             txtNombre.TabIndex = 28;
             txtNombre.KeyPress += txtNombre_KeyPress;
             // 
@@ -189,7 +189,7 @@
             // 
             txtCodServicio.Location = new Point(236, 127);
             txtCodServicio.Name = "txtCodServicio";
-            txtCodServicio.Size = new Size(164, 23);
+            txtCodServicio.Size = new Size(229, 23);
             txtCodServicio.TabIndex = 31;
             txtCodServicio.KeyPress += txtCodServicio_KeyPress;
             // 
@@ -220,21 +220,23 @@
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(395, 83);
+            txtBuscar.Location = new Point(236, 83);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(158, 23);
+            txtBuscar.Size = new Size(229, 23);
             txtBuscar.TabIndex = 34;
             // 
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.White;
             btnBuscar.FlatStyle = FlatStyle.Popup;
-            btnBuscar.Location = new Point(579, 78);
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(516, 78);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(74, 30);
             btnBuscar.TabIndex = 35;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // ServiciosCrud
             // 
