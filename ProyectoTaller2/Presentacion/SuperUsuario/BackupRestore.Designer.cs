@@ -55,7 +55,7 @@
             lblTituloRespaldo.AutoSize = true;
             lblTituloRespaldo.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             lblTituloRespaldo.ForeColor = Color.White;
-            lblTituloRespaldo.Location = new Point(104, 9);
+            lblTituloRespaldo.Location = new Point(87, 9);
             lblTituloRespaldo.Name = "lblTituloRespaldo";
             lblTituloRespaldo.Size = new Size(711, 37);
             lblTituloRespaldo.TabIndex = 0;
@@ -105,7 +105,7 @@
             iconPictureBox1.IconSize = 77;
             iconPictureBox1.Location = new Point(2, 9);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(96, 77);
+            iconPictureBox1.Size = new Size(87, 77);
             iconPictureBox1.TabIndex = 4;
             iconPictureBox1.TabStop = false;
             // 
