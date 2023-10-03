@@ -129,3 +129,4 @@ C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-w
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-windows\ProyectoTaller2.dll.config

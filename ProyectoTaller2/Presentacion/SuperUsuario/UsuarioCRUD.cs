@@ -134,7 +134,8 @@ namespace ProyectoTaller2.Administrador
                 if (resultado == DialogResult.Yes)
                 {
                     // Agregar una nueva fila al datagrid con los valores
-                    //dataGridUsuario.Rows.Add(dni, CBPerfil.Text, apellido, nombre, nombreUsuario, clave, correo, TSexo.Text, fecha, telefono);
+
+                    dataGridUsuario.Rows.Add(Convert.ToInt32(txtDNI.Text), CBPerfil.Text, TApellido.Text, TNombre.Text, TNombreUsuario.Text, TClave.Text, TCorreo.Text, TSexo.Text, DTFechaNac.Value, TTelefono.Text);
 
                     //Crea un objeto Usuario con los valores ingresados
                     Usuario usuario = new Usuario();
@@ -277,6 +278,7 @@ namespace ProyectoTaller2.Administrador
             Conexion cnx = new Conexion();
             CBPerfil.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
+
         }
 
         private void TCorreo_KeyPress(object sender, KeyPressEventArgs e)
