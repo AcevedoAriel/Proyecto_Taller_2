@@ -29,6 +29,13 @@ namespace ProyectoTaller2.Presentacion
             {
                 this.DialogResult = DialogResult.OK;
 
+                //FMPrincipal frmPrincipal = new FMPrincipal();
+                //frmPrincipal.AbrirFormulario(frmPrincipal);
+
+                // Luego muestra el formulario que quieres dentro del panel
+                //Inicio formInicio = new Inicio();
+                //frmPrincipal.MostrarFormulario(formInicio);
+
             }
             else if (txtUsuario.Text == "" || txtClave.Text == "")
             {

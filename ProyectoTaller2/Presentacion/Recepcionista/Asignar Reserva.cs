@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTaller2.Administrador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -99,7 +100,7 @@ namespace ProyectoTaller2.Presentacion.Recepcionista
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        public void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

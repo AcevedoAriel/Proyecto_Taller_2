@@ -32,6 +32,18 @@ namespace ProyectoTaller2.Administrador
 
         }
 
+        public void MostrarFormulario(Form fm)
+        {
+            fm.TopLevel = false;
+            fm.FormBorderStyle = FormBorderStyle.None;
+            fm.Dock = DockStyle.Fill;
+            fm.BackColor = Color.LightSkyBlue;
+            PanelPrincipal.Controls.Add(fm);
+            PanelPrincipal.Tag = fm;
+            fm.BringToFront();
+            fm.Show();
+        }
+
         public void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             //si hay un menu activo anteriormente que se regrese al color blanco
@@ -81,6 +93,11 @@ namespace ProyectoTaller2.Administrador
             if (login.ShowDialog() != DialogResult.OK)
             {
                 Close();
+            }
+            else
+            {
+                Inicio fmInicio = new Inicio();
+                MostrarFormulario(fmInicio);
             }
         }
 

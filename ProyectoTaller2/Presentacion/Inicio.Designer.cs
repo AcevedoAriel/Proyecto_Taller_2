@@ -53,12 +53,13 @@
             label2 = new Label();
             label1 = new Label();
             btnHabitacion1 = new Button();
-            label18 = new Label();
-            label19 = new Label();
+            lblCategoria = new Label();
+            lblPiso = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             label3 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            lbl1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
@@ -124,7 +125,7 @@
             button7.Name = "button7";
             button7.Size = new Size(138, 114);
             button7.TabIndex = 79;
-            button7.Text = "100";
+            button7.Text = "107";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
@@ -158,7 +159,7 @@
             button6.Name = "button6";
             button6.Size = new Size(138, 114);
             button6.TabIndex = 74;
-            button6.Text = "100";
+            button6.Text = "106";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
@@ -192,7 +193,7 @@
             button5.Name = "button5";
             button5.Size = new Size(138, 114);
             button5.TabIndex = 69;
-            button5.Text = "100";
+            button5.Text = "105";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
@@ -226,7 +227,7 @@
             button4.Name = "button4";
             button4.Size = new Size(138, 114);
             button4.TabIndex = 64;
-            button4.Text = "100";
+            button4.Text = "104";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
@@ -260,7 +261,7 @@
             button3.Name = "button3";
             button3.Size = new Size(138, 114);
             button3.TabIndex = 59;
-            button3.Text = "100";
+            button3.Text = "103";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -294,7 +295,7 @@
             button2.Name = "button2";
             button2.Size = new Size(138, 114);
             button2.TabIndex = 54;
-            button2.Text = "100";
+            button2.Text = "102";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -328,7 +329,7 @@
             button1.Name = "button1";
             button1.Size = new Size(138, 114);
             button1.TabIndex = 49;
-            button1.Text = "100";
+            button1.Text = "101";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -366,25 +367,25 @@
             btnHabitacion1.UseVisualStyleBackColor = false;
             btnHabitacion1.Click += btnHabitacion1_Click;
             // 
-            // label18
+            // lblCategoria
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(213, 108);
-            label18.Name = "label18";
-            label18.Size = new Size(84, 20);
-            label18.TabIndex = 23;
-            label18.Text = "Categoría :";
+            lblCategoria.AutoSize = true;
+            lblCategoria.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCategoria.Location = new Point(213, 108);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(84, 20);
+            lblCategoria.TabIndex = 23;
+            lblCategoria.Text = "Categoría :";
             // 
-            // label19
+            // lblPiso
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.Location = new Point(556, 109);
-            label19.Name = "label19";
-            label19.Size = new Size(46, 20);
-            label19.TabIndex = 24;
-            label19.Text = "Piso :";
+            lblPiso.AutoSize = true;
+            lblPiso.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPiso.Location = new Point(556, 109);
+            lblPiso.Name = "lblPiso";
+            lblPiso.Size = new Size(46, 20);
+            lblPiso.TabIndex = 24;
+            lblPiso.Text = "Piso :";
             // 
             // comboBox1
             // 
@@ -429,17 +430,28 @@
             iconPictureBox1.TabIndex = 28;
             iconPictureBox1.TabStop = false;
             // 
+            // lbl1
+            // 
+            lbl1.AutoSize = true;
+            lbl1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl1.Location = new Point(2, 140);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(819, 20);
+            lbl1.TabIndex = 29;
+            lbl1.Text = "_______________________________________________________________________________________________________________________________________";
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(lbl1);
             Controls.Add(iconPictureBox1);
             Controls.Add(label3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
-            Controls.Add(label19);
-            Controls.Add(label18);
+            Controls.Add(lblPiso);
+            Controls.Add(lblCategoria);
             Controls.Add(panel1);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "Inicio";
@@ -456,8 +468,8 @@
         private Button btnHabitacion1;
         private Label label1;
         private Label label2;
-        private Label label18;
-        private Label label19;
+        private Label lblCategoria;
+        private Label lblPiso;
         private Label label34;
         private Label label35;
         private Button button7;
@@ -483,5 +495,6 @@
         private Button button1;
         private Label label3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Label lbl1;
     }
 }
