@@ -33,17 +33,6 @@ namespace ProyectoTaller2.Administrador
             BEditar = new Button();
             panel2 = new Panel();
             dataGridUsuario = new DataGridView();
-            DNI_colum1 = new DataGridViewTextBoxColumn();
-            Perfil = new DataGridViewTextBoxColumn();
-            apellido = new DataGridViewTextBoxColumn();
-            nombre = new DataGridViewTextBoxColumn();
-            usuario = new DataGridViewTextBoxColumn();
-            clave = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            sexo = new DataGridViewTextBoxColumn();
-            fechaNac = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            estado = new DataGridViewTextBoxColumn();
             DTFechaNac = new DateTimePicker();
             TSexo = new ComboBox();
             TTelefono = new TextBox();
@@ -103,7 +92,6 @@ namespace ProyectoTaller2.Administrador
             // 
             dataGridUsuario.AllowUserToAddRows = false;
             dataGridUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { DNI_colum1, Perfil, apellido, nombre, usuario, clave, email, sexo, fechaNac, telefono, estado });
             dataGridUsuario.Dock = DockStyle.Fill;
             dataGridUsuario.Location = new Point(0, 0);
             dataGridUsuario.Name = "dataGridUsuario";
@@ -111,64 +99,6 @@ namespace ProyectoTaller2.Administrador
             dataGridUsuario.Size = new Size(827, 185);
             dataGridUsuario.TabIndex = 44;
             dataGridUsuario.SelectionChanged += dataGridUsuario_SelectionChanged;
-            // 
-            // DNI_colum1
-            // 
-            DNI_colum1.HeaderText = "DNI";
-            DNI_colum1.Name = "DNI_colum1";
-            // 
-            // Perfil
-            // 
-            Perfil.HeaderText = "Tipo de Perfil";
-            Perfil.Name = "Perfil";
-            Perfil.Resizable = DataGridViewTriState.True;
-            Perfil.Width = 110;
-            // 
-            // apellido
-            // 
-            apellido.HeaderText = "Apellido";
-            apellido.Name = "apellido";
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "Nombre";
-            nombre.Name = "nombre";
-            // 
-            // usuario
-            // 
-            usuario.HeaderText = "Nombre Usuario";
-            usuario.Name = "usuario";
-            // 
-            // clave
-            // 
-            clave.HeaderText = "Contraseña";
-            clave.Name = "clave";
-            // 
-            // email
-            // 
-            email.HeaderText = "Driección de Correo";
-            email.Name = "email";
-            // 
-            // sexo
-            // 
-            sexo.HeaderText = "Sexo";
-            sexo.Name = "sexo";
-            sexo.Resizable = DataGridViewTriState.True;
-            // 
-            // fechaNac
-            // 
-            fechaNac.HeaderText = "Fecha de Nacimiento";
-            fechaNac.Name = "fechaNac";
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Telefono";
-            telefono.Name = "telefono";
-            // 
-            // estado
-            // 
-            estado.HeaderText = "Estado";
-            estado.Name = "estado";
             // 
             // DTFechaNac
             // 
@@ -547,17 +477,6 @@ namespace ProyectoTaller2.Administrador
         private PictureBox pictureBox1;
         private TextBox txtDNI;
         private Label lblDniUsuario;
-        private DataGridViewTextBoxColumn DNI_colum1;
-        private DataGridViewTextBoxColumn Perfil;
-        private DataGridViewTextBoxColumn apellido;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn usuario;
-        private DataGridViewTextBoxColumn clave;
-        private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn sexo;
-        private DataGridViewTextBoxColumn fechaNac;
-        private DataGridViewTextBoxColumn telefono;
-        private DataGridViewTextBoxColumn estado;
         private Label label5;
     }
 }

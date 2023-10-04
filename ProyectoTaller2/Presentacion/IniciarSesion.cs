@@ -25,7 +25,7 @@ namespace ProyectoTaller2.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Admin" && txtClave.Text == "123")
+            if (txtUsuario.Text == "Admin" && txtClave.Text == "123" || txtUsuario.Text == "Recep" && txtClave.Text == "123" || txtUsuario.Text == "SupUsr" && txtClave.Text == "123")
             {
                 this.DialogResult = DialogResult.OK;
 

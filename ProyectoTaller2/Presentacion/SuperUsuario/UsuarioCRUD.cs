@@ -200,7 +200,7 @@ namespace ProyectoTaller2.Administrador
                 btnEliminar.Visible = false;
 
                 // Reemplaza "Columna1" con el nombre de tu columna  
-                txtDNI.Text = filaSeleccionada.Cells["DNI_colum1"].Value.ToString();
+                /*txtDNI.Text = filaSeleccionada.Cells["DNI_colum1"].Value.ToString();
                 TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
                 TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
                 TNombreUsuario.Text = filaSeleccionada.Cells["usuario"].Value.ToString();
@@ -209,7 +209,7 @@ namespace ProyectoTaller2.Administrador
                 TSexo.Text = filaSeleccionada.Cells["sexo"].Value.ToString();
                 TCorreo.Text = filaSeleccionada.Cells["email"].Value.ToString();
                 DTFechaNac.Text = filaSeleccionada.Cells["fechaNac"].Value.ToString();
-                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
+                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();*/
 
             }
             BRegistrar.Visible = true;
@@ -327,7 +327,7 @@ namespace ProyectoTaller2.Administrador
             }
         }
 
-        public void RefreshPantalla() 
+        public void RefreshPantalla()
         {
             dataGridUsuario.DataSource = UsuarioDB.PresentarRegistro();
         }
