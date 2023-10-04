@@ -135,7 +135,7 @@ namespace ProyectoTaller2.Administrador
                 {
                     // Agregar una nueva fila al datagrid con los valores
 
-                    dataGridUsuario.Rows.Add(Convert.ToInt32(txtDNI.Text), CBPerfil.Text, TApellido.Text, TNombre.Text, TNombreUsuario.Text, TClave.Text, TCorreo.Text, TSexo.Text, DTFechaNac.Value, TTelefono.Text);
+                    //dataGridUsuario.Rows.Add(Convert.ToInt32(txtDNI.Text), CBPerfil.Text, TApellido.Text, TNombre.Text, TNombreUsuario.Text, TClave.Text, TCorreo.Text, TSexo.Text, DTFechaNac.Value, TTelefono.Text);
 
                     //Crea un objeto Usuario con los valores ingresados
                     Usuario usuario = new Usuario();
@@ -150,7 +150,7 @@ namespace ProyectoTaller2.Administrador
                     usuario.sexo = TSexo.Text;
                     usuario.fechaNAc = DTFechaNac.Value;
 
-                    int result = UsuarioDAL.AgregarUsuario(usuario);
+                    int result = UsuarioDB.AgregarUsuario(usuario);
 
                     if (result > 0)
                     {
@@ -163,7 +163,7 @@ namespace ProyectoTaller2.Administrador
                     }
 
                     limpiarFormulario();
-
+                    RefreshPantalla();
                 }
             }
             else
@@ -274,10 +274,9 @@ namespace ProyectoTaller2.Administrador
 
         private void UsuarioCRUD_Load(object sender, EventArgs e)
         {
-
-            Conexion cnx = new Conexion();
             CBPerfil.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
+            RefreshPantalla();
 
         }
 
@@ -326,6 +325,11 @@ namespace ProyectoTaller2.Administrador
                 // Aqui va el codigo
 
             }
+        }
+
+        public void RefreshPantalla() 
+        {
+            dataGridUsuario.DataSource = UsuarioDB.PresentarRegistro();
         }
     }
 }

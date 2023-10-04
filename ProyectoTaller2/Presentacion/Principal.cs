@@ -94,11 +94,11 @@ namespace ProyectoTaller2.Administrador
             {
                 Close();
             }
-            else
+            /*else
             {
                 Inicio fmInicio = new Inicio();
                 MostrarFormulario(fmInicio);
-            }
+            }*/
         }
 
 

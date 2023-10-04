@@ -20,17 +20,6 @@ namespace ProyectoTaller2.CDatos
             return cnx;
         }
 
-        public Conexion() {
-            try
-            {
-                cn = new SqlConnection("Data Source=DESKTOP-45C6NCU\\SQLEXPRESS;Persist Security Info=False;Initial Catalog=GESTION_HOTELERA;User ID=sa;Password=12345678");
-                cn.Open();
-                MessageBox.Show("conexion exitosa", "Conectado", MessageBoxButtons.OK);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("ERROR:" + e.Message, "Error de Conexión");
-            }
-        }
+       
     }
 }

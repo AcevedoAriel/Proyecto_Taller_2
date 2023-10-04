@@ -159,5 +159,16 @@ namespace ProyectoTaller2.Presentacion
 
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (filaSeleccionada != null)
+                {
+                    dataGridServicios.Rows.Remove(filaSeleccionada);
+                }
+            }
+        }
     }
 }
