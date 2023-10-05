@@ -275,6 +275,7 @@ namespace ProyectoTaller2.Administrador
         private void UsuarioCRUD_Load(object sender, EventArgs e)
         {
             CBPerfil.SelectedIndex = 0;
+            CBEstadoUsuario.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
             RefreshPantalla();
 

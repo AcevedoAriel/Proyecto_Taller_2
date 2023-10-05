@@ -62,6 +62,8 @@ namespace ProyectoTaller2.Administrador
             txtDNI = new TextBox();
             lblDniUsuario = new Label();
             label5 = new Label();
+            CBEstadoUsuario = new ComboBox();
+            lblEstadoUsuario = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -113,7 +115,7 @@ namespace ProyectoTaller2.Administrador
             TSexo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TSexo.FormattingEnabled = true;
             TSexo.Items.AddRange(new object[] { "[Seleccione Sexo]", "Hombre", "Mujer" });
-            TSexo.Location = new Point(510, 153);
+            TSexo.Location = new Point(510, 174);
             TSexo.Name = "TSexo";
             TSexo.Size = new Size(174, 23);
             TSexo.TabIndex = 63;
@@ -122,7 +124,7 @@ namespace ProyectoTaller2.Administrador
             // TTelefono
             // 
             TTelefono.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TTelefono.Location = new Point(510, 120);
+            TTelefono.Location = new Point(510, 148);
             TTelefono.MaxLength = 10;
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(174, 21);
@@ -133,7 +135,7 @@ namespace ProyectoTaller2.Administrador
             // TCorreo
             // 
             TCorreo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TCorreo.Location = new Point(510, 191);
+            TCorreo.Location = new Point(510, 205);
             TCorreo.Name = "TCorreo";
             TCorreo.Size = new Size(174, 21);
             TCorreo.TabIndex = 61;
@@ -144,7 +146,7 @@ namespace ProyectoTaller2.Administrador
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(354, 123);
+            label4.Location = new Point(354, 157);
             label4.Name = "label4";
             label4.Size = new Size(62, 15);
             label4.TabIndex = 60;
@@ -164,7 +166,7 @@ namespace ProyectoTaller2.Administrador
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(354, 157);
+            label2.Location = new Point(354, 182);
             label2.Name = "label2";
             label2.Size = new Size(41, 15);
             label2.TabIndex = 58;
@@ -174,7 +176,7 @@ namespace ProyectoTaller2.Administrador
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(354, 194);
+            label1.Location = new Point(354, 213);
             label1.Name = "label1";
             label1.Size = new Size(124, 15);
             label1.TabIndex = 57;
@@ -198,7 +200,7 @@ namespace ProyectoTaller2.Administrador
             CBPerfil.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             CBPerfil.FormattingEnabled = true;
             CBPerfil.Items.AddRange(new object[] { "[Seleccione el tipo de usuario]", "Super Usuario", "Administrador", "Recepcionista" });
-            CBPerfil.Location = new Point(510, 84);
+            CBPerfil.Location = new Point(510, 116);
             CBPerfil.Name = "CBPerfil";
             CBPerfil.Size = new Size(174, 23);
             CBPerfil.TabIndex = 54;
@@ -259,7 +261,7 @@ namespace ProyectoTaller2.Administrador
             // 
             LPerfil.AutoSize = true;
             LPerfil.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LPerfil.Location = new Point(354, 88);
+            LPerfil.Location = new Point(354, 120);
             LPerfil.Name = "LPerfil";
             LPerfil.Size = new Size(70, 15);
             LPerfil.TabIndex = 48;
@@ -397,11 +399,33 @@ namespace ProyectoTaller2.Administrador
             label5.TabIndex = 76;
             label5.Text = "Gestión de Usuarios";
             // 
+            // CBEstadoUsuario
+            // 
+            CBEstadoUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            CBEstadoUsuario.FormattingEnabled = true;
+            CBEstadoUsuario.Items.AddRange(new object[] { "[Seleccione el Estado]", "Activo", "Inactivo" });
+            CBEstadoUsuario.Location = new Point(510, 83);
+            CBEstadoUsuario.Name = "CBEstadoUsuario";
+            CBEstadoUsuario.Size = new Size(174, 23);
+            CBEstadoUsuario.TabIndex = 78;
+            // 
+            // lblEstadoUsuario
+            // 
+            lblEstadoUsuario.AutoSize = true;
+            lblEstadoUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEstadoUsuario.Location = new Point(354, 91);
+            lblEstadoUsuario.Name = "lblEstadoUsuario";
+            lblEstadoUsuario.Size = new Size(46, 15);
+            lblEstadoUsuario.TabIndex = 77;
+            lblEstadoUsuario.Text = "Estado:";
+            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(CBEstadoUsuario);
+            Controls.Add(lblEstadoUsuario);
             Controls.Add(label5);
             Controls.Add(txtDNI);
             Controls.Add(lblDniUsuario);
@@ -478,5 +502,7 @@ namespace ProyectoTaller2.Administrador
         private TextBox txtDNI;
         private Label lblDniUsuario;
         private Label label5;
+        private ComboBox CBEstadoUsuario;
+        private Label lblEstadoUsuario;
     }
 }
