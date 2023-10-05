@@ -21,6 +21,7 @@ namespace ProyectoTaller2.Presentacion
             btnEliminar.Enabled = false;
             CBCategoriaH.SelectedIndex = 0;
             CBPiso.SelectedIndex = 0;
+            CBEstado.SelectedIndex = 0;
         }
 
         private void THabitacion_KeyPress(object sender, KeyPressEventArgs e)
@@ -51,7 +52,7 @@ namespace ProyectoTaller2.Presentacion
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (TIDHabitacion.Text != "" && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
+            if (CBEstado.SelectedIndex != 0 && TIDHabitacion.Text != "" && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
@@ -61,12 +62,13 @@ namespace ProyectoTaller2.Presentacion
                     string IDHabitacion = TIDHabitacion.Text;
                     string Piso = CBPiso.Text;
                     string NroHabiacion = TNroHabitacion.Text;
+                    string Estado = CBEstado.Text;
                     string Precio = TPrecio.Text;
                     string Categoria = CBCategoriaH.Text;
                     decimal numeroDeCamas = numericCantCamas.Value;
 
                     // Agregar una nueva fila al datagrid con los valores
-                    dataGridListaHabitacion.Rows.Add(IDHabitacion, Piso, NroHabiacion, Precio, Categoria, numeroDeCamas);
+                    dataGridListaHabitacion.Rows.Add(IDHabitacion, Piso, NroHabiacion, Categoria, numeroDeCamas, Precio, Estado);
                     MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
 
                     limpiarFormulario();
@@ -88,14 +90,15 @@ namespace ProyectoTaller2.Presentacion
             TPrecio.Clear();
             CBCategoriaH.SelectedIndex = 0;
             numericCantCamas.Value = 0;
+            CBEstado.SelectedIndex = 0;
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (TIDHabitacion.Text != "" && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
+            if (CBEstado.SelectedIndex != 0 && TIDHabitacion.Text != "" && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
             {
-                resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
+                resultado = MessageBox.Show("Seguro que desea actualizar?", "Confirmar Cambios", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
@@ -103,6 +106,7 @@ namespace ProyectoTaller2.Presentacion
                     string IDHabitacion = TIDHabitacion.Text;
                     string Piso = CBPiso.Text;
                     string NroHabiacion = TNroHabitacion.Text;
+                    string Estado = CBEstado.Text;
                     string Precio = TPrecio.Text;
                     string Categoria = CBCategoriaH.Text;
                     decimal numeroDeCamas = numericCantCamas.Value;
@@ -111,15 +115,16 @@ namespace ProyectoTaller2.Presentacion
                     if (filaSeleccionada != null)
                     {
                         btnEliminar.Visible = true;
-                        filaSeleccionada.Cells["Colum1IDHabitacion"].Value = IDHabitacion;
-                        filaSeleccionada.Cells["Colum2Piso"].Value = Piso;
-                        filaSeleccionada.Cells["Colum3NroHabitacion"].Value = NroHabiacion;
-                        filaSeleccionada.Cells["Colum4Categoria"].Value = Categoria;
-                        filaSeleccionada.Cells["Colum5CantidadDeCamas"].Value = numeroDeCamas;
-                        filaSeleccionada.Cells["Colum6Precio"].Value = Precio;
+                        filaSeleccionada.Cells["IDHabitacion"].Value = IDHabitacion;
+                        filaSeleccionada.Cells["Piso"].Value = Piso;
+                        filaSeleccionada.Cells["NroHabitacion"].Value = NroHabiacion;
+                        filaSeleccionada.Cells["Categoria"].Value = Categoria;
+                        filaSeleccionada.Cells["CantidadDeCamas"].Value = numeroDeCamas;
+                        filaSeleccionada.Cells["Precio"].Value = Precio;
+                        filaSeleccionada.Cells["Estado"].Value = Estado;
                     }
 
-                    MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
+                    MessageBox.Show("Se actualizo correctamente", "Actualizado!", MessageBoxButtons.OK);
                     limpiarFormulario();
                     btnGuardarCambios.Visible = false;
                     //btnEliminar.Enabled = true;
@@ -162,12 +167,13 @@ namespace ProyectoTaller2.Presentacion
                 btnAgregarHabitacion.Visible = false;
 
                 // Reemplaza "Columna1" con el nombre de tu columna  
-                TIDHabitacion.Text = filaSeleccionada.Cells["Colum1IDHabitacion"].Value.ToString();
-                CBPiso.Text = filaSeleccionada.Cells["Colum2Piso"].Value.ToString();
-                TNroHabitacion.Text = filaSeleccionada.Cells["Colum3NroHabitacion"].Value.ToString();
-                CBCategoriaH.Text = filaSeleccionada.Cells["Colum4Categoria"].Value.ToString();
-                numericCantCamas.Text = filaSeleccionada.Cells["Colum5CantidadDeCamas"].Value.ToString();
-                TPrecio.Text = filaSeleccionada.Cells["Colum6Precio"].Value.ToString();
+                TIDHabitacion.Text = filaSeleccionada.Cells["IDHabitacion"].Value.ToString();
+                CBPiso.Text = filaSeleccionada.Cells["Piso"].Value.ToString();
+                TNroHabitacion.Text = filaSeleccionada.Cells["NroHabitacion"].Value.ToString();
+                CBCategoriaH.Text = filaSeleccionada.Cells["Categoria"].Value.ToString();
+                numericCantCamas.Text = filaSeleccionada.Cells["CantidadDeCamas"].Value.ToString();
+                TPrecio.Text = filaSeleccionada.Cells["Precio"].Value.ToString();
+                CBEstado.Text = filaSeleccionada.Cells["Estado"].Value.ToString();
 
             }
             btnAgregarHabitacion.Visible = true;

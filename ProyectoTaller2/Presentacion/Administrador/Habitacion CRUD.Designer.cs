@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             dataGridListaHabitacion = new DataGridView();
-            Colum1IDHabitacion = new DataGridViewTextBoxColumn();
-            Colum2Piso = new DataGridViewTextBoxColumn();
-            Colum3NroHabitacion = new DataGridViewTextBoxColumn();
-            Colum4Categoria = new DataGridViewTextBoxColumn();
-            Colum5CantidadDeCamas = new DataGridViewTextBoxColumn();
-            Colum6Precio = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             lblIDHabitacion = new Label();
             lblPiso = new Label();
@@ -56,6 +50,15 @@
             label1 = new Label();
             btnBuscar = new Button();
             txtBuscar = new TextBox();
+            lblEstadoHabitacion = new Label();
+            CBEstado = new ComboBox();
+            IDHabitacion = new DataGridViewTextBoxColumn();
+            Piso = new DataGridViewTextBoxColumn();
+            NroHabitacion = new DataGridViewTextBoxColumn();
+            Categoria = new DataGridViewTextBoxColumn();
+            CantidadDeCamas = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridListaHabitacion).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -66,58 +69,28 @@
             // 
             dataGridListaHabitacion.AllowUserToAddRows = false;
             dataGridListaHabitacion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridListaHabitacion.Columns.AddRange(new DataGridViewColumn[] { Colum1IDHabitacion, Colum2Piso, Colum3NroHabitacion, Colum4Categoria, Colum5CantidadDeCamas, Colum6Precio });
+            dataGridListaHabitacion.Columns.AddRange(new DataGridViewColumn[] { IDHabitacion, Piso, NroHabitacion, Categoria, CantidadDeCamas, Precio, Estado });
             dataGridListaHabitacion.Dock = DockStyle.Fill;
             dataGridListaHabitacion.Location = new Point(0, 0);
             dataGridListaHabitacion.Name = "dataGridListaHabitacion";
             dataGridListaHabitacion.RowTemplate.Height = 25;
-            dataGridListaHabitacion.Size = new Size(645, 165);
+            dataGridListaHabitacion.Size = new Size(762, 165);
             dataGridListaHabitacion.TabIndex = 0;
             dataGridListaHabitacion.SelectionChanged += dataGridListaHabitacion_SelectionChanged;
-            // 
-            // Colum1IDHabitacion
-            // 
-            Colum1IDHabitacion.HeaderText = "ID Habitacion";
-            Colum1IDHabitacion.Name = "Colum1IDHabitacion";
-            // 
-            // Colum2Piso
-            // 
-            Colum2Piso.HeaderText = "Piso";
-            Colum2Piso.Name = "Colum2Piso";
-            // 
-            // Colum3NroHabitacion
-            // 
-            Colum3NroHabitacion.HeaderText = "Nro Habitacion";
-            Colum3NroHabitacion.Name = "Colum3NroHabitacion";
-            // 
-            // Colum4Categoria
-            // 
-            Colum4Categoria.HeaderText = "Categoria";
-            Colum4Categoria.Name = "Colum4Categoria";
-            // 
-            // Colum5CantidadDeCamas
-            // 
-            Colum5CantidadDeCamas.HeaderText = "Cantidad de Camas";
-            Colum5CantidadDeCamas.Name = "Colum5CantidadDeCamas";
-            // 
-            // Colum6Precio
-            // 
-            Colum6Precio.HeaderText = "Precio";
-            Colum6Precio.Name = "Colum6Precio";
             // 
             // panel1
             // 
             panel1.Controls.Add(dataGridListaHabitacion);
-            panel1.Location = new Point(108, 300);
+            panel1.Location = new Point(32, 300);
             panel1.Name = "panel1";
-            panel1.Size = new Size(645, 165);
+            panel1.Size = new Size(762, 165);
             panel1.TabIndex = 1;
             // 
             // lblIDHabitacion
             // 
             lblIDHabitacion.AutoSize = true;
             lblIDHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblIDHabitacion.Location = new Point(89, 175);
+            lblIDHabitacion.Location = new Point(89, 146);
             lblIDHabitacion.Name = "lblIDHabitacion";
             lblIDHabitacion.Size = new Size(82, 15);
             lblIDHabitacion.TabIndex = 2;
@@ -127,7 +100,7 @@
             // 
             lblPiso.AutoSize = true;
             lblPiso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPiso.Location = new Point(89, 215);
+            lblPiso.Location = new Point(89, 192);
             lblPiso.Name = "lblPiso";
             lblPiso.Size = new Size(29, 15);
             lblPiso.TabIndex = 3;
@@ -137,7 +110,7 @@
             // 
             lblNroHabitacion.AutoSize = true;
             lblNroHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNroHabitacion.Location = new Point(89, 255);
+            lblNroHabitacion.Location = new Point(89, 227);
             lblNroHabitacion.Name = "lblNroHabitacion";
             lblNroHabitacion.Size = new Size(90, 15);
             lblNroHabitacion.TabIndex = 4;
@@ -178,7 +151,7 @@
             btnAgregarHabitacion.BackColor = Color.Lime;
             btnAgregarHabitacion.FlatStyle = FlatStyle.Popup;
             btnAgregarHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregarHabitacion.Location = new Point(168, 106);
+            btnAgregarHabitacion.Location = new Point(201, 70);
             btnAgregarHabitacion.Name = "btnAgregarHabitacion";
             btnAgregarHabitacion.Size = new Size(117, 40);
             btnAgregarHabitacion.TabIndex = 8;
@@ -188,7 +161,7 @@
             // 
             // TIDHabitacion
             // 
-            TIDHabitacion.Location = new Point(220, 167);
+            TIDHabitacion.Location = new Point(220, 143);
             TIDHabitacion.Name = "TIDHabitacion";
             TIDHabitacion.Size = new Size(169, 23);
             TIDHabitacion.TabIndex = 9;
@@ -196,7 +169,7 @@
             // 
             // TNroHabitacion
             // 
-            TNroHabitacion.Location = new Point(220, 247);
+            TNroHabitacion.Location = new Point(220, 219);
             TNroHabitacion.Name = "TNroHabitacion";
             TNroHabitacion.Size = new Size(169, 23);
             TNroHabitacion.TabIndex = 11;
@@ -215,7 +188,7 @@
             btnEditar.BackColor = Color.DodgerBlue;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEditar.Location = new Point(388, 106);
+            btnEditar.Location = new Point(396, 70);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(117, 40);
             btnEditar.TabIndex = 13;
@@ -228,7 +201,7 @@
             btnEliminar.BackColor = Color.Red;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.Location = new Point(606, 106);
+            btnEliminar.Location = new Point(606, 70);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(117, 40);
             btnEliminar.TabIndex = 14;
@@ -266,7 +239,7 @@
             // 
             CBPiso.FormattingEnabled = true;
             CBPiso.Items.AddRange(new object[] { "[Seleccione]", "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
-            CBPiso.Location = new Point(220, 207);
+            CBPiso.Location = new Point(220, 184);
             CBPiso.Name = "CBPiso";
             CBPiso.Size = new Size(169, 23);
             CBPiso.TabIndex = 19;
@@ -276,7 +249,7 @@
             btnGuardarCambios.BackColor = Color.Lime;
             btnGuardarCambios.FlatStyle = FlatStyle.Popup;
             btnGuardarCambios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGuardarCambios.Location = new Point(168, 106);
+            btnGuardarCambios.Location = new Point(201, 70);
             btnGuardarCambios.Name = "btnGuardarCambios";
             btnGuardarCambios.Size = new Size(117, 40);
             btnGuardarCambios.TabIndex = 20;
@@ -299,6 +272,7 @@
             // 
             btnBuscar.BackColor = Color.White;
             btnBuscar.FlatStyle = FlatStyle.Popup;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.Location = new Point(734, 21);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(81, 31);
@@ -314,11 +288,71 @@
             txtBuscar.Size = new Size(173, 23);
             txtBuscar.TabIndex = 23;
             // 
+            // lblEstadoHabitacion
+            // 
+            lblEstadoHabitacion.AutoSize = true;
+            lblEstadoHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEstadoHabitacion.Location = new Point(89, 262);
+            lblEstadoHabitacion.Name = "lblEstadoHabitacion";
+            lblEstadoHabitacion.Size = new Size(43, 15);
+            lblEstadoHabitacion.TabIndex = 24;
+            lblEstadoHabitacion.Text = "Estado";
+            // 
+            // CBEstado
+            // 
+            CBEstado.FormattingEnabled = true;
+            CBEstado.Items.AddRange(new object[] { "[Seleccione el Estado]", "Habilitado", "Ocupado", "Mantenimiento" });
+            CBEstado.Location = new Point(220, 259);
+            CBEstado.Name = "CBEstado";
+            CBEstado.Size = new Size(169, 23);
+            CBEstado.TabIndex = 25;
+            // 
+            // IDHabitacion
+            // 
+            IDHabitacion.HeaderText = "ID Habitacion";
+            IDHabitacion.Name = "IDHabitacion";
+            IDHabitacion.Width = 104;
+            // 
+            // Piso
+            // 
+            Piso.HeaderText = "Piso";
+            Piso.Name = "Piso";
+            Piso.Width = 50;
+            // 
+            // NroHabitacion
+            // 
+            NroHabitacion.HeaderText = "Nro Habitacion";
+            NroHabitacion.Name = "NroHabitacion";
+            NroHabitacion.Width = 114;
+            // 
+            // Categoria
+            // 
+            Categoria.HeaderText = "Categoria";
+            Categoria.Name = "Categoria";
+            // 
+            // CantidadDeCamas
+            // 
+            CantidadDeCamas.HeaderText = "Cantidad de Camas";
+            CantidadDeCamas.Name = "CantidadDeCamas";
+            CantidadDeCamas.Width = 140;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
+            // 
             // CRUDHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(CBEstado);
+            Controls.Add(lblEstadoHabitacion);
             Controls.Add(txtBuscar);
             Controls.Add(btnBuscar);
             Controls.Add(label1);
@@ -372,14 +406,17 @@
         private NumericUpDown numericCantCamas;
         private ComboBox CBPiso;
         private Button btnGuardarCambios;
-        private DataGridViewTextBoxColumn Colum1IDHabitacion;
-        private DataGridViewTextBoxColumn Colum2Piso;
-        private DataGridViewTextBoxColumn Colum3NroHabitacion;
-        private DataGridViewTextBoxColumn Colum4Categoria;
-        private DataGridViewTextBoxColumn Colum5CantidadDeCamas;
-        private DataGridViewTextBoxColumn Colum6Precio;
         private Label label1;
         private Button btnBuscar;
         private TextBox txtBuscar;
+        private Label lblEstadoHabitacion;
+        private ComboBox CBEstado;
+        private DataGridViewTextBoxColumn IDHabitacion;
+        private DataGridViewTextBoxColumn Piso;
+        private DataGridViewTextBoxColumn NroHabitacion;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn CantidadDeCamas;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Estado;
     }
 }
