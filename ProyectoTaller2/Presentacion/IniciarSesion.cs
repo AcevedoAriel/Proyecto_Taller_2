@@ -1,5 +1,6 @@
 ﻿using ProyectoTaller2.Administrador;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,23 +24,28 @@ namespace ProyectoTaller2.Presentacion
             this.Close();
         }
 
-        /*private void btnAceptar_Click(object sender, EventArgs e)
+        public void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Admin" && txtClave.Text == "123" || txtUsuario.Text == "Recep" && txtClave.Text == "123" || txtUsuario.Text == "SupUsr" && txtClave.Text == "123")
+            if (txtUsuario.Text == "Admin" && txtClave.Text == "123")
             {
                 this.DialogResult = DialogResult.OK;
-
-
             }
-            else if (txtUsuario.Text == "" || txtClave.Text == "")
+            else if (txtUsuario.Text == "Recep" || txtClave.Text == "456")
             {
+                this.DialogResult = DialogResult.OK;
                 
-                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
 
-        }*/
-        private void btnAceptar_Click(object sender, EventArgs e)
+            }else if (txtUsuario.Text == "SupUsr" || txtClave.Text == "789")
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /*public int perfil ()
         {
             switch (txtUsuario.Text)
             {
@@ -48,43 +54,48 @@ namespace ProyectoTaller2.Presentacion
                     {
                         // Funciones para el perfil de Administrador
 
-                        this.DialogResult = DialogResult.OK;
+                        return 1;
                     }
                     else
                     {
                         MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 0;
                     }
                     break;
 
                 case "Recep":
-                    if (txtClave.Text == "123")
+                    if (txtClave.Text == "456")
                     {
                         // Funciones para el perfil de Recepcionista
-                        this.DialogResult = DialogResult.OK;
+                        return 2;
                     }
                     else
                     {
                         MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 0;
                     }
                     break;
 
                 case "SupUsr":
-                    if (txtClave.Text == "123")
+                    if (txtClave.Text == "789")
                     {
                         // Funciones para el perfil de Superusuario
-                        this.DialogResult = DialogResult.OK;
+                        return 3;
                     }
                     else
                     {
                         MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 0;
                     }
                     break;
 
                 default:
                     MessageBox.Show("El usuario ingresado no tiene un perfil válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return 0;
                     break;
+
             }
-        }
+        }*/
 
     }
 }

@@ -38,8 +38,6 @@ namespace ProyectoTaller2.Administrador
             fm.FormBorderStyle = FormBorderStyle.None;
             fm.Dock = DockStyle.Fill;
             fm.BackColor = Color.LightSkyBlue;
-            PanelPrincipal.Controls.Add(fm);
-            PanelPrincipal.Tag = fm;
             fm.BringToFront();
             fm.Show();
         }
@@ -90,39 +88,53 @@ namespace ProyectoTaller2.Administrador
         {
             FMIniciarSesion login = new();
 
-            if (login.ShowDialog() != DialogResult.OK)
+            switch (login.ShowDialog())
             {
-                Close();
+                case DialogResult.OK:
+                    switch (login.txtUsuario.Text)
+                    {
+                        case "Admin":
+                            if (login.txtClave.Text == "123")
+                            {
+                                MenuBackup.Visible = false;
+                                MenuReserva.Visible = false;
+                                MenuUsuario.Visible = false;
+                            }
+                            break;
+                        case "Recep":
+                            if (login.txtClave.Text == "456")
+                            {
+                                MenuUsuario.Visible = false;
+                                MenuBackup.Visible = false;
+                                MenuServicios.Visible = false;
+                                MenuIngresoDePagos.Visible = false;
+                                MenuHabitacion.Visible = false;
+                            }
+                            break;
+                        case "SupUsr":
+                            if (login.txtClave.Text == "789")
+                            {
+                                MenuServicios.Visible = false;
+                                MenuHabitacion.Visible = false;
+                                MenuReserva.Visible = false;
+                                MenuIngresoDePagos.Visible = false;
+                            }
+                            break;
+                        default:
+                            this.Close();
+                            break;
+                    }
+                    break;
+                default:
+                    this.Close();
+                    break;
             }
-            /*else
-            {
-                Inicio fmInicio = new Inicio();
-                MostrarFormulario(fmInicio);
-            }*/
+
         }
-
-
-
-
-        /* public void MostrarFormularioInicio()
-         {
-             Inicio formInicio = new Inicio();
-             formInicio.TopLevel = false;
-             formInicio.Dock = DockStyle.Fill;
-             Panel1.Controls.Clear();
-             Panel1.Controls.Add(formInicio);
-             formInicio.Show();
-         }*/
 
         private void MenuSalir_Click(object sender, EventArgs e)
         {
-            // Aquí puedes agregar el código para cerrar la sesión y volver a la pantalla de inicio de sesión.
-            // Por ejemplo, si estás utilizando un formulario de inicio de sesión llamado LoginForm:
-
-            FMIniciarSesion loginForm = new FMIniciarSesion();
-            loginForm.Show();
             this.Close();
-            //this.Hide(); // Oculta el formulario actual
 
         }
 
@@ -143,7 +155,7 @@ namespace ProyectoTaller2.Administrador
 
         private void MenuPagos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(MenuPagos, new Ingresos());
+            AbrirFormulario(MenuIngresoDePagos, new Ingresos());
 
         }
 

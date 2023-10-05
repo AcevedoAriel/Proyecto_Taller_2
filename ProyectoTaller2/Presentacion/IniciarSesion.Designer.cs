@@ -164,7 +164,7 @@
         private Label label2;
         private Label labelUsuario;
         private Label labelClave;
-        private TextBox txtUsuario;
-        private TextBox txtClave;
+        public TextBox txtUsuario;
+        public TextBox txtClave;
     }
 }

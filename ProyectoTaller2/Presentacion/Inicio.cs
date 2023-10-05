@@ -78,14 +78,23 @@ namespace ProyectoTaller2.Presentacion
 
         private void btnFiltrarFecha_Click(object sender, EventArgs e)
         {
-            DateTime fechaSeleccionada = dateTimeFechaHabitacion.Value;
+            DateTime fechaDesde = dateTimeFechaDesde.Value;
 
             // Validar que la fecha seleccionada no sea una fecha pasada
-            if (fechaSeleccionada < DateTime.Now)
+            if (fechaDesde < DateTime.Now)
             {
                 MessageBox.Show("No se puede Reservar una fecha Pasada");
                 return; // Salir del evento sin realizar el filtrado
             }
+
+            DateTime fechaHasta = dateTimeFechaHasta.Value;
+            if (fechaHasta < fechaDesde)
+            {
+                MessageBox.Show("La fecha de retirno debe ser mayor que la Fecha de Ingreso");
+                return; // Salir del evento sin realizar el filtrado
+            }
+
+
         }
     }
 }

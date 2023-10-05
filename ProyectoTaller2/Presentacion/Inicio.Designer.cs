@@ -60,9 +60,11 @@
             label3 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lbl1 = new Label();
-            lblFecha = new Label();
-            dateTimeFechaHabitacion = new DateTimePicker();
+            lblDesde = new Label();
+            dateTimeFechaDesde = new DateTimePicker();
             btnFiltrarFecha = new Button();
+            dateTimeFechaHasta = new DateTimePicker();
+            lblHasta = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
@@ -396,7 +398,7 @@
             comboBox1.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
             comboBox1.Location = new Point(249, 110);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(162, 21);
+            comboBox1.Size = new Size(165, 21);
             comboBox1.TabIndex = 25;
             // 
             // comboBox2
@@ -443,45 +445,65 @@
             lbl1.TabIndex = 29;
             lbl1.Text = "_______________________________________________________________________________________________________________________________________";
             // 
-            // lblFecha
+            // lblDesde
             // 
-            lblFecha.AutoSize = true;
-            lblFecha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblFecha.Location = new Point(439, 74);
-            lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(49, 20);
-            lblFecha.TabIndex = 30;
-            lblFecha.Text = "Fecha";
+            lblDesde.AutoSize = true;
+            lblDesde.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDesde.Location = new Point(439, 74);
+            lblDesde.Name = "lblDesde";
+            lblDesde.Size = new Size(56, 20);
+            lblDesde.TabIndex = 30;
+            lblDesde.Text = "Desde:";
             // 
-            // dateTimeFechaHabitacion
+            // dateTimeFechaDesde
             // 
-            dateTimeFechaHabitacion.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dateTimeFechaHabitacion.Location = new Point(494, 74);
-            dateTimeFechaHabitacion.Name = "dateTimeFechaHabitacion";
-            dateTimeFechaHabitacion.Size = new Size(227, 22);
-            dateTimeFechaHabitacion.TabIndex = 31;
+            dateTimeFechaDesde.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dateTimeFechaDesde.Location = new Point(494, 74);
+            dateTimeFechaDesde.Name = "dateTimeFechaDesde";
+            dateTimeFechaDesde.Size = new Size(227, 22);
+            dateTimeFechaDesde.TabIndex = 31;
             // 
             // btnFiltrarFecha
             // 
             btnFiltrarFecha.BackColor = Color.White;
             btnFiltrarFecha.FlatStyle = FlatStyle.Popup;
             btnFiltrarFecha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltrarFecha.Location = new Point(727, 68);
+            btnFiltrarFecha.Location = new Point(727, 75);
             btnFiltrarFecha.Name = "btnFiltrarFecha";
-            btnFiltrarFecha.Size = new Size(88, 37);
+            btnFiltrarFecha.Size = new Size(88, 53);
             btnFiltrarFecha.TabIndex = 32;
             btnFiltrarFecha.Text = "Buscar";
             btnFiltrarFecha.UseVisualStyleBackColor = false;
             btnFiltrarFecha.Click += btnFiltrarFecha_Click;
+            // 
+            // dateTimeFechaHasta
+            // 
+            dateTimeFechaHasta.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dateTimeFechaHasta.Location = new Point(494, 111);
+            dateTimeFechaHasta.Name = "dateTimeFechaHasta";
+            dateTimeFechaHasta.Size = new Size(227, 22);
+            dateTimeFechaHasta.TabIndex = 34;
+            // 
+            // lblHasta
+            // 
+            lblHasta.AutoSize = true;
+            lblHasta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblHasta.Location = new Point(439, 111);
+            lblHasta.Name = "lblHasta";
+            lblHasta.Size = new Size(53, 20);
+            lblHasta.TabIndex = 33;
+            lblHasta.Text = "Hasta:";
             // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(dateTimeFechaHasta);
+            Controls.Add(lblHasta);
             Controls.Add(btnFiltrarFecha);
-            Controls.Add(dateTimeFechaHabitacion);
-            Controls.Add(lblFecha);
+            Controls.Add(dateTimeFechaDesde);
+            Controls.Add(lblDesde);
             Controls.Add(lbl1);
             Controls.Add(iconPictureBox1);
             Controls.Add(label3);
@@ -533,8 +555,10 @@
         private Label label3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label lbl1;
-        private Label lblFecha;
-        private DateTimePicker dateTimeFechaHabitacion;
+        private Label lblDesde;
+        private DateTimePicker dateTimeFechaDesde;
         private Button btnFiltrarFecha;
+        private DateTimePicker dateTimeFechaHasta;
+        private Label lblHasta;
     }
 }

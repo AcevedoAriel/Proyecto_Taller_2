@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             dataGridListaHabitacion = new DataGridView();
+            IDHabitacion = new DataGridViewTextBoxColumn();
+            Piso = new DataGridViewTextBoxColumn();
+            NroHabitacion = new DataGridViewTextBoxColumn();
+            Categoria = new DataGridViewTextBoxColumn();
+            CantidadDeCamas = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             lblIDHabitacion = new Label();
             lblPiso = new Label();
@@ -52,13 +59,6 @@
             txtBuscar = new TextBox();
             lblEstadoHabitacion = new Label();
             CBEstado = new ComboBox();
-            IDHabitacion = new DataGridViewTextBoxColumn();
-            Piso = new DataGridViewTextBoxColumn();
-            NroHabitacion = new DataGridViewTextBoxColumn();
-            Categoria = new DataGridViewTextBoxColumn();
-            CantidadDeCamas = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridListaHabitacion).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -77,6 +77,45 @@
             dataGridListaHabitacion.Size = new Size(762, 165);
             dataGridListaHabitacion.TabIndex = 0;
             dataGridListaHabitacion.SelectionChanged += dataGridListaHabitacion_SelectionChanged;
+            // 
+            // IDHabitacion
+            // 
+            IDHabitacion.HeaderText = "ID Habitacion";
+            IDHabitacion.Name = "IDHabitacion";
+            IDHabitacion.Width = 104;
+            // 
+            // Piso
+            // 
+            Piso.HeaderText = "Piso";
+            Piso.Name = "Piso";
+            Piso.Width = 50;
+            // 
+            // NroHabitacion
+            // 
+            NroHabitacion.HeaderText = "Nro Habitacion";
+            NroHabitacion.Name = "NroHabitacion";
+            NroHabitacion.Width = 114;
+            // 
+            // Categoria
+            // 
+            Categoria.HeaderText = "Categoria";
+            Categoria.Name = "Categoria";
+            // 
+            // CantidadDeCamas
+            // 
+            CantidadDeCamas.HeaderText = "Cantidad de Camas";
+            CantidadDeCamas.Name = "CantidadDeCamas";
+            CantidadDeCamas.Width = 140;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
             // 
             // panel1
             // 
@@ -164,7 +203,7 @@
             TIDHabitacion.Location = new Point(220, 143);
             TIDHabitacion.Name = "TIDHabitacion";
             TIDHabitacion.Size = new Size(169, 23);
-            TIDHabitacion.TabIndex = 9;
+            TIDHabitacion.TabIndex = 1;
             TIDHabitacion.KeyPress += THabitacion_KeyPress;
             // 
             // TNroHabitacion
@@ -172,7 +211,7 @@
             TNroHabitacion.Location = new Point(220, 219);
             TNroHabitacion.Name = "TNroHabitacion";
             TNroHabitacion.Size = new Size(169, 23);
-            TNroHabitacion.TabIndex = 11;
+            TNroHabitacion.TabIndex = 3;
             TNroHabitacion.KeyPress += TNroHabitacion_KeyPress;
             // 
             // TPrecio
@@ -180,7 +219,7 @@
             TPrecio.Location = new Point(584, 166);
             TPrecio.Name = "TPrecio";
             TPrecio.Size = new Size(169, 23);
-            TPrecio.TabIndex = 12;
+            TPrecio.TabIndex = 5;
             TPrecio.KeyPress += TPrecio_KeyPress;
             // 
             // btnEditar
@@ -216,7 +255,7 @@
             CBCategoriaH.Location = new Point(584, 207);
             CBCategoriaH.Name = "CBCategoriaH";
             CBCategoriaH.Size = new Size(169, 23);
-            CBCategoriaH.TabIndex = 15;
+            CBCategoriaH.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -233,7 +272,7 @@
             numericCantCamas.Location = new Point(584, 246);
             numericCantCamas.Name = "numericCantCamas";
             numericCantCamas.Size = new Size(169, 23);
-            numericCantCamas.TabIndex = 18;
+            numericCantCamas.TabIndex = 7;
             // 
             // CBPiso
             // 
@@ -242,7 +281,7 @@
             CBPiso.Location = new Point(220, 184);
             CBPiso.Name = "CBPiso";
             CBPiso.Size = new Size(169, 23);
-            CBPiso.TabIndex = 19;
+            CBPiso.TabIndex = 2;
             // 
             // btnGuardarCambios
             // 
@@ -301,50 +340,11 @@
             // CBEstado
             // 
             CBEstado.FormattingEnabled = true;
-            CBEstado.Items.AddRange(new object[] { "[Seleccione el Estado]", "Habilitado", "Ocupado", "Mantenimiento" });
+            CBEstado.Items.AddRange(new object[] { "[Seleccione el Estado]", "Habilitado", "Mantenimiento" });
             CBEstado.Location = new Point(220, 259);
             CBEstado.Name = "CBEstado";
             CBEstado.Size = new Size(169, 23);
-            CBEstado.TabIndex = 25;
-            // 
-            // IDHabitacion
-            // 
-            IDHabitacion.HeaderText = "ID Habitacion";
-            IDHabitacion.Name = "IDHabitacion";
-            IDHabitacion.Width = 104;
-            // 
-            // Piso
-            // 
-            Piso.HeaderText = "Piso";
-            Piso.Name = "Piso";
-            Piso.Width = 50;
-            // 
-            // NroHabitacion
-            // 
-            NroHabitacion.HeaderText = "Nro Habitacion";
-            NroHabitacion.Name = "NroHabitacion";
-            NroHabitacion.Width = 114;
-            // 
-            // Categoria
-            // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.Name = "Categoria";
-            // 
-            // CantidadDeCamas
-            // 
-            CantidadDeCamas.HeaderText = "Cantidad de Camas";
-            CantidadDeCamas.Name = "CantidadDeCamas";
-            CantidadDeCamas.Width = 140;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "Estado";
-            Estado.Name = "Estado";
+            CBEstado.TabIndex = 4;
             // 
             // CRUDHabitacion
             // 
