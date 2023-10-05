@@ -116,7 +116,14 @@ namespace ProyectoTaller2.Administrador
 
         private void MenuSalir_Click(object sender, EventArgs e)
         {
+            // Aquí puedes agregar el código para cerrar la sesión y volver a la pantalla de inicio de sesión.
+            // Por ejemplo, si estás utilizando un formulario de inicio de sesión llamado LoginForm:
+
+            FMIniciarSesion loginForm = new FMIniciarSesion();
+            loginForm.Show();
             this.Close();
+            //this.Hide(); // Oculta el formulario actual
+
         }
 
         private void MenuHabitacion_Click(object sender, EventArgs e)
@@ -140,9 +147,9 @@ namespace ProyectoTaller2.Administrador
 
         }
 
-        private void MenuAjusteAvanzado_Click(object sender, EventArgs e)
+        private void MenuBackup_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(MenuAjusteAvanzado, new FMBackupRestore());
+            AbrirFormulario(MenuBackup, new FMBackupRestore());
         }
     }
 }
