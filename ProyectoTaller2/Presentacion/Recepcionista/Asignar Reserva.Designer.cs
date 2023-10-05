@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             NCantidad = new NumericUpDown();
-            CBServicio = new ComboBox();
             DTRetiro = new DateTimePicker();
             DTIngreso = new DateTimePicker();
             TTelefono = new TextBox();
-            LServicio = new Label();
             LCantidad = new Label();
             LTel = new Label();
             LDNI = new Label();
@@ -60,24 +58,15 @@
             // 
             // NCantidad
             // 
-            NCantidad.Location = new Point(519, 392);
+            NCantidad.Location = new Point(159, 379);
             NCantidad.Name = "NCantidad";
             NCantidad.Size = new Size(160, 23);
             NCantidad.TabIndex = 39;
             // 
-            // CBServicio
-            // 
-            CBServicio.FormattingEnabled = true;
-            CBServicio.Items.AddRange(new object[] { "[Seleccione]", "Desayuno", "Televisión", "Despertador" });
-            CBServicio.Location = new Point(519, 337);
-            CBServicio.Name = "CBServicio";
-            CBServicio.Size = new Size(160, 23);
-            CBServicio.TabIndex = 38;
-            // 
             // DTRetiro
             // 
             DTRetiro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            DTRetiro.Location = new Point(159, 279);
+            DTRetiro.Location = new Point(159, 314);
             DTRetiro.Name = "DTRetiro";
             DTRetiro.Size = new Size(160, 23);
             DTRetiro.TabIndex = 37;
@@ -86,7 +75,7 @@
             // DTIngreso
             // 
             DTIngreso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            DTIngreso.Location = new Point(159, 235);
+            DTIngreso.Location = new Point(159, 255);
             DTIngreso.Name = "DTIngreso";
             DTIngreso.Size = new Size(160, 23);
             DTIngreso.TabIndex = 36;
@@ -94,27 +83,17 @@
             // 
             // TTelefono
             // 
-            TTelefono.Location = new Point(519, 285);
+            TTelefono.Location = new Point(519, 390);
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(160, 23);
             TTelefono.TabIndex = 35;
             TTelefono.KeyPress += TTelefono_KeyPress;
             // 
-            // LServicio
-            // 
-            LServicio.AutoSize = true;
-            LServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LServicio.Location = new Point(357, 339);
-            LServicio.Name = "LServicio";
-            LServicio.Size = new Size(110, 15);
-            LServicio.TabIndex = 34;
-            LServicio.Text = "Servicio al Cuarto :";
-            // 
             // LCantidad
             // 
             LCantidad.AutoSize = true;
             LCantidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LCantidad.Location = new Point(357, 400);
+            LCantidad.Location = new Point(12, 379);
             LCantidad.Name = "LCantidad";
             LCantidad.Size = new Size(130, 15);
             LCantidad.TabIndex = 33;
@@ -124,7 +103,7 @@
             // 
             LTel.AutoSize = true;
             LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LTel.Location = new Point(357, 287);
+            LTel.Location = new Point(357, 390);
             LTel.Name = "LTel";
             LTel.Size = new Size(124, 15);
             LTel.TabIndex = 32;
@@ -151,7 +130,7 @@
             // TNombre
             // 
             TNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            TNombre.Location = new Point(159, 334);
+            TNombre.Location = new Point(519, 287);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(160, 23);
             TNombre.TabIndex = 29;
@@ -160,7 +139,7 @@
             // TApellido
             // 
             TApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            TApellido.Location = new Point(159, 397);
+            TApellido.Location = new Point(519, 340);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(160, 23);
             TApellido.TabIndex = 28;
@@ -170,7 +149,7 @@
             // 
             LApellido.AutoSize = true;
             LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LApellido.Location = new Point(12, 400);
+            LApellido.Location = new Point(357, 340);
             LApellido.Name = "LApellido";
             LApellido.Size = new Size(120, 15);
             LApellido.TabIndex = 27;
@@ -180,7 +159,7 @@
             // 
             LNombre.AutoSize = true;
             LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombre.Location = new Point(12, 336);
+            LNombre.Location = new Point(357, 287);
             LNombre.Name = "LNombre";
             LNombre.Size = new Size(121, 15);
             LNombre.TabIndex = 26;
@@ -190,7 +169,7 @@
             // 
             LFechaRet.AutoSize = true;
             LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LFechaRet.Location = new Point(12, 284);
+            LFechaRet.Location = new Point(12, 314);
             LFechaRet.Name = "LFechaRet";
             LFechaRet.Size = new Size(100, 15);
             LFechaRet.TabIndex = 25;
@@ -200,7 +179,7 @@
             // 
             LFechaIng.AutoSize = true;
             LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LFechaIng.Location = new Point(12, 241);
+            LFechaIng.Location = new Point(12, 255);
             LFechaIng.Name = "LFechaIng";
             LFechaIng.Size = new Size(107, 15);
             LFechaIng.TabIndex = 24;
@@ -325,11 +304,9 @@
             Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(NCantidad);
-            Controls.Add(CBServicio);
             Controls.Add(DTRetiro);
             Controls.Add(DTIngreso);
             Controls.Add(TTelefono);
-            Controls.Add(LServicio);
             Controls.Add(LCantidad);
             Controls.Add(LTel);
             Controls.Add(LDNI);
@@ -355,11 +332,9 @@
         #endregion
 
         private NumericUpDown NCantidad;
-        private ComboBox CBServicio;
         private DateTimePicker DTRetiro;
         private DateTimePicker DTIngreso;
         private TextBox TTelefono;
-        private Label LServicio;
         private Label LCantidad;
         private Label LTel;
         private Label LDNI;

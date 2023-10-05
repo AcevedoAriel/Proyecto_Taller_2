@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTaller2.Presentacion.Recepcionista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
             BGuardar.Enabled = false;
             BEditar.Enabled = false;
             BEliminar.Enabled = false;
+            BServicios.Enabled = false;
 
         }
 
@@ -31,7 +33,6 @@ namespace ProyectoTaller2.Presentacion.Administrador
                                    && !string.IsNullOrWhiteSpace(DTIngreso.Text)
                                    && !string.IsNullOrWhiteSpace(TTelefono.Text)
                                    && !string.IsNullOrWhiteSpace(DTRetiro.Text)
-                                   && !string.IsNullOrWhiteSpace(CBServicio.Text)
                                    && !string.IsNullOrWhiteSpace(lblNroHabitacion.Text)
                                    && !string.IsNullOrWhiteSpace(NCantidad.Text);
 
@@ -54,7 +55,6 @@ namespace ProyectoTaller2.Presentacion.Administrador
             TTelefono.Clear();
             DTIngreso.ResetText();
             DTRetiro.ResetText();
-            CBServicio.SelectedIndex = 0;
             NCantidad.Value = 0;
         }
 
@@ -62,7 +62,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
         {
             DialogResult resultado;
 
-            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && CBServicio.SelectedIndex != 0)
+            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar una nueva reserva?", "Confirmar Rerserva", MessageBoxButtons.YesNo);
 
@@ -78,7 +78,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
                     DateTime retiro = DTRetiro.Value;
 
                     // Agregar una nueva fila al datagrid con los valores
-                    dataGridReserva.Rows.Add(ingreso, retiro, nroHabitacion, nombre, apellido, dni, telefono, cant, CBServicio.Text);
+                    dataGridReserva.Rows.Add(ingreso, retiro, nroHabitacion, nombre, apellido, dni, telefono, cant);
                     MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
 
                     limpiarFormulario();
@@ -106,7 +106,6 @@ namespace ProyectoTaller2.Presentacion.Administrador
                 txtNroHabitacion.Text = filaSeleccionada.Cells["habitacion"].Value.ToString();
                 TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
                 TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
-                CBServicio.Text = filaSeleccionada.Cells["servicio"].Value.ToString();
                 TDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
                 TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
                 NCantidad.Text = filaSeleccionada.Cells["cantidad"].Value.ToString();
@@ -128,7 +127,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
         private void BGuardar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && CBServicio.SelectedIndex != 0)
+            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime)
             {
                 resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
@@ -194,6 +193,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
             // Verifica si al menos una fila está seleccionada
             BEditar.Enabled = dataGridReserva.SelectedRows.Count > 0;
             BEliminar.Enabled = dataGridReserva.SelectedRows.Count > 0;
+            BServicios.Enabled = dataGridReserva.SelectedRows.Count > 0;
             if (dataGridReserva.SelectedRows.Count > 0)
             {
                 // Almacena la fila seleccionada en la variable
@@ -256,6 +256,14 @@ namespace ProyectoTaller2.Presentacion.Administrador
                 // Aqui va el codigo
 
             }
+        }
+
+        private void BServicios_Click(object sender, EventArgs e)
+        {
+            ServiciosAdicionales fm = new ServiciosAdicionales();
+            fm.BackColor = Color.LightSkyBlue;
+            fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
+            this.Hide(); //oculta el formulario actual
         }
     }
 }

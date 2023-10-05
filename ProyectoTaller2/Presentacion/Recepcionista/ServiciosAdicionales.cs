@@ -16,5 +16,12 @@ namespace ProyectoTaller2.Presentacion
         {
             InitializeComponent();
         }
+
+        private void Bagregar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Los Servicios fueron correctamente agregados" ,"Servicios Agregados", MessageBoxButtons.OK);
+            this.Close();
+
+        }
     }
 }

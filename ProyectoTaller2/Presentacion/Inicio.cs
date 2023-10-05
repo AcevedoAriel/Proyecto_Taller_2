@@ -30,6 +30,7 @@ namespace ProyectoTaller2.Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             Asignar_Reserva fm = new Asignar_Reserva();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
@@ -37,6 +38,7 @@ namespace ProyectoTaller2.Presentacion
         private void button2_Click(object sender, EventArgs e)
         {
             Asignar_Reserva fm = new Asignar_Reserva();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
@@ -44,6 +46,7 @@ namespace ProyectoTaller2.Presentacion
         private void button3_Click(object sender, EventArgs e)
         {
             Asignar_Reserva fm = new Asignar_Reserva();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
@@ -51,6 +54,7 @@ namespace ProyectoTaller2.Presentacion
         private void button4_Click(object sender, EventArgs e)
         {
             Cobrar_Habitacion fm = new Cobrar_Habitacion();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
@@ -58,6 +62,7 @@ namespace ProyectoTaller2.Presentacion
         private void button5_Click(object sender, EventArgs e)
         {
             Cobrar_Habitacion fm = new Cobrar_Habitacion();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
@@ -65,6 +70,7 @@ namespace ProyectoTaller2.Presentacion
         private void button6_Click(object sender, EventArgs e)
         {
             Cobrar_Habitacion fm = new Cobrar_Habitacion();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
@@ -72,6 +78,7 @@ namespace ProyectoTaller2.Presentacion
         private void button7_Click(object sender, EventArgs e)
         {
             Cobrar_Habitacion fm = new Cobrar_Habitacion();
+            fm.BackColor = Color.LightSkyBlue;
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }

@@ -57,13 +57,12 @@
             dni = new DataGridViewTextBoxColumn();
             telefono = new DataGridViewTextBoxColumn();
             personas = new DataGridViewTextBoxColumn();
-            servicio = new DataGridViewTextBoxColumn();
+            servicio = new DataGridViewComboBoxColumn();
             BGuardar = new Button();
-            LServicio = new Label();
-            CBServicio = new ComboBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lblNroHabitacion = new Label();
             txtNroHabitacion = new TextBox();
+            BServicios = new Button();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).BeginInit();
@@ -86,9 +85,9 @@
             BEditar.BackColor = Color.DodgerBlue;
             BEditar.FlatStyle = FlatStyle.Popup;
             BEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BEditar.Location = new Point(703, 159);
+            BEditar.Location = new Point(702, 181);
             BEditar.Name = "BEditar";
-            BEditar.Size = new Size(113, 46);
+            BEditar.Size = new Size(113, 45);
             BEditar.TabIndex = 3;
             BEditar.Text = "Editar";
             BEditar.UseVisualStyleBackColor = false;
@@ -99,9 +98,9 @@
             BEliminar.BackColor = Color.Red;
             BEliminar.FlatStyle = FlatStyle.Popup;
             BEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BEliminar.Location = new Point(703, 223);
+            BEliminar.Location = new Point(702, 242);
             BEliminar.Name = "BEliminar";
-            BEliminar.Size = new Size(113, 46);
+            BEliminar.Size = new Size(113, 45);
             BEliminar.TabIndex = 4;
             BEliminar.Text = "Eliminar";
             BEliminar.UseVisualStyleBackColor = false;
@@ -121,7 +120,7 @@
             // 
             LFechaRet.AutoSize = true;
             LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LFechaRet.Location = new Point(20, 144);
+            LFechaRet.Location = new Point(20, 152);
             LFechaRet.Name = "LFechaRet";
             LFechaRet.Size = new Size(100, 15);
             LFechaRet.TabIndex = 6;
@@ -131,7 +130,7 @@
             // 
             LNombre.AutoSize = true;
             LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombre.Location = new Point(20, 226);
+            LNombre.Location = new Point(360, 96);
             LNombre.Name = "LNombre";
             LNombre.Size = new Size(121, 15);
             LNombre.TabIndex = 8;
@@ -158,7 +157,7 @@
             // 
             // TNombre
             // 
-            TNombre.Location = new Point(166, 218);
+            TNombre.Location = new Point(516, 94);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(160, 23);
             TNombre.TabIndex = 11;
@@ -167,7 +166,7 @@
             // 
             // TDNI
             // 
-            TDNI.Location = new Point(516, 94);
+            TDNI.Location = new Point(516, 147);
             TDNI.Name = "TDNI";
             TDNI.Size = new Size(160, 23);
             TDNI.TabIndex = 13;
@@ -178,7 +177,7 @@
             // 
             LDNI.AutoSize = true;
             LDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LDNI.Location = new Point(354, 97);
+            LDNI.Location = new Point(360, 152);
             LDNI.Name = "LDNI";
             LDNI.Size = new Size(97, 15);
             LDNI.TabIndex = 14;
@@ -188,7 +187,7 @@
             // 
             LTel.AutoSize = true;
             LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LTel.Location = new Point(354, 145);
+            LTel.Location = new Point(354, 206);
             LTel.Name = "LTel";
             LTel.Size = new Size(124, 15);
             LTel.TabIndex = 15;
@@ -206,7 +205,7 @@
             // 
             // TTelefono
             // 
-            TTelefono.Location = new Point(516, 142);
+            TTelefono.Location = new Point(516, 203);
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(160, 23);
             TTelefono.TabIndex = 18;
@@ -223,7 +222,7 @@
             // 
             // DTRetiro
             // 
-            DTRetiro.Location = new Point(167, 139);
+            DTRetiro.Location = new Point(167, 147);
             DTRetiro.Name = "DTRetiro";
             DTRetiro.Size = new Size(160, 23);
             DTRetiro.TabIndex = 20;
@@ -242,7 +241,7 @@
             btnBuscar.BackColor = Color.White;
             btnBuscar.FlatStyle = FlatStyle.Popup;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(668, 17);
+            btnBuscar.Location = new Point(680, 8);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(83, 38);
             btnBuscar.TabIndex = 23;
@@ -252,7 +251,7 @@
             // 
             // TBuscar
             // 
-            TBuscar.Location = new Point(470, 26);
+            TBuscar.Location = new Point(470, 17);
             TBuscar.Name = "TBuscar";
             TBuscar.Size = new Size(192, 23);
             TBuscar.TabIndex = 24;
@@ -267,7 +266,6 @@
             // 
             // dataGridReserva
             // 
-            dataGridReserva.AllowUserToAddRows = false;
             dataGridReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridReserva.Columns.AddRange(new DataGridViewColumn[] { ingreso, retiro, habitacion, nombre, apellido, dni, telefono, personas, servicio });
             dataGridReserva.Dock = DockStyle.Fill;
@@ -282,13 +280,11 @@
             // 
             ingreso.HeaderText = "Fecha de Ingreso";
             ingreso.Name = "ingreso";
-            ingreso.Width = 80;
             // 
             // retiro
             // 
             retiro.HeaderText = "Fecha de Retiro";
             retiro.Name = "retiro";
-            retiro.Width = 80;
             // 
             // habitacion
             // 
@@ -322,46 +318,26 @@
             // 
             personas.HeaderText = "Cantidad de Personas";
             personas.Name = "personas";
-            personas.Width = 60;
             // 
             // servicio
             // 
-            servicio.HeaderText = "Servicio al Cuarto";
+            servicio.HeaderText = "Servicios Incluidos";
             servicio.Name = "servicio";
-            servicio.Width = 60;
+            servicio.Resizable = DataGridViewTriState.True;
+            servicio.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // BGuardar
             // 
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
             BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BGuardar.Location = new Point(703, 97);
+            BGuardar.Location = new Point(702, 122);
             BGuardar.Name = "BGuardar";
-            BGuardar.Size = new Size(113, 44);
+            BGuardar.Size = new Size(113, 45);
             BGuardar.TabIndex = 26;
             BGuardar.Text = "Guardar Cambios";
             BGuardar.UseVisualStyleBackColor = false;
             BGuardar.Click += BGuardar_Click;
-            // 
-            // LServicio
-            // 
-            LServicio.AutoSize = true;
-            LServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LServicio.Location = new Point(354, 198);
-            LServicio.Name = "LServicio";
-            LServicio.Size = new Size(110, 15);
-            LServicio.TabIndex = 17;
-            LServicio.Text = "Servicio al Cuarto :";
-            // 
-            // CBServicio
-            // 
-            CBServicio.FormattingEnabled = true;
-            CBServicio.Items.AddRange(new object[] { "[Seleccione]", "Desayuno", "Televisión", "Despertador" });
-            CBServicio.Location = new Point(516, 195);
-            CBServicio.Name = "CBServicio";
-            CBServicio.Size = new Size(160, 23);
-            CBServicio.TabIndex = 21;
-            CBServicio.TextChanged += CamposTextChanged;
             // 
             // iconPictureBox1
             // 
@@ -380,25 +356,38 @@
             // lblNroHabitacion
             // 
             lblNroHabitacion.AutoSize = true;
-            lblNroHabitacion.Location = new Point(20, 190);
+            lblNroHabitacion.Location = new Point(20, 206);
             lblNroHabitacion.Name = "lblNroHabitacion";
-            lblNroHabitacion.Size = new Size(90, 15);
+            lblNroHabitacion.Size = new Size(96, 15);
             lblNroHabitacion.TabIndex = 28;
-            lblNroHabitacion.Text = "Nro Habitacion";
+            lblNroHabitacion.Text = "Nro Habitacion :";
             // 
             // txtNroHabitacion
             // 
-            txtNroHabitacion.Location = new Point(166, 182);
+            txtNroHabitacion.Location = new Point(166, 203);
             txtNroHabitacion.Name = "txtNroHabitacion";
             txtNroHabitacion.Size = new Size(160, 23);
             txtNroHabitacion.TabIndex = 29;
             txtNroHabitacion.KeyPress += txtNroHabitacion_KeyPress;
+            // 
+            // BServicios
+            // 
+            BServicios.BackColor = Color.Gold;
+            BServicios.FlatStyle = FlatStyle.Popup;
+            BServicios.Location = new Point(702, 66);
+            BServicios.Name = "BServicios";
+            BServicios.Size = new Size(113, 45);
+            BServicios.TabIndex = 30;
+            BServicios.Text = "Agregar Servicios";
+            BServicios.UseVisualStyleBackColor = false;
+            BServicios.Click += BServicios_Click;
             // 
             // ListadoDeReservas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(BServicios);
             Controls.Add(txtNroHabitacion);
             Controls.Add(lblNroHabitacion);
             Controls.Add(iconPictureBox1);
@@ -407,11 +396,9 @@
             Controls.Add(TBuscar);
             Controls.Add(btnBuscar);
             Controls.Add(NCantidad);
-            Controls.Add(CBServicio);
             Controls.Add(DTRetiro);
             Controls.Add(DTIngreso);
             Controls.Add(TTelefono);
-            Controls.Add(LServicio);
             Controls.Add(LCantidad);
             Controls.Add(LTel);
             Controls.Add(LDNI);
@@ -461,6 +448,10 @@
         private Panel panel1;
         private Button BGuardar;
         private DataGridView dataGridReserva;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Label lblNroHabitacion;
+        private TextBox txtNroHabitacion;
+        private Button BServicios;
         private DataGridViewTextBoxColumn ingreso;
         private DataGridViewTextBoxColumn retiro;
         private DataGridViewTextBoxColumn habitacion;
@@ -469,11 +460,6 @@
         private DataGridViewTextBoxColumn dni;
         private DataGridViewTextBoxColumn telefono;
         private DataGridViewTextBoxColumn personas;
-        private DataGridViewTextBoxColumn servicio;
-        private Label LServicio;
-        private ComboBox CBServicio;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Label lblNroHabitacion;
-        private TextBox txtNroHabitacion;
+        private DataGridViewComboBoxColumn servicio;
     }
 }
