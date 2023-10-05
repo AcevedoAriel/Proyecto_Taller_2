@@ -23,27 +23,68 @@ namespace ProyectoTaller2.Presentacion
             this.Close();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        /*private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "Admin" && txtClave.Text == "123" || txtUsuario.Text == "Recep" && txtClave.Text == "123" || txtUsuario.Text == "SupUsr" && txtClave.Text == "123")
             {
                 this.DialogResult = DialogResult.OK;
 
-                //FMPrincipal frmPrincipal = new FMPrincipal();
-                //frmPrincipal.AbrirFormulario(frmPrincipal);
-
-                // Luego muestra el formulario que quieres dentro del panel
-                //Inicio formInicio = new Inicio();
-                //frmPrincipal.MostrarFormulario(formInicio);
 
             }
             else if (txtUsuario.Text == "" || txtClave.Text == "")
             {
-                //labelError.Visible = true;
+                
                 MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //this.DialogResult = DialogResult.None;
+                
             }
 
+        }*/
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            switch (txtUsuario.Text)
+            {
+                case "Admin":
+                    if (txtClave.Text == "123")
+                    {
+                        // Funciones para el perfil de Administrador
+
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+
+                case "Recep":
+                    if (txtClave.Text == "123")
+                    {
+                        // Funciones para el perfil de Recepcionista
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+
+                case "SupUsr":
+                    if (txtClave.Text == "123")
+                    {
+                        // Funciones para el perfil de Superusuario
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show("El usuario ingresado no tiene un perfil válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
         }
+
     }
 }

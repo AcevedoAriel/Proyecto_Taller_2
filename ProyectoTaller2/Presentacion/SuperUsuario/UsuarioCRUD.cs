@@ -277,7 +277,6 @@ namespace ProyectoTaller2.Administrador
 
         private void UsuarioCRUD_Load(object sender, EventArgs e)
         {
-            Conexion conexion = new Conexion();
             CBPerfil.SelectedIndex = 0;
             CBEstadoUsuario.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
@@ -341,10 +340,10 @@ namespace ProyectoTaller2.Administrador
         {
             DateTime fechaSeleccionada = DTFechaNac.Value.Date;
 
-            // Validar si la fecha seleccionada es pasada
-            if (fechaSeleccionada < DateTime.Today)
+            // Validar si la fecha seleccionada es futura
+            if (fechaSeleccionada > DateTime.Today)
             {
-                MessageBox.Show("No puedes seleccionar una fecha pasada.");
+                MessageBox.Show("No puedes seleccionar una fecha futura.");
                 DTFechaNac.Value = DateTime.Today; // Establecer la fecha actual
             }
         }
