@@ -20,6 +20,21 @@ namespace ProyectoTaller2.CDatos
             return cnx;
         }
 
+
+        public Conexion()
+        {
+            try
+            {
+                cn = new SqlConnection("Server=. \\SQLEXPRESS;Integrated Security=True;Database=GESTION_HOTELERA;");
+                cn.Open();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message); 
+               
+            }
+        }
+
        
     }
 }

@@ -277,6 +277,7 @@ namespace ProyectoTaller2.Administrador
 
         private void UsuarioCRUD_Load(object sender, EventArgs e)
         {
+            Conexion conexion = new Conexion();
             CBPerfil.SelectedIndex = 0;
             CBEstadoUsuario.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
