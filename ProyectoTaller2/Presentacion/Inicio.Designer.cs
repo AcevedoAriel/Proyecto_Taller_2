@@ -60,6 +60,9 @@
             label3 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lbl1 = new Label();
+            lblFecha = new Label();
+            dateTimeFechaHabitacion = new DateTimePicker();
+            btnFiltrarFecha = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
@@ -371,7 +374,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCategoria.Location = new Point(213, 108);
+            lblCategoria.Location = new Point(159, 108);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(84, 20);
             lblCategoria.TabIndex = 23;
@@ -381,7 +384,7 @@
             // 
             lblPiso.AutoSize = true;
             lblPiso.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPiso.Location = new Point(556, 109);
+            lblPiso.Location = new Point(159, 75);
             lblPiso.Name = "lblPiso";
             lblPiso.Size = new Size(46, 20);
             lblPiso.TabIndex = 24;
@@ -391,7 +394,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
-            comboBox1.Location = new Point(310, 109);
+            comboBox1.Location = new Point(249, 110);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(162, 21);
             comboBox1.TabIndex = 25;
@@ -400,9 +403,9 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "[Seleccione]", "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
-            comboBox2.Location = new Point(614, 108);
+            comboBox2.Location = new Point(249, 74);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(124, 21);
+            comboBox2.Size = new Size(165, 21);
             comboBox2.TabIndex = 26;
             // 
             // label3
@@ -440,11 +443,45 @@
             lbl1.TabIndex = 29;
             lbl1.Text = "_______________________________________________________________________________________________________________________________________";
             // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFecha.Location = new Point(439, 74);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(49, 20);
+            lblFecha.TabIndex = 30;
+            lblFecha.Text = "Fecha";
+            // 
+            // dateTimeFechaHabitacion
+            // 
+            dateTimeFechaHabitacion.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dateTimeFechaHabitacion.Location = new Point(494, 74);
+            dateTimeFechaHabitacion.Name = "dateTimeFechaHabitacion";
+            dateTimeFechaHabitacion.Size = new Size(227, 22);
+            dateTimeFechaHabitacion.TabIndex = 31;
+            // 
+            // btnFiltrarFecha
+            // 
+            btnFiltrarFecha.BackColor = Color.White;
+            btnFiltrarFecha.FlatStyle = FlatStyle.Popup;
+            btnFiltrarFecha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltrarFecha.Location = new Point(727, 68);
+            btnFiltrarFecha.Name = "btnFiltrarFecha";
+            btnFiltrarFecha.Size = new Size(88, 37);
+            btnFiltrarFecha.TabIndex = 32;
+            btnFiltrarFecha.Text = "Buscar";
+            btnFiltrarFecha.UseVisualStyleBackColor = false;
+            btnFiltrarFecha.Click += btnFiltrarFecha_Click;
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(btnFiltrarFecha);
+            Controls.Add(dateTimeFechaHabitacion);
+            Controls.Add(lblFecha);
             Controls.Add(lbl1);
             Controls.Add(iconPictureBox1);
             Controls.Add(label3);
@@ -496,5 +533,8 @@
         private Label label3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label lbl1;
+        private Label lblFecha;
+        private DateTimePicker dateTimeFechaHabitacion;
+        private Button btnFiltrarFecha;
     }
 }

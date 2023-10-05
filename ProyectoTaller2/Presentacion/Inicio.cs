@@ -75,5 +75,17 @@ namespace ProyectoTaller2.Presentacion
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
+
+        private void btnFiltrarFecha_Click(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dateTimeFechaHabitacion.Value;
+
+            // Validar que la fecha seleccionada no sea una fecha pasada
+            if (fechaSeleccionada < DateTime.Now)
+            {
+                MessageBox.Show("No se puede Reservar una fecha Pasada");
+                return; // Salir del evento sin realizar el filtrado
+            }
+        }
     }
 }
