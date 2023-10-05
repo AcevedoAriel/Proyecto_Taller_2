@@ -11,9 +11,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ProyectoTaller2.Presentacion.Administrador
 {
-    public partial class GestionReserva : Form
+    public partial class ListadoDeReservas : Form
     {
-        public GestionReserva()
+        public ListadoDeReservas()
         {
             InitializeComponent();
             BGuardar.Enabled = false;
@@ -32,6 +32,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
                                    && !string.IsNullOrWhiteSpace(TTelefono.Text)
                                    && !string.IsNullOrWhiteSpace(DTRetiro.Text)
                                    && !string.IsNullOrWhiteSpace(CBServicio.Text)
+                                   && !string.IsNullOrWhiteSpace(lblNroHabitacion.Text)
                                    && !string.IsNullOrWhiteSpace(NCantidad.Text);
 
 
@@ -42,10 +43,6 @@ namespace ProyectoTaller2.Presentacion.Administrador
             // BGuardar.Enabled = todosCamposLlenos;
         }
 
-        private void Reservas_Load(object sender, EventArgs e)
-        {
-
-        }
 
         public void limpiarFormulario()
         {
@@ -65,24 +62,23 @@ namespace ProyectoTaller2.Presentacion.Administrador
         {
             DialogResult resultado;
 
-            if (TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && CBServicio.SelectedIndex != 0)
+            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && CBServicio.SelectedIndex != 0)
             {
-                resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
+                resultado = MessageBox.Show("Seguro que desea insertar una nueva reserva?", "Confirmar Rerserva", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
-
-                    string apellido = TApellido.Text;
                     string nombre = TNombre.Text;
-
+                    string apellido = TApellido.Text;
                     string dni = TDNI.Text;
+                    string nroHabitacion = txtNroHabitacion.Text;
                     long telefono = long.Parse(TTelefono.Text);
                     string cant = NCantidad.Text;
                     DateTime ingreso = DTIngreso.Value;
                     DateTime retiro = DTRetiro.Value;
 
                     // Agregar una nueva fila al datagrid con los valores
-                    dataGridReserva.Rows.Add(ingreso, retiro, habitacion, nombre, apellido, dni, telefono, cant, CBServicio.Text);
+                    dataGridReserva.Rows.Add(ingreso, retiro, nroHabitacion, nombre, apellido, dni, telefono, cant, CBServicio.Text);
                     MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
 
                     limpiarFormulario();
@@ -107,9 +103,9 @@ namespace ProyectoTaller2.Presentacion.Administrador
                 // Reemplaza "Columna1" con el nombre de tu columna  
                 DTIngreso.Text = filaSeleccionada.Cells["ingreso"].Value.ToString();
                 DTRetiro.Text = filaSeleccionada.Cells["retiro"].Value.ToString();
+                txtNroHabitacion.Text = filaSeleccionada.Cells["habitacion"].Value.ToString();
                 TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
                 TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
-
                 CBServicio.Text = filaSeleccionada.Cells["servicio"].Value.ToString();
                 TDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
                 TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
@@ -132,41 +128,44 @@ namespace ProyectoTaller2.Presentacion.Administrador
         private void BGuardar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes)
+            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && CBServicio.SelectedIndex != 0)
             {
-                DateTime ingreso = DTIngreso.Value;
-                DateTime retiro = DTRetiro.Value;
-                string apellido = TApellido.Text;
-                string nombre = TNombre.Text;
-
-                string dni = TDNI.Text;
-                string telefono = TTelefono.Text;
-                string cantidad = NCantidad.Text;
-
-                // Agregar una nueva fila al datagrid con los valores
-                if (filaSeleccionada != null)
+                resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
                 {
-                    BEliminar.Visible = true;
-                    filaSeleccionada.Cells["ingreso"].Value = ingreso;
-                    filaSeleccionada.Cells["retiro"].Value = retiro;
-                    filaSeleccionada.Cells["nombre"].Value = nombre;
-                    filaSeleccionada.Cells["apellido"].Value = apellido;
+                    DateTime ingreso = DTIngreso.Value;
+                    DateTime retiro = DTRetiro.Value;
+                    string apellido = TApellido.Text;
+                    string nombre = TNombre.Text;
+                    string dni = TDNI.Text;
+                    string nroHabitacion = txtNroHabitacion.Text;
+                    string telefono = TTelefono.Text;
+                    string cantidad = NCantidad.Text;
 
-                    filaSeleccionada.Cells["dni"].Value = dni;
-                    filaSeleccionada.Cells["cantidad"].Value = cantidad;
-                    filaSeleccionada.Cells["telefono"].Value = telefono;
+                    // Agregar una nueva fila al datagrid con los valores
+                    if (filaSeleccionada != null)
+                    {
+                        BEliminar.Visible = true;
+                        filaSeleccionada.Cells["ingreso"].Value = ingreso;
+                        filaSeleccionada.Cells["retiro"].Value = retiro;
+                        filaSeleccionada.Cells["nombre"].Value = nombre;
+                        filaSeleccionada.Cells["apellido"].Value = apellido;
+                        filaSeleccionada.Cells["habitacion"].Value = nroHabitacion;
+                        filaSeleccionada.Cells["dni"].Value = dni;
+                        filaSeleccionada.Cells["cantidad"].Value = cantidad;
+                        filaSeleccionada.Cells["telefono"].Value = telefono;
+                    }
+
+                    MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
+                    limpiarFormulario();
+
                 }
-
-                MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
-                limpiarFormulario();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error");
 
             }
-        }
-
-        private void THabitacion_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
 
         private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -231,6 +230,31 @@ namespace ProyectoTaller2.Presentacion.Administrador
             if (Char.IsLetter(e.KeyChar)) // Comparas si la tecla presionada corresponde a una letra
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtNroHabitacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (TBuscar.Text == "")
+            {
+
+                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Aqui va el codigo
+
             }
         }
     }

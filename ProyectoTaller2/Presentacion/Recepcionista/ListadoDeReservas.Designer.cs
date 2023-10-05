@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTaller2.Presentacion.Administrador
 {
-    partial class GestionReserva
+    partial class ListadoDeReservas
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             DTIngreso = new DateTimePicker();
             DTRetiro = new DateTimePicker();
             NCantidad = new NumericUpDown();
-            BBuscar = new Button();
+            btnBuscar = new Button();
             TBuscar = new TextBox();
             panel1 = new Panel();
             dataGridReserva = new DataGridView();
@@ -62,6 +62,8 @@
             LServicio = new Label();
             CBServicio = new ComboBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            lblNroHabitacion = new Label();
+            txtNroHabitacion = new TextBox();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).BeginInit();
@@ -129,7 +131,7 @@
             // 
             LNombre.AutoSize = true;
             LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombre.Location = new Point(20, 202);
+            LNombre.Location = new Point(20, 226);
             LNombre.Name = "LNombre";
             LNombre.Size = new Size(121, 15);
             LNombre.TabIndex = 8;
@@ -147,7 +149,7 @@
             // 
             // TApellido
             // 
-            TApellido.Location = new Point(167, 254);
+            TApellido.Location = new Point(166, 254);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(160, 23);
             TApellido.TabIndex = 10;
@@ -156,7 +158,7 @@
             // 
             // TNombre
             // 
-            TNombre.Location = new Point(167, 198);
+            TNombre.Location = new Point(166, 218);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(160, 23);
             TNombre.TabIndex = 11;
@@ -235,21 +237,22 @@
             NCantidad.TabIndex = 22;
             NCantidad.TextChanged += CamposTextChanged;
             // 
-            // BBuscar
+            // btnBuscar
             // 
-            BBuscar.BackColor = Color.White;
-            BBuscar.FlatStyle = FlatStyle.Popup;
-            BBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BBuscar.Location = new Point(733, 17);
-            BBuscar.Name = "BBuscar";
-            BBuscar.Size = new Size(83, 38);
-            BBuscar.TabIndex = 23;
-            BBuscar.Text = "Buscar";
-            BBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.BackColor = Color.White;
+            btnBuscar.FlatStyle = FlatStyle.Popup;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(668, 17);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(83, 38);
+            btnBuscar.TabIndex = 23;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // TBuscar
             // 
-            TBuscar.Location = new Point(505, 17);
+            TBuscar.Location = new Point(470, 26);
             TBuscar.Name = "TBuscar";
             TBuscar.Size = new Size(192, 23);
             TBuscar.TabIndex = 24;
@@ -332,7 +335,7 @@
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
             BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BGuardar.Location = new Point(703, 94);
+            BGuardar.Location = new Point(703, 97);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(113, 44);
             BGuardar.TabIndex = 26;
@@ -374,16 +377,35 @@
             iconPictureBox1.TabIndex = 27;
             iconPictureBox1.TabStop = false;
             // 
-            // GestionReserva
+            // lblNroHabitacion
+            // 
+            lblNroHabitacion.AutoSize = true;
+            lblNroHabitacion.Location = new Point(20, 190);
+            lblNroHabitacion.Name = "lblNroHabitacion";
+            lblNroHabitacion.Size = new Size(90, 15);
+            lblNroHabitacion.TabIndex = 28;
+            lblNroHabitacion.Text = "Nro Habitacion";
+            // 
+            // txtNroHabitacion
+            // 
+            txtNroHabitacion.Location = new Point(166, 182);
+            txtNroHabitacion.Name = "txtNroHabitacion";
+            txtNroHabitacion.Size = new Size(160, 23);
+            txtNroHabitacion.TabIndex = 29;
+            txtNroHabitacion.KeyPress += txtNroHabitacion_KeyPress;
+            // 
+            // ListadoDeReservas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(txtNroHabitacion);
+            Controls.Add(lblNroHabitacion);
             Controls.Add(iconPictureBox1);
             Controls.Add(BGuardar);
             Controls.Add(panel1);
             Controls.Add(TBuscar);
-            Controls.Add(BBuscar);
+            Controls.Add(btnBuscar);
             Controls.Add(NCantidad);
             Controls.Add(CBServicio);
             Controls.Add(DTRetiro);
@@ -404,9 +426,8 @@
             Controls.Add(BEditar);
             Controls.Add(LReservas);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Name = "GestionReserva";
+            Name = "ListadoDeReservas";
             Text = "Gestionar Reservas";
-            Load += Reservas_Load;
             ((System.ComponentModel.ISupportInitialize)NCantidad).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).EndInit();
@@ -435,7 +456,7 @@
         private DateTimePicker DTIngreso;
         private DateTimePicker DTRetiro;
         private NumericUpDown NCantidad;
-        private Button BBuscar;
+        private Button btnBuscar;
         private TextBox TBuscar;
         private Panel panel1;
         private Button BGuardar;
@@ -452,5 +473,7 @@
         private Label LServicio;
         private ComboBox CBServicio;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Label lblNroHabitacion;
+        private TextBox txtNroHabitacion;
     }
 }

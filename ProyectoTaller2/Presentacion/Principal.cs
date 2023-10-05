@@ -78,7 +78,7 @@ namespace ProyectoTaller2.Administrador
 
         private void MenuReserva_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new GestionReserva());
+            AbrirFormulario((IconMenuItem)sender, new ListadoDeReservas());
         }
 
         private void MenuInicio_Click(object sender, EventArgs e)

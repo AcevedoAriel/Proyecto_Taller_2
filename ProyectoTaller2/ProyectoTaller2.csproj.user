@@ -28,7 +28,7 @@
     <Compile Update="Presentacion\Recepcionista\Cobrar Habitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Recepcionista\GestionReserva.cs">
+    <Compile Update="Presentacion\Recepcionista\ListadoDeReservas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\Recepcionista\ServiciosAdicionales.cs">
