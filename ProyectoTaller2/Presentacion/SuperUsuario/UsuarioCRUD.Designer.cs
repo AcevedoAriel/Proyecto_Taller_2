@@ -109,6 +109,7 @@ namespace ProyectoTaller2.Administrador
             DTFechaNac.Name = "DTFechaNac";
             DTFechaNac.Size = new Size(174, 21);
             DTFechaNac.TabIndex = 64;
+            DTFechaNac.ValueChanged += DTFechaNac_ValueChanged;
             // 
             // TSexo
             // 

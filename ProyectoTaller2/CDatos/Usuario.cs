@@ -27,8 +27,10 @@ namespace ProyectoTaller2.CDatos
 
         public string sexo { get; set; }
 
+        public string estado { get; set; }
+
         public Usuario() { }
-        public Usuario(int dni, string ape, string nom, string nomUs, string clave, string tel, int usPer, string correo, DateTime nac, string sexo ) 
+        public Usuario(int dni, string ape, string nom, string nomUs, string clave, string tel, int usPer, string correo, DateTime nac, string sexo, string estado ) 
         { 
             
             this.dni = dni;
@@ -40,7 +42,8 @@ namespace ProyectoTaller2.CDatos
             this.usuario_perfil = usPer;
             this.correo = correo;
             this.fechaNAc = nac;
-            this.sexo = sexo;       
+            this.sexo = sexo;
+            this.estado = estado;
 
         }
     }

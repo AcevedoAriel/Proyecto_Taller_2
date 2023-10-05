@@ -15,7 +15,7 @@ namespace ProyectoTaller2.CDatos
 
             using (SqlConnection conexion = Conexion.ObtenerConexion()) 
             {
-                string query = "insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc, sexo) values ("+usuario.dni+" ,'"+usuario.apellido+ "' , '"+usuario.nombre+ "' , '"+usuario.nombreUsuario+ "' , '"+usuario.clave+ "' , '"+usuario.telefono+ "', "+usuario.usuario_perfil+" ,'"+usuario.correo+"' , '"+usuario.fechaNAc+ "' ,  '" + usuario.sexo+ "' )";
+                string query = "insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc, sexo, estado) values ("+usuario.dni+" ,'"+usuario.apellido+ "' , '"+usuario.nombre+ "' , '"+usuario.nombreUsuario+ "' , '"+usuario.clave+ "' , '"+usuario.telefono+ "', "+usuario.usuario_perfil+" ,'"+usuario.correo+"' , '"+usuario.fechaNAc+ "' ,  '" + usuario.sexo+ "' , '" + usuario.estado+ "')";
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
                 retorno = cmd.ExecuteNonQuery();
@@ -45,6 +45,7 @@ namespace ProyectoTaller2.CDatos
                     usuario.correo = reader.GetString(7);
                     usuario.fechaNAc = reader.GetDateTime(8);
                     usuario.sexo = reader.GetString(9);
+                    usuario.estado = reader.GetString(10);
                     lista.Add(usuario);
                 }
                 conexion.Close();

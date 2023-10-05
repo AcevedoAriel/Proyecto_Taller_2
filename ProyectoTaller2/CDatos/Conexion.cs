@@ -15,7 +15,7 @@ namespace ProyectoTaller2.CDatos
 
         public static SqlConnection ObtenerConexion() 
         {
-            SqlConnection cnx = new SqlConnection("Data Source=DESKTOP-45C6NCU\\SQLEXPRESS;Persist Security Info=False;Initial Catalog=GESTION_HOTELERA;User ID=sa;Password=12345678");
+            SqlConnection cnx = new SqlConnection("Server=. \\SQLEXPRESS;Integrated Security=True;Database=GESTION_HOTELERA;");
             cnx.Open();
             return cnx;
         }

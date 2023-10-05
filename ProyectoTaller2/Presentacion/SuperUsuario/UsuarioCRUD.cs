@@ -10,6 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Automation.Peers;
 using System.Windows.Forms;
 
 namespace ProyectoTaller2.Administrador
@@ -127,7 +128,7 @@ namespace ProyectoTaller2.Administrador
         private void BRegistrar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (txtDNI.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
+            if (txtDNI.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0 && CBEstadoUsuario.SelectedIndex != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
@@ -149,6 +150,7 @@ namespace ProyectoTaller2.Administrador
                     usuario.correo = TCorreo.Text;
                     usuario.sexo = TSexo.Text;
                     usuario.fechaNAc = DTFechaNac.Value;
+                    usuario.estado = CBEstadoUsuario.Text;
 
                     int result = UsuarioDB.AgregarUsuario(usuario);
 
@@ -185,6 +187,7 @@ namespace ProyectoTaller2.Administrador
             TCorreo.Clear();
             DTFechaNac.ResetText();
             CBPerfil.SelectedIndex = 0;
+            CBEstadoUsuario.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
             lblMensajeClave.ResetText();
             lblMensajeCorreo.ResetText();
@@ -236,7 +239,7 @@ namespace ProyectoTaller2.Administrador
                     if (filaSeleccionada != null)
                     {
                         btnEliminar.Visible = true;
-                        filaSeleccionada.Cells["DNI_colum1"].Value = dni;
+                        filaSeleccionada.Cells["dni"].Value = dni;
                         filaSeleccionada.Cells["nombre"].Value = nombre;
                         filaSeleccionada.Cells["apellido"].Value = apellido;
                         filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
@@ -331,6 +334,18 @@ namespace ProyectoTaller2.Administrador
         public void RefreshPantalla()
         {
             dataGridUsuario.DataSource = UsuarioDB.PresentarRegistro();
+        }
+
+        private void DTFechaNac_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = DTFechaNac.Value.Date;
+
+            // Validar si la fecha seleccionada es pasada
+            if (fechaSeleccionada < DateTime.Today)
+            {
+                MessageBox.Show("No puedes seleccionar una fecha pasada.");
+                DTFechaNac.Value = DateTime.Today; // Establecer la fecha actual
+            }
         }
     }
 }
