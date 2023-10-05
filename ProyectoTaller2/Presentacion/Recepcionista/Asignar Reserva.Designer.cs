@@ -81,14 +81,16 @@
             DTRetiro.Name = "DTRetiro";
             DTRetiro.Size = new Size(160, 23);
             DTRetiro.TabIndex = 37;
+            DTRetiro.ValueChanged += DTRetiro_ValueChanged;
             // 
             // DTIngreso
             // 
             DTIngreso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            DTIngreso.Location = new Point(159, 229);
+            DTIngreso.Location = new Point(159, 235);
             DTIngreso.Name = "DTIngreso";
             DTIngreso.Size = new Size(160, 23);
             DTIngreso.TabIndex = 36;
+            DTIngreso.ValueChanged += DTIngreso_ValueChanged;
             // 
             // TTelefono
             // 
@@ -198,7 +200,7 @@
             // 
             LFechaIng.AutoSize = true;
             LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LFechaIng.Location = new Point(12, 234);
+            LFechaIng.Location = new Point(12, 241);
             LFechaIng.Name = "LFechaIng";
             LFechaIng.Size = new Size(107, 15);
             LFechaIng.TabIndex = 24;

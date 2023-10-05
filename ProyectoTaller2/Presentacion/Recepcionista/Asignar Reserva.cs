@@ -104,5 +104,29 @@ namespace ProyectoTaller2.Presentacion.Recepcionista
         {
             this.Close();
         }
+
+        private void DTIngreso_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = DTIngreso.Value.Date;
+
+            // Validar si la fecha seleccionada es pasada
+            if (fechaSeleccionada < DateTime.Today)
+            {
+                MessageBox.Show("No puedes seleccionar una fecha pasada.");
+                DTIngreso.Value = DateTime.Today; // Establecer la fecha actual
+            }
+        }
+
+        private void DTRetiro_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = DTRetiro.Value.Date;
+
+            // Validar si la fecha seleccionada es pasada
+            if (fechaSeleccionada < DateTime.Today)
+            {
+                MessageBox.Show("No puedes seleccionar una fecha pasada.");
+                DTRetiro.Value = DateTime.Today; // Establecer la fecha actual
+            }
+        }
     }
 }
