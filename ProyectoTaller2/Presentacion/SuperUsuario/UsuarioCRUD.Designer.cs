@@ -33,6 +33,10 @@ namespace ProyectoTaller2.Administrador
             BEditar = new Button();
             panel2 = new Panel();
             dataGridUsuario = new DataGridView();
+            dni = new DataGridViewTextBoxColumn();
+            apellido = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            nomUsuario = new DataGridViewTextBoxColumn();
             DTFechaNac = new DateTimePicker();
             TSexo = new ComboBox();
             TTelefono = new TextBox();
@@ -64,6 +68,12 @@ namespace ProyectoTaller2.Administrador
             label5 = new Label();
             CBEstadoUsuario = new ComboBox();
             lblEstadoUsuario = new Label();
+            telefono = new DataGridViewTextBoxColumn();
+            perfil = new DataGridViewTextBoxColumn();
+            correo = new DataGridViewTextBoxColumn();
+            fechaNac = new DataGridViewTextBoxColumn();
+            sexo = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -94,6 +104,7 @@ namespace ProyectoTaller2.Administrador
             // 
             dataGridUsuario.AllowUserToAddRows = false;
             dataGridUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { dni, apellido, nombre, nomUsuario, telefono, perfil, correo, fechaNac, sexo, estado });
             dataGridUsuario.Dock = DockStyle.Fill;
             dataGridUsuario.Location = new Point(0, 0);
             dataGridUsuario.Name = "dataGridUsuario";
@@ -101,6 +112,26 @@ namespace ProyectoTaller2.Administrador
             dataGridUsuario.Size = new Size(827, 185);
             dataGridUsuario.TabIndex = 44;
             dataGridUsuario.SelectionChanged += dataGridUsuario_SelectionChanged;
+            // 
+            // dni
+            // 
+            dni.HeaderText = "DNI";
+            dni.Name = "dni";
+            // 
+            // apellido
+            // 
+            apellido.HeaderText = "Apellido";
+            apellido.Name = "apellido";
+            // 
+            // nombre
+            // 
+            nombre.HeaderText = "Nombre";
+            nombre.Name = "nombre";
+            // 
+            // nomUsuario
+            // 
+            nomUsuario.HeaderText = "Nombre de Usuario";
+            nomUsuario.Name = "nomUsuario";
             // 
             // DTFechaNac
             // 
@@ -420,6 +451,36 @@ namespace ProyectoTaller2.Administrador
             lblEstadoUsuario.TabIndex = 77;
             lblEstadoUsuario.Text = "Estado:";
             // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.Name = "telefono";
+            // 
+            // perfil
+            // 
+            perfil.HeaderText = "Tipo de perfil";
+            perfil.Name = "perfil";
+            // 
+            // correo
+            // 
+            correo.HeaderText = "Direccion de Correo";
+            correo.Name = "correo";
+            // 
+            // fechaNac
+            // 
+            fechaNac.HeaderText = "Fecha de Nacimiento";
+            fechaNac.Name = "fechaNac";
+            // 
+            // sexo
+            // 
+            sexo.HeaderText = "Sexo";
+            sexo.Name = "sexo";
+            // 
+            // estado
+            // 
+            estado.HeaderText = "Estado";
+            estado.Name = "estado";
+            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -505,5 +566,15 @@ namespace ProyectoTaller2.Administrador
         private Label label5;
         private ComboBox CBEstadoUsuario;
         private Label lblEstadoUsuario;
+        private DataGridViewTextBoxColumn dni;
+        private DataGridViewTextBoxColumn apellido;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn nomUsuario;
+        private DataGridViewTextBoxColumn telefono;
+        private DataGridViewTextBoxColumn perfil;
+        private DataGridViewTextBoxColumn correo;
+        private DataGridViewTextBoxColumn fechaNac;
+        private DataGridViewTextBoxColumn sexo;
+        private DataGridViewTextBoxColumn estado;
     }
 }

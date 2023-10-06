@@ -88,7 +88,7 @@ namespace ProyectoTaller2.Presentacion
             DateTime fechaDesde = dateTimeFechaDesde.Value;
 
             // Validar que la fecha seleccionada no sea una fecha pasada
-            if (fechaDesde < DateTime.Now)
+            if (fechaDesde < DateTime.Today )
             {
                 MessageBox.Show("No se puede Reservar una fecha Pasada");
                 return; // Salir del evento sin realizar el filtrado

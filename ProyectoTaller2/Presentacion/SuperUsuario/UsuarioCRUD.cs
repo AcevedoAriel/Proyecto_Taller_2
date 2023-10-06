@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Automation.Peers;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace ProyectoTaller2.Administrador
 {
@@ -333,9 +335,35 @@ namespace ProyectoTaller2.Administrador
 
         public void RefreshPantalla()
         {
-            dataGridUsuario.DataSource = UsuarioDB.PresentarRegistro();
-        }
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select * from usuario";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlDataReader reader = cmd.ExecuteReader();
 
+                while (reader.Read())
+                {
+                    
+                    Usuario usuario = new Usuario();
+                    usuario.dni = reader.GetInt32(0);
+                    usuario.apellido = reader.GetString(1);
+                    usuario.nombre = reader.GetString(2);
+                    usuario.nombreUsuario = reader.GetString(3);
+                    usuario.clave = reader.GetString(4);
+                    usuario.telefono = reader.GetString(5);
+                    usuario.usuario_perfil = reader.GetInt32(6);
+                    usuario.correo = reader.GetString(7);
+                    usuario.fechaNAc = reader.GetDateTime(8);
+                    usuario.sexo = reader.GetString(9);
+                    usuario.estado = reader.GetString(10);
+                    
+                    dataGridUsuario.Rows.Add(usuario.dni, usuario.apellido, usuario.nombre, usuario.nombreUsuario, usuario.telefono, usuario.usuario_perfil, usuario.correo, usuario.fechaNAc, usuario.sexo, usuario.estado);
+                }
+                conexion.Close();
+
+                //dataGridUsuario.DataSource = UsuarioDB.PresentarRegistro();
+            }
+        }
         private void DTFechaNac_ValueChanged(object sender, EventArgs e)
         {
             DateTime fechaSeleccionada = DTFechaNac.Value.Date;

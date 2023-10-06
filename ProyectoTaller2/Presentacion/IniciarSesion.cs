@@ -45,57 +45,5 @@ namespace ProyectoTaller2.Presentacion
             }
         }
 
-        /*public int perfil ()
-        {
-            switch (txtUsuario.Text)
-            {
-                case "Admin":
-                    if (txtClave.Text == "123")
-                    {
-                        // Funciones para el perfil de Administrador
-
-                        return 1;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return 0;
-                    }
-                    break;
-
-                case "Recep":
-                    if (txtClave.Text == "456")
-                    {
-                        // Funciones para el perfil de Recepcionista
-                        return 2;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return 0;
-                    }
-                    break;
-
-                case "SupUsr":
-                    if (txtClave.Text == "789")
-                    {
-                        // Funciones para el perfil de Superusuario
-                        return 3;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return 0;
-                    }
-                    break;
-
-                default:
-                    MessageBox.Show("El usuario ingresado no tiene un perfil válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return 0;
-                    break;
-
-            }
-        }*/
-
     }
 }
