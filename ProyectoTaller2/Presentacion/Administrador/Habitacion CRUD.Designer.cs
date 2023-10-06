@@ -204,6 +204,7 @@
             TIDHabitacion.Name = "TIDHabitacion";
             TIDHabitacion.Size = new Size(169, 23);
             TIDHabitacion.TabIndex = 1;
+            TIDHabitacion.TextChanged += TIDHabitacion_TextChanged;
             TIDHabitacion.KeyPress += THabitacion_KeyPress;
             // 
             // TNroHabitacion
@@ -220,6 +221,7 @@
             TPrecio.Name = "TPrecio";
             TPrecio.Size = new Size(169, 23);
             TPrecio.TabIndex = 5;
+            TPrecio.TextChanged += TPrecio_TextChanged;
             TPrecio.KeyPress += TPrecio_KeyPress;
             // 
             // btnEditar

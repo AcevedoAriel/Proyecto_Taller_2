@@ -55,8 +55,8 @@
             btnHabitacion1 = new Button();
             lblCategoria = new Label();
             lblPiso = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            CBcategoria = new ComboBox();
+            CBpiso = new ComboBox();
             label3 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lbl1 = new Label();
@@ -65,6 +65,8 @@
             btnFiltrarFecha = new Button();
             dateTimeFechaHasta = new DateTimePicker();
             lblHasta = new Label();
+            txtNoHab = new TextBox();
+            LNoHab = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
@@ -376,7 +378,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCategoria.Location = new Point(159, 108);
+            lblCategoria.Location = new Point(129, 112);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(84, 20);
             lblCategoria.TabIndex = 23;
@@ -386,29 +388,29 @@
             // 
             lblPiso.AutoSize = true;
             lblPiso.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPiso.Location = new Point(159, 75);
+            lblPiso.Location = new Point(129, 79);
             lblPiso.Name = "lblPiso";
             lblPiso.Size = new Size(46, 20);
             lblPiso.TabIndex = 24;
             lblPiso.Text = "Piso :";
             // 
-            // comboBox1
+            // CBcategoria
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
-            comboBox1.Location = new Point(249, 110);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(165, 21);
-            comboBox1.TabIndex = 25;
+            CBcategoria.FormattingEnabled = true;
+            CBcategoria.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
+            CBcategoria.Location = new Point(219, 114);
+            CBcategoria.Name = "CBcategoria";
+            CBcategoria.Size = new Size(165, 21);
+            CBcategoria.TabIndex = 25;
             // 
-            // comboBox2
+            // CBpiso
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "[Seleccione]", "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
-            comboBox2.Location = new Point(249, 74);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(165, 21);
-            comboBox2.TabIndex = 26;
+            CBpiso.FormattingEnabled = true;
+            CBpiso.Items.AddRange(new object[] { "[Seleccione]", "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
+            CBpiso.Location = new Point(219, 78);
+            CBpiso.Name = "CBpiso";
+            CBpiso.Size = new Size(165, 21);
+            CBpiso.TabIndex = 26;
             // 
             // label3
             // 
@@ -429,7 +431,7 @@
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 105;
-            iconPictureBox1.Location = new Point(33, 52);
+            iconPictureBox1.Location = new Point(12, 52);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(105, 105);
             iconPictureBox1.TabIndex = 28;
@@ -449,7 +451,7 @@
             // 
             lblDesde.AutoSize = true;
             lblDesde.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDesde.Location = new Point(439, 74);
+            lblDesde.Location = new Point(399, 78);
             lblDesde.Name = "lblDesde";
             lblDesde.Size = new Size(56, 20);
             lblDesde.TabIndex = 30;
@@ -458,9 +460,9 @@
             // dateTimeFechaDesde
             // 
             dateTimeFechaDesde.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dateTimeFechaDesde.Location = new Point(494, 74);
+            dateTimeFechaDesde.Location = new Point(454, 78);
             dateTimeFechaDesde.Name = "dateTimeFechaDesde";
-            dateTimeFechaDesde.Size = new Size(227, 22);
+            dateTimeFechaDesde.Size = new Size(183, 22);
             dateTimeFechaDesde.TabIndex = 31;
             // 
             // btnFiltrarFecha
@@ -468,9 +470,9 @@
             btnFiltrarFecha.BackColor = Color.White;
             btnFiltrarFecha.FlatStyle = FlatStyle.Popup;
             btnFiltrarFecha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltrarFecha.Location = new Point(727, 75);
+            btnFiltrarFecha.Location = new Point(717, 36);
             btnFiltrarFecha.Name = "btnFiltrarFecha";
-            btnFiltrarFecha.Size = new Size(88, 53);
+            btnFiltrarFecha.Size = new Size(75, 46);
             btnFiltrarFecha.TabIndex = 32;
             btnFiltrarFecha.Text = "Buscar";
             btnFiltrarFecha.UseVisualStyleBackColor = false;
@@ -479,26 +481,47 @@
             // dateTimeFechaHasta
             // 
             dateTimeFechaHasta.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dateTimeFechaHasta.Location = new Point(494, 111);
+            dateTimeFechaHasta.Location = new Point(454, 115);
             dateTimeFechaHasta.Name = "dateTimeFechaHasta";
-            dateTimeFechaHasta.Size = new Size(227, 22);
+            dateTimeFechaHasta.Size = new Size(183, 22);
             dateTimeFechaHasta.TabIndex = 34;
             // 
             // lblHasta
             // 
             lblHasta.AutoSize = true;
             lblHasta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblHasta.Location = new Point(439, 111);
+            lblHasta.Location = new Point(399, 115);
             lblHasta.Name = "lblHasta";
             lblHasta.Size = new Size(53, 20);
             lblHasta.TabIndex = 33;
             lblHasta.Text = "Hasta:";
+            // 
+            // txtNoHab
+            // 
+            txtNoHab.Location = new Point(668, 115);
+            txtNoHab.Name = "txtNoHab";
+            txtNoHab.Size = new Size(128, 20);
+            txtNoHab.TabIndex = 35;
+            txtNoHab.TextChanged += txtNoHab_TextChanged;
+            txtNoHab.KeyPress += txtNoHab_KeyPress;
+            // 
+            // LNoHab
+            // 
+            LNoHab.AutoSize = true;
+            LNoHab.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LNoHab.Location = new Point(668, 97);
+            LNoHab.Name = "LNoHab";
+            LNoHab.Size = new Size(124, 15);
+            LNoHab.TabIndex = 36;
+            LNoHab.Text = "N° de Habitación :";
             // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(LNoHab);
+            Controls.Add(txtNoHab);
             Controls.Add(dateTimeFechaHasta);
             Controls.Add(lblHasta);
             Controls.Add(btnFiltrarFecha);
@@ -507,8 +530,8 @@
             Controls.Add(lbl1);
             Controls.Add(iconPictureBox1);
             Controls.Add(label3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(CBpiso);
+            Controls.Add(CBcategoria);
             Controls.Add(lblPiso);
             Controls.Add(lblCategoria);
             Controls.Add(panel1);
@@ -548,8 +571,8 @@
         private Button button2;
         private Label label5;
         private Label label6;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox CBcategoria;
+        private ComboBox CBpiso;
         private Button button5;
         private Button button1;
         private Label label3;
@@ -560,5 +583,7 @@
         private Button btnFiltrarFecha;
         private DateTimePicker dateTimeFechaHasta;
         private Label lblHasta;
+        private TextBox txtNoHab;
+        private Label LNoHab;
     }
 }

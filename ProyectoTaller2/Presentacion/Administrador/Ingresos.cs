@@ -22,19 +22,9 @@ namespace ProyectoTaller2.Presentacion
 
         }
 
-        private void Bbuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tbuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (btnBuscar.Text == "")
+            if (Tbuscar.Text == "")
             {
 
                 MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -45,5 +35,12 @@ namespace ProyectoTaller2.Presentacion
 
             }
         }
-    }
+
+        private void Tbuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+     }
 }
+

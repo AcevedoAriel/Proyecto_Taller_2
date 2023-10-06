@@ -103,5 +103,20 @@ namespace ProyectoTaller2.Presentacion
 
 
         }
+
+        private void txtNoHab_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNoHab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

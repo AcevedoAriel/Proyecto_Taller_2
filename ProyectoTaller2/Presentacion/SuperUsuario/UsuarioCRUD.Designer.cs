@@ -105,7 +105,7 @@ namespace ProyectoTaller2.Administrador
             // DTFechaNac
             // 
             DTFechaNac.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DTFechaNac.Location = new Point(510, 232);
+            DTFechaNac.Location = new Point(510, 242);
             DTFechaNac.Name = "DTFechaNac";
             DTFechaNac.Size = new Size(174, 21);
             DTFechaNac.TabIndex = 64;
@@ -157,7 +157,7 @@ namespace ProyectoTaller2.Administrador
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(354, 236);
+            label3.Location = new Point(354, 246);
             label3.Name = "label3";
             label3.Size = new Size(129, 15);
             label3.TabIndex = 59;
@@ -334,7 +334,7 @@ namespace ProyectoTaller2.Administrador
             // lblMensajeClave
             // 
             lblMensajeClave.AutoSize = true;
-            lblMensajeClave.Location = new Point(155, 263);
+            lblMensajeClave.Location = new Point(150, 258);
             lblMensajeClave.Name = "lblMensajeClave";
             lblMensajeClave.Size = new Size(0, 15);
             lblMensajeClave.TabIndex = 71;
@@ -342,7 +342,7 @@ namespace ProyectoTaller2.Administrador
             // lblMensajeCorreo
             // 
             lblMensajeCorreo.AutoSize = true;
-            lblMensajeCorreo.Location = new Point(485, 213);
+            lblMensajeCorreo.Location = new Point(510, 227);
             lblMensajeCorreo.Name = "lblMensajeCorreo";
             lblMensajeCorreo.Size = new Size(0, 15);
             lblMensajeCorreo.TabIndex = 71;

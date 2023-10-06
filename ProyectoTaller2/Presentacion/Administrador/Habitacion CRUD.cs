@@ -181,7 +181,7 @@ namespace ProyectoTaller2.Presentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (btnBuscar.Text == "")
+            if (txtBuscar.Text == "")
             {
 
                 MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -191,6 +191,16 @@ namespace ProyectoTaller2.Presentacion
                 // Aqui va el codigo
 
             }
+        }
+
+        private void TIDHabitacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TPrecio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

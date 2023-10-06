@@ -319,7 +319,7 @@ namespace ProyectoTaller2.Administrador
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (btnBuscar.Text == "")
+            if (txtBuscar.Text == "")
             {
 
                 MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -100,7 +100,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
                 BGuardar.Visible = true;
                 BEliminar.Visible = false;
 
-                // Reemplaza "Columna1" con el nombre de tu columna  
+                /* Reemplaza "Columna1" con el nombre de tu columna  
                 DTIngreso.Text = filaSeleccionada.Cells["ingreso"].Value.ToString();
                 DTRetiro.Text = filaSeleccionada.Cells["retiro"].Value.ToString();
                 txtNroHabitacion.Text = filaSeleccionada.Cells["habitacion"].Value.ToString();
@@ -108,7 +108,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
                 TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
                 TDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
                 TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
-                NCantidad.Text = filaSeleccionada.Cells["cantidad"].Value.ToString();
+                NCantidad.Text = filaSeleccionada.Cells["cantidad"].Value.ToString();*/
 
             }
         }
@@ -117,10 +117,7 @@ namespace ProyectoTaller2.Presentacion.Administrador
         {
             if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminaci�n", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (filaSeleccionada != null)
-                {
-                    dataGridReserva.Rows.Remove(filaSeleccionada);
-                }
+                
             }
         }
 
