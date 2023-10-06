@@ -34,11 +34,16 @@ namespace ProyectoTaller2.Administrador
 
         public void MostrarFormulario(Form fm)
         {
+            if (FormularioActivo != null)
+            {
+                FormularioActivo.Close();
+            }
+            FormularioActivo = fm;
+            //indica que no es un formulario padre
             fm.TopLevel = false;
             fm.FormBorderStyle = FormBorderStyle.None;
+            //se ajusta al panel
             fm.Dock = DockStyle.Fill;
-            fm.BackColor = Color.LightSkyBlue;
-            fm.BringToFront();
             fm.Show();
         }
 
@@ -73,6 +78,7 @@ namespace ProyectoTaller2.Administrador
             PanelPrincipal.Controls.Add(formulario);
             formulario.Show();
         }
+
 
         private void MenuReserva_Click(object sender, EventArgs e)
         {
