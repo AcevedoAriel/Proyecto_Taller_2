@@ -203,33 +203,23 @@ namespace ProyectoTaller2.Presentacion.Administrador
 
         private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsPunctuation(e.KeyChar)) // Comparas si la tecla presionada corresponde a un signo de puntuación
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Si coincide, se controla el evento, es decir, no se escribe el carácter
-            }
-            if (Char.IsSymbol(e.KeyChar)) // Comparas si la tecla presionada corresponde a un símbolo
-            {
-                e.Handled = true;
-            }
-            if (Char.IsLetter(e.KeyChar)) // Comparas si la tecla presionada corresponde a una letra
-            {
-                e.Handled = true;
+
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void TDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsPunctuation(e.KeyChar)) // Comparas si la tecla presionada corresponde a un signo de puntuación
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Si coincide, se controla el evento, es decir, no se escribe el carácter
-            }
-            if (Char.IsSymbol(e.KeyChar)) // Comparas si la tecla presionada corresponde a un símbolo
-            {
-                e.Handled = true;
-            }
-            if (Char.IsLetter(e.KeyChar)) // Comparas si la tecla presionada corresponde a una letra
-            {
-                e.Handled = true;
+
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

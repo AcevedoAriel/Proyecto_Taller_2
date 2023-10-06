@@ -74,11 +74,11 @@
             LReservas.AutoEllipsis = true;
             LReservas.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             LReservas.ForeColor = Color.White;
-            LReservas.Location = new Point(103, 3);
+            LReservas.Location = new Point(117, 8);
             LReservas.Name = "LReservas";
             LReservas.Size = new Size(340, 46);
             LReservas.TabIndex = 0;
-            LReservas.Text = "Gestión de Reservas";
+            LReservas.Text = "Gestión Reservadas";
             // 
             // BEditar
             // 
@@ -167,6 +167,7 @@
             // TDNI
             // 
             TDNI.Location = new Point(516, 147);
+            TDNI.MaxLength = 10;
             TDNI.Name = "TDNI";
             TDNI.Size = new Size(160, 23);
             TDNI.TabIndex = 13;
@@ -206,6 +207,7 @@
             // TTelefono
             // 
             TTelefono.Location = new Point(516, 203);
+            TTelefono.MaxLength = 10;
             TTelefono.Name = "TTelefono";
             TTelefono.Size = new Size(160, 23);
             TTelefono.TabIndex = 18;
