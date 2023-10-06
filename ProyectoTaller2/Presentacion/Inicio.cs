@@ -97,7 +97,7 @@ namespace ProyectoTaller2.Presentacion
             DateTime fechaHasta = dateTimeFechaHasta.Value;
             if (fechaHasta < fechaDesde)
             {
-                MessageBox.Show("La fecha de retirno debe ser mayor que la Fecha de Ingreso");
+                MessageBox.Show("La fecha de retiro debe ser mayor que la Fecha de Ingreso");
                 return; // Salir del evento sin realizar el filtrado
             }
 
