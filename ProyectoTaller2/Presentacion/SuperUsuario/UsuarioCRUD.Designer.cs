@@ -33,10 +33,17 @@ namespace ProyectoTaller2.Administrador
             BEditar = new Button();
             panel2 = new Panel();
             dataGridUsuario = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
             dni = new DataGridViewTextBoxColumn();
             apellido = new DataGridViewTextBoxColumn();
             nombre = new DataGridViewTextBoxColumn();
             nomUsuario = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            perfil = new DataGridViewTextBoxColumn();
+            correo = new DataGridViewTextBoxColumn();
+            fechaNac = new DataGridViewTextBoxColumn();
+            sexo = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
             DTFechaNac = new DateTimePicker();
             TSexo = new ComboBox();
             TTelefono = new TextBox();
@@ -66,14 +73,6 @@ namespace ProyectoTaller2.Administrador
             txtDNI = new TextBox();
             lblDniUsuario = new Label();
             label5 = new Label();
-            CBEstadoUsuario = new ComboBox();
-            lblEstadoUsuario = new Label();
-            telefono = new DataGridViewTextBoxColumn();
-            perfil = new DataGridViewTextBoxColumn();
-            correo = new DataGridViewTextBoxColumn();
-            fechaNac = new DataGridViewTextBoxColumn();
-            sexo = new DataGridViewTextBoxColumn();
-            estado = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -104,7 +103,7 @@ namespace ProyectoTaller2.Administrador
             // 
             dataGridUsuario.AllowUserToAddRows = false;
             dataGridUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { dni, apellido, nombre, nomUsuario, telefono, perfil, correo, fechaNac, sexo, estado });
+            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { ID, dni, apellido, nombre, nomUsuario, telefono, perfil, correo, fechaNac, sexo, estado });
             dataGridUsuario.Dock = DockStyle.Fill;
             dataGridUsuario.Location = new Point(0, 0);
             dataGridUsuario.Name = "dataGridUsuario";
@@ -112,6 +111,12 @@ namespace ProyectoTaller2.Administrador
             dataGridUsuario.Size = new Size(827, 185);
             dataGridUsuario.TabIndex = 44;
             dataGridUsuario.SelectionChanged += dataGridUsuario_SelectionChanged;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.Width = 50;
             // 
             // dni
             // 
@@ -132,6 +137,36 @@ namespace ProyectoTaller2.Administrador
             // 
             nomUsuario.HeaderText = "Nombre de Usuario";
             nomUsuario.Name = "nomUsuario";
+            // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.Name = "telefono";
+            // 
+            // perfil
+            // 
+            perfil.HeaderText = "Tipo de perfil";
+            perfil.Name = "perfil";
+            // 
+            // correo
+            // 
+            correo.HeaderText = "Direccion de Correo";
+            correo.Name = "correo";
+            // 
+            // fechaNac
+            // 
+            fechaNac.HeaderText = "Fecha de Nacimiento";
+            fechaNac.Name = "fechaNac";
+            // 
+            // sexo
+            // 
+            sexo.HeaderText = "Sexo";
+            sexo.Name = "sexo";
+            // 
+            // estado
+            // 
+            estado.HeaderText = "Estado";
+            estado.Name = "estado";
             // 
             // DTFechaNac
             // 
@@ -338,7 +373,7 @@ namespace ProyectoTaller2.Administrador
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(110, 47);
             btnEliminar.TabIndex = 67;
-            btnEliminar.Text = "Eliminar";
+            btnEliminar.Text = "Dar de Baja";
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
@@ -431,63 +466,11 @@ namespace ProyectoTaller2.Administrador
             label5.TabIndex = 76;
             label5.Text = "Gestión de Usuarios";
             // 
-            // CBEstadoUsuario
-            // 
-            CBEstadoUsuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            CBEstadoUsuario.FormattingEnabled = true;
-            CBEstadoUsuario.Items.AddRange(new object[] { "[Seleccione el Estado]", "Activo", "Inactivo" });
-            CBEstadoUsuario.Location = new Point(510, 83);
-            CBEstadoUsuario.Name = "CBEstadoUsuario";
-            CBEstadoUsuario.Size = new Size(174, 23);
-            CBEstadoUsuario.TabIndex = 78;
-            // 
-            // lblEstadoUsuario
-            // 
-            lblEstadoUsuario.AutoSize = true;
-            lblEstadoUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEstadoUsuario.Location = new Point(354, 91);
-            lblEstadoUsuario.Name = "lblEstadoUsuario";
-            lblEstadoUsuario.Size = new Size(46, 15);
-            lblEstadoUsuario.TabIndex = 77;
-            lblEstadoUsuario.Text = "Estado:";
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Telefono";
-            telefono.Name = "telefono";
-            // 
-            // perfil
-            // 
-            perfil.HeaderText = "Tipo de perfil";
-            perfil.Name = "perfil";
-            // 
-            // correo
-            // 
-            correo.HeaderText = "Direccion de Correo";
-            correo.Name = "correo";
-            // 
-            // fechaNac
-            // 
-            fechaNac.HeaderText = "Fecha de Nacimiento";
-            fechaNac.Name = "fechaNac";
-            // 
-            // sexo
-            // 
-            sexo.HeaderText = "Sexo";
-            sexo.Name = "sexo";
-            // 
-            // estado
-            // 
-            estado.HeaderText = "Estado";
-            estado.Name = "estado";
-            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
-            Controls.Add(CBEstadoUsuario);
-            Controls.Add(lblEstadoUsuario);
             Controls.Add(label5);
             Controls.Add(txtDNI);
             Controls.Add(lblDniUsuario);
@@ -564,8 +547,7 @@ namespace ProyectoTaller2.Administrador
         private TextBox txtDNI;
         private Label lblDniUsuario;
         private Label label5;
-        private ComboBox CBEstadoUsuario;
-        private Label lblEstadoUsuario;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn dni;
         private DataGridViewTextBoxColumn apellido;
         private DataGridViewTextBoxColumn nombre;

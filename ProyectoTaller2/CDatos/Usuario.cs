@@ -8,6 +8,7 @@ namespace ProyectoTaller2.CDatos
 {
     public class Usuario
     {
+        public int id { get; set; }
         public int dni { get; set; }
         public string apellido { get; set; }
 
@@ -30,9 +31,9 @@ namespace ProyectoTaller2.CDatos
         public string estado { get; set; }
 
         public Usuario() { }
-        public Usuario(int dni, string ape, string nom, string nomUs, string clave, string tel, int usPer, string correo, DateTime nac, string sexo, string estado ) 
+        public Usuario(int id, int dni, string ape, string nom, string nomUs, string clave, string tel, int usPer, string correo, DateTime nac, string sexo, string estado ) 
         { 
-            
+            this.id = id;
             this.dni = dni;
             this.apellido = ape;
             this.nombre = nom;

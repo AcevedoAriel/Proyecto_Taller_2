@@ -130,15 +130,12 @@ namespace ProyectoTaller2.Administrador
         private void BRegistrar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (txtDNI.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0 && CBEstadoUsuario.SelectedIndex != 0)
+            if (txtDNI.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    // Agregar una nueva fila al datagrid con los valores
-
-                    //dataGridUsuario.Rows.Add(Convert.ToInt32(txtDNI.Text), CBPerfil.Text, TApellido.Text, TNombre.Text, TNombreUsuario.Text, TClave.Text, TCorreo.Text, TSexo.Text, DTFechaNac.Value, TTelefono.Text);
 
                     //Crea un objeto Usuario con los valores ingresados
                     Usuario usuario = new Usuario();
@@ -152,7 +149,7 @@ namespace ProyectoTaller2.Administrador
                     usuario.correo = TCorreo.Text;
                     usuario.sexo = TSexo.Text;
                     usuario.fechaNAc = DTFechaNac.Value;
-                    usuario.estado = CBEstadoUsuario.Text;
+
 
                     int result = UsuarioDB.AgregarUsuario(usuario);
 
@@ -189,7 +186,6 @@ namespace ProyectoTaller2.Administrador
             TCorreo.Clear();
             DTFechaNac.ResetText();
             CBPerfil.SelectedIndex = 0;
-            CBEstadoUsuario.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
             lblMensajeClave.ResetText();
             lblMensajeCorreo.ResetText();
@@ -204,17 +200,16 @@ namespace ProyectoTaller2.Administrador
                 BRegistrar.Visible = false;
                 btnEliminar.Visible = false;
 
-                // Reemplaza "Columna1" con el nombre de tu columna  
-                /*txtDNI.Text = filaSeleccionada.Cells["DNI_colum1"].Value.ToString();
-                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
+                //Reemplaza "Columna1" con el nombre de tu columna  
+                txtDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
                 TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
-                TNombreUsuario.Text = filaSeleccionada.Cells["usuario"].Value.ToString();
-                CBPerfil.Text = filaSeleccionada.Cells["Perfil"].Value.ToString();
-                TClave.Text = filaSeleccionada.Cells["clave"].Value.ToString();
+                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
+                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
+                TNombreUsuario.Text = filaSeleccionada.Cells["nomUsuario"].Value.ToString();
+                CBPerfil.Text = filaSeleccionada.Cells["perfil"].Value.ToString();
                 TSexo.Text = filaSeleccionada.Cells["sexo"].Value.ToString();
-                TCorreo.Text = filaSeleccionada.Cells["email"].Value.ToString();
+                TCorreo.Text = filaSeleccionada.Cells["correo"].Value.ToString();
                 DTFechaNac.Text = filaSeleccionada.Cells["fechaNac"].Value.ToString();
-                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();*/
 
             }
             BRegistrar.Visible = true;
@@ -228,34 +223,33 @@ namespace ProyectoTaller2.Administrador
                 resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
-                    string dni = txtDNI.Text;
-                    string apellido = TApellido.Text;
-                    string nombre = TNombre.Text;
-                    string nombreUsuario = TNombreUsuario.Text;
-                    string clave = TClave.Text;
-                    long telefono = long.Parse(TTelefono.Text);
-                    string correo = TCorreo.Text;
-                    DateTime fecha = DTFechaNac.Value;
+                    Usuario usuario = new Usuario();
+                    usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
+                    usuario.dni = Convert.ToInt32(txtDNI.Text);
+                    usuario.apellido = TApellido.Text;
+                    usuario.nombre = TNombre.Text;
+                    usuario.nombreUsuario = TNombreUsuario.Text;
+                    usuario.clave = TClave.Text;
+                    usuario.telefono = TTelefono.Text;
+                    usuario.usuario_perfil = CBPerfil.SelectedIndex;
+                    usuario.correo = TCorreo.Text;
+                    usuario.sexo = TSexo.Text;
+                    usuario.fechaNAc = DTFechaNac.Value;
 
-                    // Agregar una nueva fila al datagrid con los valores
-                    if (filaSeleccionada != null)
+                    int result = UsuarioDB.ModificarUsuario(usuario);
+                    if (result > 0)
                     {
-                        btnEliminar.Visible = true;
-                        filaSeleccionada.Cells["dni"].Value = dni;
-                        filaSeleccionada.Cells["nombre"].Value = nombre;
-                        filaSeleccionada.Cells["apellido"].Value = apellido;
-                        filaSeleccionada.Cells["usuario"].Value = nombreUsuario;
-                        filaSeleccionada.Cells["Perfil"].Value = CBPerfil.Text;
-                        filaSeleccionada.Cells["clave"].Value = clave;
-                        filaSeleccionada.Cells["sexo"].Value = TSexo.Text;
-                        filaSeleccionada.Cells["email"].Value = correo;
-                        filaSeleccionada.Cells["fechaNac"].Value = fecha;
-                        filaSeleccionada.Cells["telefono"].Value = telefono;
+                        MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
+                        limpiarFormulario();
+                        RefreshPantalla();
+                        BGuardar.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar", "Error", MessageBoxButtons.OK);
+
                     }
 
-                    MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
-                    limpiarFormulario();
-                    BGuardar.Visible = false;
                 }
             }
             else
@@ -268,11 +262,23 @@ namespace ProyectoTaller2.Administrador
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro de que deseas dar de baja este usuario?", "Confirmar Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (filaSeleccionada != null)
                 {
-                    dataGridUsuario.Rows.Remove(filaSeleccionada);
+                    Usuario usuario = new Usuario();
+                    usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
+                    int result = UsuarioDB.BajaUsuario(usuario);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Usuario dado de baja", "Completado", MessageBoxButtons.OK);
+                        RefreshPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo dar de baja", "Error", MessageBoxButtons.OK);
+
+                    }
                 }
             }
         }
@@ -280,7 +286,6 @@ namespace ProyectoTaller2.Administrador
         private void UsuarioCRUD_Load(object sender, EventArgs e)
         {
             CBPerfil.SelectedIndex = 0;
-            CBEstadoUsuario.SelectedIndex = 0;
             TSexo.SelectedIndex = 0;
             RefreshPantalla();
 
@@ -343,21 +348,22 @@ namespace ProyectoTaller2.Administrador
 
                 while (reader.Read())
                 {
-                    
+
                     Usuario usuario = new Usuario();
-                    usuario.dni = reader.GetInt32(0);
-                    usuario.apellido = reader.GetString(1);
-                    usuario.nombre = reader.GetString(2);
-                    usuario.nombreUsuario = reader.GetString(3);
-                    usuario.clave = reader.GetString(4);
-                    usuario.telefono = reader.GetString(5);
-                    usuario.usuario_perfil = reader.GetInt32(6);
-                    usuario.correo = reader.GetString(7);
-                    usuario.fechaNAc = reader.GetDateTime(8);
-                    usuario.sexo = reader.GetString(9);
-                    usuario.estado = reader.GetString(10);
-                    
-                    dataGridUsuario.Rows.Add(usuario.dni, usuario.apellido, usuario.nombre, usuario.nombreUsuario, usuario.telefono, usuario.usuario_perfil, usuario.correo, usuario.fechaNAc, usuario.sexo, usuario.estado);
+                    usuario.id = reader.GetInt32(0);
+                    usuario.dni = reader.GetInt32(1);
+                    usuario.apellido = reader.GetString(2);
+                    usuario.nombre = reader.GetString(3);
+                    usuario.nombreUsuario = reader.GetString(4);
+                    usuario.clave = reader.GetString(5);
+                    usuario.telefono = reader.GetString(6);
+                    usuario.usuario_perfil = reader.GetInt32(7);
+                    usuario.correo = reader.GetString(8);
+                    usuario.fechaNAc = reader.GetDateTime(9);
+                    usuario.sexo = reader.GetString(10);
+                    usuario.estado = reader.GetString(11);
+
+                    dataGridUsuario.Rows.Add(usuario.id, usuario.dni, usuario.apellido, usuario.nombre, usuario.nombreUsuario, usuario.telefono, usuario.usuario_perfil, usuario.correo, usuario.fechaNAc, usuario.sexo, usuario.estado);
                 }
                 conexion.Close();
 
@@ -375,5 +381,7 @@ namespace ProyectoTaller2.Administrador
                 DTFechaNac.Value = DateTime.Today; // Establecer la fecha actual
             }
         }
+
+
     }
 }

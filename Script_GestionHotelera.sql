@@ -10,6 +10,7 @@ CREATE TABLE perfil(
 	CONSTRAINT PK_perfil PRIMARY KEY (cod_perfil)
 )
 CREATE TABLE usuario(
+	id_usuario int identity (1,1) not null,	
 	dni INT NOT NULL,
 	apellido VARCHAR(100) NOT NULL,
 	nombre VARCHAR (100) NOT NULL,
@@ -22,7 +23,8 @@ CREATE TABLE usuario(
 	sexo varchar(10)  NOT NULL,
 	estado varchar(150) NOT NULL
 	/*Restricciones*/
-	CONSTRAINT PK_dniUsuario PRIMARY KEY (dni),
+	CONSTRAINT PK_id_usuario PRIMARY KEY (id_usuario),
+	
 	CONSTRAINT FK_Usuario_Perfil FOREIGN KEY (usuario_perfil) REFERENCES perfil (cod_perfil)
 	)
 
@@ -30,6 +32,3 @@ CREATE TABLE usuario(
 insert into perfil (cod_perfil, nombre) values(1, 'Super Usuario');		
 insert into perfil (cod_perfil, nombre) values(2, 'Administrador');		
 insert into perfil (cod_perfil, nombre) values(3, 'Recepcionista');
-
-
-		
