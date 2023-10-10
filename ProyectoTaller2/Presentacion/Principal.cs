@@ -92,7 +92,7 @@ namespace ProyectoTaller2.Administrador
 
         private void FMInicio_Load(object sender, EventArgs e)
         {
-            FMIniciarSesion login = new();
+           /* FMIniciarSesion login = new();
 
             switch (login.ShowDialog())
             {
@@ -134,14 +134,15 @@ namespace ProyectoTaller2.Administrador
                 default:
                     this.Close();
                     break;
-            }
+            }*/
 
         }
 
         private void MenuSalir_Click(object sender, EventArgs e)
         {
+            FMIniciarSesion sesion = new FMIniciarSesion();
+            sesion.Show();
             this.Close();
-
         }
 
         private void MenuHabitacion_Click(object sender, EventArgs e)

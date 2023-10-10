@@ -21,27 +21,44 @@ namespace ProyectoTaller2.Presentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         public void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Admin" && txtClave.Text == "123")
-            {
-                this.DialogResult = DialogResult.OK;
-            }
-            else if (txtUsuario.Text == "Recep" || txtClave.Text == "456")
-            {
-                this.DialogResult = DialogResult.OK;
-                
+            string usuario, clave;
+            usuario = txtUsuario.Text;
+            clave = txtClave.Text;
 
-            }else if (txtUsuario.Text == "SupUsr" || txtClave.Text == "789")
+            if (usuario == "Admin" && clave == "123")
             {
-                this.DialogResult = DialogResult.OK;
+                //this.DialogResult = DialogResult.OK;
+                FMPrincipal principal = new FMPrincipal();
+                principal.Show();
+                this.Hide();
+
+            }
+            else if (usuario == "Recep" && clave == "456")
+            {
+                //this.DialogResult = DialogResult.OK;
+                FMPrincipal principal = new FMPrincipal();
+                principal.Show();
+                this.Hide();
+            }
+            else if (usuario == "SupUsr" && clave == "789")
+            {
+                //this.DialogResult = DialogResult.OK;
+                FMPrincipal principal = new FMPrincipal();
+                principal.Show();
+                this.Hide();
+            }
+            else if(usuario == "" || clave == "" )
+            {
+                MessageBox.Show("Debes completar todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Autenticación.", "Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
