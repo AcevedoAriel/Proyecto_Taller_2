@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoTaller2.CDatos
+namespace ProyectoTaller2.CapaDatos
 {
     public class Usuario
     {

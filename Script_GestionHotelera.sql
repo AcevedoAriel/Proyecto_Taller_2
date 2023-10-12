@@ -29,9 +29,19 @@ CREATE TABLE usuario(
 	)
 
 /*Lote de Perfi*/
+select * from perfil
 insert into perfil (cod_perfil, nombre) values(1, 'Super Usuario');		
 insert into perfil (cod_perfil, nombre) values(2, 'Administrador');		
 insert into perfil (cod_perfil, nombre) values(3, 'Recepcionista');
+
+/*Lote de Usuario*/
+select * from usuario
+insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
+values(37393962, 'Acevedo', 'Ariel', 'Arielo90', '123456', '37393962', 1, 'ariel@gmail.com', '1993-16-06 14:30:00', 'Hombre', 1);
+insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
+values(38791452, 'Pineyro', 'Juan', 'Juanma10', '7891011', '64589874', 2, 'juanma@gmail.com', '1996-10-06 02:00:00', 'Hombre',1);
+insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
+values(14521369, 'Gomez', 'Maria', 'Maria18', '12131415', '14525632', 3, 'mariagmz@gmail.com', '1969-03-01 03:00:00', 'Mujer',1);
 
 
 CREATE TABLE servicios(
@@ -57,10 +67,3 @@ CREATE TABLE categoriaHabitacion(
 		id_categoria int identity (1,1) not null,
 		descripcion varchar (150) not null
 )
-
-CREATE TABLE reserva(
-
-)
-
-
-select * from usuario

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+﻿using System.Data.SqlClient;
 
-namespace ProyectoTaller2.CDatos
+namespace ProyectoTaller2.CapaDatos
 {
     internal class Conexion
     {
