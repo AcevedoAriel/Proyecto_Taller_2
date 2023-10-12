@@ -1,4 +1,4 @@
-﻿namespace ProyectoTaller2.Administrador
+﻿namespace ProyectoTaller2.CapaPresentacion
 {
     partial class FMPrincipal
     {

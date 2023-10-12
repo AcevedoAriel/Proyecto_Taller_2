@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Presentacion\Administrador\AgregarServicios.cs">
+    <Compile Update="CapaPresentacion\Administrador\AgregarServicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Administrador\Habitacion CRUD.cs">
+    <Compile Update="CapaPresentacion\Administrador\Habitacion CRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\IniciarSesion.cs">
+    <Compile Update="CapaPresentacion\IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Inicio.cs">
+    <Compile Update="CapaPresentacion\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Administrador\Ingresos.cs">
+    <Compile Update="CapaPresentacion\Administrador\Ingresos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Principal.cs">
+    <Compile Update="CapaPresentacion\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\SuperUsuario\UsuarioCRUD.cs">
+    <Compile Update="CapaPresentacion\SuperUsuario\UsuarioCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Recepcionista\Asignar Reserva.cs">
+    <Compile Update="CapaPresentacion\Recepcionista\Asignar Reserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Recepcionista\Cobrar Habitacion.cs">
+    <Compile Update="CapaPresentacion\Recepcionista\Cobrar Habitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Recepcionista\ListadoDeReservas.cs">
+    <Compile Update="CapaPresentacion\Recepcionista\ListadoDeReservas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Recepcionista\ServiciosAdicionales.cs">
+    <Compile Update="CapaPresentacion\Recepcionista\ServiciosAdicionales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\SuperUsuario\BackupRestore.cs">
+    <Compile Update="CapaPresentacion\SuperUsuario\BackupRestore.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

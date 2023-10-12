@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ProyectoTaller2.Administrador
+namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 {
     partial class UsuarioCRUD
     {

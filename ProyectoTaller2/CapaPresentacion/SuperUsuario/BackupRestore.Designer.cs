@@ -1,4 +1,4 @@
-﻿namespace ProyectoTaller2.Presentacion.SuperUsuario
+﻿namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 {
     partial class FMBackupRestore
     {

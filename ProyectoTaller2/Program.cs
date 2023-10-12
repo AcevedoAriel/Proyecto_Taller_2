@@ -1,5 +1,5 @@
-using ProyectoTaller2.Administrador;
-using ProyectoTaller2.Presentacion;
+using ProyectoTaller2.CapaPresentacion.Administrador;
+using ProyectoTaller2.CapaPresentacion;
 
 namespace ProyectoTaller2
 {

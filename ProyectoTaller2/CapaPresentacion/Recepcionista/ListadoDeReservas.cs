@@ -1,4 +1,4 @@
-﻿using ProyectoTaller2.Presentacion.Recepcionista;
+﻿using ProyectoTaller2.CapaPresentacion.Recepcionista;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace ProyectoTaller2.Presentacion.Administrador
+namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     public partial class ListadoDeReservas : Form
     {

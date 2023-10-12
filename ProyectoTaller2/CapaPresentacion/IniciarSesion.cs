@@ -1,16 +1,4 @@
-﻿using ProyectoTaller2.Administrador;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ProyectoTaller2.Presentacion
+﻿namespace ProyectoTaller2.CapaPresentacion
 {
     public partial class FMIniciarSesion : Form
     {

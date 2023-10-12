@@ -1,4 +1,4 @@
-﻿namespace ProyectoTaller2.Presentacion
+﻿namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     partial class ServiciosAdicionales
     {

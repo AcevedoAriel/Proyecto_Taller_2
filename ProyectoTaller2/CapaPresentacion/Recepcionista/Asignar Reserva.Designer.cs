@@ -1,4 +1,4 @@
-﻿namespace ProyectoTaller2.Presentacion.Recepcionista
+﻿namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     partial class Asignar_Reserva
     {

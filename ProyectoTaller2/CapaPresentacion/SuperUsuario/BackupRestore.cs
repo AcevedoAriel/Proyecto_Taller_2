@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoTaller2.Presentacion.SuperUsuario
+namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 {
     public partial class FMBackupRestore : Form
     {

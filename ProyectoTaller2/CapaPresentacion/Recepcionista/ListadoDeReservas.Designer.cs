@@ -1,4 +1,4 @@
-﻿namespace ProyectoTaller2.Presentacion.Administrador
+﻿namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     partial class ListadoDeReservas
     {

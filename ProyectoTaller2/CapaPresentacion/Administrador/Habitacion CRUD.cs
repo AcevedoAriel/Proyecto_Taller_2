@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace ProyectoTaller2.Presentacion
+namespace ProyectoTaller2.CapaPresentacion.Administrador
 {
     public partial class CRUDHabitacion : Form
     {

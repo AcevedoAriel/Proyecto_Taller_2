@@ -1,4 +1,4 @@
-﻿using ProyectoTaller2.Administrador;
+﻿using ProyectoTaller2.CapaPresentacion.Administrador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoTaller2.Presentacion.Recepcionista
+namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     public partial class Asignar_Reserva : Form
     {

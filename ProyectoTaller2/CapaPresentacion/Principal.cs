@@ -1,20 +1,9 @@
 ﻿using FontAwesome.Sharp;
-using ProyectoTaller2.Presentacion;
-using ProyectoTaller2.Presentacion.Administrador;
-using ProyectoTaller2.Presentacion.Recepcionista;
-using ProyectoTaller2.Presentacion.SuperUsuario;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using ProyectoTaller2.CapaPresentacion.Administrador;
+using ProyectoTaller2.CapaPresentacion.Recepcionista;
+using ProyectoTaller2.CapaPresentacion.SuperUsuario;
 
-namespace ProyectoTaller2.Administrador
+namespace ProyectoTaller2.CapaPresentacion
 {
     public partial class FMPrincipal : Form
     {

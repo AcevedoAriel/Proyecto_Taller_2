@@ -1,16 +1,6 @@
-﻿using ProyectoTaller2.Presentacion.Recepcionista;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
+﻿using ProyectoTaller2.CapaPresentacion.Recepcionista;
 
-namespace ProyectoTaller2.Presentacion
+namespace ProyectoTaller2.CapaPresentacion
 {
     public partial class Inicio : Form
     {
