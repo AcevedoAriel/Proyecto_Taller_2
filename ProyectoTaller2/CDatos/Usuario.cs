@@ -28,10 +28,10 @@ namespace ProyectoTaller2.CDatos
 
         public string sexo { get; set; }
 
-        public string estado { get; set; }
+        public int estado { get; set; }
 
         public Usuario() { }
-        public Usuario(int id, int dni, string ape, string nom, string nomUs, string clave, string tel, int usPer, string correo, DateTime nac, string sexo, string estado ) 
+        public Usuario(int id, int dni, string ape, string nom, string nomUs, string clave, string tel, int usPer, string correo, DateTime nac, string sexo, int estado ) 
         { 
             this.id = id;
             this.dni = dni;

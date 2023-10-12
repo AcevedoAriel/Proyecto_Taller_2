@@ -15,7 +15,7 @@ namespace ProyectoTaller2.CDatos
 
             using (SqlConnection conexion = Conexion.ObtenerConexion()) 
             {
-                string query = "insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc, sexo, estado) values ( "+usuario.dni+" ,'"+usuario.apellido+ "' , '"+usuario.nombre+ "' , '"+usuario.nombreUsuario+ "' , '"+usuario.clave+ "' , '"+usuario.telefono+ "', "+usuario.usuario_perfil+" ,'"+usuario.correo+"' , '"+usuario.fechaNAc+ "' ,  '" + usuario.sexo+ "', 'Activo' )";
+                string query = "insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc, sexo, estado) values ( "+usuario.dni+" ,'"+usuario.apellido+ "' , '"+usuario.nombre+ "' , '"+usuario.nombreUsuario+ "' , '"+usuario.clave+ "' , '"+usuario.telefono+ "', "+usuario.usuario_perfil+" ,'"+usuario.correo+"' , '"+usuario.fechaNAc+ "' ,  '" + usuario.sexo+ "', 1 )";
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
                 retorno = cmd.ExecuteNonQuery();
@@ -42,7 +42,7 @@ namespace ProyectoTaller2.CDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update usuario set estado = 'Inactivo' where id_usuario = "+usuario.id+" ";
+                string query = "update usuario set estado = 0 where id_usuario = "+usuario.id+" ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();

@@ -33,17 +33,6 @@ namespace ProyectoTaller2.Administrador
             BEditar = new Button();
             panel2 = new Panel();
             dataGridUsuario = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            dni = new DataGridViewTextBoxColumn();
-            apellido = new DataGridViewTextBoxColumn();
-            nombre = new DataGridViewTextBoxColumn();
-            nomUsuario = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            perfil = new DataGridViewTextBoxColumn();
-            correo = new DataGridViewTextBoxColumn();
-            fechaNac = new DataGridViewTextBoxColumn();
-            sexo = new DataGridViewTextBoxColumn();
-            estado = new DataGridViewTextBoxColumn();
             DTFechaNac = new DateTimePicker();
             TSexo = new ComboBox();
             TTelefono = new TextBox();
@@ -73,6 +62,7 @@ namespace ProyectoTaller2.Administrador
             txtDNI = new TextBox();
             lblDniUsuario = new Label();
             label5 = new Label();
+            ID = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -103,7 +93,7 @@ namespace ProyectoTaller2.Administrador
             // 
             dataGridUsuario.AllowUserToAddRows = false;
             dataGridUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { ID, dni, apellido, nombre, nomUsuario, telefono, perfil, correo, fechaNac, sexo, estado });
+            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { ID });
             dataGridUsuario.Dock = DockStyle.Fill;
             dataGridUsuario.Location = new Point(0, 0);
             dataGridUsuario.Name = "dataGridUsuario";
@@ -111,62 +101,6 @@ namespace ProyectoTaller2.Administrador
             dataGridUsuario.Size = new Size(827, 185);
             dataGridUsuario.TabIndex = 44;
             dataGridUsuario.SelectionChanged += dataGridUsuario_SelectionChanged;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.Width = 50;
-            // 
-            // dni
-            // 
-            dni.HeaderText = "DNI";
-            dni.Name = "dni";
-            // 
-            // apellido
-            // 
-            apellido.HeaderText = "Apellido";
-            apellido.Name = "apellido";
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "Nombre";
-            nombre.Name = "nombre";
-            // 
-            // nomUsuario
-            // 
-            nomUsuario.HeaderText = "Nombre de Usuario";
-            nomUsuario.Name = "nomUsuario";
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Telefono";
-            telefono.Name = "telefono";
-            // 
-            // perfil
-            // 
-            perfil.HeaderText = "Tipo de perfil";
-            perfil.Name = "perfil";
-            // 
-            // correo
-            // 
-            correo.HeaderText = "Direccion de Correo";
-            correo.Name = "correo";
-            // 
-            // fechaNac
-            // 
-            fechaNac.HeaderText = "Fecha de Nacimiento";
-            fechaNac.Name = "fechaNac";
-            // 
-            // sexo
-            // 
-            sexo.HeaderText = "Sexo";
-            sexo.Name = "sexo";
-            // 
-            // estado
-            // 
-            estado.HeaderText = "Estado";
-            estado.Name = "estado";
             // 
             // DTFechaNac
             // 
@@ -466,6 +400,13 @@ namespace ProyectoTaller2.Administrador
             label5.TabIndex = 76;
             label5.Text = "Gestión de Usuarios";
             // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.Visible = false;
+            ID.Width = 50;
+            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -548,15 +489,5 @@ namespace ProyectoTaller2.Administrador
         private Label lblDniUsuario;
         private Label label5;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn dni;
-        private DataGridViewTextBoxColumn apellido;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn nomUsuario;
-        private DataGridViewTextBoxColumn telefono;
-        private DataGridViewTextBoxColumn perfil;
-        private DataGridViewTextBoxColumn correo;
-        private DataGridViewTextBoxColumn fechaNac;
-        private DataGridViewTextBoxColumn sexo;
-        private DataGridViewTextBoxColumn estado;
     }
 }

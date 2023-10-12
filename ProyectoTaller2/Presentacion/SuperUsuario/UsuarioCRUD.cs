@@ -342,11 +342,18 @@ namespace ProyectoTaller2.Administrador
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select * from usuario";
+                string query = "select id_usuario as USUARIO from usuario";
                 SqlCommand cmd = new SqlCommand(query, conexion);
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                DataSet dataset = new DataSet();
+                //conexion.Open();
+                dt.Fill(dataset, "Test_table");
+                //conexion.Close();
+                dataGridUsuario.DataSource = dataset;
+                dataGridUsuario.DataMember = "Test_table";
+                //SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
+                /*while (reader.Read())
                 {
 
                     Usuario usuario = new Usuario();
@@ -361,13 +368,13 @@ namespace ProyectoTaller2.Administrador
                     usuario.correo = reader.GetString(8);
                     usuario.fechaNAc = reader.GetDateTime(9);
                     usuario.sexo = reader.GetString(10);
-                    usuario.estado = reader.GetString(11);
+                    usuario.estado = reader.GetInt32(11);
 
                     dataGridUsuario.Rows.Add(usuario.id, usuario.dni, usuario.apellido, usuario.nombre, usuario.nombreUsuario, usuario.telefono, usuario.usuario_perfil, usuario.correo, usuario.fechaNAc, usuario.sexo, usuario.estado);
                 }
-                conexion.Close();
+                conexion.Close();*/
 
-                //dataGridUsuario.DataSource = UsuarioDB.PresentarRegistro();
+                //dataGridUsuario.DataSource = 
             }
         }
         private void DTFechaNac_ValueChanged(object sender, EventArgs e)
@@ -381,7 +388,6 @@ namespace ProyectoTaller2.Administrador
                 DTFechaNac.Value = DateTime.Today; // Establecer la fecha actual
             }
         }
-
 
     }
 }
