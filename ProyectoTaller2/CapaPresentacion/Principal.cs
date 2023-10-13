@@ -11,9 +11,11 @@ namespace ProyectoTaller2.CapaPresentacion
         private static IconMenuItem? MenuActivo;
         //Formulario que esta activo en el panel
         public static Form? FormularioActivo;
-        public FMPrincipal()
+
+        public FMPrincipal(string nombre)
         {
             InitializeComponent();
+            perfilToolStripMenuItem.Text = nombre;
         }
 
         private void Menu1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -69,61 +71,61 @@ namespace ProyectoTaller2.CapaPresentacion
         }
 
 
-        private void MenuReserva_Click(object sender, EventArgs e)
+        public void MenuReserva_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new ListadoDeReservas());
         }
 
-        private void MenuInicio_Click(object sender, EventArgs e)
+        public void MenuInicio_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new Inicio());
         }
 
         private void FMInicio_Load(object sender, EventArgs e)
         {
-           /* FMIniciarSesion login = new();
+            /* FMIniciarSesion login = new();
 
-            switch (login.ShowDialog())
-            {
-                case DialogResult.OK:
-                    switch (login.txtUsuario.Text)
-                    {
-                        case "Admin":
-                            if (login.txtClave.Text == "123")
-                            {
-                                MenuBackup.Visible = false;
-                                MenuReserva.Visible = false;
-                                MenuUsuario.Visible = false;
-                            }
-                            break;
-                        case "Recep":
-                            if (login.txtClave.Text == "456")
-                            {
-                                MenuUsuario.Visible = false;
-                                MenuBackup.Visible = false;
-                                MenuServicios.Visible = false;
-                                MenuIngresoDePagos.Visible = false;
-                                MenuHabitacion.Visible = false;
-                            }
-                            break;
-                        case "SupUsr":
-                            if (login.txtClave.Text == "789")
-                            {
-                                MenuServicios.Visible = false;
-                                MenuHabitacion.Visible = false;
-                                MenuReserva.Visible = false;
-                                MenuIngresoDePagos.Visible = false;
-                            }
-                            break;
-                        default:
-                            this.Close();
-                            break;
-                    }
-                    break;
-                default:
-                    this.Close();
-                    break;
-            }*/
+             switch (login.ShowDialog())
+             {
+                 case DialogResult.OK:
+                     switch (login.txtUsuario.Text)
+                     {
+                         case "Admin":
+                             if (login.txtClave.Text == "123")
+                             {
+                                 MenuBackup.Visible = false;
+                                 MenuReserva.Visible = false;
+                                 MenuUsuario.Visible = false;
+                             }
+                             break;
+                         case "Recep":
+                             if (login.txtClave.Text == "456")
+                             {
+                                 MenuUsuario.Visible = false;
+                                 MenuBackup.Visible = false;
+                                 MenuServicios.Visible = false;
+                                 MenuIngresoDePagos.Visible = false;
+                                 MenuHabitacion.Visible = false;
+                             }
+                             break;
+                         case "SupUsr":
+                             if (login.txtClave.Text == "789")
+                             {
+                                 MenuServicios.Visible = false;
+                                 MenuHabitacion.Visible = false;
+                                 MenuReserva.Visible = false;
+                                 MenuIngresoDePagos.Visible = false;
+                             }
+                             break;
+                         default:
+                             this.Close();
+                             break;
+                     }
+                     break;
+                 default:
+                     this.Close();
+                     break;
+             }*/
 
         }
 
@@ -134,28 +136,28 @@ namespace ProyectoTaller2.CapaPresentacion
             this.Close();
         }
 
-        private void MenuHabitacion_Click(object sender, EventArgs e)
+        public void MenuHabitacion_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new CRUDHabitacion());
         }
 
-        private void MenuServicios_Click(object sender, EventArgs e)
+        public void MenuServicios_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new ServiciosCrud());
         }
 
-        private void MenuUsuario_Click(object sender, EventArgs e)
+        public void MenuUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuUsuario, new UsuarioCRUD());
         }
 
-        private void MenuPagos_Click(object sender, EventArgs e)
+        public void MenuPagos_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuIngresoDePagos, new Ingresos());
 
         }
 
-        private void MenuBackup_Click(object sender, EventArgs e)
+        public void MenuBackup_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuBackup, new FMBackupRestore());
         }

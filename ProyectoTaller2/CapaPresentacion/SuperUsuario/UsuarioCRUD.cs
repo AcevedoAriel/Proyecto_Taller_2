@@ -1,4 +1,4 @@
-﻿using ProyectoTaller2.CDatos;
+﻿using ProyectoTaller2.CapaDatos;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;

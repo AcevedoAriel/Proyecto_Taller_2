@@ -1,9 +1,9 @@
 Para Recepcionista:
-			Usuario: Recep
-			Contraseña: 456
+			Usuario: Arielo90
+			Contraseña: 123456
 Para Administrador:   
-			Usuario: Admin
-			Contraseña: 123
+			Usuario: Juanma10
+			Contraseña: 7891011
 Para Super Usuario:
-			Usuario: SupUsr
-			Comtraseña: 789
+			Usuario: Maria18
+			Contraseña: 12131415
