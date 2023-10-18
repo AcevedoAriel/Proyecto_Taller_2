@@ -18,9 +18,13 @@ namespace ProyectoTaller2.CapaPresentacion
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT nombreUsuario, usuario_perfil FROM usuario WHERE nombreUsuario = @nombreUsuario AND clave = @pas", conexion);
+                    //SqlCommand cmd = new SqlCommand("SELECT nombreUsuario, usuario_perfil FROM usuario WHERE nombreUsuario = @nombreUsuario AND clave = @pas", conexion);
+                    SqlCommand cmd = new SqlCommand("SELECT u.nombreUsuario, p.nombre " +
+                                            "FROM usuario u " +
+                                            "JOIN perfil p ON u.usuario_perfil = p.cod_perfil " +
+                                            "WHERE u.nombreUsuario = @nombreUsuario AND u.clave = @clave", conexion);
                     cmd.Parameters.AddWithValue("nombreUsuario", nombreUsuario);
-                    cmd.Parameters.AddWithValue("pas", contrasena);
+                    cmd.Parameters.AddWithValue("clave", contrasena);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -28,17 +32,18 @@ namespace ProyectoTaller2.CapaPresentacion
                     if(dt.Rows.Count == 1)
                     {
                         this.Hide();
-                        if (dt.Rows[0][1].ToString() == "1")
+                        if (dt.Rows[0][1].ToString() == "Super Usuario")
                         {
-                            new FMPrincipal(dt.Rows[0][0].ToString()).Show();
+                            new FMPrincipal(dt.Rows[0][1].ToString(), dt.Rows[0][0].ToString()).Show();
+                            
                         }
-                        else if(dt.Rows[0][1].ToString() == "2")
+                        else if(dt.Rows[0][1].ToString() == "Administrador")
                         {
-                            new FMPrincipal(dt.Rows[0][0].ToString()).Show();
+                            new FMPrincipal(dt.Rows[0][1].ToString(), dt.Rows[0][0].ToString()).Show();
                         }
-                        else if ((dt.Rows[0][1].ToString() == "3"))
+                        else if ((dt.Rows[0][1].ToString() == "Recepcionista"))
                         {
-                            new FMPrincipal(dt.Rows[0][0].ToString()).Show();
+                            new FMPrincipal(dt.Rows[0][1].ToString(), dt.Rows[0][0].ToString()).Show();
                         }
                     }
                     else
@@ -65,7 +70,14 @@ namespace ProyectoTaller2.CapaPresentacion
 
         public void btnAceptar_Click(object sender, EventArgs e)
         {
-            logear(txtUsuario.Text, txtClave.Text);
+            if(txtUsuario.Text != "" && txtClave.Text != "")
+            {
+                logear(txtUsuario.Text, txtClave.Text);
+            }
+            else
+            {
+                MessageBox.Show("Debes completar todo los campos!!");
+            }
             //string usuario, clave;
             //usuario = txtUsuario.Text;
             //clave = txtClave.Text;

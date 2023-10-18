@@ -38,11 +38,12 @@
             MenuBackup = new FontAwesome.Sharp.IconMenuItem();
             MenuTitulo = new MenuStrip();
             MenuSalir = new FontAwesome.Sharp.IconMenuItem();
-            perfilToolStripMenuItem = new ToolStripMenuItem();
+            UsuarioToolStripMenuItem = new ToolStripMenuItem();
             ICTitulo = new FontAwesome.Sharp.IconMenuItem();
             hOTELDELPARANAToolStripMenuItem = new ToolStripMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             PanelPrincipal = new Panel();
+            perfilToolStripMenuItem1 = new ToolStripMenuItem();
             MenuIzquierdo.SuspendLayout();
             MenuTitulo.SuspendLayout();
             SuspendLayout();
@@ -168,7 +169,7 @@
             // 
             MenuTitulo.AutoSize = false;
             MenuTitulo.BackColor = Color.SteelBlue;
-            MenuTitulo.Items.AddRange(new ToolStripItem[] { MenuSalir, perfilToolStripMenuItem, ICTitulo, hOTELDELPARANAToolStripMenuItem });
+            MenuTitulo.Items.AddRange(new ToolStripItem[] { MenuSalir, UsuarioToolStripMenuItem, ICTitulo, hOTELDELPARANAToolStripMenuItem, perfilToolStripMenuItem1 });
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
             MenuTitulo.Size = new Size(995, 60);
@@ -189,13 +190,13 @@
             MenuSalir.TextImageRelation = TextImageRelation.ImageAboveText;
             MenuSalir.Click += MenuSalir_Click;
             // 
-            // perfilToolStripMenuItem
+            // UsuarioToolStripMenuItem
             // 
-            perfilToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
-            perfilToolStripMenuItem.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-            perfilToolStripMenuItem.Size = new Size(49, 56);
-            perfilToolStripMenuItem.Text = "Perfil";
+            UsuarioToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
+            UsuarioToolStripMenuItem.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem";
+            UsuarioToolStripMenuItem.Size = new Size(60, 56);
+            UsuarioToolStripMenuItem.Text = "Usuario";
             // 
             // ICTitulo
             // 
@@ -234,6 +235,14 @@
             PanelPrincipal.Size = new Size(843, 504);
             PanelPrincipal.TabIndex = 2;
             // 
+            // perfilToolStripMenuItem1
+            // 
+            perfilToolStripMenuItem1.Alignment = ToolStripItemAlignment.Right;
+            perfilToolStripMenuItem1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
+            perfilToolStripMenuItem1.Size = new Size(55, 56);
+            perfilToolStripMenuItem1.Text = "Perfil :";
+            // 
             // FMPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -265,12 +274,13 @@
         private FontAwesome.Sharp.IconMenuItem MenuReserva;
         private FontAwesome.Sharp.IconMenuItem MenuSalir;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
-        private ToolStripMenuItem perfilToolStripMenuItem;
+        private ToolStripMenuItem UsuarioToolStripMenuItem;
         private Panel PanelPrincipal;
         private FontAwesome.Sharp.IconMenuItem MenuIngresoDePagos;
         private FontAwesome.Sharp.IconMenuItem ICTitulo;
         private ToolStripMenuItem hOTELDELPARANAToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem MenuBackup;
         private FontAwesome.Sharp.IconMenuItem MenuServicios;
+        private ToolStripMenuItem perfilToolStripMenuItem1;
     }
 }

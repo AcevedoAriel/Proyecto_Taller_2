@@ -8,14 +8,15 @@ namespace ProyectoTaller2.CapaPresentacion
     public partial class FMPrincipal : Form
     {
         //alcamena el menu que se encuentra activo
-        private static IconMenuItem? MenuActivo;
+        public static IconMenuItem? MenuActivo;
         //Formulario que esta activo en el panel
         public static Form? FormularioActivo;
 
-        public FMPrincipal(string nombre)
+        public FMPrincipal(string perfil, string nombre)
         {
             InitializeComponent();
-            perfilToolStripMenuItem.Text = nombre;
+            UsuarioToolStripMenuItem.Text = nombre;
+            perfilToolStripMenuItem1.Text = perfil + ":";
         }
 
         private void Menu1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -81,8 +82,9 @@ namespace ProyectoTaller2.CapaPresentacion
             AbrirFormulario((IconMenuItem)sender, new Inicio());
         }
 
-        private void FMInicio_Load(object sender, EventArgs e)
+        public void FMInicio_Load(object sender, EventArgs e)
         {
+
             /* FMIniciarSesion login = new();
 
              switch (login.ShowDialog())
@@ -129,11 +131,15 @@ namespace ProyectoTaller2.CapaPresentacion
 
         }
 
-        private void MenuSalir_Click(object sender, EventArgs e)
+        public void MenuSalir_Click(object sender, EventArgs e)
         {
-            FMIniciarSesion sesion = new FMIniciarSesion();
-            sesion.Show();
-            this.Close();
+            if (MessageBox.Show("¿Estás seguro que desea cerrar sesion?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                FMIniciarSesion sesion = new FMIniciarSesion();
+                sesion.Show();
+                this.Close();
+            }
+
         }
 
         public void MenuHabitacion_Click(object sender, EventArgs e)

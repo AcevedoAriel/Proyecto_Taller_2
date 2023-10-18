@@ -46,5 +46,10 @@ namespace ProyectoTaller2.CapaDatos
             return retorno;
         }
 
+        public static class UsuarioLoginCache
+        {
+
+        }
+
     }
 }
