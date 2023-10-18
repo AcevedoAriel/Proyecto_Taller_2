@@ -62,7 +62,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             txtDNI = new TextBox();
             lblDniUsuario = new Label();
             label5 = new Label();
-            ID = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -93,7 +92,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             // 
             dataGridUsuario.AllowUserToAddRows = false;
             dataGridUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridUsuario.Columns.AddRange(new DataGridViewColumn[] { ID });
             dataGridUsuario.Dock = DockStyle.Fill;
             dataGridUsuario.Location = new Point(0, 0);
             dataGridUsuario.Name = "dataGridUsuario";
@@ -400,13 +398,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             label5.TabIndex = 76;
             label5.Text = "Gestión de Usuarios";
             // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.Visible = false;
-            ID.Width = 50;
-            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -488,6 +479,5 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         private TextBox txtDNI;
         private Label lblDniUsuario;
         private Label label5;
-        private DataGridViewTextBoxColumn ID;
     }
 }

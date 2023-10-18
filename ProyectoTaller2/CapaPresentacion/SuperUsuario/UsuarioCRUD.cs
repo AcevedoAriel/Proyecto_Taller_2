@@ -120,7 +120,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             DialogResult resultado;
             if (txtDNI.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TNombreUsuario.Text != "" && (TClave.Text != "" && TClave.Text.Length >= 6) && TTelefono.Text != "" && (TCorreo.Text != "" && ValidarCorreo(TCorreo.Text)) && DTFechaNac.Value != DateTimePicker.MinimumDateTime && CBPerfil.SelectedIndex != 0 && TSexo.SelectedIndex != 0)
             {
-                resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
+                resultado = MessageBox.Show("Seguro que desea insertar un nuevo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
@@ -212,7 +212,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 if (resultado == DialogResult.Yes)
                 {
                     Usuario usuario = new Usuario();
-                    usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
                     usuario.dni = Convert.ToInt32(txtDNI.Text);
                     usuario.apellido = TApellido.Text;
                     usuario.nombre = TNombre.Text;
@@ -330,7 +329,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select id_usuario as USUARIO from usuario";
+                string query = "select dni as DNI, apellido as Apellido, nombre as NombreUsuario, telefono as Telefono, usuario_perfil as TipoPerfil, correo as Correo, fechaNAc as FechaNacimiento, sexo as Sexo, estado as Estado from usuario";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
                 DataSet dataset = new DataSet();
