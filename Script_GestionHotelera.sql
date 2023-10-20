@@ -44,14 +44,7 @@ insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuar
 values(14521369, 'Gomez', 'Maria', 'Maria18', '12131415', '14525632', 3, 'mariagmz@gmail.com', '1969-03-01 03:00:00', 'Mujer',1);
 
 
-CREATE TABLE servicios(
-		cod_servicio int identity (1,1) not null,
-		nombre	VARCHAR (150) NOT NULL,
-		precio   DECIMAL (5 ,2),
 
-		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),
-
-)
 
 CREATE TABLE habitacion(
 	id_habitacion int identity (1,1) not null,
@@ -59,11 +52,82 @@ CREATE TABLE habitacion(
 	nro_habitacion int  not null,
 	id_estado int not null,
 	precio decimal (5,2) not null,
-	id_categoria int not null,
-	cantidad_camas int not null
+	categoria int not null,
+	cantidad_camas int not null,
+	constraint pk_idHabitacion primary key (id_habitacion),
+	constraint fk_categoria foreign key (categoria) references categoriaHabitacion (id_categoria),
+	constraint fk_id_estado foreign key (id_estado) references estado_habitacion (id_estado)
 )
+
+CREATE TABLE estado_habitacion(
+		id_estado int identity (1,1) not null,
+		descripcion varchar (150) not null,
+		constraint pk_id_estado primary key (id_estado)
+)
+
 
 CREATE TABLE categoriaHabitacion(
 		id_categoria int identity (1,1) not null,
-		descripcion varchar (150) not null
+		descripcion varchar (150) not null,
+		constraint pk_categoria primary key (id_categoria)
 )
+
+select * from habitacion
+
+
+CREATE TABLE cliente(
+	id_cliente int identity (1,1) not null,
+	dni int not null,
+	apellido varchar (100) not null,
+	nombre varchar (100) not null,
+	telefono varchar (100) not null,
+	constraint pk_idCliente primary key (id_cliente)
+)
+
+CREATE TABLE reserva(
+	id_reserva int identity (1,1) not null,
+	cant_personas int not null,
+	fecha_ingreso date not null,
+	fecha_retiro date not null,
+	id_habitacion int not null,
+	id_cliente int not null,
+	precio decimal (5,2),
+	constraint pk_idReserva primary key (id_reserva),
+	constraint fk_idHabitacion foreign key (id_habitacion) references habitacion (id_habitacion),
+	constraint fk_id_cliente foreign key (id_cliente) references cliente (id_cliente)
+)
+
+CREATE TABLE servicios(
+		cod_servicio int identity (1,1) not null,
+		id_detalle int identity (1,1) not null,
+		nombre	VARCHAR (150) NOT NULL,
+		precio   DECIMAL (5 ,2),
+		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),
+)
+
+CREATE TABLE DetalleServicios(
+	id_reserva int  not null,
+	cod_servicio int not null,
+	precio decimal (5, 2),
+	constraint pk_id_reserva_servicio primary key (id_reserva, cod_servicio),
+	constraint fk_id_reserva foreign key (id_reserva) references reserva (id_reserva),
+	constraint fk_codServicioa foreign key (cod_servicio) references servicios (cod_servicio)
+)
+
+
+CREATE TABLE factura(
+		id_factura int identity (1,1) not null,
+		id_tipo_pago int not null,
+		no_cuotas int not null,
+		fecha_pago date not null,
+		costo_habitacion   DECIMAL (5 ,2),
+		costo_servicios   DECIMAL (5 ,2),
+		costo_total   DECIMAL (5 ,2),
+		CONSTRAINT PK_idFactura PRIMARY KEY (id_factura)
+)
+
+CREATE TABLE tipo_pago(
+		id_tipo_pago int identity (1,1) not null,
+		descripcion varchar (100) not null
+)
+
