@@ -100,7 +100,7 @@ CREATE TABLE reserva(
 
 CREATE TABLE servicios(
 		cod_servicio int identity (1,1) not null,
-		id_detalle int identity (1,1) not null,
+		id_detalle int not null,
 		nombre	VARCHAR (150) NOT NULL,
 		precio   DECIMAL (5 ,2),
 		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),

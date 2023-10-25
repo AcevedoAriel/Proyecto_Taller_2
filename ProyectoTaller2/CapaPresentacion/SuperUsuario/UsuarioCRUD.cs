@@ -99,6 +99,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 filaSeleccionada = dataGridUsuario.SelectedRows[0];
                 if (Convert.ToInt32(filaSeleccionada.Cells["Estado"].Value) == 0)
                 {
+                    filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
                     btnEliminar.Visible = false;
                     BntAlta.Visible = true;
                 }
@@ -339,7 +340,8 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select dni as DNI, apellido as Apellido, nombre as Nombre, nombreUsuario as Nombreusuario, telefono as Telefono, nombre as TipoPerfil, correo as Correo, fechaNAc as FechaNacimiento, sexo as Sexo, estado as Estado from usuario";
+                string query = "select usuario.dni as DNI, usuario.apellido as Apellido, usuario.nombre as Nombre, usuario.nombreUsuario as Nombreusuario, usuario.telefono as Telefono, perfil.nombre as TipoPerfil, usuario.correo as Correo, usuario.fechaNAc as FechaNacimiento, usuario.sexo as Sexo, usuario.estado as Estado" + " from usuario " +
+                "JOIN perfil ON usuario.usuario_perfil = perfil.cod_perfil";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
                 DataSet dataset = new DataSet();
