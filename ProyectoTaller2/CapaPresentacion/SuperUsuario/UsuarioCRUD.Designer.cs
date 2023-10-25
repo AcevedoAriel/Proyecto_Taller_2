@@ -62,6 +62,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             txtDNI = new TextBox();
             lblDniUsuario = new Label();
             label5 = new Label();
+            BntAlta = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -398,11 +399,26 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             label5.TabIndex = 76;
             label5.Text = "Gestión de Usuarios";
             // 
+            // BntAlta
+            // 
+            BntAlta.BackColor = Color.Lime;
+            BntAlta.FlatStyle = FlatStyle.Popup;
+            BntAlta.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            BntAlta.Location = new Point(705, 207);
+            BntAlta.Name = "BntAlta";
+            BntAlta.Size = new Size(110, 47);
+            BntAlta.TabIndex = 77;
+            BntAlta.Text = "Dar de Alta";
+            BntAlta.UseVisualStyleBackColor = false;
+            BntAlta.Visible = false;
+            BntAlta.Click += BntAlta_Click;
+            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(BntAlta);
             Controls.Add(label5);
             Controls.Add(txtDNI);
             Controls.Add(lblDniUsuario);
@@ -479,5 +495,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         private TextBox txtDNI;
         private Label lblDniUsuario;
         private Label label5;
+        private Button BntAlta;
     }
 }

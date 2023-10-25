@@ -92,11 +92,21 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             // Verifica si al menos una fila está seleccionada
             BEditar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
             btnEliminar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
+            
             if (dataGridUsuario.SelectedRows.Count > 0)
             {
                 // Almacena la fila seleccionada en la variable
                 filaSeleccionada = dataGridUsuario.SelectedRows[0];
-            }
+                if (Convert.ToInt32(filaSeleccionada.Cells["Estado"].Value) == 0)
+                {
+                    btnEliminar.Visible = false;
+                    BntAlta.Visible = true;
+                }
+                else
+                {
+                    btnEliminar.Visible = true;
+                    BntAlta.Visible = false;
+                }            }
         }
 
         private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -254,7 +264,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 if (filaSeleccionada != null)
                 {
                     Usuario usuario = new Usuario();
-                    usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
+                    usuario.dni = Convert.ToInt32(filaSeleccionada.Cells["DNI"].Value);
                     int result = UsuarioDB.BajaUsuario(usuario);
                     if (result > 0)
                     {
@@ -329,7 +339,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select dni as DNI, apellido as Apellido, nombre as NombreUsuario, telefono as Telefono, usuario_perfil as TipoPerfil, correo as Correo, fechaNAc as FechaNacimiento, sexo as Sexo, estado as Estado from usuario";
+                string query = "select dni as DNI, apellido as Apellido, nombre as Nombre, nombreUsuario as Nombreusuario, telefono as Telefono, nombre as TipoPerfil, correo as Correo, fechaNAc as FechaNacimiento, sexo as Sexo, estado as Estado from usuario";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
                 DataSet dataset = new DataSet();
@@ -376,5 +386,27 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             }
         }
 
+        private void BntAlta_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro de que deseas dar de alta este usuario?", "Confirmar alta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (filaSeleccionada != null)
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.dni = Convert.ToInt32(filaSeleccionada.Cells["DNI"].Value);
+                    int result = UsuarioDB.AltaUsuario(usuario);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Usuario dado de alta", "Completado", MessageBoxButtons.OK);
+                        RefreshPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo dar de alta", "Error", MessageBoxButtons.OK);
+
+                    }
+                }
+            }
+        }
     }
 }

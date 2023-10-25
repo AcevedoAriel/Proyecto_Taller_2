@@ -1,5 +1,8 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
+using ProyectoTaller2.CapaPresentacion;
+using ProyectoTaller2.CapaPresentacion.SuperUsuario;
+
 namespace ProyectoTaller2.CapaDatos
 {
     public class UsuarioDB
@@ -37,7 +40,7 @@ namespace ProyectoTaller2.CapaDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update usuario set estado = 0 where id_usuario = "+usuario.id+" ";
+                string query = "update usuario set estado = 0 where dni = "+usuario.dni+" ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();
@@ -46,10 +49,21 @@ namespace ProyectoTaller2.CapaDatos
             return retorno;
         }
 
-        public static class UsuarioLoginCache
+        public static int AltaUsuario(Usuario usuario)
         {
+            int retorno = 0;
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "update usuario set estado = 1 where dni = " + usuario.dni + " ";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                retorno = cmd.ExecuteNonQuery();
+                conexion.Close();
 
+            }
+            return retorno;
         }
+
+
 
     }
 }

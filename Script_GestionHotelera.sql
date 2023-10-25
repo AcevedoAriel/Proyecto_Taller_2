@@ -43,7 +43,8 @@ values(38791452, 'Pineyro', 'Juan', 'Juanma10', '7891011', '64589874', 2, 'juanm
 insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
 values(14521369, 'Gomez', 'Maria', 'Maria18', '12131415', '14525632', 3, 'mariagmz@gmail.com', '1969-03-01 03:00:00', 'Mujer',1);
 
-
+select * from usuario
+select * from perfil
 
 
 CREATE TABLE habitacion(
@@ -91,7 +92,7 @@ CREATE TABLE reserva(
 	fecha_retiro date not null,
 	id_habitacion int not null,
 	id_cliente int not null,
-	precio decimal (5,2),
+	precio decimal (10,2),
 	constraint pk_idReserva primary key (id_reserva),
 	constraint fk_idHabitacion foreign key (id_habitacion) references habitacion (id_habitacion),
 	constraint fk_id_cliente foreign key (id_cliente) references cliente (id_cliente)
@@ -118,16 +119,23 @@ CREATE TABLE DetalleServicios(
 CREATE TABLE factura(
 		id_factura int identity (1,1) not null,
 		id_tipo_pago int not null,
+		id_cliente int not null,
 		no_cuotas int not null,
 		fecha_pago date not null,
-		costo_habitacion   DECIMAL (5 ,2),
-		costo_servicios   DECIMAL (5 ,2),
-		costo_total   DECIMAL (5 ,2),
+		costo_habitacion   DECIMAL (10 ,2),
+		costo_servicios   DECIMAL (10 ,2),
+		costo_total   DECIMAL (10 ,2),
+		constraint fk_idCliente foreign key (id_cliente) references cliente (id_cliente),
+		constraint fk_idTipoPago foreign key (id_tipo_pago) references tipo_pago (id_tipo_pago),
 		CONSTRAINT PK_idFactura PRIMARY KEY (id_factura)
 )
 
 CREATE TABLE tipo_pago(
 		id_tipo_pago int identity (1,1) not null,
-		descripcion varchar (100) not null
+		descripcion varchar (100) not null,
+		CONSTRAINT PK_idTipoPago PRIMARY KEY (id_tipo_pago)
+
 )
+
+
 
