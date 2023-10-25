@@ -1,12 +1,16 @@
-﻿using System;
+﻿using ProyectoTaller2.CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Windows.Controls;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ProyectoTaller2.CapaPresentacion.Administrador
@@ -16,6 +20,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         public CRUDHabitacion()
         {
             InitializeComponent();
+            RefreshPantalla();
             btnEditar.Enabled = false;
             btnGuardarCambios.Visible = false;
             btnEliminar.Enabled = false;
@@ -52,27 +57,32 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (CBEstado.SelectedIndex != 0 && TIDHabitacion.Text != "" && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
+            if (CBEstado.SelectedIndex != 0 && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
+                    Habitacion habitacion = new Habitacion();
+                    habitacion.piso = CBPiso.SelectedIndex;
+                    habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
+                    habitacion.estado = CBEstado.SelectedIndex;
+                    habitacion.precio = Convert.ToDouble(TPrecio.Text);
+                    habitacion.categoria = Convert.ToInt32(CBCategoriaH.Text);
+                    habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
-                    string IDHabitacion = TIDHabitacion.Text;
-                    string Piso = CBPiso.Text;
-                    string NroHabiacion = TNroHabitacion.Text;
-                    string Estado = CBEstado.Text;
-                    string Precio = TPrecio.Text;
-                    string Categoria = CBCategoriaH.Text;
-                    decimal numeroDeCamas = numericCantCamas.Value;
+                    int result = Habitacion.AgregarHabitacion(habitacion);
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+                        limpiarFormulario();
+                        RefreshPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo Insertar", "Error", MessageBoxButtons.OK);
 
-                    // Agregar una nueva fila al datagrid con los valores
-                    dataGridListaHabitacion.Rows.Add(IDHabitacion, Piso, NroHabiacion, Categoria, numeroDeCamas, Precio, Estado);
-                    MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
-
-                    limpiarFormulario();
-
+                    }
                 }
             }
             else
@@ -84,7 +94,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         public void limpiarFormulario()
         {
             // Limpiar formulario
-            TIDHabitacion.Clear();
+
             CBPiso.SelectedIndex = 0;
             TNroHabitacion.Clear();
             TPrecio.Clear();
@@ -96,37 +106,36 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (CBEstado.SelectedIndex != 0 && TIDHabitacion.Text != "" && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
+            if (CBEstado.SelectedIndex != 0 && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea actualizar?", "Confirmar Cambios", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
+                    Habitacion habitacion = new Habitacion();
+                    habitacion.piso = CBPiso.SelectedIndex;
+                    habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
+                    habitacion.estado = CBEstado.SelectedIndex;
+                    habitacion.precio = Convert.ToDouble(TPrecio.Text);
+                    habitacion.categoria = Convert.ToInt32(CBCategoriaH.Text);
+                    habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
-                    string IDHabitacion = TIDHabitacion.Text;
-                    string Piso = CBPiso.Text;
-                    string NroHabiacion = TNroHabitacion.Text;
-                    string Estado = CBEstado.Text;
-                    string Precio = TPrecio.Text;
-                    string Categoria = CBCategoriaH.Text;
-                    decimal numeroDeCamas = numericCantCamas.Value;
-
+                    int result = Habitacion.ModificarHabitacion(habitacion);
                     // Agregar una nueva fila al datagrid con los valores
-                    if (filaSeleccionada != null)
+                    if (result > 0)
                     {
                         btnEliminar.Visible = true;
-                        filaSeleccionada.Cells["IDHabitacion"].Value = IDHabitacion;
-                        filaSeleccionada.Cells["Piso"].Value = Piso;
-                        filaSeleccionada.Cells["NroHabitacion"].Value = NroHabiacion;
-                        filaSeleccionada.Cells["Categoria"].Value = Categoria;
-                        filaSeleccionada.Cells["CantidadDeCamas"].Value = numeroDeCamas;
-                        filaSeleccionada.Cells["Precio"].Value = Precio;
-                        filaSeleccionada.Cells["Estado"].Value = Estado;
+                        MessageBox.Show("Se actualizo correctamente", "Actualizado!", MessageBoxButtons.OK);
+                        limpiarFormulario();
+                        RefreshPantalla();
+                        btnGuardarCambios.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo Actualizar", "Error", MessageBoxButtons.OK);
+
                     }
 
-                    MessageBox.Show("Se actualizo correctamente", "Actualizado!", MessageBoxButtons.OK);
-                    limpiarFormulario();
-                    btnGuardarCambios.Visible = false;
                     //btnEliminar.Enabled = true;
                 }
             }
@@ -138,11 +147,23 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Cambiar estado a Mantenimiento?", "Confirmar Matenimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (filaSeleccionada != null)
                 {
-                    dataGridListaHabitacion.Rows.Remove(filaSeleccionada);
+                    Habitacion habitacion = new Habitacion();
+                    habitacion.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
+                    int result = Habitacion.BajaHabitacion(habitacion);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("La Habitacion fue puesta en Mantenimiento", "Completado", MessageBoxButtons.OK);
+                        RefreshPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo completar la acción", "Error", MessageBoxButtons.OK);
+
+                    }
                 }
             }
         }
@@ -156,6 +177,17 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             {
                 // Almacena la fila seleccionada en la variable
                 filaSeleccionada = dataGridListaHabitacion.SelectedRows[0];
+                if (Convert.ToString(filaSeleccionada.Cells["Estado"].Value) == "Mantenimiento")
+                {
+                    filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
+                    btnEliminar.Visible = false;
+                    btnAlta.Visible = true;
+                }
+                else
+                {
+                    btnEliminar.Visible = true;
+                    btnAlta.Visible = false;
+                }
             }
         }
 
@@ -167,11 +199,10 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 btnAgregarHabitacion.Visible = false;
 
                 // Reemplaza "Columna1" con el nombre de tu columna  
-                TIDHabitacion.Text = filaSeleccionada.Cells["IDHabitacion"].Value.ToString();
                 CBPiso.Text = filaSeleccionada.Cells["Piso"].Value.ToString();
                 TNroHabitacion.Text = filaSeleccionada.Cells["NroHabitacion"].Value.ToString();
                 CBCategoriaH.Text = filaSeleccionada.Cells["Categoria"].Value.ToString();
-                numericCantCamas.Text = filaSeleccionada.Cells["CantidadDeCamas"].Value.ToString();
+                numericCantCamas.Text = filaSeleccionada.Cells["NroCamas"].Value.ToString();
                 TPrecio.Text = filaSeleccionada.Cells["Precio"].Value.ToString();
                 CBEstado.Text = filaSeleccionada.Cells["Estado"].Value.ToString();
 
@@ -193,6 +224,25 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             }
         }
 
+        /**/
+        public void RefreshPantalla()
+        {
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas  " +
+                    "from habitacion                " +
+                    "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
+                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                DataSet dataset = new DataSet();
+                dt.Fill(dataset, "Test_table");
+                dataGridListaHabitacion.DataSource = dataset;
+                dataGridListaHabitacion.DataMember = "Test_table";
+
+            }
+        }
+
         private void TIDHabitacion_TextChanged(object sender, EventArgs e)
         {
 
@@ -201,6 +251,29 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         private void TPrecio_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAlta_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Habilitar esta Habitación?", "Confirmo Habilitación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (filaSeleccionada != null)
+                {
+                    Habitacion habitacion = new Habitacion();
+                    habitacion.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
+                    int result = Habitacion.AltaHabitacion(habitacion);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("La Habitacion fue Habilitada", "Completado", MessageBoxButtons.OK);
+                        RefreshPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo completar la acción", "Error", MessageBoxButtons.OK);
+
+                    }
+                }
+            }
         }
     }
 }

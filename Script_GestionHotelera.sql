@@ -21,12 +21,13 @@ CREATE TABLE usuario(
     correo VARCHAR(100) NOT NULL,
     fechaNAc DATETIME NOT NULL,
 	sexo varchar(10)  NOT NULL,
-	estado int NOT NULL,
+	estado varchar(10) NOT NULL,
 	/*Restricciones*/
 	CONSTRAINT PK_id_usuario PRIMARY KEY (id_usuario),
-	CONSTRAINT CK_estado CHECK (estado in (0,1)),
+	CONSTRAINT CK_estado CHECK (estado in ('Inactivo','Activo')),
 	CONSTRAINT FK_Usuario_Perfil FOREIGN KEY (usuario_perfil) REFERENCES perfil (cod_perfil)
 	)
+
 
 /*Lote de Perfi*/
 select * from perfil
@@ -37,14 +38,31 @@ insert into perfil (cod_perfil, nombre) values(3, 'Recepcionista');
 /*Lote de Usuario*/
 select * from usuario
 insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
-values(37393962, 'Acevedo', 'Ariel', 'Arielo90', '123456', '37393962', 1, 'ariel@gmail.com', '1993-16-06 14:30:00', 'Hombre', 1);
+values(37393962, 'Acevedo', 'Ariel', 'Arielo90', '123456', '37393962', 1, 'ariel@gmail.com', '1993-16-06 14:30:00', 'Hombre', 'Activo');
 insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
-values(38791452, 'Pineyro', 'Juan', 'Juanma10', '7891011', '64589874', 2, 'juanma@gmail.com', '1996-10-06 02:00:00', 'Hombre',1);
+values(38791452, 'Pineyro', 'Juan', 'Juanma10', '7891011', '64589874', 2, 'juanma@gmail.com', '1996-10-06 02:00:00', 'Hombre', 'Activo');
 insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
-values(14521369, 'Gomez', 'Maria', 'Maria18', '12131415', '14525632', 3, 'mariagmz@gmail.com', '1969-03-01 03:00:00', 'Mujer',1);
+values(14521369, 'Gomez', 'Maria', 'Maria18', '12131415', '14525632', 3, 'mariagmz@gmail.com', '1969-03-01 03:00:00', 'Mujer', 'Activo');
 
-select * from usuario
-select * from perfil
+select * from habitacion
+delete from habitacion
+insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
+values(1, 25, 2, 42.12 , 1, 2)
+insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
+values(1, 45, 1, 42.12 , 2, 1)
+
+select * from estado_habitacion
+insert into estado_habitacion(descripcion) values ('Ocupada')
+insert into estado_habitacion(descripcion) values ('Libre')
+insert into estado_habitacion(descripcion) values ('Mantenimiento')
+
+select * from categoriaHabitacion
+delete from categoriaHabitacion
+TRUNCATE TABLE categoriaHabitacion;
+DBCC CHECKIDENT ('categoriaHabitacion', RESEED, 0);
+insert into categoriaHabitacion(descripcion) values ('Simple')
+insert into categoriaHabitacion(descripcion) values ('Matrimonial')
+insert into categoriaHabitacion(descripcion) values ('Ejecutivo')
 
 
 CREATE TABLE habitacion(
@@ -139,3 +157,8 @@ CREATE TABLE tipo_pago(
 
 
 
+select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion 
+as Categoria, habitacion.cantidad_camas as NroCamas
+from habitacion
+JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado
+JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria

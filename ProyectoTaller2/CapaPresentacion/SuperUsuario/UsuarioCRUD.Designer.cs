@@ -308,6 +308,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             btnEliminar.TabIndex = 67;
             btnEliminar.Text = "Dar de Baja";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Visible = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnBuscar

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Windows.Controls;
 
 namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 {
@@ -92,13 +93,13 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             // Verifica si al menos una fila está seleccionada
             BEditar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
             btnEliminar.Enabled = dataGridUsuario.SelectedRows.Count > 0;
-            
+
             if (dataGridUsuario.SelectedRows.Count > 0)
             {
                 // Almacena la fila seleccionada en la variable
                 filaSeleccionada = dataGridUsuario.SelectedRows[0];
-                if (Convert.ToInt32(filaSeleccionada.Cells["Estado"].Value) == 0)
-                {
+                if (Convert.ToString(filaSeleccionada.Cells["Estado"].Value) == "Inactivo")
+                {   
                     filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
                     btnEliminar.Visible = false;
                     BntAlta.Visible = true;
@@ -107,7 +108,8 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 {
                     btnEliminar.Visible = true;
                     BntAlta.Visible = false;
-                }            }
+                }
+            }
         }
 
         private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -200,15 +202,15 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 btnEliminar.Visible = false;
 
                 //Reemplaza "Columna1" con el nombre de tu columna  
-                txtDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
-                TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
-                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
-                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
-                TNombreUsuario.Text = filaSeleccionada.Cells["nomUsuario"].Value.ToString();
-                CBPerfil.Text = filaSeleccionada.Cells["perfil"].Value.ToString();
-                TSexo.Text = filaSeleccionada.Cells["sexo"].Value.ToString();
-                TCorreo.Text = filaSeleccionada.Cells["correo"].Value.ToString();
-                DTFechaNac.Text = filaSeleccionada.Cells["fechaNac"].Value.ToString();
+                txtDNI.Text = filaSeleccionada.Cells["DNI"].Value.ToString();
+                TApellido.Text = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                TNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                TTelefono.Text = filaSeleccionada.Cells["Telefono"].Value.ToString();
+                TNombreUsuario.Text = filaSeleccionada.Cells["Nombreusuario"].Value.ToString();
+                CBPerfil.Text = filaSeleccionada.Cells["TipoPerfil"].Value.ToString();
+                TSexo.Text = filaSeleccionada.Cells["Sexo"].Value.ToString();
+                TCorreo.Text = filaSeleccionada.Cells["Correo"].Value.ToString();
+                DTFechaNac.Text = filaSeleccionada.Cells["FechaNacimiento"].Value.ToString();
 
             }
             BRegistrar.Visible = true;
@@ -223,6 +225,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 if (resultado == DialogResult.Yes)
                 {
                     Usuario usuario = new Usuario();
+                    usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
                     usuario.dni = Convert.ToInt32(txtDNI.Text);
                     usuario.apellido = TApellido.Text;
                     usuario.nombre = TNombre.Text;
@@ -265,7 +268,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 if (filaSeleccionada != null)
                 {
                     Usuario usuario = new Usuario();
-                    usuario.dni = Convert.ToInt32(filaSeleccionada.Cells["DNI"].Value);
+                    usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
                     int result = UsuarioDB.BajaUsuario(usuario);
                     if (result > 0)
                     {
@@ -340,40 +343,15 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select usuario.dni as DNI, usuario.apellido as Apellido, usuario.nombre as Nombre, usuario.nombreUsuario as Nombreusuario, usuario.telefono as Telefono, perfil.nombre as TipoPerfil, usuario.correo as Correo, usuario.fechaNAc as FechaNacimiento, usuario.sexo as Sexo, usuario.estado as Estado" + " from usuario " +
+                string query = "select usuario.id_usuario as ID, usuario.dni as DNI, usuario.apellido as Apellido, usuario.nombre as Nombre, usuario.nombreUsuario as Nombreusuario, usuario.telefono as Telefono, perfil.nombre as TipoPerfil, usuario.correo as Correo, usuario.fechaNAc as FechaNacimiento, usuario.sexo as Sexo, usuario.estado as Estado" + " from usuario " +
                 "JOIN perfil ON usuario.usuario_perfil = perfil.cod_perfil";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
                 DataSet dataset = new DataSet();
-                //conexion.Open();
                 dt.Fill(dataset, "Test_table");
-                //conexion.Close();
                 dataGridUsuario.DataSource = dataset;
                 dataGridUsuario.DataMember = "Test_table";
-                //SqlDataReader reader = cmd.ExecuteReader();
 
-                /*while (reader.Read())
-                {
-
-                    Usuario usuario = new Usuario();
-                    usuario.id = reader.GetInt32(0);
-                    usuario.dni = reader.GetInt32(1);
-                    usuario.apellido = reader.GetString(2);
-                    usuario.nombre = reader.GetString(3);
-                    usuario.nombreUsuario = reader.GetString(4);
-                    usuario.clave = reader.GetString(5);
-                    usuario.telefono = reader.GetString(6);
-                    usuario.usuario_perfil = reader.GetInt32(7);
-                    usuario.correo = reader.GetString(8);
-                    usuario.fechaNAc = reader.GetDateTime(9);
-                    usuario.sexo = reader.GetString(10);
-                    usuario.estado = reader.GetInt32(11);
-
-                    dataGridUsuario.Rows.Add(usuario.id, usuario.dni, usuario.apellido, usuario.nombre, usuario.nombreUsuario, usuario.telefono, usuario.usuario_perfil, usuario.correo, usuario.fechaNAc, usuario.sexo, usuario.estado);
-                }
-                conexion.Close();*/
-
-                //dataGridUsuario.DataSource = 
             }
         }
         private void DTFechaNac_ValueChanged(object sender, EventArgs e)
@@ -395,7 +373,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 if (filaSeleccionada != null)
                 {
                     Usuario usuario = new Usuario();
-                    usuario.dni = Convert.ToInt32(filaSeleccionada.Cells["DNI"].Value);
+                    usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
                     int result = UsuarioDB.AltaUsuario(usuario);
                     if (result > 0)
                     {

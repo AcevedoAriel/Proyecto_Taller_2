@@ -84,50 +84,26 @@ namespace ProyectoTaller2.CapaPresentacion
 
         public void FMInicio_Load(object sender, EventArgs e)
         {
-
-            /* FMIniciarSesion login = new();
-
-             switch (login.ShowDialog())
-             {
-                 case DialogResult.OK:
-                     switch (login.txtUsuario.Text)
-                     {
-                         case "Admin":
-                             if (login.txtClave.Text == "123")
-                             {
-                                 MenuBackup.Visible = false;
-                                 MenuReserva.Visible = false;
-                                 MenuUsuario.Visible = false;
-                             }
-                             break;
-                         case "Recep":
-                             if (login.txtClave.Text == "456")
-                             {
-                                 MenuUsuario.Visible = false;
-                                 MenuBackup.Visible = false;
-                                 MenuServicios.Visible = false;
-                                 MenuIngresoDePagos.Visible = false;
-                                 MenuHabitacion.Visible = false;
-                             }
-                             break;
-                         case "SupUsr":
-                             if (login.txtClave.Text == "789")
-                             {
-                                 MenuServicios.Visible = false;
-                                 MenuHabitacion.Visible = false;
-                                 MenuReserva.Visible = false;
-                                 MenuIngresoDePagos.Visible = false;
-                             }
-                             break;
-                         default:
-                             this.Close();
-                             break;
-                     }
-                     break;
-                 default:
-                     this.Close();
-                     break;
-             }*/
+           if(perfilToolStripMenuItem1.Text == "Administrador:")
+            {
+                MenuBackup.Visible = false;
+                MenuReserva.Visible = false;
+                MenuUsuario.Visible = false;
+            }else if (perfilToolStripMenuItem1.Text == "Recepcionista:")
+            {
+                MenuUsuario.Visible = false;
+                MenuBackup.Visible = false;
+                MenuServicios.Visible = false;
+                MenuIngresoDePagos.Visible = false;
+                MenuHabitacion.Visible = false;
+            }
+            else if (perfilToolStripMenuItem1.Text == "Super Usuario:")
+            {
+                MenuServicios.Visible = false;
+                MenuHabitacion.Visible = false;
+                MenuReserva.Visible = false;
+                MenuIngresoDePagos.Visible = false;
+            }
 
         }
 
