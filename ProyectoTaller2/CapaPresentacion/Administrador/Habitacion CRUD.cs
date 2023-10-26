@@ -1,18 +1,6 @@
 ﻿using ProyectoTaller2.CapaDatos;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
-using System.Windows.Controls;
-using static System.Net.Mime.MediaTypeNames;
-
 namespace ProyectoTaller2.CapaPresentacion.Administrador
 {
     public partial class CRUDHabitacion : Form
@@ -51,7 +39,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
 
         private void TPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == 8);
         }
 
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
@@ -64,11 +52,11 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 if (resultado == DialogResult.Yes)
                 {
                     Habitacion habitacion = new Habitacion();
-                    habitacion.piso = CBPiso.SelectedIndex;
+                    habitacion.piso = Convert.ToInt32(CBPiso.SelectedIndex);
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
                     habitacion.estado = CBEstado.SelectedIndex;
                     habitacion.precio = Convert.ToDouble(TPrecio.Text);
-                    habitacion.categoria = Convert.ToInt32(CBCategoriaH.Text);
+                    habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
                     int result = Habitacion.AgregarHabitacion(habitacion);
@@ -117,7 +105,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
                     habitacion.estado = CBEstado.SelectedIndex;
                     habitacion.precio = Convert.ToDouble(TPrecio.Text);
-                    habitacion.categoria = Convert.ToInt32(CBCategoriaH.Text);
+                    habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
                     int result = Habitacion.ModificarHabitacion(habitacion);
@@ -230,7 +218,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
                 string query = "select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas  " +
-                    "from habitacion                " +
+                    " from habitacion " +
                     "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
                     "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria";
                 SqlCommand cmd = new SqlCommand(query, conexion);
@@ -241,16 +229,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 dataGridListaHabitacion.DataMember = "Test_table";
 
             }
-        }
-
-        private void TIDHabitacion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TPrecio_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAlta_Click(object sender, EventArgs e)

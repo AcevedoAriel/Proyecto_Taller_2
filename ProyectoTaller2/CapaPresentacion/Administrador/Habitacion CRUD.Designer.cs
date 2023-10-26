@@ -154,7 +154,6 @@
             TPrecio.Name = "TPrecio";
             TPrecio.Size = new Size(169, 23);
             TPrecio.TabIndex = 5;
-            TPrecio.TextChanged += TPrecio_TextChanged;
             TPrecio.KeyPress += TPrecio_KeyPress;
             // 
             // btnEditar
@@ -186,7 +185,7 @@
             // CBCategoriaH
             // 
             CBCategoriaH.FormattingEnabled = true;
-            CBCategoriaH.Items.AddRange(new object[] { "[Seleccione]", "Suite Simple", "Suite Doble", "Suite Matrimonial", "Suite Doble Matrimonial", "Suite Premium" });
+            CBCategoriaH.Items.AddRange(new object[] { "[Seleccione]", "Simple", "Matrimonial", "Ejecutivo" });
             CBCategoriaH.Location = new Point(584, 207);
             CBCategoriaH.Name = "CBCategoriaH";
             CBCategoriaH.Size = new Size(169, 23);
@@ -275,7 +274,7 @@
             // CBEstado
             // 
             CBEstado.FormattingEnabled = true;
-            CBEstado.Items.AddRange(new object[] { "[Seleccione el Estado]", "Habilitado", "Mantenimiento" });
+            CBEstado.Items.AddRange(new object[] { "[Seleccione el Estado]", "Ocupada", "Libre", "Mantenimiento" });
             CBEstado.Location = new Point(220, 259);
             CBEstado.Name = "CBEstado";
             CBEstado.Size = new Size(169, 23);
