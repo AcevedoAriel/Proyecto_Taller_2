@@ -70,7 +70,7 @@ CREATE TABLE habitacion(
 	piso int not null,
 	nro_habitacion int  not null,
 	id_estado int not null,
-	precio decimal (5,2) not null,
+	precio decimal (10,2) not null,
 	categoria int not null,
 	cantidad_camas int not null,
 	constraint pk_idHabitacion primary key (id_habitacion),
@@ -120,14 +120,14 @@ CREATE TABLE servicios(
 		cod_servicio int identity (1,1) not null,
 		id_detalle int not null,
 		nombre	VARCHAR (150) NOT NULL,
-		precio   DECIMAL (5 ,2),
+		precio   DECIMAL (10 ,2),
 		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),
 )
 
 CREATE TABLE DetalleServicios(
 	id_reserva int  not null,
 	cod_servicio int not null,
-	precio decimal (5, 2),
+	precio decimal (10, 2),
 	constraint pk_id_reserva_servicio primary key (id_reserva, cod_servicio),
 	constraint fk_id_reserva foreign key (id_reserva) references reserva (id_reserva),
 	constraint fk_codServicioa foreign key (cod_servicio) references servicios (cod_servicio)
