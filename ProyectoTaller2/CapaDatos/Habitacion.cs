@@ -50,7 +50,7 @@ namespace ProyectoTaller2.CapaDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update habitacion set piso = " + habitacion.piso + " , nro_habitacion = " + habitacion.nro_habitacion + " , precio = '" + habitacion.precio + "' , categoria = " + habitacion.categoria + ", cantidad_camas = " + habitacion.cantidad_camas + "  ";
+                string query = "update habitacion set piso = " + habitacion.piso + " , nro_habitacion = " + habitacion.nro_habitacion + " , precio = '" + habitacion.precio + "' , categoria = " + habitacion.categoria + ", cantidad_camas = '" + habitacion.cantidad_camas + "' where id_habitacion = " + habitacion.id + " ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();

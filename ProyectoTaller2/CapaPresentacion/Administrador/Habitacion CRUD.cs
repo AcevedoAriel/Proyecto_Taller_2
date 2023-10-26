@@ -91,6 +91,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 if (resultado == DialogResult.Yes)
                 {
                     Habitacion habitacion = new Habitacion();
+                    habitacion.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
                     habitacion.piso = CBPiso.SelectedIndex;
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
                     habitacion.estado = CBEstado.SelectedIndex;
