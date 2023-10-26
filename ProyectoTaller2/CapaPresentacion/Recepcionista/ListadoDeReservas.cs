@@ -1,4 +1,5 @@
-﻿using ProyectoTaller2.CapaPresentacion.Recepcionista;
+﻿using ProyectoTaller2.CapaDatos;
+using ProyectoTaller2.CapaPresentacion.Recepcionista;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,20 +69,30 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 
                 if (resultado == DialogResult.Yes)
                 {
-                    string nombre = TNombre.Text;
-                    string apellido = TApellido.Text;
-                    string dni = TDNI.Text;
+                    Reserva reserva = new Reserva();
+                    Cliente cliente = new Cliente();
+                    reserva.ingreso = DTIngreso.Value;
+                    reserva.retiro = DTRetiro.Value;
+                    cliente.apellido = TApellido.Text;
+                    cliente.nombre = TNombre.Text;
+                    cliente.dni = Convert.ToInt16(TDNI.Text);
                     string nroHabitacion = txtNroHabitacion.Text;
-                    long telefono = long.Parse(TTelefono.Text);
-                    string cant = NCantidad.Text;
-                    DateTime ingreso = DTIngreso.Value;
-                    DateTime retiro = DTRetiro.Value;
+                    cliente.telefono = TTelefono.Text;
+                    reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
+                    int result = Reserva.AgregarREserva(reserva);
+                    int result1 = Cliente.AgregarCliente(cliente);
+                    if (result != 0 && result1 != 0)
+                    {
+                        MessageBox.Show("Se insertó correctamente", "actualizado", MessageBoxButtons.OK);
+                        limpiarFormulario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo Insertar", "Error");
 
-                    // Agregar una nueva fila al datagrid con los valores
-                    dataGridReserva.Rows.Add(ingreso, retiro, nroHabitacion, nombre, apellido, dni, telefono, cant);
-                    MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+                    }
 
-                    limpiarFormulario();
+
 
                 }
             }
@@ -100,7 +111,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 BGuardar.Visible = true;
                 BEliminar.Visible = false;
 
-                /* Reemplaza "Columna1" con el nombre de tu columna  
+                 //Reemplaza "Columna1" con el nombre de tu columna  
                 DTIngreso.Text = filaSeleccionada.Cells["ingreso"].Value.ToString();
                 DTRetiro.Text = filaSeleccionada.Cells["retiro"].Value.ToString();
                 txtNroHabitacion.Text = filaSeleccionada.Cells["habitacion"].Value.ToString();
@@ -108,7 +119,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
                 TDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
                 TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
-                NCantidad.Text = filaSeleccionada.Cells["cantidad"].Value.ToString();*/
+                NCantidad.Text = filaSeleccionada.Cells["cantidad"].Value.ToString();
 
             }
         }
@@ -117,7 +128,18 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         {
             if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminaci�n", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                
+                Reserva reserva = new Reserva();
+                int result = Reserva.EliminarReserva(reserva);
+                reserva.id  = 0;
+                if (result != 0)
+                {
+                    MessageBox.Show("Se eliminó correctamente", "Reserva Eliminada", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo Eliminar", "Error");
+
+                }
             }
         }
 
@@ -129,31 +151,28 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
-                    DateTime ingreso = DTIngreso.Value;
-                    DateTime retiro = DTRetiro.Value;
-                    string apellido = TApellido.Text;
-                    string nombre = TNombre.Text;
-                    string dni = TDNI.Text;
+                    Reserva reserva = new Reserva();
+                    Cliente cliente = new Cliente();
+                    reserva.ingreso = DTIngreso.Value;
+                    reserva.retiro = DTRetiro.Value;
+                    cliente.apellido = TApellido.Text;
+                    cliente.nombre = TNombre.Text;
+                    cliente.dni = Convert.ToInt16(TDNI.Text);
                     string nroHabitacion = txtNroHabitacion.Text;
-                    string telefono = TTelefono.Text;
-                    string cantidad = NCantidad.Text;
-
-                    // Agregar una nueva fila al datagrid con los valores
-                    if (filaSeleccionada != null)
+                    cliente.telefono = TTelefono.Text;
+                    reserva.cantPersonas =Convert.ToInt16(NCantidad.Value);
+                    int result = Reserva.ModificarReserva(reserva);
+                    int result1 = Cliente.ModificarCliente(cliente);
+                    if (result != 0 && result1 != 0)
                     {
-                        BEliminar.Visible = true;
-                        filaSeleccionada.Cells["ingreso"].Value = ingreso;
-                        filaSeleccionada.Cells["retiro"].Value = retiro;
-                        filaSeleccionada.Cells["nombre"].Value = nombre;
-                        filaSeleccionada.Cells["apellido"].Value = apellido;
-                        filaSeleccionada.Cells["habitacion"].Value = nroHabitacion;
-                        filaSeleccionada.Cells["dni"].Value = dni;
-                        filaSeleccionada.Cells["cantidad"].Value = cantidad;
-                        filaSeleccionada.Cells["telefono"].Value = telefono;
+                        MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
+                        limpiarFormulario();
                     }
+                    else
+                    {
+                        MessageBox.Show("No se pudo Actualizar", "Error");
 
-                    MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
-                    limpiarFormulario();
+                    }
 
                 }
             }

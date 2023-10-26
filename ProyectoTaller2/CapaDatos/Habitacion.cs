@@ -18,7 +18,8 @@ namespace ProyectoTaller2.CapaDatos
         public int cantidad_camas { get; set; }
 
         public Habitacion() { }
-        public Habitacion(int id, int piso, int nro_habitacion, int estado, double precio, int categoria, int cantidad_camas) {
+        public Habitacion(int id, int piso, int nro_habitacion, int estado, double precio, int categoria, int cantidad_camas) 
+        {
 
             this.id = id;
             this.piso = piso;
