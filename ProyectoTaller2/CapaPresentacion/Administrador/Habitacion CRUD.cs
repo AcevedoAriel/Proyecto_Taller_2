@@ -17,6 +17,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             CBEstado.SelectedIndex = 0;
         }
 
+        /*------------------------------------Validaciones en los campos del formulario Habitacion---------------------------*/
         private void THabitacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
@@ -26,7 +27,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void TNroHabitacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
@@ -36,11 +36,14 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void TPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == 8);
         }
+
+
+
+        /*----------------------------------------Botones---------------------------------------------------------------------*/
 
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
         {
@@ -78,19 +81,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 MessageBox.Show("Debe completar todos los campos", "Error");
             }
         }
-
-        public void limpiarFormulario()
-        {
-            // Limpiar formulario
-
-            CBPiso.SelectedIndex = 0;
-            TNroHabitacion.Clear();
-            TPrecio.Clear();
-            CBCategoriaH.SelectedIndex = 0;
-            numericCantCamas.Value = 0;
-            CBEstado.SelectedIndex = 0;
-        }
-
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
@@ -132,7 +122,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 MessageBox.Show("Debe completar todos los campos", "Error");
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Cambiar estado a Mantenimiento?", "Confirmar Matenimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -155,30 +144,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 }
             }
         }
-
-        private void dataGridListaHabitacion_SelectionChanged(object sender, EventArgs e)
-        {
-            // Verifica si al menos una fila está seleccionada
-            btnEditar.Enabled = dataGridListaHabitacion.SelectedRows.Count > 0;
-            btnEliminar.Enabled = dataGridListaHabitacion.SelectedRows.Count > 0;
-            if (dataGridListaHabitacion.SelectedRows.Count > 0)
-            {
-                // Almacena la fila seleccionada en la variable
-                filaSeleccionada = dataGridListaHabitacion.SelectedRows[0];
-                if (Convert.ToString(filaSeleccionada.Cells["Estado"].Value) == "Mantenimiento")
-                {
-                    filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
-                    btnEliminar.Visible = false;
-                    btnAlta.Visible = true;
-                }
-                else
-                {
-                    btnEliminar.Visible = true;
-                    btnAlta.Visible = false;
-                }
-            }
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (filaSeleccionada != null)
@@ -197,7 +162,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             }
             btnAgregarHabitacion.Visible = true;
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtBuscar.Text == "")
@@ -211,26 +175,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
 
             }
         }
-
-        /**/
-        public void RefreshPantalla()
-        {
-            using (SqlConnection conexion = Conexion.ObtenerConexion())
-            {
-                string query = "select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas  " +
-                    " from habitacion " +
-                    "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
-                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria";
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
-                DataSet dataset = new DataSet();
-                dt.Fill(dataset, "Test_table");
-                dataGridListaHabitacion.DataSource = dataset;
-                dataGridListaHabitacion.DataMember = "Test_table";
-
-            }
-        }
-
         private void btnAlta_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Desea Habilitar esta Habitación?", "Confirmo Habilitación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -253,5 +197,58 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 }
             }
         }
+        /*---------------------------------------------------------------------------------------------------------------------*/
+
+        public void limpiarFormulario()
+        {
+            // Limpiar formulario
+
+            CBPiso.SelectedIndex = 0;
+            TNroHabitacion.Clear();
+            TPrecio.Clear();
+            CBCategoriaH.SelectedIndex = 0;
+            numericCantCamas.Value = 0;
+            CBEstado.SelectedIndex = 0;
+        }
+        private void dataGridListaHabitacion_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verifica si al menos una fila está seleccionada
+            btnEditar.Enabled = dataGridListaHabitacion.SelectedRows.Count > 0;
+            btnEliminar.Enabled = dataGridListaHabitacion.SelectedRows.Count > 0;
+            if (dataGridListaHabitacion.SelectedRows.Count > 0)
+            {
+                // Almacena la fila seleccionada en la variable
+                filaSeleccionada = dataGridListaHabitacion.SelectedRows[0];
+                if (Convert.ToString(filaSeleccionada.Cells["Estado"].Value) == "Mantenimiento")
+                {
+                    filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
+                    btnEliminar.Visible = false;
+                    btnAlta.Visible = true;
+                }
+                else
+                {
+                    btnEliminar.Visible = true;
+                    btnAlta.Visible = false;
+                }
+            }
+        }
+        public void RefreshPantalla()
+        {
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas  " +
+                    " from habitacion " +
+                    "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
+                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                DataSet dataset = new DataSet();
+                dt.Fill(dataset, "Test_table");
+                dataGridListaHabitacion.DataSource = dataset;
+                dataGridListaHabitacion.DataMember = "Test_table";
+
+            }
+        }
+        
     }
 }
