@@ -1,8 +1,10 @@
 ﻿using ProyectoTaller2.CapaDatos;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO.Packaging;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
+
 
 namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 {
@@ -99,7 +101,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 // Almacena la fila seleccionada en la variable
                 filaSeleccionada = dataGridUsuario.SelectedRows[0];
                 if (Convert.ToString(filaSeleccionada.Cells["Estado"].Value) == "Inactivo")
-                {   
+                {
                     filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
                     btnEliminar.Visible = false;
                     BntAlta.Visible = true;
@@ -152,7 +154,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                     usuario.fechaNAc = DTFechaNac.Value;
 
 
-                    int result = UsuarioDB.AgregarUsuario(usuario);
+                    int result = Usuario.AgregarUsuario(usuario);
 
                     if (result > 0)
                     {
@@ -237,7 +239,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                     usuario.sexo = TSexo.Text;
                     usuario.fechaNAc = DTFechaNac.Value;
 
-                    int result = UsuarioDB.ModificarUsuario(usuario);
+                    int result = Usuario.ModificarUsuario(usuario);
                     if (result > 0)
                     {
                         MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
@@ -269,7 +271,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 {
                     Usuario usuario = new Usuario();
                     usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
-                    int result = UsuarioDB.BajaUsuario(usuario);
+                    int result = Usuario.BajaUsuario(usuario);
                     if (result > 0)
                     {
                         MessageBox.Show("Usuario dado de baja", "Completado", MessageBoxButtons.OK);
@@ -374,7 +376,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                 {
                     Usuario usuario = new Usuario();
                     usuario.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
-                    int result = UsuarioDB.AltaUsuario(usuario);
+                    int result = Usuario.AltaUsuario(usuario);
                     if (result > 0)
                     {
                         MessageBox.Show("Usuario dado de alta", "Completado", MessageBoxButtons.OK);

@@ -37,19 +37,29 @@ insert into perfil (cod_perfil, nombre) values(3, 'Recepcionista');
 
 /*Lote de Usuario*/
 select * from usuario
-insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
-values(37393962, 'Acevedo', 'Ariel', 'Arielo90', '123456', '37393962', 1, 'ariel@gmail.com', '1993-16-06 14:30:00', 'Hombre', 'Activo');
-insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
-values(38791452, 'Pineyro', 'Juan', 'Juanma10', '7891011', '64589874', 2, 'juanma@gmail.com', '1996-10-06 02:00:00', 'Hombre', 'Activo');
-insert into usuario(dni, apellido, nombre, nombreUsuario, clave, telefono, usuario_perfil, correo, fechaNAc,sexo, estado)
-values(14521369, 'Gomez', 'Maria', 'Maria18', '12131415', '14525632', 3, 'mariagmz@gmail.com', '1969-03-01 03:00:00', 'Mujer', 'Activo');
+
+INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
+VALUES (37393962, N'Acevedo', N'Ariel', N'Arielo90', N'$2a$12$ABAlkdsDFwYmbMhJ2r3x8.u/vh39jzIS4.aWIYy3cZh/w9zStHdhW', N'37393962', 1, N'ariel@gmail.com', CAST(N'1993-06-16T14:30:00.000' AS DateTime), N'Hombre', N'Activo')
+INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
+VALUES (38791452, N'Pineyro', N'Juan', N'Juanma10', N'$2a$12$UxM2AWJdaKV7DXW1MUQ.RuEXmSBr1lDxPlOQSa2RAnSsR52dtKpxa', N'64589874', 2, N'juanma@gmail.com', CAST(N'1996-06-10T02:00:00.000' AS DateTime), N'Hombre', N'Activo')
+INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
+VALUES (14521369, N'Gomez', N'Maria', N'Maria18', N'$2a$12$NniDmVQTs1JLlW18X.czlemW1uVeBjyKw6sSjje7X8.U5HFXuIKcy', N'14525632', 3, N'mariagmz@gmail.com', CAST(N'1969-01-03T03:00:00.000' AS DateTime), N'Mujer', N'Activo')
+INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
+VALUES (2345345, N'pineyrodos', N'juandos', N'juan2', N'$2a$12$GbWt.KpvduQEuryAgd.OLOxUTT0p8sK8K25t/yoWEZ0WpeQWX/NK2', N'2345345', 2, N'juan2@gmail.com', CAST(N'2021-11-05T10:15:50.000' AS DateTime), N'Hombre', N'Activo')
+INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
+VALUES (43545, N'dfgsdfg', N'fgsfdg', N'efgdvsdfxcv', N'$2a$12$Q0KBnSzKgrEdFvHvrl2H8.fHo2eKeOpzgeqB9GtWEs7ufrAzLw.z2', N'4533456', 1, N'sdfgsdfgsdf@sf.com', CAST(N'2023-10-27T10:17:00.000' AS DateTime), N'Hombre', N'Activo')
+INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
+VALUES (452345345, N'Fulano', N'Alguien', N'fulano', N'$2a$12$Q0KBnSzKgrEdFvHvrl2H8.fHo2eKeOpzgeqB9GtWEs7ufrAzLw.z2', N'45354234', 1, N'fulanosoy@gmial.com', CAST(N'2023-10-27T11:25:00.000' AS DateTime), N'Mujer', N'Activo')
+INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
+VALUES (2352435, N'asdfasd', N'dsdasf', N'asdfasdf', N'$2a$10$CDOvZsw.v8s9MqKO/idIa.8f6oan3Pm.PcANI1MrnYcEj/KxpOKNi', N'363456', 1, N'sdfgd@d.com', CAST(N'2023-10-27T11:32:49.000' AS DateTime), N'Hombre', N'Activo')
+
 
 select * from habitacion
 delete from habitacion
 insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
-values(1, 25, 2, 42.12 , 1, 2)
+values(1, 25, 2, 4200 , 1, 2)
 insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
-values(1, 45, 1, 42.12 , 2, 1)
+values(1, 45, 1, 5500 , 2, 2)
 
 select * from estado_habitacion
 insert into estado_habitacion(descripcion) values ('Ocupada')
@@ -65,12 +75,15 @@ insert into categoriaHabitacion(descripcion) values ('Matrimonial')
 insert into categoriaHabitacion(descripcion) values ('Ejecutivo')
 
 
+
+
+
 CREATE TABLE habitacion(
 	id_habitacion int identity (1,1) not null,
 	piso int not null,
 	nro_habitacion int  not null,
 	id_estado int not null,
-	precio decimal (10,2) not null,
+	precio varchar(20) not null,
 	categoria int not null,
 	cantidad_camas int not null,
 	constraint pk_idHabitacion primary key (id_habitacion),

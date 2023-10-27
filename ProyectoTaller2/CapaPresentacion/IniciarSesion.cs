@@ -2,6 +2,7 @@
 using System.Data;
 using System.Text.RegularExpressions;
 using ProyectoTaller2.CapaDatos;
+using BCrypt.Net;
 
 namespace ProyectoTaller2.CapaPresentacion
 {
@@ -19,17 +20,25 @@ namespace ProyectoTaller2.CapaPresentacion
                 try
                 {
                     //SqlCommand cmd = new SqlCommand("SELECT nombreUsuario, usuario_perfil FROM usuario WHERE nombreUsuario = @nombreUsuario AND clave = @pas", conexion);
-                    SqlCommand cmd = new SqlCommand("SELECT u.nombreUsuario, p.nombre " +
+                    SqlCommand cmd = new SqlCommand("SELECT u.nombreUsuario, p.nombre, u.clave " +
                                             "FROM usuario u " +
                                             "JOIN perfil p ON u.usuario_perfil = p.cod_perfil " +
-                                            "WHERE u.nombreUsuario = @nombreUsuario AND u.clave = @clave", conexion);
+                                            "WHERE u.nombreUsuario = @nombreUsuario", conexion);
                     cmd.Parameters.AddWithValue("nombreUsuario", nombreUsuario);
-                    cmd.Parameters.AddWithValue("clave", contrasena);
+                
+                    //cmd.Parameters.AddWithValue("clave", contrasena);
+                    
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
+                    bool isPasswordCorrect = false;
+                    if (dt.Rows.Count == 1)
+                    {
+                        string hash = dt.Rows[0][2].ToString();
+                        isPasswordCorrect = BCrypt.Net.BCrypt.Verify(contrasena, hash);
+                    }
 
-                    if(dt.Rows.Count == 1)
+                    if (dt.Rows.Count == 1 && isPasswordCorrect)
                     {
                         this.Hide();
                         if (dt.Rows[0][1].ToString() == "Super Usuario")

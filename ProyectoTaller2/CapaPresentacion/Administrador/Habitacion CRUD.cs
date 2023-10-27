@@ -38,7 +38,12 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         }
         private void TPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == 8);
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
 
@@ -58,7 +63,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                     habitacion.piso = Convert.ToInt32(CBPiso.SelectedIndex);
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
                     habitacion.estado = CBEstado.SelectedIndex;
-                    habitacion.precio = Convert.ToDouble(TPrecio.Text);
+                    habitacion.precio = TPrecio.Text;
                     habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
@@ -95,7 +100,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                     habitacion.piso = CBPiso.SelectedIndex;
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
                     habitacion.estado = CBEstado.SelectedIndex;
-                    habitacion.precio = Convert.ToDouble(TPrecio.Text);
+                    habitacion.precio = TPrecio.Text;
                     habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
@@ -153,7 +158,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 btnAgregarHabitacion.Visible = false;
 
                 // Reemplaza "Columna1" con el nombre de tu columna  
-                CBPiso.Text = filaSeleccionada.Cells["Piso"].Value.ToString();
+                CBPiso.SelectedIndex = Convert.ToInt16(filaSeleccionada.Cells["Piso"].Value);
                 TNroHabitacion.Text = filaSeleccionada.Cells["NroHabitacion"].Value.ToString();
                 CBCategoriaH.Text = filaSeleccionada.Cells["Categoria"].Value.ToString();
                 numericCantCamas.Text = filaSeleccionada.Cells["NroCamas"].Value.ToString();
@@ -250,6 +255,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
 
             }
         }
-        
+
+      
     }
 }
