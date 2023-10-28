@@ -103,7 +103,7 @@
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 77;
-            iconPictureBox1.Location = new Point(111, 59);
+            iconPictureBox1.Location = new Point(87, 51);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(87, 77);
             iconPictureBox1.TabIndex = 4;
