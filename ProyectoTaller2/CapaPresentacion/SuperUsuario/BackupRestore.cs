@@ -66,7 +66,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         {
             try
             {
-                // Verifica que exista la carpeta, en caso contrario la crea
+                // Verifica que exista la carpeta, en caso contrario la crea//
                 if (!Directory.Exists(@"D:\Backup"))
                 {
                     Directory.CreateDirectory(@"D:\Backup");
