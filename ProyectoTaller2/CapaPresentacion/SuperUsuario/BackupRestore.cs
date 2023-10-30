@@ -31,11 +31,13 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 
         private void btnAbrirRestaurar_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                //Aqui va el codigo para Salvar.
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "SQL Backup Files|*.bak";
+            openFileDialog1.FileName = "";
 
-                txtAbrirRestaurar.Text = saveFileDialog1.FileName;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtAbrirRestaurar.Text = openFileDialog1.FileName;
             }
         }
 
@@ -53,9 +55,9 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
                     {
                         CBBaseDeDatos.Items.Add(fila[0].ToString());
                     }
-                    
+
                     CBBaseDeDatos.SelectedIndex = 0;
-                
+
                 }
             }
         }
@@ -65,9 +67,9 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             try
             {
                 // Verifica que exista la carpeta, en caso contrario la crea
-                if (!Directory.Exists(@"C:\Users\ariel\OneDrive\Documentos\Backup"))
+                if (!Directory.Exists(@"D:\Backup"))
                 {
-                    Directory.CreateDirectory(@"C:\Users\ariel\OneDrive\Documentos\Backup");
+                    Directory.CreateDirectory(@"D:\Backup");
                 }
 
                 System.Diagnostics.Process.Start("cmd", $"/k sqlcmd -S localhost\\SQLEXPRESS -E -Q \"BACKUP DATABASE [{CBBaseDeDatos.Text}] TO DISK='{txtAbrirGuardar.Text}'\"");
@@ -80,16 +82,13 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 
         private void btnRestaruar_Click(object sender, EventArgs e)
         {
-            if (txtAbrirRestaurar.Text == "")
-            {
+            string baseName = txtBaseRestaurar.Text;
+            string rutaRestaurar = txtAbrirRestaurar.Text;
 
-                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                // Aqui va el codigo
-
-            }
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = $"/k Sqlcmd -S localhost\\SQLEXPRESS -E -Q \"RESTORE DATABASE [{baseName}] FROM DISK = '{rutaRestaurar}'\"";
+            System.Diagnostics.Process.Start(startInfo);
         }
     }
 }

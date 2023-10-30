@@ -41,7 +41,7 @@
             btnAbrirRestaurar = new Button();
             txtAbrirRestaurar = new TextBox();
             lblRestaurar = new Label();
-            textBox2 = new TextBox();
+            txtBaseRestaurar = new TextBox();
             lblBaseDeDatosRestaurar = new Label();
             btnRestaruar = new Button();
             saveFileDialog1 = new SaveFileDialog();
@@ -183,12 +183,12 @@
             lblRestaurar.TabIndex = 10;
             lblRestaurar.Text = "Ruta Restaurar:";
             // 
-            // textBox2
+            // txtBaseRestaurar
             // 
-            textBox2.Location = new Point(217, 364);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(406, 23);
-            textBox2.TabIndex = 14;
+            txtBaseRestaurar.Location = new Point(217, 364);
+            txtBaseRestaurar.Name = "txtBaseRestaurar";
+            txtBaseRestaurar.Size = new Size(406, 23);
+            txtBaseRestaurar.TabIndex = 14;
             // 
             // lblBaseDeDatosRestaurar
             // 
@@ -239,7 +239,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnRestaruar);
-            Controls.Add(textBox2);
+            Controls.Add(txtBaseRestaurar);
             Controls.Add(lblBaseDeDatosRestaurar);
             Controls.Add(btnAbrirRestaurar);
             Controls.Add(txtAbrirRestaurar);
@@ -275,7 +275,7 @@
         private Button btnAbrirRestaurar;
         private TextBox txtAbrirRestaurar;
         private Label lblRestaurar;
-        private TextBox textBox2;
+        private TextBox txtBaseRestaurar;
         private Label lblBaseDeDatosRestaurar;
         private Button btnRestaruar;
         private SaveFileDialog saveFileDialog1;
