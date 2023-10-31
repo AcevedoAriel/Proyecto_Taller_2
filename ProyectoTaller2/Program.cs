@@ -1,4 +1,3 @@
-using ProyectoTaller2.CapaPresentacion.Administrador;
 using ProyectoTaller2.CapaPresentacion;
 
 namespace ProyectoTaller2

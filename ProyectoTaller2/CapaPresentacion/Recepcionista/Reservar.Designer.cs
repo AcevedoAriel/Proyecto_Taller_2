@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTaller2.CapaPresentacion
 {
-    partial class Inicio
+    partial class Reservar
     {
         /// <summary>
         /// Required designer variable.
