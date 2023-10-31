@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -79,18 +80,8 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     string nroHabitacion = txtNroHabitacion.Text;
                     cliente.telefono = TTelefono.Text;
                     reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
-                    int result = Reserva.AgregarREserva(reserva);
-                    int result1 = Cliente.AgregarCliente(cliente);
-                    if (result != 0 && result1 != 0)
-                    {
-                        MessageBox.Show("Se insertó correctamente", "actualizado", MessageBoxButtons.OK);
-                        limpiarFormulario();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo Insertar", "Error");
-
-                    }
+                    
+                    
 
 
 
@@ -103,7 +94,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             }
 
         }
-
+       
         private void BEditar_Click(object sender, EventArgs e)
         {
             if (filaSeleccionada != null)
@@ -112,14 +103,14 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 BEliminar.Visible = false;
 
                  //Reemplaza "Columna1" con el nombre de tu columna  
-                DTIngreso.Text = filaSeleccionada.Cells["ingreso"].Value.ToString();
-                DTRetiro.Text = filaSeleccionada.Cells["retiro"].Value.ToString();
-                txtNroHabitacion.Text = filaSeleccionada.Cells["habitacion"].Value.ToString();
-                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
-                TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
-                TDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
-                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
-                NCantidad.Text = filaSeleccionada.Cells["cantidad"].Value.ToString();
+                DTIngreso.Text = filaSeleccionada.Cells["FechaIngreso"].Value.ToString();
+                DTRetiro.Text = filaSeleccionada.Cells["FechaRetiro"].Value.ToString();
+                txtNroHabitacion.Text = filaSeleccionada.Cells["NroHabitacion"].Value.ToString();
+                TNombre.Text = filaSeleccionada.Cells["NombreCliente"].Value.ToString();
+                TApellido.Text = filaSeleccionada.Cells["ApellidoCliente"].Value.ToString();
+                TDNI.Text = filaSeleccionada.Cells["DNICliente"].Value.ToString();
+                TTelefono.Text = filaSeleccionada.Cells["TelCliente"].Value.ToString();
+                NCantidad.Text = filaSeleccionada.Cells["CantPersonas"].Value.ToString();
 
             }
         }
@@ -271,5 +262,25 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
+
+        public void RefreshPantalla()
+        {
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select reserva.id_reserva as ID,  reserva.fecha_ingreso as FechaIngreso, reserva.fechaRetiro as FechaRetiro, habitacion.nro_habitacion as NroHabitacion, cliente.nombre as NombreCliente, cliente.apellido as ApellidoCliente, cliente.dni as DNICliente, cliente.telefono as TelCliente, reserva.cant_personas as CantPersonas, reserva.precio as PrecioTotal" +
+                    " from reserva " +
+                    "JOIN  cliente ON cliente.id_cliente = reserva.id_cliente " +
+                    "JOIN  habitacion ON habitacion.id_habitacion = reserva.id_habitacion ";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                DataSet dataset = new DataSet();
+                dt.Fill(dataset, "Test_table");
+                dataGridReserva.DataSource = dataset;
+                dataGridReserva.DataMember = "Test_table";
+
+            }
+        }
+
+
     }
 }
