@@ -53,7 +53,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             LApellido = new Label();
             LNombre = new Label();
             btnEliminar = new Button();
-            btnBuscar = new Button();
             txtBuscar = new TextBox();
             lblMensajeClave = new Label();
             lblMensajeCorreo = new Label();
@@ -63,6 +62,7 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             lblDniUsuario = new Label();
             label5 = new Label();
             BntAlta = new Button();
+            lblBuscarNombre = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -311,25 +311,13 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             btnEliminar.Visible = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // btnBuscar
-            // 
-            btnBuscar.BackColor = Color.White;
-            btnBuscar.FlatStyle = FlatStyle.Popup;
-            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(738, 12);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(77, 38);
-            btnBuscar.TabIndex = 69;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click;
-            // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(510, 21);
+            txtBuscar.Location = new Point(510, 17);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(194, 23);
+            txtBuscar.Size = new Size(280, 23);
             txtBuscar.TabIndex = 70;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // lblMensajeClave
             // 
@@ -414,11 +402,22 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             BntAlta.Visible = false;
             BntAlta.Click += BntAlta_Click;
             // 
+            // lblBuscarNombre
+            // 
+            lblBuscarNombre.AutoSize = true;
+            lblBuscarNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBuscarNombre.Location = new Point(510, 43);
+            lblBuscarNombre.Name = "lblBuscarNombre";
+            lblBuscarNombre.Size = new Size(158, 15);
+            lblBuscarNombre.TabIndex = 78;
+            lblBuscarNombre.Text = "Buscar por Nombre o Perfil";
+            // 
             // UsuarioCRUD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(lblBuscarNombre);
             Controls.Add(BntAlta);
             Controls.Add(label5);
             Controls.Add(txtDNI);
@@ -428,7 +427,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             Controls.Add(lblMensajeClave);
             Controls.Add(lblMensajeCorreo);
             Controls.Add(txtBuscar);
-            Controls.Add(btnBuscar);
             Controls.Add(btnEliminar);
             Controls.Add(BEditar);
             Controls.Add(panel2);
@@ -487,7 +485,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         private Label LApellido;
         private Label LNombre;
         private Button btnEliminar;
-        private Button btnBuscar;
         private TextBox txtBuscar;
         private Label lblMensajeClave;
         private Label lblMensajeCorreo;
@@ -497,5 +494,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
         private Label lblDniUsuario;
         private Label label5;
         private Button BntAlta;
+        private Label lblBuscarNombre;
     }
 }

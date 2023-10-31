@@ -327,20 +327,6 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (txtBuscar.Text == "")
-            {
-
-                MessageBox.Show("El campo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                // Aqui va el codigo
-
-            }
-        }
-
         public void RefreshPantalla()
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
@@ -388,6 +374,36 @@ namespace ProyectoTaller2.CapaPresentacion.SuperUsuario
 
                     }
                 }
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+            {
+                try
+                {
+                    using (SqlConnection conexion = Conexion.ObtenerConexion())
+                    {
+                        string query = " select usuario.id_usuario as ID, usuario.dni as DNI, usuario.apellido as Apellido, usuario.nombre as Nombre, usuario.nombreUsuario as Nombreusuario, usuario.telefono as Telefono, perfil.nombre as TipoPerfil, usuario.correo as Correo, usuario.fechaNAc as FechaNacimiento, usuario.sexo as Sexo, usuario.estado as Estado " + " from usuario " +
+                        " JOIN perfil ON usuario.usuario_perfil = perfil.cod_perfil " + " WHERE usuario.nombre LIKE ('" + txtBuscar.Text + "%') OR perfil.nombre LIKE ('" + txtBuscar.Text + "%') ";
+                        SqlCommand cmd = new SqlCommand(query, conexion);
+                        SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                        DataSet dataset = new DataSet();
+                        dt.Fill(dataset, "Test_table");
+                        dataGridUsuario.DataSource = dataset;
+                        dataGridUsuario.DataMember = "Test_table";
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                RefreshPantalla();
             }
         }
     }
