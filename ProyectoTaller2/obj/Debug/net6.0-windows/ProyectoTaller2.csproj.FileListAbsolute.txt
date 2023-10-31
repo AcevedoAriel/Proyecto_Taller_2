@@ -111,7 +111,6 @@ C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-w
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Administrador.CRUDHabitacion.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Administrador.Ingresos.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.FMIniciarSesion.resources
-C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Inicio.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.FMPrincipal.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Recepcionista.Asignar_Reserva.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Recepcionista.Cobrar_Habitacion.resources
@@ -136,3 +135,4 @@ C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\bin\Debug\net6.0-w
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Administrador.Inicio_Admin.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Recepcionista.Inicio_Recep.resources
 C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.SuperUsuario.Inicio_SuperUsuario.resources
+C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Reservar.resources

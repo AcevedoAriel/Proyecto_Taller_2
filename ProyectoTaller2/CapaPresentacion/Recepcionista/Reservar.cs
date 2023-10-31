@@ -1,10 +1,11 @@
 ﻿using ProyectoTaller2.CapaPresentacion.Recepcionista;
+using System.Windows.Forms;
 
 namespace ProyectoTaller2.CapaPresentacion
 {
-    public partial class Inicio : Form
+    public partial class Reservar : Form
     {
-        public Inicio()
+        public Reservar()
         {
             InitializeComponent();
         }

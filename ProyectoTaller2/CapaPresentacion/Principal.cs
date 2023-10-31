@@ -79,14 +79,14 @@ namespace ProyectoTaller2.CapaPresentacion
             AbrirFormulario((IconMenuItem)sender, new ListadoDeReservas());
         }
 
-        public void MenuInicio_Click(object sender, EventArgs e)
+        public void MenuReservar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new Inicio());
+            AbrirFormulario((IconMenuItem)sender, new Reservar());
         }
 
         public void FMInicio_Load(object sender, EventArgs e)
         {
-           if(perfilToolStripMenuItem1.Text == "Administrador:")
+            if (perfilToolStripMenuItem1.Text == "Administrador:")
             {
                 Inicio_Admin iniAdmin = new Inicio_Admin();
                 MostrarFormulario(iniAdmin);
@@ -151,6 +151,23 @@ namespace ProyectoTaller2.CapaPresentacion
         public void MenuBackup_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuBackup, new FMBackupRestore());
+        }
+
+        private void iconMenuInicio_Click(object sender, EventArgs e)
+        {
+            if (perfilToolStripMenuItem1.Text == "Administrador:")
+            {
+                AbrirFormulario(MenuBackup, new Inicio_Admin());
+            }
+            else if (perfilToolStripMenuItem1.Text == "Recepcionista:")
+            {
+                AbrirFormulario(MenuBackup, new Inicio_Recep());
+            }
+            else if (perfilToolStripMenuItem1.Text == "Super Usuario:")
+            {
+                AbrirFormulario(MenuBackup, new Inicio_SuperUsuario());
+            }
+
         }
     }
 }

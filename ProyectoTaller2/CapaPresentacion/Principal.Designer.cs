@@ -30,6 +30,7 @@
         {
             MenuIzquierdo = new MenuStrip();
             MenuInicio = new FontAwesome.Sharp.IconMenuItem();
+            MenuReservar = new FontAwesome.Sharp.IconMenuItem();
             MenuUsuario = new FontAwesome.Sharp.IconMenuItem();
             MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
@@ -41,9 +42,9 @@
             UsuarioToolStripMenuItem = new ToolStripMenuItem();
             ICTitulo = new FontAwesome.Sharp.IconMenuItem();
             hOTELDELPARANAToolStripMenuItem = new ToolStripMenuItem();
+            perfilToolStripMenuItem1 = new ToolStripMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             PanelPrincipal = new Panel();
-            perfilToolStripMenuItem1 = new ToolStripMenuItem();
             MenuIzquierdo.SuspendLayout();
             MenuTitulo.SuspendLayout();
             SuspendLayout();
@@ -53,7 +54,7 @@
             MenuIzquierdo.AutoSize = false;
             MenuIzquierdo.BackColor = Color.White;
             MenuIzquierdo.Dock = DockStyle.Left;
-            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuUsuario, MenuHabitacion, MenuReserva, MenuServicios, MenuIngresoDePagos, MenuBackup });
+            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuReservar, MenuUsuario, MenuHabitacion, MenuReserva, MenuServicios, MenuIngresoDePagos, MenuBackup });
             MenuIzquierdo.Location = new Point(0, 60);
             MenuIzquierdo.Name = "MenuIzquierdo";
             MenuIzquierdo.Size = new Size(152, 504);
@@ -73,7 +74,22 @@
             MenuInicio.Size = new Size(80, 60);
             MenuInicio.Text = "Inicio";
             MenuInicio.TextImageRelation = TextImageRelation.ImageAboveText;
-            MenuInicio.Click += MenuInicio_Click;
+            MenuInicio.Click += iconMenuInicio_Click;
+            // 
+            // MenuReservar
+            // 
+            MenuReservar.AutoSize = false;
+            MenuReservar.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuReservar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            MenuReservar.IconColor = Color.Black;
+            MenuReservar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuReservar.IconSize = 45;
+            MenuReservar.ImageScaling = ToolStripItemImageScaling.None;
+            MenuReservar.Name = "MenuReservar";
+            MenuReservar.Size = new Size(80, 60);
+            MenuReservar.Text = "Reservar";
+            MenuReservar.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuReservar.Click += MenuReservar_Click;
             // 
             // MenuUsuario
             // 
@@ -218,6 +234,14 @@
             hOTELDELPARANAToolStripMenuItem.Size = new Size(266, 56);
             hOTELDELPARANAToolStripMenuItem.Text = "HOTEL DEL PARANA";
             // 
+            // perfilToolStripMenuItem1
+            // 
+            perfilToolStripMenuItem1.Alignment = ToolStripItemAlignment.Right;
+            perfilToolStripMenuItem1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
+            perfilToolStripMenuItem1.Size = new Size(55, 56);
+            perfilToolStripMenuItem1.Text = "Perfil :";
+            // 
             // iconMenuItem1
             // 
             iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -235,14 +259,6 @@
             PanelPrincipal.Size = new Size(843, 504);
             PanelPrincipal.TabIndex = 2;
             // 
-            // perfilToolStripMenuItem1
-            // 
-            perfilToolStripMenuItem1.Alignment = ToolStripItemAlignment.Right;
-            perfilToolStripMenuItem1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-            perfilToolStripMenuItem1.Size = new Size(55, 56);
-            perfilToolStripMenuItem1.Text = "Perfil :";
-            // 
             // FMPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -257,6 +273,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema G. Hotelera";
             Load += FMInicio_Load;
+            Click += MenuReservar_Click;
             MenuIzquierdo.ResumeLayout(false);
             MenuIzquierdo.PerformLayout();
             MenuTitulo.ResumeLayout(false);
@@ -268,7 +285,7 @@
 
         private MenuStrip MenuIzquierdo;
         private MenuStrip MenuTitulo;
-        private FontAwesome.Sharp.IconMenuItem MenuInicio;
+        private FontAwesome.Sharp.IconMenuItem MenuReservar;
         private FontAwesome.Sharp.IconMenuItem MenuUsuario;
         private FontAwesome.Sharp.IconMenuItem MenuHabitacion;
         private FontAwesome.Sharp.IconMenuItem MenuReserva;
@@ -282,5 +299,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuBackup;
         private FontAwesome.Sharp.IconMenuItem MenuServicios;
         private ToolStripMenuItem perfilToolStripMenuItem1;
+        private FontAwesome.Sharp.IconMenuItem MenuInicio;
     }
 }
