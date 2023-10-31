@@ -36,6 +36,8 @@ namespace ProyectoTaller2.CapaPresentacion
             fm.FormBorderStyle = FormBorderStyle.None;
             //se ajusta al panel
             fm.Dock = DockStyle.Fill;
+            fm.BackColor = Color.LightSkyBlue;
+            PanelPrincipal.Controls.Add(fm);
             fm.Show();
         }
 
@@ -86,11 +88,16 @@ namespace ProyectoTaller2.CapaPresentacion
         {
            if(perfilToolStripMenuItem1.Text == "Administrador:")
             {
+                Inicio_Admin iniAdmin = new Inicio_Admin();
+                MostrarFormulario(iniAdmin);
                 MenuBackup.Visible = false;
                 MenuReserva.Visible = false;
                 MenuUsuario.Visible = false;
-            }else if (perfilToolStripMenuItem1.Text == "Recepcionista:")
+            }
+            else if (perfilToolStripMenuItem1.Text == "Recepcionista:")
             {
+                Inicio_Recep iniRecep = new Inicio_Recep();
+                MostrarFormulario(iniRecep);
                 MenuUsuario.Visible = false;
                 MenuBackup.Visible = false;
                 MenuServicios.Visible = false;
@@ -99,6 +106,8 @@ namespace ProyectoTaller2.CapaPresentacion
             }
             else if (perfilToolStripMenuItem1.Text == "Super Usuario:")
             {
+                Inicio_SuperUsuario iniSuper = new Inicio_SuperUsuario();
+                MostrarFormulario(iniSuper);
                 MenuServicios.Visible = false;
                 MenuHabitacion.Visible = false;
                 MenuReserva.Visible = false;
