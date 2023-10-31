@@ -7,6 +7,9 @@
     <Compile Update="CapaPresentacion\Administrador\Habitacion CRUD.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CapaPresentacion\Administrador\Inicio Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CapaPresentacion\IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +20,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CapaPresentacion\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CapaPresentacion\Recepcionista\Inicio Recep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CapaPresentacion\SuperUsuario\Inicio SuperUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CapaPresentacion\SuperUsuario\UsuarioCRUD.cs">
