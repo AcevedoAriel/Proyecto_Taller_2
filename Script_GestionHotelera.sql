@@ -129,18 +129,18 @@ CREATE TABLE reserva(
 	constraint fk_id_cliente foreign key (id_cliente) references cliente (id_cliente)
 )
 
+select * from servicios
 CREATE TABLE servicios(
 		cod_servicio int identity (1,1) not null,
-		id_detalle int not null,
 		nombre	VARCHAR (150) NOT NULL,
-		precio   DECIMAL (10 ,2),
+		precio   varchar(20),
 		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),
 )
 
 CREATE TABLE DetalleServicios(
 	id_reserva int  not null,
 	cod_servicio int not null,
-	precio decimal (10, 2),
+	precio varchar(20),
 	constraint pk_id_reserva_servicio primary key (id_reserva, cod_servicio),
 	constraint fk_id_reserva foreign key (id_reserva) references reserva (id_reserva),
 	constraint fk_codServicioa foreign key (cod_servicio) references servicios (cod_servicio)
