@@ -48,8 +48,6 @@
             label1 = new Label();
             btnBuscar = new Button();
             txtBuscar = new TextBox();
-            lblEstadoHabitacion = new Label();
-            CBEstado = new ComboBox();
             btnAlta = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridListaHabitacion).BeginInit();
             panel1.SuspendLayout();
@@ -260,25 +258,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(173, 23);
             txtBuscar.TabIndex = 23;
-            // 
-            // lblEstadoHabitacion
-            // 
-            lblEstadoHabitacion.AutoSize = true;
-            lblEstadoHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEstadoHabitacion.Location = new Point(89, 262);
-            lblEstadoHabitacion.Name = "lblEstadoHabitacion";
-            lblEstadoHabitacion.Size = new Size(43, 15);
-            lblEstadoHabitacion.TabIndex = 24;
-            lblEstadoHabitacion.Text = "Estado";
-            // 
-            // CBEstado
-            // 
-            CBEstado.FormattingEnabled = true;
-            CBEstado.Items.AddRange(new object[] { "[Seleccione el Estado]", "Ocupada", "Libre", "Mantenimiento" });
-            CBEstado.Location = new Point(220, 259);
-            CBEstado.Name = "CBEstado";
-            CBEstado.Size = new Size(169, 23);
-            CBEstado.TabIndex = 4;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // btnAlta
             // 
@@ -300,8 +280,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
             Controls.Add(btnAlta);
-            Controls.Add(CBEstado);
-            Controls.Add(lblEstadoHabitacion);
             Controls.Add(txtBuscar);
             Controls.Add(btnBuscar);
             Controls.Add(label1);
@@ -354,8 +332,6 @@
         private Label label1;
         private Button btnBuscar;
         private TextBox txtBuscar;
-        private Label lblEstadoHabitacion;
-        private ComboBox CBEstado;
         private Button btnAlta;
     }
 }

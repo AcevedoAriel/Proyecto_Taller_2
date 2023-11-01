@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -129,8 +130,10 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             if (MessageBox.Show("Estas seguro de que deseas eliminar este registro?", "Confirmar Eliminaci�n", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Reserva reserva = new Reserva();
+
+                reserva.id = Convert.ToInt16(filaSeleccionada.Cells["ID"]);
                 int result = Reserva.EliminarReserva(reserva);
-                reserva.id  = 0;
+                
                 if (result != 0)
                 {
                     MessageBox.Show("Se eliminó correctamente", "Reserva Eliminada", MessageBoxButtons.OK);
@@ -271,5 +274,24 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
             this.Hide(); //oculta el formulario actual
         }
+
+        public void RefreshPantalla()
+        {
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select reserva.id_reserva as ID,  reserva.fecha_ingreso as FechaIngreso, reserva.fechaRetiro as FechaRetiro, habitacion.nro_habitacion as NroHabitacion, cliente.nombre as NombreCliente, cliente.apellido as ApellidoCliente, cliente.dni as DNICliente, cliente.telefono as TelCliente, reserva.cant_personas as CantPersonas, reserva.precio as PrecioTotal" +
+                    " from reserva " +
+                    "JOIN  cliente ON cliente.id_cliente = reserva.id_cliente " +
+                    "JOIN  habitacion ON habitacion.id_habitacion = reserva.id_habitacion ";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                DataSet dataset = new DataSet();
+                dt.Fill(dataset, "Test_table");
+                dataGridReserva.DataSource = dataset;
+                dataGridReserva.DataMember = "Test_table";
+
+            }
+        }
+
     }
 }

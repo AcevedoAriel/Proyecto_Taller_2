@@ -11,10 +11,10 @@ namespace ProyectoTaller2.CapaDatos
     {
         public int id { get; set; }
         public string nombre { get; set; }
-        public double precio { get; set; }
+        public string precio { get; set; }
 
         public Servicio() { }
-        public Servicio(int id, string nombre, double precio)
+        public Servicio(int id, string nombre, string precio)
         {
             this.id = id;
             this.nombre = nombre;
@@ -41,7 +41,7 @@ namespace ProyectoTaller2.CapaDatos
 
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update servicios set nombre = '" + servicio.nombre + "', precio = '" + servicio.precio + "' where cod_servicio = " + servicio.id + " )";
+                string query = "update servicios set nombre = '" + servicio.nombre + "', precio = '" + servicio.precio + "' where cod_servicio = " + servicio.id + " ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
                 retorno = cmd.ExecuteNonQuery();

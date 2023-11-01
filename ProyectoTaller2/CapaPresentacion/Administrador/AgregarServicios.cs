@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ProyectoTaller2.CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             btnEditar.Enabled = false;
             btnGuardarCambios.Visible = false;
             btnEliminar.Enabled = false;
+            RefreshPantalla();
         }
 
         private void txtCodServicio_KeyPress(object sender, KeyPressEventArgs e)
@@ -54,23 +57,24 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (txtCodServicio.Text != "" && txtNombre.Text != "" && txtPrecio.Text != "")
+            if (txtNombre.Text != "" && txtPrecio.Text != "")
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuevo Servicio?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    string codServicio = txtCodServicio.Text;
-                    string nombre = txtNombre.Text;
-                    string precio = txtPrecio.Text;
-
-                    // Agregar una nueva fila al datagrid con los valores
-                    dataGridServicios.Rows.Add(codServicio, nombre, precio);
-                    MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
-
-                    limpiarFormulario();
-
+                    Servicio servicio = new Servicio();
+                    servicio.nombre = txtNombre.Text;
+                    servicio.precio = txtPrecio.Text;
+                    int result = Servicio.AgregarServicio(servicio);
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
+                        limpiarFormulario();
+                        RefreshPantalla();
+                    }
                 }
+                // Agregar una nueva fila al datagrid con los valores
             }
             else
             {
@@ -80,7 +84,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         public void limpiarFormulario()
         {
             // Limpiar formulario
-            txtCodServicio.Clear();
+
             txtNombre.Clear();
             txtPrecio.Clear();
         }
@@ -88,27 +92,24 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (txtCodServicio.Text != "" && txtNombre.Text != "" && txtPrecio.Text != "")
+            if (txtNombre.Text != "" && txtPrecio.Text != "")
             {
                 resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
-                    string codServicio = txtCodServicio.Text;
-                    string nombre = txtNombre.Text;
-                    string precio = txtPrecio.Text;
-
-                    // Agregar una nueva fila al datagrid con los valores
-                    if (filaSeleccionada != null)
+                    Servicio servicio = new Servicio();
+                    servicio.id = Convert.ToInt16(filaSeleccionada.Cells["ID"].Value);
+                    servicio.nombre = txtNombre.Text;
+                    servicio.precio = txtPrecio.Text;
+                    int result = Servicio.ModificarServicio(servicio);
+                    if (result > 0)
                     {
+                        MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
+                        limpiarFormulario();
+                        RefreshPantalla();
+                        btnGuardarCambios.Visible = false;
                         btnEliminar.Visible = true;
-                        filaSeleccionada.Cells["Cod_Servio"].Value = codServicio;
-                        filaSeleccionada.Cells["Nombre"].Value = nombre;
-                        filaSeleccionada.Cells["Precio"].Value = precio;
                     }
-
-                    MessageBox.Show("Se actualizo correctamente", "actualizado", MessageBoxButtons.OK);
-                    limpiarFormulario();
-                    btnGuardarCambios.Visible = false;
                 }
             }
             else
@@ -138,7 +139,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 btnEliminar.Visible = false;
 
                 // Reemplaza "Columna1" con el nombre de tu columna  
-                txtCodServicio.Text = filaSeleccionada.Cells["Cod_Servio"].Value.ToString(); ;
+
                 txtNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString(); ;
                 txtPrecio.Text = filaSeleccionada.Cells["Precio"].Value.ToString();
 
@@ -166,8 +167,67 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             {
                 if (filaSeleccionada != null)
                 {
-                    dataGridServicios.Rows.Remove(filaSeleccionada);
+                    Servicio servicio = new Servicio();
+                    servicio.id = Convert.ToInt16(filaSeleccionada.Cells["ID"].Value);
+                    int result = Servicio.EliminarServicio(servicio);
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Se eliminó correctamente", "Servicio Eliminado", MessageBoxButtons.OK);
+                        RefreshPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo Eliminar", "Error");
+
+                    }
                 }
+            }
+        }
+
+
+        public void RefreshPantalla()
+        {
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select servicios.cod_servicio as ID, servicios.nombre as Nombre, servicios.precio as Precio" +
+                    " from servicios ";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                DataSet dataset = new DataSet();
+                dt.Fill(dataset, "Test_table");
+                dataGridServicios.DataSource = dataset;
+                dataGridServicios.DataMember = "Test_table";
+
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+            {
+                try
+                {
+                    using (SqlConnection conexion = Conexion.ObtenerConexion())
+                    {
+                        string query = " select servicios.cod_servicio as ID, servicios.nombre as Nombre, servicios.precio as Precio" + " from servicios " +
+                            " WHERE servicios.nombre LIKE ('" + txtBuscar.Text + "%') OR servicios.cod_servicio LIKE ('" + txtBuscar.Text + "%') ";
+                        SqlCommand cmd = new SqlCommand(query, conexion);
+                        SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                        DataSet dataset = new DataSet();
+                        dt.Fill(dataset, "Test_table");
+                        dataGridServicios.DataSource = dataset;
+                        dataGridServicios.DataMember = "Test_table";
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                RefreshPantalla();
             }
         }
     }

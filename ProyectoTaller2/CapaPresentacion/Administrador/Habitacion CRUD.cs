@@ -13,8 +13,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             btnGuardarCambios.Visible = false;
             btnEliminar.Enabled = false;
             CBCategoriaH.SelectedIndex = 0;
-            CBPiso.SelectedIndex = 0;
-            CBEstado.SelectedIndex = 0;
+            CBPiso.SelectedIndex = 0; ;
         }
 
         /*------------------------------------Validaciones en los campos del formulario Habitacion---------------------------*/
@@ -53,7 +52,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (CBEstado.SelectedIndex != 0 && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
+            if (CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea insertar un nuveo registro?", "Confirmar Insercion", MessageBoxButtons.YesNo);
 
@@ -62,7 +61,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                     Habitacion habitacion = new Habitacion();
                     habitacion.piso = Convert.ToInt32(CBPiso.SelectedIndex);
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
-                    habitacion.estado = CBEstado.SelectedIndex;
+
                     habitacion.precio = TPrecio.Text;
                     habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
@@ -89,7 +88,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (CBEstado.SelectedIndex != 0 && CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
+            if (CBPiso.SelectedIndex != 0 && TNroHabitacion.Text != "" && TPrecio.Text != "" && CBCategoriaH.SelectedIndex != 0 && numericCantCamas.Value != 0)
             {
                 resultado = MessageBox.Show("Seguro que desea actualizar?", "Confirmar Cambios", MessageBoxButtons.YesNo);
 
@@ -99,7 +98,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                     habitacion.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
                     habitacion.piso = CBPiso.SelectedIndex;
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
-                    habitacion.estado = CBEstado.SelectedIndex;
                     habitacion.precio = TPrecio.Text;
                     habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
@@ -163,7 +161,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 CBCategoriaH.Text = filaSeleccionada.Cells["Categoria"].Value.ToString();
                 numericCantCamas.Text = filaSeleccionada.Cells["NroCamas"].Value.ToString();
                 TPrecio.Text = filaSeleccionada.Cells["Precio"].Value.ToString();
-                CBEstado.Text = filaSeleccionada.Cells["Estado"].Value.ToString();
 
             }
             btnAgregarHabitacion.Visible = true;
@@ -214,7 +211,6 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             TPrecio.Clear();
             CBCategoriaH.SelectedIndex = 0;
             numericCantCamas.Value = 0;
-            CBEstado.SelectedIndex = 0;
         }
         private void dataGridListaHabitacion_SelectionChanged(object sender, EventArgs e)
         {
@@ -256,6 +252,37 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
             }
         }
 
-      
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+            {
+                try
+                {
+                    using (SqlConnection conexion = Conexion.ObtenerConexion())
+                    {
+                        string query = " select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas" + " from habitacion " +
+                            "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
+                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria" +
+                          " WHERE  habitacion.piso LIKE ('" + txtBuscar.Text + "%') OR categoriaHabitacion.descripcion LIKE ('" + txtBuscar.Text + "%')";
+                        SqlCommand cmd = new SqlCommand(query, conexion);
+                        SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                        DataSet dataset = new DataSet();
+                        dt.Fill(dataset, "Test_table");
+                        dataGridListaHabitacion.DataSource = dataset;
+                        dataGridListaHabitacion.DataMember = "Test_table";
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                RefreshPantalla();
+            }
+        }
+
     }
 }

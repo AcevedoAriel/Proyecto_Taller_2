@@ -1,5 +1,9 @@
 ﻿using ProyectoTaller2.CapaPresentacion.Recepcionista;
+using System;
+using System.Data;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using ProyectoTaller2.CapaDatos;
 
 namespace ProyectoTaller2.CapaPresentacion
 {
@@ -8,6 +12,9 @@ namespace ProyectoTaller2.CapaPresentacion
         public Reservar()
         {
             InitializeComponent();
+            // Recupera los datos de la tabla SQL
+            DataTable dataTable = RefreshPantalla();
+
         }
 
         private void btnHabitacion1_Click(object sender, EventArgs e)
@@ -93,6 +100,19 @@ namespace ProyectoTaller2.CapaPresentacion
             }
 
 
+        }
+
+        public DataTable RefreshPantalla()
+        {
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select * from habitacion";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                DataTable dataTable = new DataTable();
+                dt.Fill(dataTable);
+                return dataTable;
+            }
         }
 
         private void txtNoHab_TextChanged(object sender, EventArgs e)

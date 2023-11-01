@@ -38,15 +38,10 @@
             txtNombre = new TextBox();
             panel1 = new Panel();
             dataGridServicios = new DataGridView();
-            Cod_Servio = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            CodigoServicio = new Label();
-            txtCodServicio = new TextBox();
             label1 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtBuscar = new TextBox();
-            btnBuscar = new Button();
+            lblBuscar = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridServicios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -108,7 +103,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(117, 220);
+            lblPrecio.Location = new Point(117, 195);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(48, 15);
             lblPrecio.TabIndex = 25;
@@ -118,7 +113,7 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombre.Location = new Point(117, 175);
+            lblNombre.Location = new Point(117, 139);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(59, 15);
             lblNombre.TabIndex = 26;
@@ -126,7 +121,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(236, 217);
+            txtPrecio.Location = new Point(284, 192);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(229, 23);
             txtPrecio.TabIndex = 27;
@@ -134,7 +129,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(236, 172);
+            txtNombre.Location = new Point(284, 131);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(229, 23);
             txtNombre.TabIndex = 28;
@@ -152,7 +147,6 @@
             // 
             dataGridServicios.AllowUserToAddRows = false;
             dataGridServicios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridServicios.Columns.AddRange(new DataGridViewColumn[] { Cod_Servio, Nombre, Precio });
             dataGridServicios.Dock = DockStyle.Fill;
             dataGridServicios.Location = new Point(0, 0);
             dataGridServicios.Name = "dataGridServicios";
@@ -160,39 +154,6 @@
             dataGridServicios.Size = new Size(346, 199);
             dataGridServicios.TabIndex = 0;
             dataGridServicios.SelectionChanged += dataGridServicios_SelectionChanged;
-            // 
-            // Cod_Servio
-            // 
-            Cod_Servio.HeaderText = "Codigo Servicio";
-            Cod_Servio.Name = "Cod_Servio";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            // 
-            // CodigoServicio
-            // 
-            CodigoServicio.AutoSize = true;
-            CodigoServicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            CodigoServicio.Location = new Point(117, 130);
-            CodigoServicio.Name = "CodigoServicio";
-            CodigoServicio.Size = new Size(99, 15);
-            CodigoServicio.TabIndex = 30;
-            CodigoServicio.Text = "Codigo Servicio :";
-            // 
-            // txtCodServicio
-            // 
-            txtCodServicio.Location = new Point(236, 127);
-            txtCodServicio.Name = "txtCodServicio";
-            txtCodServicio.Size = new Size(229, 23);
-            txtCodServicio.TabIndex = 31;
-            txtCodServicio.KeyPress += txtCodServicio_KeyPress;
             // 
             // label1
             // 
@@ -221,35 +182,31 @@
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(236, 83);
+            txtBuscar.Location = new Point(284, 88);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(229, 23);
             txtBuscar.TabIndex = 34;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
-            // btnBuscar
+            // lblBuscar
             // 
-            btnBuscar.BackColor = Color.White;
-            btnBuscar.FlatStyle = FlatStyle.Popup;
-            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(516, 78);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(74, 30);
-            btnBuscar.TabIndex = 35;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click;
+            lblBuscar.AutoSize = true;
+            lblBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBuscar.Location = new Point(117, 91);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(144, 15);
+            lblBuscar.TabIndex = 36;
+            lblBuscar.Text = "Buscar por ID o Nombre:";
             // 
             // ServiciosCrud
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
-            Controls.Add(btnBuscar);
+            Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(iconPictureBox1);
             Controls.Add(label1);
-            Controls.Add(txtCodServicio);
-            Controls.Add(CodigoServicio);
             Controls.Add(panel1);
             Controls.Add(txtNombre);
             Controls.Add(txtPrecio);
@@ -281,14 +238,9 @@
         private TextBox txtNombre;
         private Panel panel1;
         private DataGridView dataGridServicios;
-        private DataGridViewTextBoxColumn Cod_Servio;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Precio;
-        private Label CodigoServicio;
-        private TextBox txtCodServicio;
         private Label label1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private TextBox txtBuscar;
-        private Button btnBuscar;
+        private Label lblBuscar;
     }
 }
