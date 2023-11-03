@@ -19,6 +19,12 @@
     <Compile Update="CapaPresentacion\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CapaPresentacion\Recepcionista\Asignar Reserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CapaPresentacion\Recepcionista\AsignarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CapaPresentacion\Recepcionista\Inicio Recep.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,9 +35,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CapaPresentacion\SuperUsuario\UsuarioCRUD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="CapaPresentacion\Recepcionista\Asignar Reserva.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CapaPresentacion\Recepcionista\Cobrar Habitacion.cs">

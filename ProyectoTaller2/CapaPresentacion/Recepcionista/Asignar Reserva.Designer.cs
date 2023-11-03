@@ -31,19 +31,16 @@
             NCantidad = new NumericUpDown();
             DTRetiro = new DateTimePicker();
             DTIngreso = new DateTimePicker();
-            TTelefono = new TextBox();
             LCantidad = new Label();
-            LTel = new Label();
-            LDNI = new Label();
-            TDNI = new TextBox();
-            TNombre = new TextBox();
-            TApellido = new TextBox();
-            LApellido = new Label();
-            LNombre = new Label();
             LFechaRet = new Label();
             LFechaIng = new Label();
             BReservar = new Button();
             panel1 = new Panel();
+            txtPrecio = new TextBox();
+            txtPiso = new TextBox();
+            txtCantCamas = new TextBox();
+            txtCategoria = new TextBox();
+            txtNroHabitacion = new TextBox();
             lblDetalleHabitacion = new Label();
             lblCategoria = new Label();
             lblPrecio = new Label();
@@ -52,6 +49,7 @@
             lblIDHabitacion = new Label();
             label2 = new Label();
             btnCancelar = new Button();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -81,14 +79,6 @@
             DTIngreso.TabIndex = 36;
             DTIngreso.ValueChanged += DTIngreso_ValueChanged;
             // 
-            // TTelefono
-            // 
-            TTelefono.Location = new Point(519, 390);
-            TTelefono.Name = "TTelefono";
-            TTelefono.Size = new Size(160, 23);
-            TTelefono.TabIndex = 35;
-            TTelefono.KeyPress += TTelefono_KeyPress;
-            // 
             // LCantidad
             // 
             LCantidad.AutoSize = true;
@@ -98,72 +88,6 @@
             LCantidad.Size = new Size(130, 15);
             LCantidad.TabIndex = 33;
             LCantidad.Text = "Cantidad de Personas :";
-            // 
-            // LTel
-            // 
-            LTel.AutoSize = true;
-            LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LTel.Location = new Point(357, 390);
-            LTel.Name = "LTel";
-            LTel.Size = new Size(124, 15);
-            LTel.TabIndex = 32;
-            LTel.Text = "Telefono del Cliente :";
-            // 
-            // LDNI
-            // 
-            LDNI.AutoSize = true;
-            LDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LDNI.Location = new Point(357, 237);
-            LDNI.Name = "LDNI";
-            LDNI.Size = new Size(97, 15);
-            LDNI.TabIndex = 31;
-            LDNI.Text = "DNI del Cliente :";
-            // 
-            // TDNI
-            // 
-            TDNI.Location = new Point(519, 235);
-            TDNI.Name = "TDNI";
-            TDNI.Size = new Size(160, 23);
-            TDNI.TabIndex = 30;
-            TDNI.KeyPress += TDNI_KeyPress;
-            // 
-            // TNombre
-            // 
-            TNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            TNombre.Location = new Point(519, 287);
-            TNombre.Name = "TNombre";
-            TNombre.Size = new Size(160, 23);
-            TNombre.TabIndex = 29;
-            TNombre.KeyPress += TNombre_KeyPress;
-            // 
-            // TApellido
-            // 
-            TApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            TApellido.Location = new Point(519, 340);
-            TApellido.Name = "TApellido";
-            TApellido.Size = new Size(160, 23);
-            TApellido.TabIndex = 28;
-            TApellido.KeyPress += TApellido_KeyPress;
-            // 
-            // LApellido
-            // 
-            LApellido.AutoSize = true;
-            LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LApellido.Location = new Point(357, 340);
-            LApellido.Name = "LApellido";
-            LApellido.Size = new Size(120, 15);
-            LApellido.TabIndex = 27;
-            LApellido.Text = "Apellido del Cliente :";
-            // 
-            // LNombre
-            // 
-            LNombre.AutoSize = true;
-            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombre.Location = new Point(357, 287);
-            LNombre.Name = "LNombre";
-            LNombre.Size = new Size(121, 15);
-            LNombre.TabIndex = 26;
-            LNombre.Text = "Nombre del Cliente :";
             // 
             // LFechaRet
             // 
@@ -200,6 +124,11 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(txtPrecio);
+            panel1.Controls.Add(txtPiso);
+            panel1.Controls.Add(txtCantCamas);
+            panel1.Controls.Add(txtCategoria);
+            panel1.Controls.Add(txtNroHabitacion);
             panel1.Controls.Add(lblDetalleHabitacion);
             panel1.Controls.Add(lblCategoria);
             panel1.Controls.Add(lblPrecio);
@@ -210,6 +139,51 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(698, 189);
             panel1.TabIndex = 40;
+            // 
+            // txtPrecio
+            // 
+            txtPrecio.BorderStyle = BorderStyle.None;
+            txtPrecio.Location = new Point(420, 153);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.ReadOnly = true;
+            txtPrecio.Size = new Size(100, 16);
+            txtPrecio.TabIndex = 58;
+            // 
+            // txtPiso
+            // 
+            txtPiso.BorderStyle = BorderStyle.None;
+            txtPiso.Location = new Point(420, 117);
+            txtPiso.Name = "txtPiso";
+            txtPiso.ReadOnly = true;
+            txtPiso.Size = new Size(100, 16);
+            txtPiso.TabIndex = 57;
+            // 
+            // txtCantCamas
+            // 
+            txtCantCamas.BorderStyle = BorderStyle.None;
+            txtCantCamas.Location = new Point(420, 85);
+            txtCantCamas.Name = "txtCantCamas";
+            txtCantCamas.ReadOnly = true;
+            txtCantCamas.Size = new Size(100, 16);
+            txtCantCamas.TabIndex = 56;
+            // 
+            // txtCategoria
+            // 
+            txtCategoria.BorderStyle = BorderStyle.None;
+            txtCategoria.Location = new Point(420, 55);
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.ReadOnly = true;
+            txtCategoria.Size = new Size(100, 16);
+            txtCategoria.TabIndex = 55;
+            // 
+            // txtNroHabitacion
+            // 
+            txtNroHabitacion.BorderStyle = BorderStyle.None;
+            txtNroHabitacion.Location = new Point(420, 17);
+            txtNroHabitacion.Name = "txtNroHabitacion";
+            txtNroHabitacion.ReadOnly = true;
+            txtNroHabitacion.Size = new Size(100, 16);
+            txtNroHabitacion.TabIndex = 54;
             // 
             // lblDetalleHabitacion
             // 
@@ -226,7 +200,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCategoria.Location = new Point(301, 90);
+            lblCategoria.Location = new Point(301, 58);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(66, 15);
             lblCategoria.TabIndex = 52;
@@ -246,7 +220,7 @@
             // 
             lblNroHabitacion.AutoSize = true;
             lblNroHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNroHabitacion.Location = new Point(301, 60);
+            lblNroHabitacion.Location = new Point(301, 20);
             lblNroHabitacion.Name = "lblNroHabitacion";
             lblNroHabitacion.Size = new Size(96, 15);
             lblNroHabitacion.TabIndex = 49;
@@ -266,11 +240,11 @@
             // 
             lblIDHabitacion.AutoSize = true;
             lblIDHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblIDHabitacion.Location = new Point(301, 26);
+            lblIDHabitacion.Location = new Point(301, 88);
             lblIDHabitacion.Name = "lblIDHabitacion";
-            lblIDHabitacion.Size = new Size(88, 15);
+            lblIDHabitacion.Size = new Size(93, 15);
             lblIDHabitacion.TabIndex = 47;
-            lblIDHabitacion.Text = "ID Habitacion :";
+            lblIDHabitacion.Text = "Cant de Camas :";
             // 
             // label2
             // 
@@ -294,27 +268,28 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(374, 258);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(233, 23);
+            comboBox1.TabIndex = 43;
+            // 
             // Asignar_Reserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(699, 531);
+            Controls.Add(comboBox1);
             Controls.Add(btnCancelar);
             Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(NCantidad);
             Controls.Add(DTRetiro);
             Controls.Add(DTIngreso);
-            Controls.Add(TTelefono);
             Controls.Add(LCantidad);
-            Controls.Add(LTel);
-            Controls.Add(LDNI);
-            Controls.Add(TDNI);
-            Controls.Add(TNombre);
-            Controls.Add(TApellido);
-            Controls.Add(LApellido);
-            Controls.Add(LNombre);
             Controls.Add(LFechaRet);
             Controls.Add(LFechaIng);
             Controls.Add(BReservar);
@@ -334,15 +309,7 @@
         private NumericUpDown NCantidad;
         private DateTimePicker DTRetiro;
         private DateTimePicker DTIngreso;
-        private TextBox TTelefono;
         private Label LCantidad;
-        private Label LTel;
-        private Label LDNI;
-        private TextBox TDNI;
-        private TextBox TNombre;
-        private TextBox TApellido;
-        private Label LApellido;
-        private Label LNombre;
         private Label LFechaRet;
         private Label LFechaIng;
         private Button BReservar;
@@ -355,5 +322,11 @@
         private Label lblIDHabitacion;
         private Label label2;
         private Button btnCancelar;
+        private TextBox txtPrecio;
+        private TextBox txtPiso;
+        private TextBox txtCantCamas;
+        private TextBox txtCategoria;
+        private TextBox txtNroHabitacion;
+        private ComboBox comboBox1;
     }
 }

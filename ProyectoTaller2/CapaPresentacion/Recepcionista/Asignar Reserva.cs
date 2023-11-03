@@ -14,9 +14,15 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     public partial class Asignar_Reserva : Form
     {
-        public Asignar_Reserva()
+        public Asignar_Reserva(int nro_habitacion, int cant_camas, string categoria, int piso, double precio)
         {
             InitializeComponent();
+            txtNroHabitacion.Text = nro_habitacion.ToString();
+            txtCantCamas.Text = cant_camas.ToString();
+            txtCategoria.Text = categoria;
+            txtPiso.Text = piso.ToString();
+            txtPrecio.Text = precio.ToString();
+
 
         }
 
@@ -83,19 +89,15 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 if (resultado == DialogResult.Yes)
                 {
                     Reserva reserva = new Reserva();
-                    Cliente cliente = new Cliente();
-                    cliente.apellido = TApellido.Text;
-                    cliente.nombre = TNombre.Text;
-                    cliente.dni = Convert.ToInt16(TDNI.Text);
-                    cliente.telefono = TTelefono.Text;
+
+                    reserva.id_hab = Convert.ToInt16(txtNroHabitacion);
                     reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
                     reserva.ingreso = DTIngreso.Value;
                     reserva.retiro = DTRetiro.Value;
                     TimeSpan diferencia = DTRetiro.Value.Subtract(DTIngreso.Value);
                     reserva.precio = diferencia.Days;
                     int result = Reserva.AgregarREserva(reserva);
-                    int result1 = Cliente.AgregarCliente(cliente);
-                    if (result != 0 && result1 != 0)
+                    if (result != 0)
                     {
                         MessageBox.Show("Reserva guardada con exito", "Guardado", MessageBoxButtons.OK);
                     }

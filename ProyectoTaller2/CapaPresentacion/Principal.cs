@@ -169,5 +169,10 @@ namespace ProyectoTaller2.CapaPresentacion
             }
 
         }
+
+        private void MenuCliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new AsignarCliente());
+        }
     }
 }

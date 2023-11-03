@@ -36,6 +36,7 @@
             MenuReserva = new FontAwesome.Sharp.IconMenuItem();
             MenuServicios = new FontAwesome.Sharp.IconMenuItem();
             MenuIngresoDePagos = new FontAwesome.Sharp.IconMenuItem();
+            MenuCliente = new FontAwesome.Sharp.IconMenuItem();
             MenuBackup = new FontAwesome.Sharp.IconMenuItem();
             MenuTitulo = new MenuStrip();
             MenuSalir = new FontAwesome.Sharp.IconMenuItem();
@@ -54,10 +55,10 @@
             MenuIzquierdo.AutoSize = false;
             MenuIzquierdo.BackColor = Color.White;
             MenuIzquierdo.Dock = DockStyle.Left;
-            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuReservar, MenuUsuario, MenuHabitacion, MenuReserva, MenuServicios, MenuIngresoDePagos, MenuBackup });
+            MenuIzquierdo.Items.AddRange(new ToolStripItem[] { MenuInicio, MenuReservar, MenuUsuario, MenuHabitacion, MenuReserva, MenuServicios, MenuIngresoDePagos, MenuCliente, MenuBackup });
             MenuIzquierdo.Location = new Point(0, 60);
             MenuIzquierdo.Name = "MenuIzquierdo";
-            MenuIzquierdo.Size = new Size(152, 504);
+            MenuIzquierdo.Size = new Size(152, 587);
             MenuIzquierdo.TabIndex = 0;
             MenuIzquierdo.Text = "menuStrip1";
             // 
@@ -166,6 +167,21 @@
             MenuIngresoDePagos.TextImageRelation = TextImageRelation.ImageAboveText;
             MenuIngresoDePagos.Click += MenuPagos_Click;
             // 
+            // MenuCliente
+            // 
+            MenuCliente.AutoSize = false;
+            MenuCliente.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MenuCliente.IconChar = FontAwesome.Sharp.IconChar.Person;
+            MenuCliente.IconColor = Color.Black;
+            MenuCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuCliente.IconSize = 45;
+            MenuCliente.ImageScaling = ToolStripItemImageScaling.None;
+            MenuCliente.Name = "MenuCliente";
+            MenuCliente.Size = new Size(80, 60);
+            MenuCliente.Text = "Clientes";
+            MenuCliente.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuCliente.Click += MenuCliente_Click;
+            // 
             // MenuBackup
             // 
             MenuBackup.AutoSize = false;
@@ -256,14 +272,14 @@
             PanelPrincipal.Dock = DockStyle.Fill;
             PanelPrincipal.Location = new Point(152, 60);
             PanelPrincipal.Name = "PanelPrincipal";
-            PanelPrincipal.Size = new Size(843, 504);
+            PanelPrincipal.Size = new Size(843, 587);
             PanelPrincipal.TabIndex = 2;
             // 
             // FMPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(995, 564);
+            ClientSize = new Size(995, 647);
             Controls.Add(PanelPrincipal);
             Controls.Add(MenuIzquierdo);
             Controls.Add(MenuTitulo);
@@ -300,5 +316,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuServicios;
         private ToolStripMenuItem perfilToolStripMenuItem1;
         private FontAwesome.Sharp.IconMenuItem MenuInicio;
+        private FontAwesome.Sharp.IconMenuItem MenuCliente;
     }
 }
