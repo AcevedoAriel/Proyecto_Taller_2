@@ -40,15 +40,15 @@ namespace ProyectoTaller2.CapaPresentacion
         {
 
             
-            
-            int nro_habitacion = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["NroHabitacion"].Value);
+            int id_hab = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["ID"].Value);
+            int nro_habitacion = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["NroHabitacion"].Value);
             int cantidad_camas = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["NroCamas"].Value);
             string categoria = Convert.ToString(dataGridHabitaciones.SelectedRows[0].Cells["Categoria"].Value);
             int piso = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["Piso"].Value);
             double precio = Convert.ToDouble(dataGridHabitaciones.SelectedRows[0].Cells["Precio"].Value);
 
             //Array[] habitacion = { nro_habitacion,  };
-            Asignar_Reserva asignar = new Asignar_Reserva(nro_habitacion, cantidad_camas, categoria, piso, precio);
+            Asignar_Reserva asignar = new Asignar_Reserva(id_hab, nro_habitacion, cantidad_camas, categoria, piso, precio);
             asignar.Show();
         }
 

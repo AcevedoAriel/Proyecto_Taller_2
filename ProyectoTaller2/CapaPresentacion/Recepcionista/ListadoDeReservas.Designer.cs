@@ -49,15 +49,6 @@
             TBuscar = new TextBox();
             panel1 = new Panel();
             dataGridReserva = new DataGridView();
-            ingreso = new DataGridViewTextBoxColumn();
-            retiro = new DataGridViewTextBoxColumn();
-            habitacion = new DataGridViewTextBoxColumn();
-            nombre = new DataGridViewTextBoxColumn();
-            apellido = new DataGridViewTextBoxColumn();
-            dni = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            personas = new DataGridViewTextBoxColumn();
-            servicio = new DataGridViewComboBoxColumn();
             BGuardar = new Button();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lblNroHabitacion = new Label();
@@ -269,7 +260,6 @@
             // dataGridReserva
             // 
             dataGridReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridReserva.Columns.AddRange(new DataGridViewColumn[] { ingreso, retiro, habitacion, nombre, apellido, dni, telefono, personas, servicio });
             dataGridReserva.Dock = DockStyle.Fill;
             dataGridReserva.Location = new Point(0, 0);
             dataGridReserva.Name = "dataGridReserva";
@@ -277,56 +267,6 @@
             dataGridReserva.Size = new Size(833, 149);
             dataGridReserva.TabIndex = 2;
             dataGridReserva.SelectionChanged += dataGridReserva_SelectionChanged;
-            // 
-            // ingreso
-            // 
-            ingreso.HeaderText = "Fecha de Ingreso";
-            ingreso.Name = "ingreso";
-            // 
-            // retiro
-            // 
-            retiro.HeaderText = "Fecha de Retiro";
-            retiro.Name = "retiro";
-            // 
-            // habitacion
-            // 
-            habitacion.HeaderText = "Habitación";
-            habitacion.Name = "habitacion";
-            habitacion.Width = 70;
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "Nombre del Cliente";
-            nombre.Name = "nombre";
-            nombre.Width = 250;
-            // 
-            // apellido
-            // 
-            apellido.HeaderText = "Apellido del Cliente";
-            apellido.Name = "apellido";
-            apellido.Width = 120;
-            // 
-            // dni
-            // 
-            dni.HeaderText = "DNI del Cliente";
-            dni.Name = "dni";
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Telefono del Cliente";
-            telefono.Name = "telefono";
-            // 
-            // personas
-            // 
-            personas.HeaderText = "Cantidad de Personas";
-            personas.Name = "personas";
-            // 
-            // servicio
-            // 
-            servicio.HeaderText = "Servicios Incluidos";
-            servicio.Name = "servicio";
-            servicio.Resizable = DataGridViewTriState.True;
-            servicio.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // BGuardar
             // 
@@ -454,14 +394,5 @@
         private Label lblNroHabitacion;
         private TextBox txtNroHabitacion;
         private Button BServicios;
-        private DataGridViewTextBoxColumn ingreso;
-        private DataGridViewTextBoxColumn retiro;
-        private DataGridViewTextBoxColumn habitacion;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn apellido;
-        private DataGridViewTextBoxColumn dni;
-        private DataGridViewTextBoxColumn telefono;
-        private DataGridViewTextBoxColumn personas;
-        private DataGridViewComboBoxColumn servicio;
     }
 }

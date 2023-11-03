@@ -39,6 +39,8 @@
             label1 = new Label();
             panel1 = new Panel();
             Bagregar = new Button();
+            listBox1 = new ListBox();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,6 +52,7 @@
             checkBox1.Size = new Size(15, 14);
             checkBox1.TabIndex = 6;
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.Click += checkBox1_Click;
             // 
             // label5
             // 
@@ -131,6 +134,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(listBox1);
             panel1.Controls.Add(Bagregar);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
@@ -157,7 +162,24 @@
             Bagregar.TabIndex = 10;
             Bagregar.Text = "Agregar";
             Bagregar.UseVisualStyleBackColor = false;
-            Bagregar.Click += Bagregar_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Items.AddRange(new object[] { "Desayuno", "Cena" });
+            listBox1.Location = new Point(193, 142);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(120, 94);
+            listBox1.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(83, 239);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 13;
             // 
             // ServiciosAdicionales
             // 
@@ -186,5 +208,7 @@
         private Label label1;
         private Panel panel1;
         private Button Bagregar;
+        private ComboBox comboBox1;
+        private ListBox listBox1;
     }
 }

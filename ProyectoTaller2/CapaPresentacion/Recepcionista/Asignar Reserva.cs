@@ -14,9 +14,10 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     public partial class Asignar_Reserva : Form
     {
-        public Asignar_Reserva(int nro_habitacion, int cant_camas, string categoria, int piso, double precio)
+        public Asignar_Reserva(int id_hab, int nro_habitacion, int cant_camas, string categoria, int piso, double precio)
         {
             InitializeComponent();
+            txtIDhab.Text = id_hab.ToString();
             txtNroHabitacion.Text = nro_habitacion.ToString();
             txtCantCamas.Text = cant_camas.ToString();
             txtCategoria.Text = categoria;
@@ -94,12 +95,13 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 {
                     Reserva reserva = new Reserva();
 
-                    reserva.id_hab = Convert.ToInt16(txtNroHabitacion);
+                    reserva.id_hab = Convert.ToInt32(txtIDhab.Text);
                     reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
                     reserva.ingreso = DTIngreso.Value;
                     reserva.retiro = DTRetiro.Value;
+                    reserva.id_cliente = Convert.ToInt32(cboboxCliente.SelectedValue);
                     TimeSpan diferencia = DTRetiro.Value.Subtract(DTIngreso.Value);
-                    reserva.precio = diferencia.Days;
+                    reserva.precio = diferencia.Days * Convert.ToDouble(txtPrecio.Text);
                     int result = Reserva.AgregarREserva(reserva);
                     if (result != 0)
                     {
@@ -112,6 +114,8 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     }
 
                     this.Close();
+                    ServiciosAdicionales serv = new ServiciosAdicionales();
+                    cobrar.Show();
                 }
             }
             else

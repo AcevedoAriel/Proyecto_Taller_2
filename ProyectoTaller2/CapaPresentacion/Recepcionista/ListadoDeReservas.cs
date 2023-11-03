@@ -23,7 +23,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             BEditar.Enabled = false;
             BEliminar.Enabled = false;
             BServicios.Enabled = false;
-
+            RefreshPantalla();
         }
 
         private void CamposTextChanged(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 BGuardar.Visible = true;
                 BEliminar.Visible = false;
 
-                 //Reemplaza "Columna1" con el nombre de tu columna  
+                //Reemplaza "Columna1" con el nombre de tu columna  
                 DTIngreso.Text = filaSeleccionada.Cells["ingreso"].Value.ToString();
                 DTRetiro.Text = filaSeleccionada.Cells["retiro"].Value.ToString();
                 txtNroHabitacion.Text = filaSeleccionada.Cells["habitacion"].Value.ToString();
@@ -133,7 +133,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 
                 reserva.id = Convert.ToInt16(filaSeleccionada.Cells["ID"]);
                 int result = Reserva.EliminarReserva(reserva);
-                
+
                 if (result != 0)
                 {
                     MessageBox.Show("Se eliminó correctamente", "Reserva Eliminada", MessageBoxButtons.OK);
@@ -163,7 +163,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     cliente.dni = Convert.ToInt16(TDNI.Text);
                     string nroHabitacion = txtNroHabitacion.Text;
                     cliente.telefono = TTelefono.Text;
-                    reserva.cantPersonas =Convert.ToInt16(NCantidad.Value);
+                    reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
                     int result = Reserva.ModificarReserva(reserva);
                     int result1 = Cliente.ModificarCliente(cliente);
                     if (result != 0 && result1 != 0)
@@ -279,7 +279,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select reserva.id_reserva as ID,  reserva.fecha_ingreso as FechaIngreso, reserva.fechaRetiro as FechaRetiro, habitacion.nro_habitacion as NroHabitacion, cliente.nombre as NombreCliente, cliente.apellido as ApellidoCliente, cliente.dni as DNICliente, cliente.telefono as TelCliente, reserva.cant_personas as CantPersonas, reserva.precio as PrecioTotal" +
+                string query = "select reserva.id_reserva as ID,  reserva.fecha_ingreso as FechaIngreso, reserva.fecha_retiro as FechaRetiro, habitacion.nro_habitacion as NroHabitacion, cliente.nombre as NombreCliente, cliente.apellido as ApellidoCliente, cliente.dni as DNICliente, cliente.telefono as TelCliente, reserva.cant_personas as CantPersonas, reserva.precio as PrecioTotal" +
                     " from reserva " +
                     "JOIN  cliente ON cliente.id_cliente = reserva.id_cliente " +
                     "JOIN  habitacion ON habitacion.id_habitacion = reserva.id_habitacion ";

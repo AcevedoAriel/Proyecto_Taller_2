@@ -50,6 +50,7 @@
             label2 = new Label();
             btnCancelar = new Button();
             cboboxCliente = new ComboBox();
+            txtIDhab = new TextBox();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(txtIDhab);
             panel1.Controls.Add(txtPrecio);
             panel1.Controls.Add(txtPiso);
             panel1.Controls.Add(txtCantCamas);
@@ -276,6 +278,15 @@
             cboboxCliente.Size = new Size(233, 23);
             cboboxCliente.TabIndex = 43;
             // 
+            // txtIDhab
+            // 
+            txtIDhab.Location = new Point(101, 110);
+            txtIDhab.Name = "txtIDhab";
+            txtIDhab.ReadOnly = true;
+            txtIDhab.Size = new Size(100, 23);
+            txtIDhab.TabIndex = 59;
+            txtIDhab.Visible = false;
+            // 
             // Asignar_Reserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -328,5 +339,6 @@
         private TextBox txtCategoria;
         private TextBox txtNroHabitacion;
         private ComboBox cboboxCliente;
+        private TextBox txtIDhab;
     }
 }

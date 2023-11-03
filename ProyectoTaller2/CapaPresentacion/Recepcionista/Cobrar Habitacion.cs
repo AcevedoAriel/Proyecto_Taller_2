@@ -17,6 +17,14 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             InitializeComponent();
             CBCantidadCuota.SelectedIndex = 0;
             CBMetodoPago.SelectedIndex = 0;
+            txtCliente.Text = string.Empty;
+            txtHabitacion.Text = string.Empty;
+            txtPrHab.Text = string.Empty;
+            txtPrSer.Text = string.Empty;
+            txtServicios.Text = string.Empty;
+            txtSubtotal.Text = string.Empty;
+            txtTotal.Text = string.Empty;
+
         }
 
         private void btnCobrarHabitacion_Click(object sender, EventArgs e)
