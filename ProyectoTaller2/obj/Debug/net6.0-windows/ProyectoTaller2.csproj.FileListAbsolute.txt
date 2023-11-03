@@ -140,3 +140,4 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Reservar.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.SuperUsuario.Inicio_SuperUsuario.resources
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Recepcionista.AsignarCliente.resources
+C:\Users\ariel\source\repos\Proyecto_Taller_2\ProyectoTaller2\obj\Debug\net6.0-windows\ProyectoTaller2.CapaPresentacion.Recepcionista.AsignarCliente.resources

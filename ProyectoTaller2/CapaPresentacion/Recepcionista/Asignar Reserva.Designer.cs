@@ -49,7 +49,7 @@
             lblIDHabitacion = new Label();
             label2 = new Label();
             btnCancelar = new Button();
-            comboBox1 = new ComboBox();
+            cboboxCliente = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -268,13 +268,13 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // comboBox1
+            // cboboxCliente
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(374, 258);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(233, 23);
-            comboBox1.TabIndex = 43;
+            cboboxCliente.FormattingEnabled = true;
+            cboboxCliente.Location = new Point(374, 258);
+            cboboxCliente.Name = "cboboxCliente";
+            cboboxCliente.Size = new Size(233, 23);
+            cboboxCliente.TabIndex = 43;
             // 
             // Asignar_Reserva
             // 
@@ -282,7 +282,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(699, 531);
-            Controls.Add(comboBox1);
+            Controls.Add(cboboxCliente);
             Controls.Add(btnCancelar);
             Controls.Add(label2);
             Controls.Add(panel1);
@@ -327,6 +327,6 @@
         private TextBox txtCantCamas;
         private TextBox txtCategoria;
         private TextBox txtNroHabitacion;
-        private ComboBox comboBox1;
+        private ComboBox cboboxCliente;
     }
 }

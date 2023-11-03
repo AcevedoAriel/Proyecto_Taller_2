@@ -50,6 +50,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
@@ -63,7 +64,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(131, 20);
+            label2.Location = new Point(50, 20);
             label2.Name = "label2";
             label2.Size = new Size(217, 32);
             label2.TabIndex = 2;
@@ -157,22 +158,28 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(697, 102);
+            btnRegistrar.BackColor = Color.Lime;
+            btnRegistrar.FlatStyle = FlatStyle.Flat;
+            btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistrar.Location = new Point(697, 60);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(75, 23);
+            btnRegistrar.Size = new Size(75, 48);
             btnRegistrar.TabIndex = 46;
             btnRegistrar.Text = "Registrar";
-            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.UseVisualStyleBackColor = false;
             btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(697, 141);
+            btnGuardar.BackColor = Color.Lime;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardar.Location = new Point(697, 114);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.Size = new Size(75, 48);
             btnGuardar.TabIndex = 47;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // label1
@@ -187,12 +194,15 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(697, 180);
+            btnEditar.BackColor = Color.DeepSkyBlue;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditar.Location = new Point(697, 172);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
+            btnEditar.Size = new Size(75, 48);
             btnEditar.TabIndex = 49;
             btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
             // AsignarCliente

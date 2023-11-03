@@ -23,6 +23,10 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             txtPiso.Text = piso.ToString();
             txtPrecio.Text = precio.ToString();
 
+            cboboxCliente.DataSource = Cliente.TraerClientes();
+            cboboxCliente.DisplayMember = "Cliente";
+            cboboxCliente.ValueMember = "id_cliente";
+
 
         }
 
@@ -82,7 +86,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         {
             DialogResult resultado;
 
-            if (TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && NCantidad.Value != 0)
+            if (DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime && NCantidad.Value != 0)
             {
                 resultado = MessageBox.Show("Confirma la Reserva Ingresada?", "Confirmar Reserva", MessageBoxButtons.YesNo);
 
