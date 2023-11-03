@@ -17,6 +17,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         public AsignarCliente()
         {
             InitializeComponent();
+            RefreshPantalla();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

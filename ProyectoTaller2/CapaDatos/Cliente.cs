@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,18 @@ namespace ProyectoTaller2.CapaDatos
 
             }
             return retorno;
+        }
+
+        public static DataTable TraerClientes()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select id_cliente, dni, CONCAT(nombre, ' ' , apellido) as Cliente, telefono " + " from cliente ";
+                SqlDataAdapter daTraer = new SqlDataAdapter(query, conexion);
+                daTraer.Fill(dt);
+            }
+            return dt;
         }
     }
 }
