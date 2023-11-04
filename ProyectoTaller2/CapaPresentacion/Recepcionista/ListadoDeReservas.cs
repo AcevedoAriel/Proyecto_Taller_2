@@ -22,18 +22,15 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             BGuardar.Enabled = false;
             BEditar.Enabled = false;
             BEliminar.Enabled = false;
-            BServicios.Enabled = false;
+            
             RefreshPantalla();
         }
 
         private void CamposTextChanged(object sender, EventArgs e)
         {
             // Verifica si todos los TextBoxes tienen datos no vacíos
-            bool todosCamposLlenos = !string.IsNullOrWhiteSpace(TNombre.Text)
-                                   && !string.IsNullOrWhiteSpace(TApellido.Text)
-                                   && !string.IsNullOrWhiteSpace(TDNI.Text)
-                                   && !string.IsNullOrWhiteSpace(DTIngreso.Text)
-                                   && !string.IsNullOrWhiteSpace(TTelefono.Text)
+            bool todosCamposLlenos =                                
+                                   !string.IsNullOrWhiteSpace(DTIngreso.Text)                                   
                                    && !string.IsNullOrWhiteSpace(DTRetiro.Text)
                                    && !string.IsNullOrWhiteSpace(lblNroHabitacion.Text)
                                    && !string.IsNullOrWhiteSpace(NCantidad.Text);
@@ -50,60 +47,12 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         public void limpiarFormulario()
         {
             // Limpiar formulario
-            TNombre.Clear();
-            TApellido.Clear();
-
-            TDNI.Clear();
-            TTelefono.Clear();
             DTIngreso.ResetText();
             DTRetiro.ResetText();
             NCantidad.Value = 0;
         }
 
-        private void BReservar_Click(object sender, EventArgs e)
-        {
-            DialogResult resultado;
-
-            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime)
-            {
-                resultado = MessageBox.Show("Seguro que desea insertar una nueva reserva?", "Confirmar Rerserva", MessageBoxButtons.YesNo);
-
-                if (resultado == DialogResult.Yes)
-                {
-                    Reserva reserva = new Reserva();
-                    Cliente cliente = new Cliente();
-                    reserva.ingreso = DTIngreso.Value;
-                    reserva.retiro = DTRetiro.Value;
-                    cliente.apellido = TApellido.Text;
-                    cliente.nombre = TNombre.Text;
-                    cliente.dni = Convert.ToInt16(TDNI.Text);
-                    string nroHabitacion = txtNroHabitacion.Text;
-                    cliente.telefono = TTelefono.Text;
-                    reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
-                    int result = Reserva.AgregarREserva(reserva);
-                    int result1 = Cliente.AgregarCliente(cliente);
-                    if (result != 0 && result1 != 0)
-                    {
-                        MessageBox.Show("Se insertó correctamente", "actualizado", MessageBoxButtons.OK);
-                        limpiarFormulario();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo Insertar", "Error");
-
-                    }
-
-
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error");
-
-            }
-
-        }
+        
 
         private void BEditar_Click(object sender, EventArgs e)
         {
@@ -113,14 +62,11 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 BEliminar.Visible = false;
 
                 //Reemplaza "Columna1" con el nombre de tu columna  
-                DTIngreso.Text = filaSeleccionada.Cells["ingreso"].Value.ToString();
-                DTRetiro.Text = filaSeleccionada.Cells["retiro"].Value.ToString();
-                txtNroHabitacion.Text = filaSeleccionada.Cells["habitacion"].Value.ToString();
-                TNombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
-                TApellido.Text = filaSeleccionada.Cells["apellido"].Value.ToString();
-                TDNI.Text = filaSeleccionada.Cells["dni"].Value.ToString();
-                TTelefono.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
-                NCantidad.Text = filaSeleccionada.Cells["cantidad"].Value.ToString();
+                DTIngreso.Text = filaSeleccionada.Cells["FechaIngreso"].Value.ToString();
+                DTRetiro.Text = filaSeleccionada.Cells["FechaRetiro"].Value.ToString();
+                txtNroHabitacion.Text = filaSeleccionada.Cells["NroHabitacion"].Value.ToString();
+                NCantidad.Text = filaSeleccionada.Cells["CantPersonas"].Value.ToString();
+                NCantidad.Text = filaSeleccionada.Cells["PrecioTotal"].Value.ToString();
 
             }
         }
@@ -149,7 +95,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         private void BGuardar_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-            if (txtNroHabitacion.Text != "" && TNombre.Text != "" && TApellido.Text != "" && TDNI.Text != "" && TTelefono.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime)
+            if (txtNroHabitacion.Text != "" && DTRetiro.Value != DateTimePicker.MinimumDateTime && DTIngreso.Value != DateTimePicker.MinimumDateTime)
             {
                 resultado = MessageBox.Show("Confirma los cambios hechos?", "Confirmar Edicion", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
@@ -158,11 +104,11 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     Cliente cliente = new Cliente();
                     reserva.ingreso = DTIngreso.Value;
                     reserva.retiro = DTRetiro.Value;
-                    cliente.apellido = TApellido.Text;
-                    cliente.nombre = TNombre.Text;
-                    cliente.dni = Convert.ToInt16(TDNI.Text);
-                    string nroHabitacion = txtNroHabitacion.Text;
-                    cliente.telefono = TTelefono.Text;
+                    
+                 
+                    int hab = Convert.ToInt32(txtNroHabitacion.Text);
+                    
+                    reserva.id_hab = 0  ;
                     reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
                     int result = Reserva.ModificarReserva(reserva);
                     int result1 = Cliente.ModificarCliente(cliente);
@@ -212,7 +158,6 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             // Verifica si al menos una fila está seleccionada
             BEditar.Enabled = dataGridReserva.SelectedRows.Count > 0;
             BEliminar.Enabled = dataGridReserva.SelectedRows.Count > 0;
-            BServicios.Enabled = dataGridReserva.SelectedRows.Count > 0;
             if (dataGridReserva.SelectedRows.Count > 0)
             {
                 // Almacena la fila seleccionada en la variable
@@ -267,21 +212,13 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             }
         }
 
-        private void BServicios_Click(object sender, EventArgs e)
-        {
-            ServiciosAdicionales fm = new ServiciosAdicionales();
-            fm.BackColor = Color.LightSkyBlue;
-            fm.ShowDialog(); //muestra el formulario sin poder manipular el form anterior
-            this.Hide(); //oculta el formulario actual
-        }
-
         public void RefreshPantalla()
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select reserva.id_reserva as ID,  reserva.fecha_ingreso as FechaIngreso, reserva.fecha_retiro as FechaRetiro, habitacion.nro_habitacion as NroHabitacion, cliente.nombre as NombreCliente, cliente.apellido as ApellidoCliente, cliente.dni as DNICliente, cliente.telefono as TelCliente, reserva.cant_personas as CantPersonas, reserva.precio as PrecioTotal" +
+                string query = "select reserva.id_reserva as ID,  reserva.fecha_ingreso as FechaIngreso, reserva.fecha_retiro as FechaRetiro, habitacion.nro_habitacion as NroHabitacion, reserva.cant_personas as CantPersonas, reserva.precio as PrecioTotal" +
                     " from reserva " +
-                    "JOIN  cliente ON cliente.id_cliente = reserva.id_cliente " +
+
                     "JOIN  habitacion ON habitacion.id_habitacion = reserva.id_habitacion ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
@@ -293,5 +230,9 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             }
         }
 
+        private void TBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

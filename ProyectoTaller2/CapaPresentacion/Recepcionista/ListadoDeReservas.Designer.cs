@@ -33,19 +33,10 @@
             BEliminar = new Button();
             LFechaIng = new Label();
             LFechaRet = new Label();
-            LNombre = new Label();
-            LApellido = new Label();
-            TApellido = new TextBox();
-            TNombre = new TextBox();
-            TDNI = new TextBox();
-            LDNI = new Label();
-            LTel = new Label();
             LCantidad = new Label();
-            TTelefono = new TextBox();
             DTIngreso = new DateTimePicker();
             DTRetiro = new DateTimePicker();
             NCantidad = new NumericUpDown();
-            btnBuscar = new Button();
             TBuscar = new TextBox();
             panel1 = new Panel();
             dataGridReserva = new DataGridView();
@@ -53,7 +44,7 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lblNroHabitacion = new Label();
             txtNroHabitacion = new TextBox();
-            BServicios = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridReserva).BeginInit();
@@ -67,16 +58,16 @@
             LReservas.ForeColor = Color.White;
             LReservas.Location = new Point(117, 8);
             LReservas.Name = "LReservas";
-            LReservas.Size = new Size(340, 46);
+            LReservas.Size = new Size(441, 46);
             LReservas.TabIndex = 0;
-            LReservas.Text = "Gestión Reservadas";
+            LReservas.Text = "Gestión Reservas";
             // 
             // BEditar
             // 
             BEditar.BackColor = Color.DodgerBlue;
             BEditar.FlatStyle = FlatStyle.Popup;
             BEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BEditar.Location = new Point(702, 181);
+            BEditar.Location = new Point(702, 153);
             BEditar.Name = "BEditar";
             BEditar.Size = new Size(113, 45);
             BEditar.TabIndex = 3;
@@ -89,7 +80,7 @@
             BEliminar.BackColor = Color.Red;
             BEliminar.FlatStyle = FlatStyle.Popup;
             BEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BEliminar.Location = new Point(702, 242);
+            BEliminar.Location = new Point(702, 214);
             BEliminar.Name = "BEliminar";
             BEliminar.Size = new Size(113, 45);
             BEliminar.TabIndex = 4;
@@ -103,7 +94,7 @@
             LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaIng.Location = new Point(20, 96);
             LFechaIng.Name = "LFechaIng";
-            LFechaIng.Size = new Size(107, 15);
+            LFechaIng.Size = new Size(135, 20);
             LFechaIng.TabIndex = 5;
             LFechaIng.Text = "Fecha de Ingreso :";
             // 
@@ -113,103 +104,25 @@
             LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaRet.Location = new Point(20, 152);
             LFechaRet.Name = "LFechaRet";
-            LFechaRet.Size = new Size(100, 15);
+            LFechaRet.Size = new Size(125, 20);
             LFechaRet.TabIndex = 6;
             LFechaRet.Text = "Fecha de Retiro :";
-            // 
-            // LNombre
-            // 
-            LNombre.AutoSize = true;
-            LNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LNombre.Location = new Point(360, 96);
-            LNombre.Name = "LNombre";
-            LNombre.Size = new Size(121, 15);
-            LNombre.TabIndex = 8;
-            LNombre.Text = "Nombre del Cliente :";
-            // 
-            // LApellido
-            // 
-            LApellido.AutoSize = true;
-            LApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LApellido.Location = new Point(20, 256);
-            LApellido.Name = "LApellido";
-            LApellido.Size = new Size(120, 15);
-            LApellido.TabIndex = 9;
-            LApellido.Text = "Apellido del Cliente :";
-            // 
-            // TApellido
-            // 
-            TApellido.Location = new Point(166, 254);
-            TApellido.Name = "TApellido";
-            TApellido.Size = new Size(160, 23);
-            TApellido.TabIndex = 10;
-            TApellido.TextChanged += CamposTextChanged;
-            TApellido.KeyPress += TApellido_KeyPress;
-            // 
-            // TNombre
-            // 
-            TNombre.Location = new Point(516, 94);
-            TNombre.Name = "TNombre";
-            TNombre.Size = new Size(160, 23);
-            TNombre.TabIndex = 11;
-            TNombre.TextChanged += CamposTextChanged;
-            TNombre.KeyPress += TNombre_KeyPress;
-            // 
-            // TDNI
-            // 
-            TDNI.Location = new Point(516, 147);
-            TDNI.MaxLength = 10;
-            TDNI.Name = "TDNI";
-            TDNI.Size = new Size(160, 23);
-            TDNI.TabIndex = 13;
-            TDNI.TextChanged += CamposTextChanged;
-            TDNI.KeyPress += TDNI_KeyPress;
-            // 
-            // LDNI
-            // 
-            LDNI.AutoSize = true;
-            LDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LDNI.Location = new Point(360, 152);
-            LDNI.Name = "LDNI";
-            LDNI.Size = new Size(97, 15);
-            LDNI.TabIndex = 14;
-            LDNI.Text = "DNI del Cliente :";
-            // 
-            // LTel
-            // 
-            LTel.AutoSize = true;
-            LTel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LTel.Location = new Point(354, 206);
-            LTel.Name = "LTel";
-            LTel.Size = new Size(124, 15);
-            LTel.TabIndex = 15;
-            LTel.Text = "Telefono del Cliente :";
             // 
             // LCantidad
             // 
             LCantidad.AutoSize = true;
             LCantidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LCantidad.Location = new Point(354, 256);
+            LCantidad.Location = new Point(367, 154);
             LCantidad.Name = "LCantidad";
-            LCantidad.Size = new Size(130, 15);
+            LCantidad.Size = new Size(167, 20);
             LCantidad.TabIndex = 16;
             LCantidad.Text = "Cantidad de Personas :";
-            // 
-            // TTelefono
-            // 
-            TTelefono.Location = new Point(516, 203);
-            TTelefono.MaxLength = 10;
-            TTelefono.Name = "TTelefono";
-            TTelefono.Size = new Size(160, 23);
-            TTelefono.TabIndex = 18;
-            TTelefono.TextChanged += CamposTextChanged;
-            TTelefono.KeyPress += TTelefono_KeyPress;
             // 
             // DTIngreso
             // 
             DTIngreso.Location = new Point(167, 94);
             DTIngreso.Name = "DTIngreso";
-            DTIngreso.Size = new Size(160, 23);
+            DTIngreso.Size = new Size(160, 27);
             DTIngreso.TabIndex = 19;
             DTIngreso.TextChanged += CamposTextChanged;
             // 
@@ -217,37 +130,25 @@
             // 
             DTRetiro.Location = new Point(167, 147);
             DTRetiro.Name = "DTRetiro";
-            DTRetiro.Size = new Size(160, 23);
+            DTRetiro.Size = new Size(160, 27);
             DTRetiro.TabIndex = 20;
             DTRetiro.TextChanged += CamposTextChanged;
             // 
             // NCantidad
             // 
-            NCantidad.Location = new Point(516, 254);
+            NCantidad.Location = new Point(586, 150);
             NCantidad.Name = "NCantidad";
-            NCantidad.Size = new Size(160, 23);
+            NCantidad.Size = new Size(87, 27);
             NCantidad.TabIndex = 22;
             NCantidad.TextChanged += CamposTextChanged;
             // 
-            // btnBuscar
-            // 
-            btnBuscar.BackColor = Color.White;
-            btnBuscar.FlatStyle = FlatStyle.Popup;
-            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(680, 8);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(83, 38);
-            btnBuscar.TabIndex = 23;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click;
-            // 
             // TBuscar
             // 
-            TBuscar.Location = new Point(470, 17);
+            TBuscar.Location = new Point(356, 232);
             TBuscar.Name = "TBuscar";
-            TBuscar.Size = new Size(192, 23);
+            TBuscar.Size = new Size(192, 27);
             TBuscar.TabIndex = 24;
+            TBuscar.TextChanged += TBuscar_TextChanged;
             // 
             // panel1
             // 
@@ -263,6 +164,7 @@
             dataGridReserva.Dock = DockStyle.Fill;
             dataGridReserva.Location = new Point(0, 0);
             dataGridReserva.Name = "dataGridReserva";
+            dataGridReserva.RowHeadersWidth = 51;
             dataGridReserva.RowTemplate.Height = 25;
             dataGridReserva.Size = new Size(833, 149);
             dataGridReserva.TabIndex = 2;
@@ -273,7 +175,7 @@
             BGuardar.BackColor = Color.Lime;
             BGuardar.FlatStyle = FlatStyle.Popup;
             BGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BGuardar.Location = new Point(702, 122);
+            BGuardar.Location = new Point(702, 94);
             BGuardar.Name = "BGuardar";
             BGuardar.Size = new Size(113, 45);
             BGuardar.TabIndex = 26;
@@ -298,57 +200,45 @@
             // lblNroHabitacion
             // 
             lblNroHabitacion.AutoSize = true;
-            lblNroHabitacion.Location = new Point(20, 206);
+            lblNroHabitacion.Location = new Point(367, 99);
             lblNroHabitacion.Name = "lblNroHabitacion";
-            lblNroHabitacion.Size = new Size(96, 15);
+            lblNroHabitacion.Size = new Size(123, 20);
             lblNroHabitacion.TabIndex = 28;
             lblNroHabitacion.Text = "Nro Habitacion :";
             // 
             // txtNroHabitacion
             // 
-            txtNroHabitacion.Location = new Point(166, 203);
+            txtNroHabitacion.Location = new Point(513, 96);
             txtNroHabitacion.Name = "txtNroHabitacion";
-            txtNroHabitacion.Size = new Size(160, 23);
+            txtNroHabitacion.Size = new Size(160, 27);
             txtNroHabitacion.TabIndex = 29;
             txtNroHabitacion.KeyPress += txtNroHabitacion_KeyPress;
             // 
-            // BServicios
+            // label1
             // 
-            BServicios.BackColor = Color.Gold;
-            BServicios.FlatStyle = FlatStyle.Popup;
-            BServicios.Location = new Point(702, 66);
-            BServicios.Name = "BServicios";
-            BServicios.Size = new Size(113, 45);
-            BServicios.TabIndex = 30;
-            BServicios.Text = "Agregar Servicios";
-            BServicios.UseVisualStyleBackColor = false;
-            BServicios.Click += BServicios_Click;
+            label1.AutoSize = true;
+            label1.Location = new Point(81, 235);
+            label1.Name = "label1";
+            label1.Size = new Size(246, 20);
+            label1.TabIndex = 30;
+            label1.Text = "Filtrar por número de Habitacion :";
             // 
             // ListadoDeReservas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
-            Controls.Add(BServicios);
+            Controls.Add(label1);
             Controls.Add(txtNroHabitacion);
             Controls.Add(lblNroHabitacion);
             Controls.Add(iconPictureBox1);
             Controls.Add(BGuardar);
             Controls.Add(panel1);
             Controls.Add(TBuscar);
-            Controls.Add(btnBuscar);
             Controls.Add(NCantidad);
             Controls.Add(DTRetiro);
             Controls.Add(DTIngreso);
-            Controls.Add(TTelefono);
             Controls.Add(LCantidad);
-            Controls.Add(LTel);
-            Controls.Add(LDNI);
-            Controls.Add(TDNI);
-            Controls.Add(TNombre);
-            Controls.Add(TApellido);
-            Controls.Add(LApellido);
-            Controls.Add(LNombre);
             Controls.Add(LFechaRet);
             Controls.Add(LFechaIng);
             Controls.Add(BEliminar);
@@ -373,19 +263,10 @@
         private Button BEliminar;
         private Label LFechaIng;
         private Label LFechaRet;
-        private Label LNombre;
-        private Label LApellido;
-        private TextBox TApellido;
-        private TextBox TNombre;
-        private TextBox TDNI;
-        private Label LDNI;
-        private Label LTel;
         private Label LCantidad;
-        private TextBox TTelefono;
         private DateTimePicker DTIngreso;
         private DateTimePicker DTRetiro;
         private NumericUpDown NCantidad;
-        private Button btnBuscar;
         private TextBox TBuscar;
         private Panel panel1;
         private Button BGuardar;
@@ -393,6 +274,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label lblNroHabitacion;
         private TextBox txtNroHabitacion;
-        private Button BServicios;
+        private Label label1;
     }
 }

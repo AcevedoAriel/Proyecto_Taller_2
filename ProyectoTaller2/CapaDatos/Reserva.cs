@@ -36,7 +36,7 @@ namespace ProyectoTaller2.CapaDatos
 
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "insert into reserva( cant_personas, fecha_ingreso, fecha_retiro, id_habitacion, id_cliente, precio) values ("+reserva.cantPersonas+", '"+reserva.ingreso+"', '"+reserva.retiro+"', "+reserva.id_hab+", "+reserva.id_cliente+", '"+reserva.precio+"')";
+                string query = "insert into reserva( cant_personas, fecha_ingreso, fecha_retiro, id_habitacion, precio) values ("+reserva.cantPersonas+", '"+reserva.ingreso+"', '"+reserva.retiro+"', "+reserva.id_hab+", '"+reserva.precio+"')";
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
                 retorno = cmd.ExecuteNonQuery();
@@ -49,7 +49,7 @@ namespace ProyectoTaller2.CapaDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update reserva set cant_personas = "+reserva.cantPersonas+ " , fecha_ingreso = '"+reserva.ingreso+ "' , fecha_retiro = '" +reserva.retiro+ "' , id_habitacion = "+reserva.id_hab+", id_cliente = "+reserva.id_cliente+"  ";
+                string query = "update reserva set cant_personas = "+reserva.cantPersonas+ " , fecha_ingreso = '"+reserva.ingreso+ "' , fecha_retiro = '" +reserva.retiro+ "' , id_habitacion =  '" +reserva.id_hab+ "' ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();
@@ -72,6 +72,9 @@ namespace ProyectoTaller2.CapaDatos
             }
             return retorno;
         }
+
+        
+
 
     }
 }

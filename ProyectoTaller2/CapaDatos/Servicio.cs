@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ProyectoTaller2.CapaDatos
 {
@@ -61,6 +63,22 @@ namespace ProyectoTaller2.CapaDatos
             }
             return retorno;
         }
+
+        public static DataTable TraerServicios()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "select cod_servicio, nombre, precio  from servicios ";
+                SqlDataAdapter daTraer = new SqlDataAdapter(query, conexion);
+                daTraer.Fill(dt);
+            }
+            return dt;
+        }
+
+
+
+        
 
     }
 }

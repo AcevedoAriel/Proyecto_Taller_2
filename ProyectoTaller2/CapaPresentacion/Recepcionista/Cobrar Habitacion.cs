@@ -15,14 +15,12 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         public Cobrar_Habitacion()
         {
             InitializeComponent();
-            CBCantidadCuota.SelectedIndex = 0;
             CBMetodoPago.SelectedIndex = 0;
             txtCliente.Text = string.Empty;
             txtHabitacion.Text = string.Empty;
             txtPrHab.Text = string.Empty;
             txtPrSer.Text = string.Empty;
             txtServicios.Text = string.Empty;
-            txtSubtotal.Text = string.Empty;
             txtTotal.Text = string.Empty;
 
         }
@@ -31,7 +29,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         {
             DialogResult resultado;
 
-            if (CBCantidadCuota.SelectedIndex != 0 && CBMetodoPago.SelectedIndex != 0)
+            if (CBMetodoPago.SelectedIndex != 0)
             {
                 resultado = MessageBox.Show("Desea confirmar el Pago?", "Confirmar Pago", MessageBoxButtons.YesNo);
 

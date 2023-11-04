@@ -4,11 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
@@ -27,6 +30,11 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             cboboxCliente.DataSource = Cliente.TraerClientes();
             cboboxCliente.DisplayMember = "Cliente";
             cboboxCliente.ValueMember = "id_cliente";
+            CBServicios.DataSource = Servicio.TraerServicios();
+            CBServicios.DisplayMember = "nombre";
+            CBServicios.ValueMember = "cod_servicio";
+
+
 
 
         }
@@ -99,7 +107,6 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     reserva.cantPersonas = Convert.ToInt16(NCantidad.Value);
                     reserva.ingreso = DTIngreso.Value;
                     reserva.retiro = DTRetiro.Value;
-                    reserva.id_cliente = Convert.ToInt32(cboboxCliente.SelectedValue);
                     TimeSpan diferencia = DTRetiro.Value.Subtract(DTIngreso.Value);
                     reserva.precio = diferencia.Days * Convert.ToDouble(txtPrecio.Text);
                     int result = Reserva.AgregarREserva(reserva);
@@ -114,7 +121,8 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     }
 
                     this.Close();
-                    ServiciosAdicionales serv = new ServiciosAdicionales();
+                    DetalleServicios.CargarServicios(listServicios );
+                    Cobrar_Habitacion cobrar = new Cobrar_Habitacion();
                     cobrar.Show();
                 }
             }
@@ -158,5 +166,23 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 DTRetiro.Value = DateTime.Today; // Establecer la fecha actual
             }
         }
+
+        private void btnServicio_Click(object sender, EventArgs e)
+        {
+            // Obtener el DataRowView del elemento seleccionado
+            DataRowView selectedRow = (DataRowView)CBServicios.SelectedItem;
+
+            // Acceder al valor de la columna "NombreServicio"
+            string nombreServicio = selectedRow["nombre"].ToString();
+
+            if (!listServicios.Items.Contains(nombreServicio))
+            {
+                // Agregar el nombre del servicio al ListBox
+                listServicios.Items.Add(nombreServicio);
+            }
+        }
+
+        
+
     }
 }
