@@ -66,8 +66,10 @@ insert into estado_habitacion(descripcion) values ('Ocupada')
 insert into estado_habitacion(descripcion) values ('Libre')
 insert into estado_habitacion(descripcion) values ('Mantenimiento')
 
+
+drop table factura
 select * from categoriaHabitacion
-delete from categoriaHabitacion
+delete from DetalleServicios
 TRUNCATE TABLE categoriaHabitacion;
 DBCC CHECKIDENT ('categoriaHabitacion', RESEED, 0);
 insert into categoriaHabitacion(descripcion) values ('Simple')
@@ -122,11 +124,10 @@ CREATE TABLE reserva(
 	fecha_ingreso date not null,
 	fecha_retiro date not null,
 	id_habitacion int not null,
-	id_cliente int not null,
 	precio decimal (10,2),
 	constraint pk_idReserva primary key (id_reserva),
 	constraint fk_idHabitacion foreign key (id_habitacion) references habitacion (id_habitacion),
-	constraint fk_id_cliente foreign key (id_cliente) references cliente (id_cliente)
+
 )
 
 select * from servicios
@@ -138,19 +139,20 @@ CREATE TABLE servicios(
 )
 
 CREATE TABLE DetalleServicios(
+	id_detalle int identity (1,1) not null,
 	id_reserva int  not null,
 	cod_servicio int not null,
-	precio varchar(20),
-	constraint pk_id_reserva_servicio primary key (id_reserva, cod_servicio),
-	constraint fk_id_reserva foreign key (id_reserva) references reserva (id_reserva),
+	constraint pk_id_detalle primary key (id_detalle),
+	constraint fk_idReserva foreign key (id_reserva) references reserva (id_reserva),
 	constraint fk_codServicioa foreign key (cod_servicio) references servicios (cod_servicio)
 )
-
+select id_habitacion from habitacion where nro_habitacion = 342
 
 CREATE TABLE factura(
 		id_factura int identity (1,1) not null,
 		id_tipo_pago int not null,
 		id_cliente int not null,
+		id_reserva int not null,
 		no_cuotas int not null,
 		fecha_pago date not null,
 		costo_habitacion   DECIMAL (10 ,2),
@@ -158,6 +160,7 @@ CREATE TABLE factura(
 		costo_total   DECIMAL (10 ,2),
 		constraint fk_idCliente foreign key (id_cliente) references cliente (id_cliente),
 		constraint fk_idTipoPago foreign key (id_tipo_pago) references tipo_pago (id_tipo_pago),
+	    constraint fk_id_reserva foreign key (id_reserva) references reserva (id_reserva),
 		CONSTRAINT PK_idFactura PRIMARY KEY (id_factura)
 )
 
@@ -167,6 +170,9 @@ CREATE TABLE tipo_pago(
 		CONSTRAINT PK_idTipoPago PRIMARY KEY (id_tipo_pago)
 
 )
+
+
+
 
 
 
