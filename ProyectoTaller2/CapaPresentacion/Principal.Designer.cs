@@ -284,6 +284,7 @@
             Controls.Add(MenuIzquierdo);
             Controls.Add(MenuTitulo);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.None;
             MainMenuStrip = MenuIzquierdo;
             Name = "FMPrincipal";
             StartPosition = FormStartPosition.CenterScreen;

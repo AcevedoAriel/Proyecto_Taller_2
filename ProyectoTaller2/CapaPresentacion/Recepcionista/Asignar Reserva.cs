@@ -34,9 +34,6 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             CBServicios.DisplayMember = "nombre";
             CBServicios.ValueMember = "cod_servicio";
 
-
-
-
         }
 
         private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -121,7 +118,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     }
 
                     this.Close();
-                    DetalleServicios.CargarServicios(listServicios );
+                    DetalleServicios.CargarServicios(listServicios);
                     Cobrar_Habitacion cobrar = new Cobrar_Habitacion();
                     cobrar.Show();
                 }
@@ -182,7 +179,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             }
         }
 
-        
+
 
     }
 }

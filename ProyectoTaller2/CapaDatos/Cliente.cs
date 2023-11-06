@@ -50,7 +50,7 @@ namespace ProyectoTaller2.CapaDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update cliente set dni = " + cliente.dni + " , apellido = '" + cliente.apellido + "' , nombre = '" + cliente.nombre + "' , telefono = '" + cliente.telefono +"'  ";
+                string query = "update cliente set dni = " + cliente.dni + " , apellido = '" + cliente.apellido + "' , nombre = '" + cliente.nombre + "' , telefono = '" + cliente.telefono +  "' where id_cliente = " + cliente.id + " ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();

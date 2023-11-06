@@ -42,6 +42,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                         MessageBox.Show("Se inserto correctamente", "Guardar", MessageBoxButtons.OK);
 
                         RefreshPantalla();
+                        LimpiarFormulario();
                     }
                     else
                     {
@@ -68,7 +69,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     Cliente cliente = new Cliente();
                     cliente.apellido = TApellido.Text;
                     cliente.nombre = TNombre.Text;
-                    cliente.dni = Convert.ToInt16(TDNI.Text);
+                    cliente.dni = Convert.ToInt32(TDNI.Text);
                     cliente.telefono = TTelefono.Text;
 
                     int result = Cliente.ModificarCliente(cliente);
@@ -78,6 +79,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                         MessageBox.Show("Se actualizo correctamente", "Guardar", MessageBoxButtons.OK);
 
                         RefreshPantalla();
+                        LimpiarFormulario();
                     }
                     else
                     {
@@ -149,5 +151,14 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                 RefreshPantalla();
             }
         }
+
+        private void LimpiarFormulario()
+        {
+            TApellido.Text = string.Empty;
+            TNombre.Text = string.Empty;
+            TDNI.Text = string.Empty;
+            TTelefono.Text = string.Empty;
+        }
+
     }
 }
