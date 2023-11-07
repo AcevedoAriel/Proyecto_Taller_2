@@ -41,17 +41,28 @@ namespace ProyectoTaller2.CapaPresentacion
 
             if (dataGridHabitaciones.SelectedRows.Count > 0)
             {
-                int id_hab = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["ID"].Value);
-                int nro_habitacion = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["NroHabitacion"].Value);
-                int cantidad_camas = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["NroCamas"].Value);
-                string categoria = Convert.ToString(dataGridHabitaciones.SelectedRows[0].Cells["Categoria"].Value);
-                int piso = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["Piso"].Value);
-                double precio = Convert.ToDouble(dataGridHabitaciones.SelectedRows[0].Cells["Precio"].Value);
 
-                //Array[] habitacion = { nro_habitacion,  };
-                Asignar_Reserva asignar = new Asignar_Reserva(id_hab, nro_habitacion, cantidad_camas, categoria, piso, precio);
-                asignar.BackColor = Color.LightSkyBlue;
-                asignar.Show();
+                string estadoHabitacion = Convert.ToString(dataGridHabitaciones.SelectedRows[0].Cells["Estado"].Value);
+
+                if (estadoHabitacion == "Ocupada" || estadoHabitacion == "Mantenimiento")
+                {
+                    MessageBox.Show("No puedes reservar una habitación ocupada o en mantenimiento.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    int id_hab = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["ID"].Value);
+                    int nro_habitacion = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["NroHabitacion"].Value);
+                    int cantidad_camas = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["NroCamas"].Value);
+                    string categoria = Convert.ToString(dataGridHabitaciones.SelectedRows[0].Cells["Categoria"].Value);
+                    int piso = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["Piso"].Value);
+                    double precio = Convert.ToDouble(dataGridHabitaciones.SelectedRows[0].Cells["Precio"].Value);
+
+                    Asignar_Reserva asignar = new Asignar_Reserva(id_hab, nro_habitacion, cantidad_camas, categoria, piso, precio);
+                    asignar.BackColor = Color.LightSkyBlue;
+                    asignar.Show();
+                }
+
+
             }
             else
             {
