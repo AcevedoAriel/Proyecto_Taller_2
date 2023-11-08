@@ -138,7 +138,7 @@ select h.nro_habitacion, r.precio, sum(s.precio) as 'Total Servicios', STRING_AG
 full outer join DetalleServicios as ds on r.id_reserva = ds.id_reserva
 full outer join servicios as s on ds.cod_servicio = s.cod_servicio
 full outer join habitacion as h on r.id_habitacion = h.id_habitacion
-where r.id_reserva = 12
+where r.id_reserva = 14
 GROUP BY  h.nro_habitacion, r.precio
 
 
@@ -167,7 +167,6 @@ CREATE TABLE factura(
 		id_tipo_pago int not null,
 		id_cliente int not null,
 		id_reserva int not null,
-		no_cuotas int not null,
 		fecha_pago date not null,
 		costo_habitacion   DECIMAL (10 ,2),
 		costo_servicios   DECIMAL (10 ,2),
@@ -185,6 +184,8 @@ CREATE TABLE tipo_pago(
 
 )
 select * from DetalleServicios
+
+select id_tipo_pago, descripcion from tipo_pago
 
 insert into tipo_pago (descripcion) values ('Crédito')
 insert into tipo_pago (descripcion) values ('Débito')

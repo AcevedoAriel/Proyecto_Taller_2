@@ -31,18 +31,10 @@
             Tbuscar = new TextBox();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
-            nombre = new DataGridViewTextBoxColumn();
-            medioPago = new DataGridViewTextBoxColumn();
-            fechaPago = new DataGridViewTextBoxColumn();
-            cuotas = new DataGridViewTextBoxColumn();
-            costoServ = new DataGridViewTextBoxColumn();
-            costoHab = new DataGridViewTextBoxColumn();
-            subtotal = new DataGridViewTextBoxColumn();
-            interes = new DataGridViewTextBoxColumn();
-            total = new DataGridViewTextBoxColumn();
             btnBuscar = new Button();
             label1 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -67,59 +59,13 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nombre, medioPago, fechaPago, cuotas, costoServ, costoHab, subtotal, interes, total });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(826, 351);
             dataGridView1.TabIndex = 1;
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "A Nombre de";
-            nombre.Name = "nombre";
-            nombre.Width = 200;
-            // 
-            // medioPago
-            // 
-            medioPago.HeaderText = "Medio de Pago";
-            medioPago.Name = "medioPago";
-            // 
-            // fechaPago
-            // 
-            fechaPago.HeaderText = "Fecha de Pago";
-            fechaPago.Name = "fechaPago";
-            // 
-            // cuotas
-            // 
-            cuotas.HeaderText = "N° de Cuotas";
-            cuotas.Name = "cuotas";
-            // 
-            // costoServ
-            // 
-            costoServ.HeaderText = "Costo por Servicio";
-            costoServ.Name = "costoServ";
-            // 
-            // costoHab
-            // 
-            costoHab.HeaderText = "Costo por Habitación";
-            costoHab.Name = "costoHab";
-            // 
-            // subtotal
-            // 
-            subtotal.HeaderText = "SubTotal";
-            subtotal.Name = "subtotal";
-            // 
-            // interes
-            // 
-            interes.HeaderText = "Interes";
-            interes.Name = "interes";
-            // 
-            // total
-            // 
-            total.HeaderText = "Total";
-            total.Name = "total";
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // btnBuscar
             // 
@@ -139,6 +85,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(515, 3);
             label1.Name = "label1";
             label1.Size = new Size(300, 37);
@@ -159,17 +106,32 @@
             iconPictureBox1.TabIndex = 7;
             iconPictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Red;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(628, 66);
+            button1.Name = "button1";
+            button1.Size = new Size(122, 38);
+            button1.TabIndex = 8;
+            button1.Text = "Eliminar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Ingresos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 465);
+            Controls.Add(button1);
             Controls.Add(iconPictureBox1);
             Controls.Add(label1);
             Controls.Add(btnBuscar);
             Controls.Add(panel1);
             Controls.Add(Tbuscar);
-            ForeColor = Color.White;
+            ForeColor = Color.Black;
             Name = "Ingresos";
             Text = "Ingresos";
             Load += Ingresos_Load;
@@ -181,20 +143,13 @@
         }
 
         #endregion
+        private DataGridViewRow filaSeleccionada = null;
         private TextBox Tbuscar;
         private Panel panel1;
         private DataGridView dataGridView1;
         private Button btnBuscar;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn medioPago;
-        private DataGridViewTextBoxColumn fechaPago;
-        private DataGridViewTextBoxColumn cuotas;
-        private DataGridViewTextBoxColumn costoServ;
-        private DataGridViewTextBoxColumn costoHab;
-        private DataGridViewTextBoxColumn subtotal;
-        private DataGridViewTextBoxColumn interes;
-        private DataGridViewTextBoxColumn total;
         private Label label1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Button button1;
     }
 }

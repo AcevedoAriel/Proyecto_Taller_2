@@ -44,6 +44,7 @@
             txtServicios = new TextBox();
             cboboxCliente = new ComboBox();
             label8 = new Label();
+            txtIDReserva = new TextBox();
             SuspendLayout();
             // 
             // lblPagoTotal
@@ -78,6 +79,7 @@
             CBMetodoPago.Name = "CBMetodoPago";
             CBMetodoPago.Size = new Size(217, 25);
             CBMetodoPago.TabIndex = 7;
+            CBMetodoPago.SelectedIndexChanged += CBMetodoPago_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -200,11 +202,21 @@
             label8.TabIndex = 28;
             label8.Text = "Seleccione Cliente :";
             // 
+            // txtIDReserva
+            // 
+            txtIDReserva.Location = new Point(12, 3);
+            txtIDReserva.Name = "txtIDReserva";
+            txtIDReserva.ReadOnly = true;
+            txtIDReserva.Size = new Size(35, 25);
+            txtIDReserva.TabIndex = 29;
+            txtIDReserva.Visible = false;
+            // 
             // Cobrar_Habitacion
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(549, 459);
+            Controls.Add(txtIDReserva);
             Controls.Add(label8);
             Controls.Add(cboboxCliente);
             Controls.Add(txtServicios);
@@ -246,5 +258,6 @@
         private TextBox txtServicios;
         private ComboBox cboboxCliente;
         private Label label8;
+        private TextBox txtIDReserva;
     }
 }

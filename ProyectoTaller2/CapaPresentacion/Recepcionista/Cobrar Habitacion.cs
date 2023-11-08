@@ -17,10 +17,11 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
         {
             InitializeComponent();
             CBMetodoPago.SelectedIndex = 0;
+            txtIDReserva.Text = id.ToString();
             Factura factura = new Factura();
             DataTable datos = factura.ObtenerDatos(id);
             DataRow fila = datos.Rows[0];
-            txtHabitacion.Text = fila["nro_habitacion"].ToString() ;
+            txtHabitacion.Text = fila["nro_habitacion"].ToString();
             txtPrHab.Text = fila["precio"].ToString();
             txtPrSer.Text = fila["Total Servicios"].ToString();
             txtServicios.Text = fila["Servicios"].ToString();
@@ -32,6 +33,10 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             cboboxCliente.DataSource = Cliente.TraerClientes();
             cboboxCliente.DisplayMember = "Cliente";
             cboboxCliente.ValueMember = "id_cliente";
+
+            CBMetodoPago.DataSource = Factura.TraerMetodoPago();
+            CBMetodoPago.DisplayMember = "descripcion";
+            CBMetodoPago.ValueMember = "id_tipo_pago";
         }
 
         private void btnCobrarHabitacion_Click(object sender, EventArgs e)
@@ -44,18 +49,38 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 
                 if (resultado == DialogResult.Yes)
                 {
+                    Factura factura = new Factura();
+                    factura.fecha_pago = DateTime.Today;
+                    factura.precio_hab = Convert.ToDouble(txtPrHab.Text);
+                    factura.precio_ser = Convert.ToDouble(txtPrSer.Text);
+                    factura.tipo_pago = CBMetodoPago.SelectedIndex;
+                    factura.id_reserva = Convert.ToInt32(txtIDReserva.Text);
+                    factura.id_cliente = cboboxCliente.SelectedIndex;
+                    factura.total = Convert.ToDouble(txtTotal.Text);
+                    int result = Factura.AgregarFactura(factura);
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Pago Guardado con exito", "Guardado", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo Guardar", "Error", MessageBoxButtons.OK);
+                    }
 
-
-                    MessageBox.Show("Pago Guardado con exito", "Guardado");
-                    this.Close();
+                   
                 }
             }
             else
             {
-                MessageBox.Show("Debe completar todos los campos", "Error");
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK);
 
             }
         }
 
+        private void CBMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
