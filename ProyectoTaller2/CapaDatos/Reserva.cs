@@ -15,17 +15,16 @@ namespace ProyectoTaller2.CapaDatos
         public DateTime ingreso { get; set; }
         public DateTime retiro { get; set; }
         public int id_hab { get; set; }
-        public int id_cliente { get; set; }
+        
         public double precio { get; set; }
 
-        public Reserva(int id, int cantPersonas, DateTime ingreso, DateTime retiro, int id_hab, int id_cliente, double precio) 
+        public Reserva(int id, int cantPersonas, DateTime ingreso, DateTime retiro, int id_hab, double precio) 
         {
             this.id = id;   
             this.cantPersonas = cantPersonas;
             this.ingreso = ingreso; 
             this.retiro = retiro;
             this.id_hab = id_hab;
-            this.id_cliente = id_cliente;
             this.precio = precio;
         }
         public Reserva() {}

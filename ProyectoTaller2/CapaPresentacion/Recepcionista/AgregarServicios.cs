@@ -13,6 +13,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     public partial class AgregarServicios : Form
     {
+        List<int> serv = new List<int>();
         public AgregarServicios(int id)
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             CBServicios.DisplayMember = "nombre";
             CBServicios.ValueMember = "cod_servicio";
             txtID.Text = id.ToString();
+            
         }
 
         private void bntCobrar_Click(object sender, EventArgs e)
@@ -33,8 +35,8 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             {
 
                 int id = Convert.ToInt32(txtID.Text);
-                DetalleServicios.CargarServicios(listServicios, id);
-                Cobrar_Habitacion cobrar = new Cobrar_Habitacion();
+                DetalleServicios.CargarServicios(serv, id);
+                Cobrar_Habitacion cobrar = new Cobrar_Habitacion(id);
                 cobrar.Show();
                 this.Close();
             }
@@ -47,12 +49,16 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 
             // Acceder al valor de la columna "NombreServicio"
             string nombreServicio = selectedRow["nombre"].ToString();
+            int idServicio = Convert.ToInt32(selectedRow["cod_servicio"]);
 
             if (!listServicios.Items.Contains(nombreServicio))
             {
                 // Agregar el nombre del servicio al ListBox
                 listServicios.Items.Add(nombreServicio);
+                serv.Add(idServicio);
             }
+            
+            
         }
 
         private void lblServicio_Click(object sender, EventArgs e)

@@ -13,10 +13,10 @@ namespace ProyectoTaller2.CapaDatos
     {
         public int id { get; set; }
         public string nombre { get; set; }
-        public string precio { get; set; }
+        public double precio { get; set; }
 
         public Servicio() { }
-        public Servicio(int id, string nombre, string precio)
+        public Servicio(int id, string nombre, double precio)
         {
             this.id = id;
             this.nombre = nombre;

@@ -13,16 +13,22 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 {
     public partial class Cobrar_Habitacion : Form
     {
-        public Cobrar_Habitacion()
+        public Cobrar_Habitacion(int id)
         {
             InitializeComponent();
             CBMetodoPago.SelectedIndex = 0;
-            txtCliente.Text = string.Empty;
-            txtHabitacion.Text = string.Empty;
-            txtPrHab.Text = string.Empty;
-            txtPrSer.Text = string.Empty;
-            txtServicios.Text = string.Empty;
-            txtTotal.Text = string.Empty;
+            Factura factura = new Factura();
+            DataTable datos = factura.ObtenerDatos(id);
+            DataRow fila = datos.Rows[0];
+            txtHabitacion.Text = fila["nro_habitacion"].ToString() ;
+            txtPrHab.Text = fila["precio"].ToString();
+            txtPrSer.Text = fila["Total Servicios"].ToString();
+            txtServicios.Text = fila["Servicios"].ToString();
+            double resultado = Convert.ToDouble(fila["precio"]) + Convert.ToDouble(fila["Total Servicios"]);
+            txtTotal.Text = resultado.ToString();
+
+
+
             cboboxCliente.DataSource = Cliente.TraerClientes();
             cboboxCliente.DisplayMember = "Cliente";
             cboboxCliente.ValueMember = "id_cliente";

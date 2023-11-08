@@ -65,7 +65,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                 {
                     Servicio servicio = new Servicio();
                     servicio.nombre = txtNombre.Text;
-                    servicio.precio = txtPrecio.Text;
+                    servicio.precio = Convert.ToDouble(txtPrecio.Text);
                     int result = Servicio.AgregarServicio(servicio);
                     if (result != 0)
                     {
@@ -100,7 +100,7 @@ namespace ProyectoTaller2.CapaPresentacion.Administrador
                     Servicio servicio = new Servicio();
                     servicio.id = Convert.ToInt16(filaSeleccionada.Cells["ID"].Value);
                     servicio.nombre = txtNombre.Text;
-                    servicio.precio = txtPrecio.Text;
+                    servicio.precio = Convert.ToDouble(txtPrecio.Text);
                     int result = Servicio.ModificarServicio(servicio);
                     if (result > 0)
                     {

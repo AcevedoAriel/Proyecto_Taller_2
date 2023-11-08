@@ -1,6 +1,7 @@
 ﻿using ProyectoTaller2.CapaPresentacion;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,7 @@ namespace ProyectoTaller2.CapaDatos
 
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "insert into factura(id_tipo_pago, id_cliente, id_reserva, fecha_pago, costo_habitacion, costo_servicios, costo_total) values ('" + factura.tipo_pago + "', "+ factura.id_cliente +", " + factura.id_reserva + ", " + factura.nro_cuotas + ", '" + factura.fecha_pago + "', '" + factura.precio_hab + "', '"+ factura.precio_ser + "', '"+factura.total+"')";
+                string query = "insert into factura(id_tipo_pago, id_cliente, id_reserva, fecha_pago, costo_habitacion, costo_servicios, costo_total) values ('" + factura.tipo_pago + "', "+ factura.id_cliente +", " + factura.id_reserva + ", '" + factura.fecha_pago + "', '" + factura.precio_hab + "', '"+ factura.precio_ser + "', '"+factura.total+"')";
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
                 retorno = cmd.ExecuteNonQuery();
@@ -78,5 +79,26 @@ namespace ProyectoTaller2.CapaDatos
 
 
 
-    }
+        public DataTable ObtenerDatos(int id) {
+            DataTable datos = new DataTable();
+            using (SqlConnection conexion = Conexion.ObtenerConexion()) 
+            {
+                string query = "select h.nro_habitacion, r.precio,  sum(s.precio) as 'Total Servicios', STRING_AGG(s.nombre, ',') as 'Servicios'  from reserva as r" +
+                    "full outer join DetalleServicios as ds on r.id_reserva = ds.id_reserva"+
+                    "full outer join servicios as s on ds.cod_servicio = s.cod_servicio" +
+                    "full outer join habitacion as h on r.id_habitacion = h.id_habitacion" +
+                    "where r.id_reserva = "+id+"" +
+                    "GROUP BY  h.nro_habitacion, r.precio";
+                SqlDataAdapter tabla = new SqlDataAdapter(query, conexion);
+                tabla.Fill(datos);
+            }
+                return datos; 
+        
+        }
+
+
+       
+
+
+}
 }

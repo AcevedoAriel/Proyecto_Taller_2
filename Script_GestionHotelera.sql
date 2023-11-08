@@ -108,7 +108,8 @@ CREATE TABLE categoriaHabitacion(
 
 select * from habitacion
 select * from reserva
-
+select * from factura
+alter table factura drop column no_cuotas 
 
 CREATE TABLE cliente(
 	id_cliente int identity (1,1) not null,
@@ -130,6 +131,18 @@ CREATE TABLE reserva(
 	constraint fk_idHabitacion foreign key (id_habitacion) references habitacion (id_habitacion),
 
 )
+
+alter table servicios alter column precio decimal(8,2) not null
+
+select h.nro_habitacion, r.precio, sum(s.precio) as 'Total Servicios', STRING_AGG(s.nombre, ',') as 'Servicios' from reserva as r
+full outer join DetalleServicios as ds on r.id_reserva = ds.id_reserva
+full outer join servicios as s on ds.cod_servicio = s.cod_servicio
+full outer join habitacion as h on r.id_habitacion = h.id_habitacion
+where r.id_reserva = 12
+GROUP BY  h.nro_habitacion, r.precio
+
+
+select * from DetalleServicios where id_reserva = 12
 
 select * from servicios
 CREATE TABLE servicios(
