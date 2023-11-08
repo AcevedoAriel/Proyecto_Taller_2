@@ -32,16 +32,21 @@ namespace ProyectoTaller2.CapaDatos
 
         public static int AgregarREserva(Reserva reserva)
         {
-            int retorno = 0;
+            int id_reserva = 0;
 
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "insert into reserva( cant_personas, fecha_ingreso, fecha_retiro, id_habitacion, precio) values ("+reserva.cantPersonas+", '"+reserva.ingreso+"', '"+reserva.retiro+"', "+reserva.id_hab+", '"+reserva.precio+"')";
+                string query = "insert into reserva( cant_personas, fecha_ingreso, fecha_retiro, id_habitacion, precio) values ("+reserva.cantPersonas+", '"+reserva.ingreso+"', '"+reserva.retiro+"', "+reserva.id_hab+", '"+reserva.precio+"')" +
+                    "SELECT SCOPE_IDENTITY()";
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
-                retorno = cmd.ExecuteNonQuery();
+                object result = cmd.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    id_reserva = Convert.ToInt32(result);
+                }
             }
-            return retorno;
+            return id_reserva;
         }
 
         public static int ModificarReserva(Reserva reserva)

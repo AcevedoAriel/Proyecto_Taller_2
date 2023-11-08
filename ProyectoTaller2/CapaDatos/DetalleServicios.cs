@@ -27,14 +27,14 @@ namespace ProyectoTaller2.CapaDatos
             this.cod_servicio = cod_servicio;
         }
 
-        public static void CargarServicios(ListBox listBox)
+        public static void CargarServicios(ListBox listBox, int id)
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
                 foreach (string elemento in listBox.Items)
                 {
                     // Crea una consulta SQL para insertar el elemento en la tabla
-                    string query = "insert into DetalleServicios  (cod_servicio, id_reserva) values (@cod_servicio ,  )";
+                    string query = "insert into DetalleServicios  (cod_servicio, id_reserva) values (@cod_servicio , " + id+" )";
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
                     {

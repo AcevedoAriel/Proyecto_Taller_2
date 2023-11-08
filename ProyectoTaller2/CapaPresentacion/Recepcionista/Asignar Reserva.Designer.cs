@@ -50,12 +50,7 @@
             lblIDHabitacion = new Label();
             label2 = new Label();
             btnCancelar = new Button();
-            cboboxCliente = new ComboBox();
-            listServicios = new ListBox();
-            CBServicios = new ComboBox();
             label1 = new Label();
-            btnServicio = new Button();
-            lblServicio = new Label();
             ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -64,7 +59,7 @@
             // 
             NCantidad.Location = new Point(171, 396);
             NCantidad.Name = "NCantidad";
-            NCantidad.Size = new Size(160, 23);
+            NCantidad.Size = new Size(160, 31);
             NCantidad.TabIndex = 39;
             // 
             // DTRetiro
@@ -72,7 +67,7 @@
             DTRetiro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             DTRetiro.Location = new Point(171, 333);
             DTRetiro.Name = "DTRetiro";
-            DTRetiro.Size = new Size(160, 23);
+            DTRetiro.Size = new Size(160, 31);
             DTRetiro.TabIndex = 37;
             DTRetiro.ValueChanged += DTRetiro_ValueChanged;
             // 
@@ -81,7 +76,7 @@
             DTIngreso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             DTIngreso.Location = new Point(171, 274);
             DTIngreso.Name = "DTIngreso";
-            DTIngreso.Size = new Size(160, 23);
+            DTIngreso.Size = new Size(160, 31);
             DTIngreso.TabIndex = 36;
             DTIngreso.ValueChanged += DTIngreso_ValueChanged;
             // 
@@ -91,7 +86,7 @@
             LCantidad.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LCantidad.Location = new Point(24, 398);
             LCantidad.Name = "LCantidad";
-            LCantidad.Size = new Size(130, 15);
+            LCantidad.Size = new Size(204, 25);
             LCantidad.TabIndex = 33;
             LCantidad.Text = "Cantidad de Personas :";
             // 
@@ -101,7 +96,7 @@
             LFechaRet.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaRet.Location = new Point(24, 333);
             LFechaRet.Name = "LFechaRet";
-            LFechaRet.Size = new Size(100, 15);
+            LFechaRet.Size = new Size(154, 25);
             LFechaRet.TabIndex = 25;
             LFechaRet.Text = "Fecha de Retiro :";
             // 
@@ -111,7 +106,7 @@
             LFechaIng.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LFechaIng.Location = new Point(24, 274);
             LFechaIng.Name = "LFechaIng";
-            LFechaIng.Size = new Size(107, 15);
+            LFechaIng.Size = new Size(166, 25);
             LFechaIng.TabIndex = 24;
             LFechaIng.Text = "Fecha de Ingreso :";
             // 
@@ -152,7 +147,7 @@
             txtIDhab.Location = new Point(652, 3);
             txtIDhab.Name = "txtIDhab";
             txtIDhab.ReadOnly = true;
-            txtIDhab.Size = new Size(35, 23);
+            txtIDhab.Size = new Size(35, 31);
             txtIDhab.TabIndex = 59;
             txtIDhab.Visible = false;
             // 
@@ -162,7 +157,7 @@
             txtPrecio.Location = new Point(537, 80);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.ReadOnly = true;
-            txtPrecio.Size = new Size(100, 16);
+            txtPrecio.Size = new Size(100, 24);
             txtPrecio.TabIndex = 58;
             // 
             // txtPiso
@@ -171,7 +166,7 @@
             txtPiso.Location = new Point(537, 44);
             txtPiso.Name = "txtPiso";
             txtPiso.ReadOnly = true;
-            txtPiso.Size = new Size(100, 16);
+            txtPiso.Size = new Size(100, 24);
             txtPiso.TabIndex = 57;
             // 
             // txtCantCamas
@@ -180,7 +175,7 @@
             txtCantCamas.Location = new Point(537, 12);
             txtCantCamas.Name = "txtCantCamas";
             txtCantCamas.ReadOnly = true;
-            txtCantCamas.Size = new Size(100, 16);
+            txtCantCamas.Size = new Size(100, 24);
             txtCantCamas.TabIndex = 56;
             // 
             // txtCategoria
@@ -189,7 +184,7 @@
             txtCategoria.Location = new Point(162, 97);
             txtCategoria.Name = "txtCategoria";
             txtCategoria.ReadOnly = true;
-            txtCategoria.Size = new Size(100, 16);
+            txtCategoria.Size = new Size(100, 24);
             txtCategoria.TabIndex = 55;
             // 
             // txtNroHabitacion
@@ -198,7 +193,7 @@
             txtNroHabitacion.Location = new Point(162, 62);
             txtNroHabitacion.Name = "txtNroHabitacion";
             txtNroHabitacion.ReadOnly = true;
-            txtNroHabitacion.Size = new Size(100, 16);
+            txtNroHabitacion.Size = new Size(100, 24);
             txtNroHabitacion.TabIndex = 54;
             // 
             // lblDetalleHabitacion
@@ -217,7 +212,7 @@
             lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblCategoria.Location = new Point(24, 97);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(66, 15);
+            lblCategoria.Size = new Size(104, 25);
             lblCategoria.TabIndex = 52;
             lblCategoria.Text = "Categoria :";
             // 
@@ -227,7 +222,7 @@
             lblPrecio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblPrecio.Location = new Point(374, 78);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(48, 15);
+            lblPrecio.Size = new Size(75, 25);
             lblPrecio.TabIndex = 51;
             lblPrecio.Text = "Precio :";
             // 
@@ -237,7 +232,7 @@
             lblNroHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblNroHabitacion.Location = new Point(24, 62);
             lblNroHabitacion.Name = "lblNroHabitacion";
-            lblNroHabitacion.Size = new Size(96, 15);
+            lblNroHabitacion.Size = new Size(152, 25);
             lblNroHabitacion.TabIndex = 49;
             lblNroHabitacion.Text = "Nro Habitacion :";
             // 
@@ -247,7 +242,7 @@
             lblPiso.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblPiso.Location = new Point(374, 42);
             lblPiso.Name = "lblPiso";
-            lblPiso.Size = new Size(35, 15);
+            lblPiso.Size = new Size(57, 25);
             lblPiso.TabIndex = 48;
             lblPiso.Text = "Piso :";
             // 
@@ -257,7 +252,7 @@
             lblIDHabitacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblIDHabitacion.Location = new Point(374, 10);
             lblIDHabitacion.Name = "lblIDHabitacion";
-            lblIDHabitacion.Size = new Size(93, 15);
+            lblIDHabitacion.Size = new Size(147, 25);
             lblIDHabitacion.TabIndex = 47;
             lblIDHabitacion.Text = "Cant de Camas :";
             // 
@@ -266,7 +261,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(21, 149);
             label2.Name = "label2";
-            label2.Size = new Size(662, 15);
+            label2.Size = new Size(929, 25);
             label2.TabIndex = 41;
             label2.Text = "___________________________________________________________________________________________________________________________________";
             // 
@@ -283,73 +278,22 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // cboboxCliente
-            // 
-            cboboxCliente.FormattingEnabled = true;
-            cboboxCliente.Location = new Point(21, 219);
-            cboboxCliente.Name = "cboboxCliente";
-            cboboxCliente.Size = new Size(310, 23);
-            cboboxCliente.TabIndex = 43;
-            // 
-            // listServicios
-            // 
-            listServicios.FormattingEnabled = true;
-            listServicios.ItemHeight = 15;
-            listServicios.Location = new Point(393, 274);
-            listServicios.Name = "listServicios";
-            listServicios.Size = new Size(244, 109);
-            listServicios.TabIndex = 44;
-            // 
-            // CBServicios
-            // 
-            CBServicios.FormattingEnabled = true;
-            CBServicios.Location = new Point(393, 219);
-            CBServicios.Name = "CBServicios";
-            CBServicios.Size = new Size(244, 23);
-            CBServicios.TabIndex = 45;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(21, 192);
             label1.Name = "label1";
-            label1.Size = new Size(115, 15);
+            label1.Size = new Size(176, 25);
             label1.TabIndex = 46;
             label1.Text = "Seleccione Cliente :";
             // 
-            // btnServicio
-            // 
-            btnServicio.BackColor = Color.LightGreen;
-            btnServicio.FlatStyle = FlatStyle.Flat;
-            btnServicio.Location = new Point(461, 398);
-            btnServicio.Name = "btnServicio";
-            btnServicio.Size = new Size(90, 45);
-            btnServicio.TabIndex = 47;
-            btnServicio.Text = "Agregar";
-            btnServicio.UseVisualStyleBackColor = false;
-            btnServicio.Click += btnServicio_Click;
-            // 
-            // lblServicio
-            // 
-            lblServicio.AutoSize = true;
-            lblServicio.Location = new Point(393, 192);
-            lblServicio.Name = "lblServicio";
-            lblServicio.Size = new Size(126, 15);
-            lblServicio.TabIndex = 48;
-            lblServicio.Text = "Seleccione Servicios :";
-            // 
             // Asignar_Reserva
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(699, 531);
-            Controls.Add(lblServicio);
-            Controls.Add(btnServicio);
             Controls.Add(label1);
-            Controls.Add(CBServicios);
-            Controls.Add(listServicios);
-            Controls.Add(cboboxCliente);
             Controls.Add(btnCancelar);
             Controls.Add(label2);
             Controls.Add(panel1);
@@ -395,12 +339,7 @@
         private TextBox txtCantCamas;
         private TextBox txtCategoria;
         private TextBox txtNroHabitacion;
-        private ComboBox cboboxCliente;
         private TextBox txtIDhab;
-        private ListBox listServicios;
-        private ComboBox CBServicios;
         private Label label1;
-        private Button btnServicio;
-        private Label lblServicio;
     }
 }

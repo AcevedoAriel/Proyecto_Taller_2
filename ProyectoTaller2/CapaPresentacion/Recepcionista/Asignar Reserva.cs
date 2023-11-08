@@ -27,12 +27,8 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             txtPiso.Text = piso.ToString();
             txtPrecio.Text = precio.ToString();
 
-            cboboxCliente.DataSource = Cliente.TraerClientes();
-            cboboxCliente.DisplayMember = "Cliente";
-            cboboxCliente.ValueMember = "id_cliente";
-            CBServicios.DataSource = Servicio.TraerServicios();
-            CBServicios.DisplayMember = "nombre";
-            CBServicios.ValueMember = "cod_servicio";
+
+
 
         }
 
@@ -105,7 +101,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     reserva.ingreso = DTIngreso.Value;
                     reserva.retiro = DTRetiro.Value;
                     TimeSpan diferencia = DTRetiro.Value.Subtract(DTIngreso.Value);
-                    reserva.precio = diferencia.Days * Convert.ToDouble(txtPrecio.Text);
+                    reserva.precio = (diferencia.Days + 1 )* Convert.ToDouble(txtPrecio.Text);
                     int result = Reserva.AgregarREserva(reserva);
                     if (result != 0)
                     {
@@ -118,9 +114,9 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
                     }
 
                     this.Close();
-                    DetalleServicios.CargarServicios(listServicios);
-                    Cobrar_Habitacion cobrar = new Cobrar_Habitacion();
-                    cobrar.Show();
+                
+                    AgregarServicios serv = new AgregarServicios(result);
+                    serv.Show();
                 }
             }
             else
@@ -164,20 +160,7 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             }
         }
 
-        private void btnServicio_Click(object sender, EventArgs e)
-        {
-            // Obtener el DataRowView del elemento seleccionado
-            DataRowView selectedRow = (DataRowView)CBServicios.SelectedItem;
-
-            // Acceder al valor de la columna "NombreServicio"
-            string nombreServicio = selectedRow["nombre"].ToString();
-
-            if (!listServicios.Items.Contains(nombreServicio))
-            {
-                // Agregar el nombre del servicio al ListBox
-                listServicios.Items.Add(nombreServicio);
-            }
-        }
+        
 
 
 

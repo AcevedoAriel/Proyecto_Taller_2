@@ -44,6 +44,8 @@
             txtPrSer = new TextBox();
             txtPrHab = new TextBox();
             txtServicios = new TextBox();
+            cboboxCliente = new ComboBox();
+            label8 = new Label();
             SuspendLayout();
             // 
             // lblPagoTotal
@@ -52,7 +54,7 @@
             lblPagoTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblPagoTotal.Location = new Point(67, 216);
             lblPagoTotal.Name = "lblPagoTotal";
-            lblPagoTotal.Size = new Size(137, 25);
+            lblPagoTotal.Size = new Size(163, 31);
             lblPagoTotal.TabIndex = 2;
             lblPagoTotal.Text = "Total a Pagar :";
             // 
@@ -74,18 +76,18 @@
             // 
             CBMetodoPago.FormattingEnabled = true;
             CBMetodoPago.Items.AddRange(new object[] { "[Eliga la Opcion de Pago]", "Efectivo", "Credito", "Debito", "MercadoPago" });
-            CBMetodoPago.Location = new Point(50, 354);
+            CBMetodoPago.Location = new Point(57, 326);
             CBMetodoPago.Name = "CBMetodoPago";
-            CBMetodoPago.Size = new Size(217, 29);
+            CBMetodoPago.Size = new Size(217, 36);
             CBMetodoPago.TabIndex = 7;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(50, 321);
+            label1.Location = new Point(57, 285);
             label1.Name = "label1";
-            label1.Size = new Size(148, 23);
+            label1.Size = new Size(173, 28);
             label1.TabIndex = 10;
             label1.Text = "Metodo de Pago:";
             // 
@@ -95,7 +97,7 @@
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(67, 26);
             label3.Name = "label3";
-            label3.Size = new Size(92, 20);
+            label3.Size = new Size(115, 25);
             label3.TabIndex = 12;
             label3.Text = "Habitación :";
             // 
@@ -105,7 +107,7 @@
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(67, 57);
             label4.Name = "label4";
-            label4.Size = new Size(111, 20);
+            label4.Size = new Size(135, 25);
             label4.TabIndex = 13;
             label4.Text = "A Nombre de :";
             // 
@@ -115,7 +117,7 @@
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(67, 88);
             label5.Name = "label5";
-            label5.Size = new Size(146, 20);
+            label5.Size = new Size(180, 25);
             label5.TabIndex = 14;
             label5.Text = "Servicios Incluidos :";
             // 
@@ -125,7 +127,7 @@
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(67, 122);
             label6.Name = "label6";
-            label6.Size = new Size(164, 20);
+            label6.Size = new Size(202, 25);
             label6.TabIndex = 15;
             label6.Text = "Costo por Habitación :";
             // 
@@ -135,7 +137,7 @@
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(67, 160);
             label7.Name = "label7";
-            label7.Size = new Size(151, 20);
+            label7.Size = new Size(185, 25);
             label7.TabIndex = 16;
             label7.Text = "Costo por Servicios :";
             // 
@@ -144,7 +146,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(21, 257);
             label2.Name = "label2";
-            label2.Size = new Size(703, 23);
+            label2.Size = new Size(804, 28);
             label2.TabIndex = 18;
             label2.Text = "___________________________________________________________________________________________________";
             // 
@@ -154,7 +156,7 @@
             txtHabitacion.Location = new Point(263, 21);
             txtHabitacion.Name = "txtHabitacion";
             txtHabitacion.ReadOnly = true;
-            txtHabitacion.Size = new Size(182, 22);
+            txtHabitacion.Size = new Size(182, 26);
             txtHabitacion.TabIndex = 19;
             // 
             // txtCliente
@@ -163,7 +165,7 @@
             txtCliente.Location = new Point(263, 52);
             txtCliente.Name = "txtCliente";
             txtCliente.ReadOnly = true;
-            txtCliente.Size = new Size(182, 22);
+            txtCliente.Size = new Size(182, 26);
             txtCliente.TabIndex = 20;
             // 
             // txtTotal
@@ -172,7 +174,7 @@
             txtTotal.Location = new Point(233, 216);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(224, 22);
+            txtTotal.Size = new Size(224, 26);
             txtTotal.TabIndex = 21;
             // 
             // txtPrSer
@@ -181,7 +183,7 @@
             txtPrSer.Location = new Point(263, 155);
             txtPrSer.Name = "txtPrSer";
             txtPrSer.ReadOnly = true;
-            txtPrSer.Size = new Size(182, 22);
+            txtPrSer.Size = new Size(182, 26);
             txtPrSer.TabIndex = 24;
             // 
             // txtPrHab
@@ -190,7 +192,7 @@
             txtPrHab.Location = new Point(263, 117);
             txtPrHab.Name = "txtPrHab";
             txtPrHab.ReadOnly = true;
-            txtPrHab.Size = new Size(182, 22);
+            txtPrHab.Size = new Size(182, 26);
             txtPrHab.TabIndex = 25;
             // 
             // txtServicios
@@ -199,14 +201,33 @@
             txtServicios.Location = new Point(263, 83);
             txtServicios.Name = "txtServicios";
             txtServicios.ReadOnly = true;
-            txtServicios.Size = new Size(182, 22);
+            txtServicios.Size = new Size(182, 26);
             txtServicios.TabIndex = 26;
+            // 
+            // cboboxCliente
+            // 
+            cboboxCliente.FormattingEnabled = true;
+            cboboxCliente.Location = new Point(57, 411);
+            cboboxCliente.Name = "cboboxCliente";
+            cboboxCliente.Size = new Size(217, 36);
+            cboboxCliente.TabIndex = 27;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(57, 380);
+            label8.Name = "label8";
+            label8.Size = new Size(195, 28);
+            label8.TabIndex = 28;
+            label8.Text = "Seleccione Cliente :";
             // 
             // Cobrar_Habitacion
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(549, 459);
+            Controls.Add(label8);
+            Controls.Add(cboboxCliente);
             Controls.Add(txtServicios);
             Controls.Add(txtPrHab);
             Controls.Add(txtPrSer);
@@ -248,5 +269,7 @@
         private TextBox txtPrSer;
         private TextBox txtPrHab;
         private TextBox txtServicios;
+        private ComboBox cboboxCliente;
+        private Label label8;
     }
 }

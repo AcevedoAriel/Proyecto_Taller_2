@@ -107,6 +107,7 @@ CREATE TABLE categoriaHabitacion(
 )
 
 select * from habitacion
+select * from reserva
 
 
 CREATE TABLE cliente(
@@ -170,8 +171,11 @@ CREATE TABLE tipo_pago(
 		CONSTRAINT PK_idTipoPago PRIMARY KEY (id_tipo_pago)
 
 )
+select * from DetalleServicios
 
-
+insert into tipo_pago (descripcion) values ('Crédito')
+insert into tipo_pago (descripcion) values ('Débito')
+insert into tipo_pago (descripcion) values ('Efectivo')
 
 
 

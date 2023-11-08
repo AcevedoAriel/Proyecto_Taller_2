@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTaller2.CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,9 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
             txtPrSer.Text = string.Empty;
             txtServicios.Text = string.Empty;
             txtTotal.Text = string.Empty;
-
+            cboboxCliente.DataSource = Cliente.TraerClientes();
+            cboboxCliente.DisplayMember = "Cliente";
+            cboboxCliente.ValueMember = "id_cliente";
         }
 
         private void btnCobrarHabitacion_Click(object sender, EventArgs e)
@@ -47,5 +50,6 @@ namespace ProyectoTaller2.CapaPresentacion.Recepcionista
 
             }
         }
+
     }
 }
