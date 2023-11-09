@@ -181,6 +181,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "Mantenimiento";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // CBCategoriaH
             // 

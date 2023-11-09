@@ -128,6 +128,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(197, 20);
             this.txtPrecio.TabIndex = 27;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtNombre
             // 
@@ -135,6 +136,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 20);
             this.txtNombre.TabIndex = 28;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // panel1
             // 

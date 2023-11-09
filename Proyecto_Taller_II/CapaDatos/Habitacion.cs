@@ -102,5 +102,51 @@ namespace Proyecto_Taller_II.CapaDatos
             }
             return retorno;
         }
+
+        public static int ActualizarEstadoHabitacion(int idHabitacion, string nuevoEstado)
+        {
+            int retorno = 0;
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "UPDATE habitacion SET estado = @estado WHERE id_habitacion = @id";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@estado", nuevoEstado);
+                cmd.Parameters.AddWithValue("@id", idHabitacion);
+
+                retorno = cmd.ExecuteNonQuery();
+            }
+
+            return retorno;
+        }
+
+        public static Habitacion ObtenerHabitacionPorID(int id)
+        {
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "SELECT * FROM habitacion WHERE id_habitacion = @id";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Habitacion habitacion = new Habitacion();
+                    habitacion.id = Convert.ToInt32(reader["id_habitacion"]);
+                    habitacion.piso = Convert.ToInt32(reader["piso"]);
+                    habitacion.nro_habitacion = Convert.ToInt32(reader["nro_habitacion"]);
+                    habitacion.precio = Convert.ToString(reader["precio"]);
+                    habitacion.categoria = Convert.ToInt32(reader["categoria"]);
+                    habitacion.cantidad_camas = Convert.ToInt32(reader["cantidad_camas"]);
+                    habitacion.estado = Convert.ToInt32(reader["estado"]);
+
+                    return habitacion;
+                }
+            }
+
+            return null; // Devuelve null si no se encuentra la habitación con el ID dado
+        }
+
+
     }
 }
