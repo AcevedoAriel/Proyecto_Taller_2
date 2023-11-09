@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
         public Cobrar_Habitacion(int id)
         {
             InitializeComponent();
-            CBMetodoPago.SelectedIndex = 0;
             txtIDReserva.Text = id.ToString();
             Factura factura = new Factura();
             DataTable datos = factura.ObtenerDatos(id);
@@ -30,9 +30,9 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
 
 
 
-            cboboxCliente.DataSource = Cliente.TraerClientes();
-            cboboxCliente.DisplayMember = "Cliente";
-            cboboxCliente.ValueMember = "id_cliente";
+            //cboboxCliente.DataSource = Cliente.TraerClientes();
+            //cboboxCliente.DisplayMember = "Cliente";
+            //cboboxCliente.ValueMember = "id_cliente";
 
             CBMetodoPago.DataSource = Factura.TraerMetodoPago();
             CBMetodoPago.DisplayMember = "descripcion";
@@ -77,5 +77,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
 
             }
         }
+
     }
 }

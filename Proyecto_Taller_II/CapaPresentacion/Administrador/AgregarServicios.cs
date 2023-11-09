@@ -24,16 +24,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             RefreshPantalla();
         }
 
-        private void txtCodServicio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Ignorar el carácter presionado
-                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 95) || (e.KeyChar >= 123 && e.KeyChar <= 255))
