@@ -148,7 +148,7 @@ select * from servicios
 CREATE TABLE servicios(
 		cod_servicio int identity (1,1) not null,
 		nombre	VARCHAR (150) NOT NULL,
-		precio   varchar(20),
+		precio decimal(8,2) NOT NULL,
 		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),
 )
 
@@ -184,7 +184,7 @@ CREATE TABLE tipo_pago(
 
 )
 select * from DetalleServicios
-
+select * from tipo_pago
 select id_tipo_pago, descripcion from tipo_pago
 
 insert into tipo_pago (descripcion) values ('Crédito')
