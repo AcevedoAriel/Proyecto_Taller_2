@@ -37,6 +37,7 @@ insert into perfil (cod_perfil, nombre) values(3, 'Recepcionista');
 
 /*Lote de Usuario*/
 select * from usuario
+select * from estado_habitacion
 
 INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
 VALUES (37393962, N'Acevedo', N'Ariel', N'Arielo90', N'$2a$12$ABAlkdsDFwYmbMhJ2r3x8.u/vh39jzIS4.aWIYy3cZh/w9zStHdhW', N'37393962', 1, N'ariel@gmail.com', CAST(N'1993-06-16T14:30:00.000' AS DateTime), N'Hombre', N'Activo')
@@ -105,7 +106,8 @@ CREATE TABLE categoriaHabitacion(
 		descripcion varchar (150) not null,
 		constraint pk_categoria primary key (id_categoria)
 )
-
+delete from reserva
+delete from factura
 select * from habitacion
 select * from reserva
 select * from factura
@@ -138,12 +140,12 @@ select h.nro_habitacion, r.precio, sum(s.precio) as 'Total Servicios', STRING_AG
 full outer join DetalleServicios as ds on r.id_reserva = ds.id_reserva
 full outer join servicios as s on ds.cod_servicio = s.cod_servicio
 full outer join habitacion as h on r.id_habitacion = h.id_habitacion
-where r.id_reserva = 14
+where r.id_reserva = 39
 GROUP BY  h.nro_habitacion, r.precio
 
 
 select * from DetalleServicios where id_reserva = 12
-
+delete from DetalleServicios
 select * from servicios
 CREATE TABLE servicios(
 		cod_servicio int identity (1,1) not null,

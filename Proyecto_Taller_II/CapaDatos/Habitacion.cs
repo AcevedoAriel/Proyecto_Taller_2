@@ -89,6 +89,22 @@ namespace Proyecto_Taller_II.CapaDatos
             return retorno;
         }
 
+
+
+        public static int LiberarHabitacion(Habitacion habitacion)
+        {
+            int retorno = 0;
+            using (SqlConnection conexion = Conexion.ObtenerConexion())
+            {
+                string query = "update habitacion set id_estado = 2 where nro_habitacion = " + habitacion.nro_habitacion + " ";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                retorno = cmd.ExecuteNonQuery();
+                conexion.Close();
+
+            }
+            return retorno;
+        }
+
         public static int OcuparHabitacion(Habitacion habitacion)
         {
             int retorno = 0;
@@ -146,6 +162,8 @@ namespace Proyecto_Taller_II.CapaDatos
 
             return null; // Devuelve null si no se encuentra la habitación con el ID dado
         }
+
+
 
 
     }

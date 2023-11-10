@@ -195,11 +195,15 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // 
             // cboboxCliente
             // 
+            this.cboboxCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboboxCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboboxCliente.FormattingEnabled = true;
             this.cboboxCliente.Location = new System.Drawing.Point(57, 411);
             this.cboboxCliente.Name = "cboboxCliente";
             this.cboboxCliente.Size = new System.Drawing.Size(217, 25);
             this.cboboxCliente.TabIndex = 27;
+            this.cboboxCliente.SelectedIndexChanged += new System.EventHandler(this.cboboxCliente_SelectedIndexChanged);
+            this.cboboxCliente.TextChanged += new System.EventHandler(this.cboboxCliente_TextChanged);
             // 
             // label8
             // 
@@ -245,6 +249,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.Name = "Cobrar_Habitacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cobrar_Habitacion";
+            this.Load += new System.EventHandler(this.Cobrar_Habitacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

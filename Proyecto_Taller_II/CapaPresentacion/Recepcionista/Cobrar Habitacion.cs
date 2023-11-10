@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,16 +24,26 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             DataRow fila = datos.Rows[0];
             txtHabitacion.Text = fila["nro_habitacion"].ToString();
             txtPrHab.Text = fila["precio"].ToString();
-            txtPrSer.Text = fila["Total Servicios"].ToString();
-            txtServicios.Text = fila["Servicios"].ToString();
-            double resultado = Convert.ToDouble(fila["precio"]) + Convert.ToDouble(fila["Total Servicios"]);
-            txtTotal.Text = resultado.ToString();
+            if (!fila.IsNull("Total Servicios") && !fila.IsNull("Servicios")) 
+            {
+                txtPrSer.Text = fila["Total Servicios"].ToString();
+                txtServicios.Text = fila["Servicios"].ToString();
+                double resultado = Convert.ToDouble(fila["precio"]) + Convert.ToDouble(fila["Total Servicios"]);
+                txtTotal.Text = resultado.ToString();
+            }
+            else
+            {
+                txtPrSer.Text = "0";
+                txtServicios.Text = "Sin Servicio";
+                txtTotal.Text = fila["precio"].ToString();
+            }
+            
 
 
 
-            //cboboxCliente.DataSource = Cliente.TraerClientes();
-            //cboboxCliente.DisplayMember = "Cliente";
-            //cboboxCliente.ValueMember = "id_cliente";
+            cboboxCliente.DataSource = Cliente.TraerClientes();
+            cboboxCliente.DisplayMember = "Cliente";
+            cboboxCliente.ValueMember = "id_cliente";
 
             CBMetodoPago.DataSource = Factura.TraerMetodoPago();
             CBMetodoPago.DisplayMember = "descripcion";
@@ -42,9 +53,9 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
         private void btnCobrarHabitacion_Click(object sender, EventArgs e)
         {
             DialogResult resultado;
-
-            if (CBMetodoPago.SelectedIndex != 0)
+            if (cboboxCliente.SelectedIndex != -1 && CBMetodoPago.SelectedIndex != -1)
             {
+
                 resultado = MessageBox.Show("Desea confirmar el Pago?", "Confirmar Pago", MessageBoxButtons.YesNo);
 
                 if (resultado == DialogResult.Yes)
@@ -73,10 +84,28 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             }
             else
             {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK);
+                        MessageBox.Show("Debe completar todos lso Campos", "Error", MessageBoxButtons.OK);
 
             }
+
+
+
+
         }
 
+        private void Cobrar_Habitacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboboxCliente_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cboboxCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

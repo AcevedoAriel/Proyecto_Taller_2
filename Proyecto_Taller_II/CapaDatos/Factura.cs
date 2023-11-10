@@ -52,7 +52,7 @@ namespace Proyecto_Taller_II.CapaDatos
 
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "insert into factura(id_tipo_pago, id_cliente, id_reserva, fecha_pago, costo_habitacion, costo_servicios, costo_total) values ('" + factura.tipo_pago + "', "+ factura.id_cliente +", " + factura.id_reserva + ", '" + factura.fecha_pago + "', '" + factura.precio_hab + "', '"+ factura.precio_ser + "', '"+factura.total+"')";
+                string query = "insert into factura(id_tipo_pago, id_cliente, id_reserva, fecha_pago, costo_habitacion, costo_servicios, costo_total) values ('" + factura.tipo_pago + "', "+ factura.id_cliente + ", " + factura.id_reserva + ", '" + factura.fecha_pago + "', '" + factura.precio_hab + "', '"+ factura.precio_ser + "', '"+factura.total+"' )";
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
                 retorno = cmd.ExecuteNonQuery();

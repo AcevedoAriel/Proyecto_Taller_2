@@ -48,6 +48,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.lblNroHabitacion = new System.Windows.Forms.Label();
             this.txtNroHabitacion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLiberar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NCantidad)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReserva)).BeginInit();
@@ -222,11 +223,22 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.label1.TabIndex = 30;
             this.label1.Text = "Filtrar por número de Habitacion :";
             // 
+            // btnLiberar
+            // 
+            this.btnLiberar.Location = new System.Drawing.Point(559, 259);
+            this.btnLiberar.Name = "btnLiberar";
+            this.btnLiberar.Size = new System.Drawing.Size(127, 36);
+            this.btnLiberar.TabIndex = 31;
+            this.btnLiberar.Text = "Liberar Habitacion";
+            this.btnLiberar.UseVisualStyleBackColor = true;
+            this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
+            // 
             // ListadoDeReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 465);
+            this.Controls.Add(this.btnLiberar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNroHabitacion);
             this.Controls.Add(this.lblNroHabitacion);
@@ -275,5 +287,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
         private Label lblNroHabitacion;
         private TextBox txtNroHabitacion;
         private Label label1;
+        private Button btnLiberar;
     }
 }

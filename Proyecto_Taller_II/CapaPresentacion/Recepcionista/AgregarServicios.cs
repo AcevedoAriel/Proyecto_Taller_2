@@ -26,20 +26,29 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
 
         private void bntCobrar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado;
-
-
-            resultado = MessageBox.Show("Confirma los Servicios Ingresados?", "Confirmar Servicios", MessageBoxButtons.YesNo);
-
-            if (resultado == DialogResult.Yes)
+            if (listServicios.Items.Count != 0)
             {
+                DialogResult resultado;
+                resultado = MessageBox.Show("Confirma los Servicios Ingresados?", "Confirmar Servicios", MessageBoxButtons.YesNo);
 
+                if (resultado == DialogResult.Yes)
+                {
+
+                    int id = Convert.ToInt32(txtID.Text);
+                    DetalleServicios.CargarServicios(serv, id);
+                    Cobrar_Habitacion cobrar = new Cobrar_Habitacion(id);
+                    cobrar.Show();
+                    this.Close();
+                }
+            }
+            else
+            {
                 int id = Convert.ToInt32(txtID.Text);
-                DetalleServicios.CargarServicios(serv, id);
                 Cobrar_Habitacion cobrar = new Cobrar_Habitacion(id);
                 cobrar.Show();
                 this.Close();
             }
+            
         }
 
         private void btnServicio_Click_1(object sender, EventArgs e)
