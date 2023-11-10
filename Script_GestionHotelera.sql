@@ -30,14 +30,13 @@ CREATE TABLE usuario(
 
 
 /*Lote de Perfi*/
-select * from perfil
+
 insert into perfil (cod_perfil, nombre) values(1, 'Super Usuario');		
 insert into perfil (cod_perfil, nombre) values(2, 'Administrador');		
 insert into perfil (cod_perfil, nombre) values(3, 'Recepcionista');
 
 /*Lote de Usuario*/
-select * from usuario
-select * from estado_habitacion
+
 
 INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
 VALUES (37393962, N'Acevedo', N'Ariel', N'Arielo90', N'$2a$12$ABAlkdsDFwYmbMhJ2r3x8.u/vh39jzIS4.aWIYy3cZh/w9zStHdhW', N'37393962', 1, N'ariel@gmail.com', CAST(N'1993-06-16T14:30:00.000' AS DateTime), N'Hombre', N'Activo')
@@ -108,9 +107,7 @@ CREATE TABLE categoriaHabitacion(
 )
 delete from reserva
 delete from factura
-select * from habitacion
-select * from reserva
-select * from factura
+
 alter table factura drop column no_cuotas 
 
 CREATE TABLE cliente(
@@ -144,7 +141,7 @@ where r.id_reserva = 39
 GROUP BY  h.nro_habitacion, r.precio
 
 
-select * from DetalleServicios where id_reserva = 12
+
 delete from DetalleServicios
 select * from servicios
 CREATE TABLE servicios(
@@ -162,7 +159,7 @@ CREATE TABLE DetalleServicios(
 	constraint fk_idReserva foreign key (id_reserva) references reserva (id_reserva),
 	constraint fk_codServicioa foreign key (cod_servicio) references servicios (cod_servicio)
 )
-select id_habitacion from habitacion where nro_habitacion = 342
+select id_habitacion from habitacion where nro_habitacion = 342 
 
 CREATE TABLE factura(
 		id_factura int identity (1,1) not null,
@@ -185,8 +182,30 @@ CREATE TABLE tipo_pago(
 		CONSTRAINT PK_idTipoPago PRIMARY KEY (id_tipo_pago)
 
 )
-select * from DetalleServicios
+
+select * from DetalleServicios where id_reserva = 12
+
+
+select * from perfil
+select * from usuario
+select * from estado_habitacion
+update estado_habitacion
+set descripcion = 'Deshabilitada'
+where id_estado = 1
+delete from estado_habitacion where id_estado = 3
+select * from habitacion
+delete from habitacion
+select * from cliente
+select * from reserva
+delete from reserva
+select * from factura
+delete from factura
 select * from tipo_pago
+select * from DetalleServicios
+delete from DetalleServicios
+
+
+
 select id_tipo_pago, descripcion from tipo_pago
 
 insert into tipo_pago (descripcion) values ('Crédito')
@@ -201,3 +220,39 @@ as Categoria, habitacion.cantidad_camas as NroCamas
 from habitacion
 JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado
 JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE ObtenerHabitacionesDisponiblesConFiltros
+    @fechaDesde DATETIME,
+    @fechaHasta DATETIME,
+    @piso INT = NULL,
+    @categoria INT = NULL,
+    @cantidadCamas INT = NULL
+AS
+BEGIN
+    SELECT
+        habitacion.id_habitacion AS ID,
+        habitacion.piso AS Piso,
+        habitacion.nro_habitacion AS NroHabitacion,
+        habitacion.precio AS Precio,
+        categoriaHabitacion.descripcion AS Categoria,
+        habitacion.cantidad_camas AS NroCamas
+    FROM
+        habitacion
+        JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria
+        LEFT JOIN reserva AS r ON r.id_habitacion = habitacion.id_habitacion
+    WHERE
+        habitacion.id_estado = 2
+        AND (r.fecha_ingreso IS NULL OR NOT (@fechaDesde BETWEEN r.fecha_ingreso AND r.fecha_retiro OR @fechaHasta BETWEEN r.fecha_ingreso AND r.fecha_retiro))
+        AND (@piso IS NULL OR habitacion.piso = @piso)
+        AND (@categoria IS NULL OR habitacion.categoria = @categoria)
+        AND (@cantidadCamas IS NULL OR habitacion.cantidad_camas = @cantidadCamas);
+END;

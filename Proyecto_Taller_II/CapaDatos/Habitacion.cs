@@ -66,7 +66,7 @@ namespace Proyecto_Taller_II.CapaDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update habitacion set id_estado = 3  where id_habitacion = " + habitacion.id + " ";
+                string query = "update habitacion set id_estado = 1  where id_habitacion = " + habitacion.id + " ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();

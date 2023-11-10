@@ -53,7 +53,10 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select * from factura";
+                string query = " select CONCAT(c.nombre, ' ' , c.apellido) as A_Nombre_De,  f.id_reserva as ReservaNro, p.descripcion as Metodo_Pago,  f.fecha_pago as Fecha_Pago, f.costo_habitacion as Costo_Habitacion, f.costo_servicios as Costo_Servicios, f.costo_total as Costo_Total " +
+                    " from factura as f " +
+                    "JOIN tipo_pago as p ON p.id_tipo_pago = f.id_tipo_pago " +
+                    "JOIN cliente as c ON c.id_cliente = f.id_cliente ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
                 DataSet dataset = new DataSet();

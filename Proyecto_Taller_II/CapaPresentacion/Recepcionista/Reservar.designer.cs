@@ -45,9 +45,10 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnReservar = new System.Windows.Forms.Button();
             this.dateTimeFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.lblHasta = new System.Windows.Forms.Label();
-            this.txtNoHab = new System.Windows.Forms.TextBox();
-            this.LNoHab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNCamas = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHabitaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -182,9 +183,9 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnReservar.BackColor = System.Drawing.Color.White;
             this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReservar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnReservar.Location = new System.Drawing.Point(717, 36);
+            this.btnReservar.Location = new System.Drawing.Point(724, 33);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(75, 46);
+            this.btnReservar.Size = new System.Drawing.Size(75, 44);
             this.btnReservar.TabIndex = 32;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = false;
@@ -209,23 +210,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.lblHasta.TabIndex = 33;
             this.lblHasta.Text = "Hasta:";
             // 
-            // txtNoHab
-            // 
-            this.txtNoHab.Location = new System.Drawing.Point(668, 115);
-            this.txtNoHab.Name = "txtNoHab";
-            this.txtNoHab.Size = new System.Drawing.Size(128, 20);
-            this.txtNoHab.TabIndex = 35;
-            // 
-            // LNoHab
-            // 
-            this.LNoHab.AutoSize = true;
-            this.LNoHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.LNoHab.Location = new System.Drawing.Point(668, 97);
-            this.LNoHab.Name = "LNoHab";
-            this.LNoHab.Size = new System.Drawing.Size(99, 15);
-            this.LNoHab.TabIndex = 36;
-            this.LNoHab.Text = "N° de Camas :";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -236,14 +220,45 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.label1.TabIndex = 37;
             this.label1.Text = "Habitaciones :";
             // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.White;
+            this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Location = new System.Drawing.Point(657, 33);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(61, 44);
+            this.btnFiltrar.TabIndex = 38;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(675, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Nro camas:";
+            // 
+            // txtNCamas
+            // 
+            this.txtNCamas.Location = new System.Drawing.Point(678, 119);
+            this.txtNCamas.Name = "txtNCamas";
+            this.txtNCamas.Size = new System.Drawing.Size(100, 20);
+            this.txtNCamas.TabIndex = 41;
+            // 
             // Reservar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 465);
+            this.Controls.Add(this.txtNCamas);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LNoHab);
-            this.Controls.Add(this.txtNoHab);
             this.Controls.Add(this.dateTimeFechaHasta);
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.btnReservar);
@@ -282,9 +297,10 @@ namespace Proyecto_Taller_II.CapaPresentacion
         private Button btnReservar;
         private DateTimePicker dateTimeFechaHasta;
         private Label lblHasta;
-        private TextBox txtNoHab;
-        private Label LNoHab;
         private DataGridView dataGridHabitaciones;
         private Label label1;
+        private Button btnFiltrar;
+        private Label label2;
+        private TextBox txtNCamas;
     }
 }

@@ -22,10 +22,11 @@ namespace Proyecto_Taller_II.CapaPresentacion
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas  " +
+                string query = "select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas  " +
                     " from habitacion " +
                     "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
-                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria";
+                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria "+
+                    "WHERE habitacion.id_estado = 2 ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
                 DataSet dataset = new DataSet();
@@ -41,16 +42,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
         {
 
             if (dataGridHabitaciones.SelectedRows.Count > 0)
-            {
-
-                string estadoHabitacion = Convert.ToString(dataGridHabitaciones.SelectedRows[0].Cells["Estado"].Value);
-
-                if (estadoHabitacion == "Ocupada" || estadoHabitacion == "Mantenimiento")
-                {
-                    MessageBox.Show("No puedes reservar una habitación ocupada o en mantenimiento.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
+            {                             
                     int id_hab = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["ID"].Value);
                     int nro_habitacion = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["NroHabitacion"].Value);
                     int cantidad_camas = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["NroCamas"].Value);
@@ -61,7 +53,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
                     Asignar_Reserva asignar = new Asignar_Reserva(id_hab, nro_habitacion, cantidad_camas, categoria, piso, precio);
                     asignar.BackColor = Color.LightSkyBlue;
                     asignar.Show();
-                }
+                
 
 
             }
@@ -87,66 +79,12 @@ namespace Proyecto_Taller_II.CapaPresentacion
 
         private void CBpiso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CBpiso.SelectedIndex != 0)
-            {
-                try
-                {
-                    using (SqlConnection conexion = Conexion.ObtenerConexion())
-                    {
-                        string query = " select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas" + " from habitacion " +
-                            "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
-                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria" +
-                          " WHERE  habitacion.piso LIKE ('" + CBpiso.SelectedIndex + "%') ";
-                        SqlCommand cmd = new SqlCommand(query, conexion);
-                        SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
-                        DataSet dataset = new DataSet();
-                        dt.Fill(dataset, "Test_table");
-                        dataGridHabitaciones.DataSource = dataset;
-                        dataGridHabitaciones.DataMember = "Test_table";
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                RefreshPantalla();
-            }
+            
         }
 
         private void CBcategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CBcategoria.SelectedIndex != 0)
-            {
-                try
-                {
-                    using (SqlConnection conexion = Conexion.ObtenerConexion())
-                    {
-                        string query = " select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion as Categoria, habitacion.cantidad_camas as NroCamas" + " from habitacion " +
-                            "JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado " +
-                    "JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria" +
-                          " WHERE  habitacion.categoria LIKE ('" + CBcategoria.SelectedIndex + "%') ";
-                        SqlCommand cmd = new SqlCommand(query, conexion);
-                        SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
-                        DataSet dataset = new DataSet();
-                        dt.Fill(dataset, "Test_table");
-                        dataGridHabitaciones.DataSource = dataset;
-                        dataGridHabitaciones.DataMember = "Test_table";
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                RefreshPantalla();
-            }
+            
         }
 
         private void dateTimeFechaDesde_ValueChanged(object sender, EventArgs e)
@@ -159,6 +97,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 MessageBox.Show("No se puede Reservar una fecha Pasada");
                 return; // Salir del evento sin realizar el filtrado
             }
+            
         }
 
         private void dateTimeFechaHasta_ValueChanged(object sender, EventArgs e)
@@ -172,7 +111,44 @@ namespace Proyecto_Taller_II.CapaPresentacion
             }
         }
 
-       
+        private void txtNoHab_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+            private void btnFiltrar_Click(object sender, EventArgs e)
+            {
+            DateTime fechaDesde = dateTimeFechaDesde.Value;
+            DateTime fechaHasta = dateTimeFechaHasta.Value;
+            int piso = CBpiso.SelectedIndex;
+            int categoria = CBcategoria.SelectedIndex;
+            int cantidadCamas = Convert.ToInt32(txtNCamas.Text);
+
+            try
+            {
+                using (SqlConnection conexion = Conexion.ObtenerConexion())
+                {
+                    SqlCommand cmd = new SqlCommand("ObtenerHabitacionesDisponiblesConFiltros", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                    cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+                    cmd.Parameters.AddWithValue("@piso", (object)piso ?? DBNull.Value); // Convertir a DBNull si es nulo
+                    cmd.Parameters.AddWithValue("@categoria", (object)categoria ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@cantidadCamas", (object)cantidadCamas ?? DBNull.Value);
+
+                    SqlDataAdapter dt = new SqlDataAdapter(cmd);
+                    DataSet dataset = new DataSet();
+                    dt.Fill(dataset, "Test_table");
+                    dataGridHabitaciones.DataSource = dataset;
+                    dataGridHabitaciones.DataMember = "Test_table";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
     }
 }

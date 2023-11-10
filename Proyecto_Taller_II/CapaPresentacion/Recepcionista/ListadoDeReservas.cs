@@ -231,27 +231,5 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             }
         }
 
-        private void btnLiberar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Desea liberar esta habitación?", "Liberar Habitacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (filaSeleccionada != null)
-                {
-                    Habitacion habitacion = new Habitacion();
-                    habitacion.nro_habitacion = Convert.ToInt32(filaSeleccionada.Cells["NroHabitacion"].Value);
-                    int result = Habitacion.LiberarHabitacion(habitacion);
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Habitacion Liberada", "Completado", MessageBoxButtons.OK);
-                        RefreshPantalla();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo completar la acción", "Error", MessageBoxButtons.OK);
-
-                    }
-                }
-            }
-        }
     }
 }

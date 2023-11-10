@@ -104,18 +104,18 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
                     int result = Reserva.AgregarREserva(reserva);
                     if (result != 0)
                     {
-                        MessageBox.Show("Reserva guardada con exito", "Guardado", MessageBoxButtons.OK);
+                       MessageBox.Show("Reserva guardada con exito", "Guardado", MessageBoxButtons.OK);
+                        this.Close();
+                        AgregarServicios serv = new AgregarServicios(result);
+                        serv.Show();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo Guardar", "Error");
-
+                        MessageBox.Show("No se pudo Guardar", "Error", MessageBoxButtons.OK);
+                        this.Close();
                     }
 
-                    this.Close();
-                
-                    AgregarServicios serv = new AgregarServicios(result);
-                    serv.Show();
+                    
                 }
             }
             else
