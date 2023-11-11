@@ -32,7 +32,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
         private void InitializeComponent()
         {
             this.lblPagoTotal = new System.Windows.Forms.Label();
-            this.btnCobrarHabitacion = new System.Windows.Forms.Button();
+            this.btnCobrarImprimir = new System.Windows.Forms.Button();
             this.CBMetodoPago = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,19 +60,19 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.lblPagoTotal.TabIndex = 2;
             this.lblPagoTotal.Text = "Total a Pagar :";
             // 
-            // btnCobrarHabitacion
+            // btnCobrarImprimir
             // 
-            this.btnCobrarHabitacion.BackColor = System.Drawing.Color.Lime;
-            this.btnCobrarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCobrarHabitacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCobrarHabitacion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCobrarHabitacion.Location = new System.Drawing.Point(363, 339);
-            this.btnCobrarHabitacion.Name = "btnCobrarHabitacion";
-            this.btnCobrarHabitacion.Size = new System.Drawing.Size(119, 58);
-            this.btnCobrarHabitacion.TabIndex = 4;
-            this.btnCobrarHabitacion.Text = "Cobrar Habitacion";
-            this.btnCobrarHabitacion.UseVisualStyleBackColor = false;
-            this.btnCobrarHabitacion.Click += new System.EventHandler(this.btnCobrarHabitacion_Click);
+            this.btnCobrarImprimir.BackColor = System.Drawing.Color.Lime;
+            this.btnCobrarImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCobrarImprimir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCobrarImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCobrarImprimir.Location = new System.Drawing.Point(363, 339);
+            this.btnCobrarImprimir.Name = "btnCobrarImprimir";
+            this.btnCobrarImprimir.Size = new System.Drawing.Size(119, 58);
+            this.btnCobrarImprimir.TabIndex = 4;
+            this.btnCobrarImprimir.Text = "Cobrar e Imprimir";
+            this.btnCobrarImprimir.UseVisualStyleBackColor = false;
+            this.btnCobrarImprimir.Click += new System.EventHandler(this.btnCobrarHabitacion_Click);
             // 
             // CBMetodoPago
             // 
@@ -202,8 +202,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.cboboxCliente.Name = "cboboxCliente";
             this.cboboxCliente.Size = new System.Drawing.Size(217, 25);
             this.cboboxCliente.TabIndex = 27;
-            this.cboboxCliente.SelectedIndexChanged += new System.EventHandler(this.cboboxCliente_SelectedIndexChanged);
-            this.cboboxCliente.TextChanged += new System.EventHandler(this.cboboxCliente_TextChanged);
             // 
             // label8
             // 
@@ -243,13 +241,12 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBMetodoPago);
-            this.Controls.Add(this.btnCobrarHabitacion);
+            this.Controls.Add(this.btnCobrarImprimir);
             this.Controls.Add(this.lblPagoTotal);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.Name = "Cobrar_Habitacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cobrar_Habitacion";
-            this.Load += new System.EventHandler(this.Cobrar_Habitacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,7 +254,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
 
         #endregion
         private Label lblPagoTotal;
-        private Button btnCobrarHabitacion;
+        private Button btnCobrarImprimir;
         private ComboBox CBMetodoPago;
         private Label label1;
         private Label label3;

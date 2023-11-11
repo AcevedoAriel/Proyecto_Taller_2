@@ -77,16 +77,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             }
         }
 
-        private void CBpiso_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void CBcategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void dateTimeFechaDesde_ValueChanged(object sender, EventArgs e)
         {
             DateTime fechaDesde = dateTimeFechaDesde.Value;
@@ -109,11 +99,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 MessageBox.Show("La fecha de retiro debe ser mayor que la Fecha de Ingreso");
                 return; // Salir del evento sin realizar el filtrado
             }
-        }
-
-        private void txtNoHab_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)

@@ -105,7 +105,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.CBcategoria.Name = "CBcategoria";
             this.CBcategoria.Size = new System.Drawing.Size(165, 21);
             this.CBcategoria.TabIndex = 25;
-            this.CBcategoria.SelectedIndexChanged += new System.EventHandler(this.CBcategoria_SelectedIndexChanged);
             // 
             // CBpiso
             // 
@@ -121,7 +120,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.CBpiso.Name = "CBpiso";
             this.CBpiso.Size = new System.Drawing.Size(165, 21);
             this.CBpiso.TabIndex = 26;
-            this.CBpiso.SelectedIndexChanged += new System.EventHandler(this.CBpiso_SelectedIndexChanged);
             // 
             // label3
             // 
