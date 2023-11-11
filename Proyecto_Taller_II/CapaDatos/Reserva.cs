@@ -67,8 +67,8 @@ namespace Proyecto_Taller_II.CapaDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "delete from reserva" +
-                    "where id_reserva = " + reserva.id + "";
+                string query = "delete from reserva " +
+                    "where id_reserva = " + reserva.id + " ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();

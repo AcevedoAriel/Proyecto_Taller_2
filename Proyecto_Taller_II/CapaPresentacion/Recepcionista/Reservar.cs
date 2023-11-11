@@ -115,26 +115,21 @@ namespace Proyecto_Taller_II.CapaPresentacion
         {
 
         }
-            private void btnFiltrar_Click(object sender, EventArgs e)
-            {
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
             DateTime fechaDesde = dateTimeFechaDesde.Value;
             DateTime fechaHasta = dateTimeFechaHasta.Value;
-            int piso = CBpiso.SelectedIndex;
-            int categoria = CBcategoria.SelectedIndex;
-            int cantidadCamas = Convert.ToInt32(txtNCamas.Text);
 
             try
             {
                 using (SqlConnection conexion = Conexion.ObtenerConexion())
                 {
-                    SqlCommand cmd = new SqlCommand("ObtenerHabitacionesDisponiblesConFiltros", conexion);
+                    SqlCommand cmd = new SqlCommand("ObtenerHabitacionesDisponibles", conexion);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
                     cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
-                    cmd.Parameters.AddWithValue("@piso", (object)piso ?? DBNull.Value); // Convertir a DBNull si es nulo
-                    cmd.Parameters.AddWithValue("@categoria", (object)categoria ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@cantidadCamas", (object)cantidadCamas ?? DBNull.Value);
 
                     SqlDataAdapter dt = new SqlDataAdapter(cmd);
                     DataSet dataset = new DataSet();
@@ -149,6 +144,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             }
         }
 
-        
+
     }
 }

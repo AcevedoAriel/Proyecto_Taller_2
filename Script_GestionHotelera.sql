@@ -189,9 +189,18 @@ select * from DetalleServicios where id_reserva = 12
 select * from perfil
 select * from usuario
 select * from estado_habitacion
+
+
 update estado_habitacion
 set descripcion = 'Deshabilitada'
 where id_estado = 1
+
+
+update estado_habitacion
+set descripcion = 'Habilitada'
+where id_estado = 2
+
+
 delete from estado_habitacion where id_estado = 3
 select * from habitacion
 delete from habitacion
@@ -226,6 +235,26 @@ JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_catego
 
 
 
+CREATE PROCEDURE ObtenerHabitacionesDisponibles
+    @fechaDesde DATETIME,
+    @fechaHasta DATETIME
+AS
+BEGIN
+    SELECT
+        habitacion.id_habitacion AS ID,
+        habitacion.piso AS Piso,
+        habitacion.nro_habitacion AS NroHabitacion,
+        habitacion.precio AS Precio,
+        categoriaHabitacion.descripcion AS Categoria,
+        habitacion.cantidad_camas AS NroCamas
+    FROM
+        habitacion
+        JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria
+        LEFT JOIN reserva AS r ON r.id_habitacion = habitacion.id_habitacion
+    WHERE
+        habitacion.id_estado = 2
+        AND (r.fecha_ingreso IS NULL OR NOT (@fechaDesde BETWEEN r.fecha_ingreso AND r.fecha_retiro OR @fechaHasta BETWEEN r.fecha_ingreso AND r.fecha_retiro));
+END;
 
 
 

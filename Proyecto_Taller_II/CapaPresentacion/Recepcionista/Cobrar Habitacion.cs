@@ -64,9 +64,9 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
                     factura.fecha_pago = DateTime.Today;
                     factura.precio_hab = Convert.ToDouble(txtPrHab.Text);
                     factura.precio_ser = Convert.ToDouble(txtPrSer.Text);
-                    factura.tipo_pago = CBMetodoPago.SelectedIndex;
+                    factura.tipo_pago =Convert.ToInt32(CBMetodoPago.SelectedValue);
                     factura.id_reserva = Convert.ToInt32(txtIDReserva.Text);
-                    factura.id_cliente = cboboxCliente.SelectedIndex;
+                    factura.id_cliente = Convert.ToInt32(cboboxCliente.SelectedValue);
                     factura.total = Convert.ToDouble(txtTotal.Text);
                     int result = Factura.AgregarFactura(factura);
                     if (result != 0)
