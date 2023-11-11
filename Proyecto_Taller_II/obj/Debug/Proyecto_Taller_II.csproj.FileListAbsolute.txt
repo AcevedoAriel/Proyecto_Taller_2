@@ -64,3 +64,8 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proy
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.csproj.CopyComplete
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.exe
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.pdb
+C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.CapaPresentacion.Administrador.ReporteReservas.resources
+C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\itextsharp.dll
+C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\itextsharp.xml
