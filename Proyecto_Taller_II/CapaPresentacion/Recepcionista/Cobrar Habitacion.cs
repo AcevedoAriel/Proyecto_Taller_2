@@ -108,6 +108,13 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
 
                             pdfDoc.Add(new Phrase(""));
 
+                            /*Agrego una imagen a mi factura en la posicion izquierda superior*/
+                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.HotelParana, System.Drawing.Imaging.ImageFormat.Png);
+                            img.ScaleToFit(227, 118);
+                            img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                            img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 80);
+                            pdfDoc.Add(img);
+
                             using (StringReader sr = new StringReader(paginaHtml_texto))
                             {
                                 XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
