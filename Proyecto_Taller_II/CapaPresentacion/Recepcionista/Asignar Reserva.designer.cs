@@ -62,7 +62,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.NCantidad.Location = new System.Drawing.Point(171, 396);
             this.NCantidad.Name = "NCantidad";
             this.NCantidad.Size = new System.Drawing.Size(160, 23);
-            this.NCantidad.TabIndex = 39;
+            this.NCantidad.TabIndex = 3;
             // 
             // DTRetiro
             // 
@@ -70,7 +70,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.DTRetiro.Location = new System.Drawing.Point(171, 333);
             this.DTRetiro.Name = "DTRetiro";
             this.DTRetiro.Size = new System.Drawing.Size(160, 23);
-            this.DTRetiro.TabIndex = 37;
+            this.DTRetiro.TabIndex = 2;
             this.DTRetiro.ValueChanged += new System.EventHandler(this.DTRetiro_ValueChanged);
             // 
             // DTIngreso
@@ -79,7 +79,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.DTIngreso.Location = new System.Drawing.Point(171, 274);
             this.DTIngreso.Name = "DTIngreso";
             this.DTIngreso.Size = new System.Drawing.Size(160, 23);
-            this.DTIngreso.TabIndex = 36;
+            this.DTIngreso.TabIndex = 1;
             this.DTIngreso.ValueChanged += new System.EventHandler(this.DTIngreso_ValueChanged);
             // 
             // LCantidad
@@ -120,7 +120,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.BReservar.Location = new System.Drawing.Point(24, 463);
             this.BReservar.Name = "BReservar";
             this.BReservar.Size = new System.Drawing.Size(113, 44);
-            this.BReservar.TabIndex = 23;
+            this.BReservar.TabIndex = 4;
             this.BReservar.Text = "Reservar";
             this.BReservar.UseVisualStyleBackColor = false;
             this.BReservar.Click += new System.EventHandler(this.BReservar_Click);
@@ -276,7 +276,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnCancelar.Location = new System.Drawing.Point(224, 463);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 44);
-            this.btnCancelar.TabIndex = 42;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

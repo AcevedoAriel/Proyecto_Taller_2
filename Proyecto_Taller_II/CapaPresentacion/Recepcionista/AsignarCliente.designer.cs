@@ -60,7 +60,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(597, 199);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabIndex = 9;
             // 
             // label2
             // 
@@ -78,7 +78,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.TTelefono.Location = new System.Drawing.Point(423, 146);
             this.TTelefono.Name = "TTelefono";
             this.TTelefono.Size = new System.Drawing.Size(138, 20);
-            this.TTelefono.TabIndex = 43;
+            this.TTelefono.TabIndex = 5;
             // 
             // LTel
             // 
@@ -105,7 +105,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.TDNI.Location = new System.Drawing.Point(128, 88);
             this.TDNI.Name = "TDNI";
             this.TDNI.Size = new System.Drawing.Size(138, 20);
-            this.TDNI.TabIndex = 40;
+            this.TDNI.TabIndex = 2;
             // 
             // TNombre
             // 
@@ -113,7 +113,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.TNombre.Location = new System.Drawing.Point(128, 153);
             this.TNombre.Name = "TNombre";
             this.TNombre.Size = new System.Drawing.Size(138, 23);
-            this.TNombre.TabIndex = 39;
+            this.TNombre.TabIndex = 3;
             // 
             // TApellido
             // 
@@ -121,7 +121,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.TApellido.Location = new System.Drawing.Point(423, 95);
             this.TApellido.Name = "TApellido";
             this.TApellido.Size = new System.Drawing.Size(138, 23);
-            this.TApellido.TabIndex = 38;
+            this.TApellido.TabIndex = 4;
             // 
             // LApellido
             // 
@@ -156,7 +156,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.txtFiltrar.Location = new System.Drawing.Point(502, 27);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(141, 20);
-            this.txtFiltrar.TabIndex = 45;
+            this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
             // 
             // btnRegistrar
@@ -167,7 +167,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnRegistrar.Location = new System.Drawing.Point(676, 51);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(77, 42);
-            this.btnRegistrar.TabIndex = 46;
+            this.btnRegistrar.TabIndex = 6;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -180,7 +180,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnGuardar.Location = new System.Drawing.Point(676, 99);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(77, 42);
-            this.btnGuardar.TabIndex = 47;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -203,7 +203,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnEditar.Location = new System.Drawing.Point(676, 153);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(77, 42);
-            this.btnEditar.TabIndex = 49;
+            this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);

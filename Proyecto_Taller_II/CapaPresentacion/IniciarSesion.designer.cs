@@ -60,7 +60,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnAceptar.Location = new System.Drawing.Point(33, 190);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(78, 26);
-            this.btnAceptar.TabIndex = 1;
+            this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -72,7 +72,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnCancelar.Location = new System.Drawing.Point(129, 190);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 26);
-            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -124,14 +124,14 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.txtUsuario.Location = new System.Drawing.Point(41, 88);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(166, 20);
-            this.txtUsuario.TabIndex = 7;
+            this.txtUsuario.TabIndex = 1;
             // 
             // txtClave
             // 
             this.txtClave.Location = new System.Drawing.Point(41, 142);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(166, 20);
-            this.txtClave.TabIndex = 8;
+            this.txtClave.TabIndex = 2;
             this.txtClave.UseSystemPasswordChar = true;
             // 
             // FMIniciarSesion

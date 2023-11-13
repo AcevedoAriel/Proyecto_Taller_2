@@ -72,7 +72,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.btnBackup.Location = new System.Drawing.Point(313, 193);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(86, 35);
-            this.btnBackup.TabIndex = 1;
+            this.btnBackup.TabIndex = 5;
             this.btnBackup.Text = "Respaldar";
             this.btnBackup.UseVisualStyleBackColor = false;
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
@@ -118,7 +118,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.CBBaseDeDatos.Location = new System.Drawing.Point(286, 63);
             this.CBBaseDeDatos.Name = "CBBaseDeDatos";
             this.CBBaseDeDatos.Size = new System.Drawing.Size(159, 21);
-            this.CBBaseDeDatos.TabIndex = 5;
+            this.CBBaseDeDatos.TabIndex = 1;
             // 
             // btnConectarBD
             // 
@@ -128,7 +128,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.btnConectarBD.Location = new System.Drawing.Point(461, 51);
             this.btnConectarBD.Name = "btnConectarBD";
             this.btnConectarBD.Size = new System.Drawing.Size(73, 42);
-            this.btnConectarBD.TabIndex = 6;
+            this.btnConectarBD.TabIndex = 2;
             this.btnConectarBD.Text = "Conectar";
             this.btnConectarBD.UseVisualStyleBackColor = false;
             this.btnConectarBD.Click += new System.EventHandler(this.btnConectarBD_Click);
@@ -151,7 +151,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.btnAbrirRespaldo.Location = new System.Drawing.Point(558, 153);
             this.btnAbrirRespaldo.Name = "btnAbrirRespaldo";
             this.btnAbrirRespaldo.Size = new System.Drawing.Size(86, 28);
-            this.btnAbrirRespaldo.TabIndex = 9;
+            this.btnAbrirRespaldo.TabIndex = 4;
             this.btnAbrirRespaldo.Text = "Abrir";
             this.btnAbrirRespaldo.UseVisualStyleBackColor = false;
             this.btnAbrirRespaldo.Click += new System.EventHandler(this.btnAbrirRespaldo_Click);
@@ -164,7 +164,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.btnAbrirRestaurar.Location = new System.Drawing.Point(558, 266);
             this.btnAbrirRestaurar.Name = "btnAbrirRestaurar";
             this.btnAbrirRestaurar.Size = new System.Drawing.Size(86, 28);
-            this.btnAbrirRestaurar.TabIndex = 12;
+            this.btnAbrirRestaurar.TabIndex = 7;
             this.btnAbrirRestaurar.Text = "Abrir";
             this.btnAbrirRestaurar.UseVisualStyleBackColor = false;
             this.btnAbrirRestaurar.Click += new System.EventHandler(this.btnAbrirRestaurar_Click);
@@ -174,7 +174,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.txtAbrirRestaurar.Location = new System.Drawing.Point(186, 271);
             this.txtAbrirRestaurar.Name = "txtAbrirRestaurar";
             this.txtAbrirRestaurar.Size = new System.Drawing.Size(349, 20);
-            this.txtAbrirRestaurar.TabIndex = 11;
+            this.txtAbrirRestaurar.TabIndex = 6;
             // 
             // lblRestaurar
             // 
@@ -191,7 +191,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.txtBaseRestaurar.Location = new System.Drawing.Point(186, 315);
             this.txtBaseRestaurar.Name = "txtBaseRestaurar";
             this.txtBaseRestaurar.Size = new System.Drawing.Size(349, 20);
-            this.txtBaseRestaurar.TabIndex = 14;
+            this.txtBaseRestaurar.TabIndex = 8;
             // 
             // lblBaseDeDatosRestaurar
             // 
@@ -211,7 +211,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.btnRestaruar.Location = new System.Drawing.Point(313, 358);
             this.btnRestaruar.Name = "btnRestaruar";
             this.btnRestaruar.Size = new System.Drawing.Size(86, 35);
-            this.btnRestaruar.TabIndex = 15;
+            this.btnRestaruar.TabIndex = 9;
             this.btnRestaruar.Text = "Restaurar";
             this.btnRestaruar.UseVisualStyleBackColor = false;
             this.btnRestaruar.Click += new System.EventHandler(this.btnRestaruar_Click);

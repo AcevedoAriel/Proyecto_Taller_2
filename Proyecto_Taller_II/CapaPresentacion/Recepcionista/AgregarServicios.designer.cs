@@ -54,10 +54,10 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnServicio.BackColor = System.Drawing.Color.LightGreen;
             this.btnServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServicio.Location = new System.Drawing.Point(124, 138);
-            this.btnServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnServicio.Margin = new System.Windows.Forms.Padding(2);
             this.btnServicio.Name = "btnServicio";
             this.btnServicio.Size = new System.Drawing.Size(54, 23);
-            this.btnServicio.TabIndex = 51;
+            this.btnServicio.TabIndex = 3;
             this.btnServicio.Text = "Agregar";
             this.btnServicio.UseVisualStyleBackColor = false;
             this.btnServicio.Click += new System.EventHandler(this.btnServicio_Click_1);
@@ -66,27 +66,27 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // 
             this.CBServicios.FormattingEnabled = true;
             this.CBServicios.Location = new System.Drawing.Point(83, 45);
-            this.CBServicios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBServicios.Margin = new System.Windows.Forms.Padding(2);
             this.CBServicios.Name = "CBServicios";
             this.CBServicios.Size = new System.Drawing.Size(148, 21);
-            this.CBServicios.TabIndex = 50;
+            this.CBServicios.TabIndex = 1;
             // 
             // listServicios
             // 
             this.listServicios.FormattingEnabled = true;
             this.listServicios.Location = new System.Drawing.Point(83, 74);
-            this.listServicios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listServicios.Margin = new System.Windows.Forms.Padding(2);
             this.listServicios.Name = "listServicios";
             this.listServicios.Size = new System.Drawing.Size(148, 56);
-            this.listServicios.TabIndex = 49;
+            this.listServicios.TabIndex = 2;
             // 
             // bntCobrar
             // 
             this.bntCobrar.Location = new System.Drawing.Point(116, 177);
-            this.bntCobrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bntCobrar.Margin = new System.Windows.Forms.Padding(2);
             this.bntCobrar.Name = "bntCobrar";
             this.bntCobrar.Size = new System.Drawing.Size(73, 34);
-            this.bntCobrar.TabIndex = 53;
+            this.bntCobrar.TabIndex = 5;
             this.bntCobrar.Text = "Siguiente";
             this.bntCobrar.UseVisualStyleBackColor = true;
             this.bntCobrar.Click += new System.EventHandler(this.bntCobrar_Click);
@@ -94,7 +94,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(23, 18);
-            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(31, 20);
@@ -112,7 +112,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.Controls.Add(this.btnServicio);
             this.Controls.Add(this.CBServicios);
             this.Controls.Add(this.listServicios);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AgregarServicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarServicios";

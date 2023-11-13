@@ -69,7 +69,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnCobrarImprimir.Location = new System.Drawing.Point(363, 339);
             this.btnCobrarImprimir.Name = "btnCobrarImprimir";
             this.btnCobrarImprimir.Size = new System.Drawing.Size(119, 58);
-            this.btnCobrarImprimir.TabIndex = 4;
+            this.btnCobrarImprimir.TabIndex = 3;
             this.btnCobrarImprimir.Text = "Cobrar e Imprimir";
             this.btnCobrarImprimir.UseVisualStyleBackColor = false;
             this.btnCobrarImprimir.Click += new System.EventHandler(this.btnCobrarHabitacion_Click);
@@ -86,7 +86,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.CBMetodoPago.Location = new System.Drawing.Point(57, 326);
             this.CBMetodoPago.Name = "CBMetodoPago";
             this.CBMetodoPago.Size = new System.Drawing.Size(217, 25);
-            this.CBMetodoPago.TabIndex = 7;
+            this.CBMetodoPago.TabIndex = 1;
             // 
             // label1
             // 
@@ -201,7 +201,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.cboboxCliente.Location = new System.Drawing.Point(57, 411);
             this.cboboxCliente.Name = "cboboxCliente";
             this.cboboxCliente.Size = new System.Drawing.Size(217, 25);
-            this.cboboxCliente.TabIndex = 27;
+            this.cboboxCliente.TabIndex = 2;
             // 
             // label8
             // 
