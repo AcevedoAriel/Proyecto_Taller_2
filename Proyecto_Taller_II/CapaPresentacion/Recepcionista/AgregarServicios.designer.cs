@@ -37,15 +37,17 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.listServicios = new System.Windows.Forms.ListBox();
             this.bntCobrar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.btnQuitar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblServicio
             // 
             this.lblServicio.AutoSize = true;
+            this.lblServicio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServicio.Location = new System.Drawing.Point(83, 31);
             this.lblServicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblServicio.Name = "lblServicio";
-            this.lblServicio.Size = new System.Drawing.Size(112, 13);
+            this.lblServicio.Size = new System.Drawing.Size(115, 13);
             this.lblServicio.TabIndex = 52;
             this.lblServicio.Text = "Seleccione Servicios :";
             // 
@@ -53,10 +55,11 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // 
             this.btnServicio.BackColor = System.Drawing.Color.LightGreen;
             this.btnServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServicio.Location = new System.Drawing.Point(124, 138);
+            this.btnServicio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServicio.Location = new System.Drawing.Point(166, 134);
             this.btnServicio.Margin = new System.Windows.Forms.Padding(2);
             this.btnServicio.Name = "btnServicio";
-            this.btnServicio.Size = new System.Drawing.Size(54, 23);
+            this.btnServicio.Size = new System.Drawing.Size(65, 23);
             this.btnServicio.TabIndex = 3;
             this.btnServicio.Text = "Agregar";
             this.btnServicio.UseVisualStyleBackColor = false;
@@ -82,13 +85,16 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // 
             // bntCobrar
             // 
+            this.bntCobrar.BackColor = System.Drawing.Color.Chartreuse;
+            this.bntCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntCobrar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntCobrar.Location = new System.Drawing.Point(116, 177);
             this.bntCobrar.Margin = new System.Windows.Forms.Padding(2);
             this.bntCobrar.Name = "bntCobrar";
             this.bntCobrar.Size = new System.Drawing.Size(73, 34);
             this.bntCobrar.TabIndex = 5;
             this.bntCobrar.Text = "Siguiente";
-            this.bntCobrar.UseVisualStyleBackColor = true;
+            this.bntCobrar.UseVisualStyleBackColor = false;
             this.bntCobrar.Click += new System.EventHandler(this.bntCobrar_Click);
             // 
             // txtID
@@ -101,11 +107,25 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.txtID.TabIndex = 54;
             this.txtID.Visible = false;
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.Location = new System.Drawing.Point(83, 134);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(63, 23);
+            this.btnQuitar.TabIndex = 55;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
             // AgregarServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 233);
+            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.bntCobrar);
             this.Controls.Add(this.lblServicio);
@@ -129,5 +149,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
         private ListBox listServicios;
         private Button bntCobrar;
         private TextBox txtID;
+        private Button btnQuitar;
     }
 }

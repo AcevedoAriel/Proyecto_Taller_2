@@ -69,6 +69,19 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             
             
         }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (listServicios.SelectedIndex != -1)
+            {
+                // Obtener el índice seleccionado en el ListBox
+                int indiceSeleccionado = listServicios.SelectedIndex;
+
+                // Remover el servicio seleccionado de la lista y la lista de identificadores
+                listServicios.Items.RemoveAt(indiceSeleccionado);
+                serv.RemoveAt(indiceSeleccionado);
+            }
+        }
     }
 }
 
