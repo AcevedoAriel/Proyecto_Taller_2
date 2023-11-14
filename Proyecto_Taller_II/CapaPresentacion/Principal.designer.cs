@@ -33,16 +33,16 @@ namespace Proyecto_Taller_II.CapaPresentacion
         {
             this.MenuIzquierdo = new System.Windows.Forms.MenuStrip();
             this.MenuInicio = new FontAwesome.Sharp.IconMenuItem();
-            this.MenuReservar = new FontAwesome.Sharp.IconMenuItem();
+            this.MenuReserva = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuAgregarReservas = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuListadoReserva = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuUsuario = new FontAwesome.Sharp.IconMenuItem();
             this.MenuHabitacion = new FontAwesome.Sharp.IconMenuItem();
-            this.MenuReserva = new FontAwesome.Sharp.IconMenuItem();
-            this.agregarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuServicios = new FontAwesome.Sharp.IconMenuItem();
             this.MenuIngresoDePagos = new FontAwesome.Sharp.IconMenuItem();
             this.MenuCliente = new FontAwesome.Sharp.IconMenuItem();
             this.MenuBackup = new FontAwesome.Sharp.IconMenuItem();
+            this.MenuReporte = new FontAwesome.Sharp.IconMenuItem();
             this.MenuTitulo = new System.Windows.Forms.MenuStrip();
             this.MenuSalir = new FontAwesome.Sharp.IconMenuItem();
             this.UsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +51,9 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.perfilToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.PanelPrincipal = new System.Windows.Forms.Panel();
+            this.SubMenuReporteReservas = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuReportesServicios = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuReportesMediosDePago = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuIzquierdo.SuspendLayout();
             this.MenuTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -62,14 +65,14 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuIzquierdo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuInicio,
-            this.MenuReservar,
+            this.MenuReserva,
             this.MenuUsuario,
             this.MenuHabitacion,
-            this.MenuReserva,
             this.MenuServicios,
             this.MenuIngresoDePagos,
             this.MenuCliente,
-            this.MenuBackup});
+            this.MenuBackup,
+            this.MenuReporte});
             this.MenuIzquierdo.Location = new System.Drawing.Point(0, 60);
             this.MenuIzquierdo.Name = "MenuIzquierdo";
             this.MenuIzquierdo.Size = new System.Drawing.Size(152, 587);
@@ -89,20 +92,38 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuInicio.Size = new System.Drawing.Size(80, 60);
             this.MenuInicio.Text = "Inicio";
             this.MenuInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuInicio.Click += new System.EventHandler(this.iconMenuInicio_Click);
             // 
-            // MenuReservar
+            // MenuReserva
             // 
-            this.MenuReservar.AutoSize = false;
-            this.MenuReservar.Font = new System.Drawing.Font("Times New Roman", 9F);
-            this.MenuReservar.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            this.MenuReservar.IconColor = System.Drawing.Color.Black;
-            this.MenuReservar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuReservar.IconSize = 45;
-            this.MenuReservar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuReservar.Name = "MenuReservar";
-            this.MenuReservar.Size = new System.Drawing.Size(80, 60);
-            this.MenuReservar.Text = "Reservar";
-            this.MenuReservar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuReserva.AutoSize = false;
+            this.MenuReserva.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SubMenuAgregarReservas,
+            this.SubMenuListadoReserva});
+            this.MenuReserva.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.MenuReserva.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
+            this.MenuReserva.IconColor = System.Drawing.Color.Black;
+            this.MenuReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MenuReserva.IconSize = 45;
+            this.MenuReserva.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuReserva.Name = "MenuReserva";
+            this.MenuReserva.Size = new System.Drawing.Size(80, 60);
+            this.MenuReserva.Text = "Reservas";
+            this.MenuReserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // SubMenuAgregarReservas
+            // 
+            this.SubMenuAgregarReservas.Name = "SubMenuAgregarReservas";
+            this.SubMenuAgregarReservas.Size = new System.Drawing.Size(170, 22);
+            this.SubMenuAgregarReservas.Text = "Agregar Reserva";
+            this.SubMenuAgregarReservas.Click += new System.EventHandler(this.agregarReservaToolStripMenuItem_Click);
+            // 
+            // SubMenuListadoReserva
+            // 
+            this.SubMenuListadoReserva.Name = "SubMenuListadoReserva";
+            this.SubMenuListadoReserva.Size = new System.Drawing.Size(170, 22);
+            this.SubMenuListadoReserva.Text = "Listado de Reservas";
+            this.SubMenuListadoReserva.Click += new System.EventHandler(this.listadoDeReservasToolStripMenuItem_Click);
             // 
             // MenuUsuario
             // 
@@ -117,6 +138,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuUsuario.Size = new System.Drawing.Size(80, 60);
             this.MenuUsuario.Text = "Usuario";
             this.MenuUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuUsuario.Click += new System.EventHandler(this.MenuUsuario_Click);
             // 
             // MenuHabitacion
             // 
@@ -131,37 +153,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuHabitacion.Size = new System.Drawing.Size(80, 60);
             this.MenuHabitacion.Text = "Habitacion";
             this.MenuHabitacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // MenuReserva
-            // 
-            this.MenuReserva.AutoSize = false;
-            this.MenuReserva.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarReservaToolStripMenuItem,
-            this.listadoDeReservasToolStripMenuItem});
-            this.MenuReserva.Font = new System.Drawing.Font("Times New Roman", 9F);
-            this.MenuReserva.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
-            this.MenuReserva.IconColor = System.Drawing.Color.Black;
-            this.MenuReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuReserva.IconSize = 45;
-            this.MenuReserva.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuReserva.Name = "MenuReserva";
-            this.MenuReserva.Size = new System.Drawing.Size(80, 60);
-            this.MenuReserva.Text = "Reservas";
-            this.MenuReserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // agregarReservaToolStripMenuItem
-            // 
-            this.agregarReservaToolStripMenuItem.Name = "agregarReservaToolStripMenuItem";
-            this.agregarReservaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarReservaToolStripMenuItem.Text = "Agregar Reserva";
-            this.agregarReservaToolStripMenuItem.Click += new System.EventHandler(this.agregarReservaToolStripMenuItem_Click);
-            // 
-            // listadoDeReservasToolStripMenuItem
-            // 
-            this.listadoDeReservasToolStripMenuItem.Name = "listadoDeReservasToolStripMenuItem";
-            this.listadoDeReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listadoDeReservasToolStripMenuItem.Text = "Listado de Reservas";
-            this.listadoDeReservasToolStripMenuItem.Click += new System.EventHandler(this.listadoDeReservasToolStripMenuItem_Click);
+            this.MenuHabitacion.Click += new System.EventHandler(this.MenuHabitacion_Click);
             // 
             // MenuServicios
             // 
@@ -176,6 +168,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuServicios.Size = new System.Drawing.Size(80, 60);
             this.MenuServicios.Text = "Servicios";
             this.MenuServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuServicios.Click += new System.EventHandler(this.MenuServicios_Click);
             // 
             // MenuIngresoDePagos
             // 
@@ -190,6 +183,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuIngresoDePagos.Size = new System.Drawing.Size(80, 60);
             this.MenuIngresoDePagos.Text = "Ingresos";
             this.MenuIngresoDePagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuIngresoDePagos.Click += new System.EventHandler(this.MenuPagos_Click);
             // 
             // MenuCliente
             // 
@@ -204,6 +198,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuCliente.Size = new System.Drawing.Size(80, 60);
             this.MenuCliente.Text = "Clientes";
             this.MenuCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuCliente.Click += new System.EventHandler(this.MenuCliente_Click);
             // 
             // MenuBackup
             // 
@@ -218,6 +213,25 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuBackup.Size = new System.Drawing.Size(80, 60);
             this.MenuBackup.Text = "BackyRest";
             this.MenuBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuBackup.Click += new System.EventHandler(this.MenuBackup_Click);
+            // 
+            // MenuReporte
+            // 
+            this.MenuReporte.AutoSize = false;
+            this.MenuReporte.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SubMenuReporteReservas,
+            this.SubMenuReportesServicios,
+            this.SubMenuReportesMediosDePago});
+            this.MenuReporte.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.MenuReporte.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            this.MenuReporte.IconColor = System.Drawing.Color.Black;
+            this.MenuReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MenuReporte.IconSize = 45;
+            this.MenuReporte.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuReporte.Name = "MenuReporte";
+            this.MenuReporte.Size = new System.Drawing.Size(80, 60);
+            this.MenuReporte.Text = "Reportes";
+            this.MenuReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // MenuTitulo
             // 
@@ -247,6 +261,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuSalir.Name = "MenuSalir";
             this.MenuSalir.Size = new System.Drawing.Size(80, 56);
             this.MenuSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuSalir.Click += new System.EventHandler(this.MenuSalir_Click);
             // 
             // UsuarioToolStripMenuItem
             // 
@@ -301,6 +316,27 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.PanelPrincipal.Size = new System.Drawing.Size(843, 587);
             this.PanelPrincipal.TabIndex = 2;
             // 
+            // SubMenuReporteReservas
+            // 
+            this.SubMenuReporteReservas.Name = "SubMenuReporteReservas";
+            this.SubMenuReporteReservas.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuReporteReservas.Text = "Reservas";
+            this.SubMenuReporteReservas.Click += new System.EventHandler(this.SubMenuReporteReservas_Click);
+            // 
+            // SubMenuReportesServicios
+            // 
+            this.SubMenuReportesServicios.Name = "SubMenuReportesServicios";
+            this.SubMenuReportesServicios.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuReportesServicios.Text = "Servicios";
+            this.SubMenuReportesServicios.Click += new System.EventHandler(this.SubMenuReportesServicios_Click);
+            // 
+            // SubMenuReportesMediosDePago
+            // 
+            this.SubMenuReportesMediosDePago.Name = "SubMenuReportesMediosDePago";
+            this.SubMenuReportesMediosDePago.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuReportesMediosDePago.Text = "Medios de Pagos";
+            this.SubMenuReportesMediosDePago.Click += new System.EventHandler(this.SubMenuReportesMediosDePago_Click);
+            // 
             // FMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -315,6 +351,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.Name = "FMPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema G. Hotelera";
+            this.Load += new System.EventHandler(this.FMInicio_Load);
             this.MenuIzquierdo.ResumeLayout(false);
             this.MenuIzquierdo.PerformLayout();
             this.MenuTitulo.ResumeLayout(false);
@@ -327,7 +364,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
 
         private MenuStrip MenuIzquierdo;
         private MenuStrip MenuTitulo;
-        private FontAwesome.Sharp.IconMenuItem MenuReservar;
         private FontAwesome.Sharp.IconMenuItem MenuUsuario;
         private FontAwesome.Sharp.IconMenuItem MenuHabitacion;
         private FontAwesome.Sharp.IconMenuItem MenuReserva;
@@ -343,7 +379,11 @@ namespace Proyecto_Taller_II.CapaPresentacion
         private ToolStripMenuItem perfilToolStripMenuItem1;
         private FontAwesome.Sharp.IconMenuItem MenuInicio;
         private FontAwesome.Sharp.IconMenuItem MenuCliente;
-        private ToolStripMenuItem agregarReservaToolStripMenuItem;
-        private ToolStripMenuItem listadoDeReservasToolStripMenuItem;
+        private ToolStripMenuItem SubMenuAgregarReservas;
+        private ToolStripMenuItem SubMenuListadoReserva;
+        private FontAwesome.Sharp.IconMenuItem MenuReporte;
+        private ToolStripMenuItem SubMenuReporteReservas;
+        private ToolStripMenuItem SubMenuReportesServicios;
+        private ToolStripMenuItem SubMenuReportesMediosDePago;
     }
 }

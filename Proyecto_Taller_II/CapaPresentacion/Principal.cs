@@ -77,15 +77,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
         }
 
 
-        public void MenuReserva_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        public void MenuReservar_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         public void FMInicio_Load(object sender, EventArgs e)
         {
@@ -94,8 +85,8 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 Inicio_Admin iniAdmin = new Inicio_Admin();
                 MostrarFormulario(iniAdmin);
                 MenuBackup.Visible = false;
-                MenuReserva.Visible = false;
                 MenuUsuario.Visible = false;
+                SubMenuAgregarReservas.Visible = false;
             }
             else if (perfilToolStripMenuItem1.Text == "Recepcionista:")
             {
@@ -106,6 +97,8 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 MenuServicios.Visible = false;
                 MenuIngresoDePagos.Visible = false;
                 MenuHabitacion.Visible = false;
+                SubMenuListadoReserva.Visible = false;
+                MenuReporte.Visible = false;
             }
             else if (perfilToolStripMenuItem1.Text == "Super Usuario:")
             {
@@ -115,6 +108,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 MenuHabitacion.Visible = false;
                 MenuReserva.Visible = false;
                 MenuIngresoDePagos.Visible = false;
+                MenuReporte.Visible = false;
             }
 
         }
@@ -160,15 +154,15 @@ namespace Proyecto_Taller_II.CapaPresentacion
         {
             if (perfilToolStripMenuItem1.Text == "Administrador:")
             {
-                AbrirFormulario(MenuBackup, new Inicio_Admin());
+                AbrirFormulario(MenuInicio, new Inicio_Admin());
             }
             else if (perfilToolStripMenuItem1.Text == "Recepcionista:")
             {
-                AbrirFormulario(MenuBackup, new Inicio_Recep());
+                AbrirFormulario(MenuInicio, new Inicio_Recep());
             }
             else if (perfilToolStripMenuItem1.Text == "Super Usuario:")
             {
-                AbrirFormulario(MenuBackup, new Inicio_SuperUsuario());
+                AbrirFormulario(MenuInicio, new Inicio_SuperUsuario());
             }
 
         }
@@ -186,6 +180,21 @@ namespace Proyecto_Taller_II.CapaPresentacion
         private void listadoDeReservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuReserva, new ListadoDeReservas());
+        }
+
+        private void SubMenuReporteReservas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReporte, new ReporteReservas());
+        }
+
+        private void SubMenuReportesServicios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReporte, new ReporteServicios());
+        }
+
+        private void SubMenuReportesMediosDePago_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReporte, new ReporteMedioPago());
         }
     }
 }
