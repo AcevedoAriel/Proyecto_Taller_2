@@ -44,7 +44,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
                 cmd.Parameters.AddWithValue("@añoingresado", ano);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                ChartReservas.Series.Clear();
+                ChartReservas.Series[0].Points.Clear();
                 while (reader.Read())
                 {
                     ChartReservas.Series[0].Points.AddXY(reader["MesIngreso"], reader["CantReservas"]);
