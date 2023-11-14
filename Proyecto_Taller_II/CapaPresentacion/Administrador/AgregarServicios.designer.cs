@@ -149,6 +149,8 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             // dataGridServicios
             // 
             this.dataGridServicios.AllowUserToAddRows = false;
+            this.dataGridServicios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridServicios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridServicios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridServicios.Location = new System.Drawing.Point(0, 0);
@@ -220,6 +222,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregarServicio);
             this.Name = "ServiciosCrud";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Servicios";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridServicios)).EndInit();
