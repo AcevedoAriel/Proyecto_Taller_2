@@ -22,22 +22,30 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
 
         private void ReporteServicios_Load(object sender, EventArgs e)
         {
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "SELECT s.cod_servicio s.nombre as nombre ,  count(*) as ServiciosCantidad " +
+                string query = "SELECT s.cod_servicio as ID, s.nombre as nombre ,  count(*) as ServiciosCantidad " +
                     "from DetalleServicios ds " +
-                    "join servicios s ON ds.cod_servicio = s.cod_servicio " +
-                    "GROUP BY s.cod_servicio, s.nombre as nombre " +
-                    "ORDER BY ServiciosCantidad ";
+                    "JOIN servicios s ON ds.cod_servicio = s.cod_servicio " +
+                    "GROUP BY s.cod_servicio , s.nombre " +
+                    "ORDER BY ServiciosCantidad DESC ";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
-                
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                chartServicios.Series.Clear();
+                SqlDataReader reader = cmd.ExecuteReader();
+                chartServicios.Series[0].Points.Clear();
+                //chartServicios.Series.Clear();
                 while (reader.Read())
                 {
-                    chartServicios.Series[0].Points.AddXY(reader["nombre"], reader["ServiciosCantidad"]);
+                    string nombreServicio = reader["nombre"].ToString();
+                    int cantidad = Convert.ToInt32(reader["ServiciosCantidad"]);
+
+                    chartServicios.Series[0].Points.AddXY(nombreServicio, cantidad);
                 }
             }
         }

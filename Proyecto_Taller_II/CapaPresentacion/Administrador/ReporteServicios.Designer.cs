@@ -28,35 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartServicios = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartServicios)).BeginInit();
             this.SuspendLayout();
             // 
             // chartServicios
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartServicios.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartServicios.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartServicios.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartServicios.Legends.Add(legend1);
             this.chartServicios.Location = new System.Drawing.Point(55, 60);
             this.chartServicios.Name = "chartServicios";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartServicios.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartServicios.Series.Add(series1);
             this.chartServicios.Size = new System.Drawing.Size(441, 300);
             this.chartServicios.TabIndex = 0;
             this.chartServicios.Text = "chart1";
+            // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(593, 44);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(107, 48);
+            this.btnVer.TabIndex = 1;
+            this.btnVer.Text = "Ver Gráfico";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // ReporteServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.chartServicios);
             this.Name = "ReporteServicios";
             this.Text = "ReporteServicios";
@@ -69,5 +81,6 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartServicios;
+        private System.Windows.Forms.Button btnVer;
     }
 }
