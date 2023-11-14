@@ -69,9 +69,10 @@ namespace Proyecto_Taller_II.CapaDatos
 
         public static int ModificarUsuario(Usuario usuario)
         {
-            string password = usuario.clave ;
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            
+            
             int retorno = 0;
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(usuario.clave);
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
                 string query = "update usuario set dni = " + usuario.dni + " , apellido = '" + usuario.apellido + "' , nombre = '" + usuario.nombre + "' , nombreUsuario = '" + usuario.nombreUsuario + "', clave = '" + hashedPassword + "'  , telefono = '" + usuario.telefono + "' , usuario_perfil = " + usuario.usuario_perfil + " , correo = '" + usuario.correo + "' , fechaNAc = '" + usuario.fechaNAc + "' , sexo = '" + usuario.sexo + "' where id_usuario = " + usuario.id + " ";

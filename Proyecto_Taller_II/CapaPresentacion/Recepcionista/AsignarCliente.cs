@@ -67,6 +67,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
                 if (resultado == DialogResult.Yes)
                 {
                     Cliente cliente = new Cliente();
+                    cliente.id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
                     cliente.apellido = TApellido.Text;
                     cliente.nombre = TNombre.Text;
                     cliente.dni = Convert.ToInt32(TDNI.Text);
@@ -109,7 +110,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
         {
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "select  dni as DNI, nombre as Nombre, apellido as Apellido, telefono as Telefono  " +
+                string query = "select id_cliente as ID, dni as DNI, nombre as Nombre, apellido as Apellido, telefono as Telefono  " +
                     " from cliente ";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
@@ -160,5 +161,44 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             TTelefono.Text = string.Empty;
         }
 
+        private void TDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 95) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Ingrese solamente letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 95) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Ingrese solamente letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un número o la tecla de retroceso (backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter presionado
+                MessageBox.Show("Ingrese solamente numero", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
                     habitacion.piso = Convert.ToInt32(CBPiso.SelectedIndex);
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
 
-                    habitacion.precio = TPrecio.Text;
+                    habitacion.precio = Convert.ToDouble(TPrecio.Text);
                     habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
@@ -102,13 +102,13 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
                     habitacion.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
                     habitacion.piso = CBPiso.SelectedIndex;
                     habitacion.nro_habitacion = Convert.ToInt32(TNroHabitacion.Text);
-                    habitacion.precio = TPrecio.Text;
+                    habitacion.precio = Convert.ToDouble(TPrecio.Text);
                     habitacion.categoria = CBCategoriaH.SelectedIndex;
                     habitacion.cantidad_camas = Convert.ToInt32(numericCantCamas.Value);
 
                     int result = Habitacion.ModificarHabitacion(habitacion);
                     // Agregar una nueva fila al datagrid con los valores
-                    if (result > 0)
+                    if (result != 0)
                     {
                         btnEliminar.Visible = true;
                         MessageBox.Show("Se actualizo correctamente", "Actualizado!", MessageBoxButtons.OK);

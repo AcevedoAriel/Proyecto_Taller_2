@@ -13,12 +13,12 @@ namespace Proyecto_Taller_II.CapaDatos
         public int piso { get; set; }
         public int nro_habitacion { get; set; }
         public int estado { get; set; }
-        public string precio { get; set; }
+        public double precio { get; set; }
         public int categoria { get; set; }
         public int cantidad_camas { get; set; }
 
         public Habitacion() { }
-        public Habitacion(int id, int piso, int nro_habitacion, int estado, string precio, int categoria, int cantidad_camas) 
+        public Habitacion(int id, int piso, int nro_habitacion, int estado, double precio, int categoria, int cantidad_camas) 
         {
 
             this.id = id;
@@ -51,7 +51,7 @@ namespace Proyecto_Taller_II.CapaDatos
             int retorno = 0;
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "update habitacion set piso = " + habitacion.piso + " , nro_habitacion = " + habitacion.nro_habitacion + " , precio = '" + habitacion.precio + "' , categoria = " + habitacion.categoria + ", cantidad_camas = '" + habitacion.cantidad_camas + "' where id_habitacion = " + habitacion.id + " ";
+                string query = "update habitacion set piso = " + habitacion.piso + " , nro_habitacion = " + habitacion.nro_habitacion + " , precio = '" + habitacion.precio + "' , categoria = " + habitacion.categoria + ", cantidad_camas = " + habitacion.cantidad_camas + " where id_habitacion = " + habitacion.id + " " ;
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 retorno = cmd.ExecuteNonQuery();
                 conexion.Close();
@@ -151,7 +151,7 @@ namespace Proyecto_Taller_II.CapaDatos
                     habitacion.id = Convert.ToInt32(reader["id_habitacion"]);
                     habitacion.piso = Convert.ToInt32(reader["piso"]);
                     habitacion.nro_habitacion = Convert.ToInt32(reader["nro_habitacion"]);
-                    habitacion.precio = Convert.ToString(reader["precio"]);
+                    habitacion.precio = Convert.ToDouble(reader["precio"]);
                     habitacion.categoria = Convert.ToInt32(reader["categoria"]);
                     habitacion.cantidad_camas = Convert.ToInt32(reader["cantidad_camas"]);
                     habitacion.estado = Convert.ToInt32(reader["estado"]);

@@ -59,7 +59,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(597, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 274);
             this.dataGridView1.TabIndex = 9;
             // 
             // label2
@@ -75,16 +75,17 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // 
             // TTelefono
             // 
-            this.TTelefono.Location = new System.Drawing.Point(423, 146);
+            this.TTelefono.Location = new System.Drawing.Point(462, 154);
             this.TTelefono.Name = "TTelefono";
             this.TTelefono.Size = new System.Drawing.Size(138, 20);
             this.TTelefono.TabIndex = 5;
+            this.TTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TTelefono_KeyPress);
             // 
             // LTel
             // 
             this.LTel.AutoSize = true;
             this.LTel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LTel.Location = new System.Drawing.Point(299, 153);
+            this.LTel.Location = new System.Drawing.Point(332, 153);
             this.LTel.Name = "LTel";
             this.LTel.Size = new System.Drawing.Size(124, 15);
             this.LTel.TabIndex = 42;
@@ -102,32 +103,35 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // 
             // TDNI
             // 
-            this.TDNI.Location = new System.Drawing.Point(128, 88);
+            this.TDNI.Location = new System.Drawing.Point(155, 89);
             this.TDNI.Name = "TDNI";
             this.TDNI.Size = new System.Drawing.Size(138, 20);
             this.TDNI.TabIndex = 2;
+            this.TDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDNI_KeyPress);
             // 
             // TNombre
             // 
             this.TNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.TNombre.Location = new System.Drawing.Point(128, 153);
+            this.TNombre.Location = new System.Drawing.Point(155, 153);
             this.TNombre.Name = "TNombre";
             this.TNombre.Size = new System.Drawing.Size(138, 23);
             this.TNombre.TabIndex = 3;
+            this.TNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TNombre_KeyPress);
             // 
             // TApellido
             // 
             this.TApellido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.TApellido.Location = new System.Drawing.Point(423, 95);
+            this.TApellido.Location = new System.Drawing.Point(462, 95);
             this.TApellido.Name = "TApellido";
             this.TApellido.Size = new System.Drawing.Size(138, 23);
             this.TApellido.TabIndex = 4;
+            this.TApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TApellido_KeyPress);
             // 
             // LApellido
             // 
             this.LApellido.AutoSize = true;
             this.LApellido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LApellido.Location = new System.Drawing.Point(299, 95);
+            this.LApellido.Location = new System.Drawing.Point(332, 95);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(120, 15);
             this.LApellido.TabIndex = 37;
@@ -146,14 +150,14 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(35, 194);
+            this.panel1.Location = new System.Drawing.Point(1, 194);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 199);
+            this.panel1.Size = new System.Drawing.Size(708, 274);
             this.panel1.TabIndex = 44;
             // 
             // txtFiltrar
             // 
-            this.txtFiltrar.Location = new System.Drawing.Point(502, 27);
+            this.txtFiltrar.Location = new System.Drawing.Point(420, 29);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(141, 20);
             this.txtFiltrar.TabIndex = 1;
@@ -164,7 +168,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnRegistrar.BackColor = System.Drawing.Color.Lime;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrar.Location = new System.Drawing.Point(676, 51);
+            this.btnRegistrar.Location = new System.Drawing.Point(646, 17);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(77, 42);
             this.btnRegistrar.TabIndex = 6;
@@ -177,7 +181,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnGuardar.BackColor = System.Drawing.Color.Lime;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.Location = new System.Drawing.Point(676, 99);
+            this.btnGuardar.Location = new System.Drawing.Point(646, 84);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(77, 42);
             this.btnGuardar.TabIndex = 7;
@@ -189,7 +193,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(400, 29);
+            this.label1.Location = new System.Drawing.Point(318, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 15);
             this.label1.TabIndex = 48;
@@ -200,7 +204,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.btnEditar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEditar.Location = new System.Drawing.Point(676, 153);
+            this.btnEditar.Location = new System.Drawing.Point(646, 146);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(77, 42);
             this.btnEditar.TabIndex = 8;

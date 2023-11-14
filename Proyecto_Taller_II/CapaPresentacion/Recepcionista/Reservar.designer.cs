@@ -48,10 +48,11 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.label1 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNCamas = new System.Windows.Forms.TextBox();
+            this.udNroCamas = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHabitaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udNroCamas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -221,7 +222,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             // btnFiltrar
             // 
             this.btnFiltrar.BackColor = System.Drawing.Color.White;
-            this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.Location = new System.Drawing.Point(657, 33);
@@ -241,19 +242,19 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.label2.TabIndex = 40;
             this.label2.Text = "Nro camas:";
             // 
-            // txtNCamas
+            // udNroCamas
             // 
-            this.txtNCamas.Location = new System.Drawing.Point(678, 119);
-            this.txtNCamas.Name = "txtNCamas";
-            this.txtNCamas.Size = new System.Drawing.Size(100, 20);
-            this.txtNCamas.TabIndex = 7;
+            this.udNroCamas.Location = new System.Drawing.Point(666, 120);
+            this.udNroCamas.Name = "udNroCamas";
+            this.udNroCamas.Size = new System.Drawing.Size(120, 20);
+            this.udNroCamas.TabIndex = 41;
             // 
             // Reservar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 465);
-            this.Controls.Add(this.txtNCamas);
+            this.Controls.Add(this.udNroCamas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label1);
@@ -276,6 +277,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHabitaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udNroCamas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +301,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
         private Label label1;
         private Button btnFiltrar;
         private Label label2;
-        private TextBox txtNCamas;
+        private NumericUpDown udNroCamas;
     }
 }
