@@ -75,3 +75,4 @@ C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\bin\Debug\itex
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\bin\Debug\itextsharp.xml
 C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.CapaPresentacion.Administrador.ReporteServicios.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.CapaPresentacion.Administrador.ReporteMedioPago.resources

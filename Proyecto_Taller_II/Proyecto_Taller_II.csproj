@@ -130,6 +130,12 @@
     <Compile Include="CapaPresentacion\Administrador\Inicio Admin.designer.cs">
       <DependentUpon>Inicio Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\Administrador\ReporteMedioPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Administrador\ReporteMedioPago.Designer.cs">
+      <DependentUpon>ReporteMedioPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\Administrador\ReporteReservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Administrador\Inicio Admin.resx">
       <DependentUpon>Inicio Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Administrador\ReporteMedioPago.resx">
+      <DependentUpon>ReporteMedioPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Administrador\ReporteReservas.resx">
       <DependentUpon>ReporteReservas.cs</DependentUpon>

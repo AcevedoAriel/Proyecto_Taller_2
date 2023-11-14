@@ -22,11 +22,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
 
         private void ReporteServicios_Load(object sender, EventArgs e)
         {
-        }
-
-        private void btnVer_Click(object sender, EventArgs e)
-        {
-
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
                 string query = "SELECT s.cod_servicio as ID, s.nombre as nombre ,  count(*) as ServiciosCantidad " +
@@ -48,6 +43,12 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
                     chartServicios.Series[0].Points.AddXY(nombreServicio, cantidad);
                 }
             }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }
