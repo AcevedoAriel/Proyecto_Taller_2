@@ -43,6 +43,9 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuCliente = new FontAwesome.Sharp.IconMenuItem();
             this.MenuBackup = new FontAwesome.Sharp.IconMenuItem();
             this.MenuReporte = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuReporteReservas = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuReportesServicios = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuReportesMediosDePago = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuTitulo = new System.Windows.Forms.MenuStrip();
             this.MenuSalir = new FontAwesome.Sharp.IconMenuItem();
             this.UsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +54,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.perfilToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.PanelPrincipal = new System.Windows.Forms.Panel();
-            this.SubMenuReporteReservas = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubMenuReportesServicios = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubMenuReportesMediosDePago = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuIzquierdo.SuspendLayout();
             this.MenuTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuReporte});
             this.MenuIzquierdo.Location = new System.Drawing.Point(0, 60);
             this.MenuIzquierdo.Name = "MenuIzquierdo";
-            this.MenuIzquierdo.Size = new System.Drawing.Size(152, 587);
+            this.MenuIzquierdo.Size = new System.Drawing.Size(152, 550);
             this.MenuIzquierdo.TabIndex = 0;
             this.MenuIzquierdo.Text = "menuStrip1";
             // 
@@ -233,6 +233,27 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.MenuReporte.Text = "Reportes";
             this.MenuReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // SubMenuReporteReservas
+            // 
+            this.SubMenuReporteReservas.Name = "SubMenuReporteReservas";
+            this.SubMenuReporteReservas.Size = new System.Drawing.Size(156, 22);
+            this.SubMenuReporteReservas.Text = "Reservas";
+            this.SubMenuReporteReservas.Click += new System.EventHandler(this.SubMenuReporteReservas_Click);
+            // 
+            // SubMenuReportesServicios
+            // 
+            this.SubMenuReportesServicios.Name = "SubMenuReportesServicios";
+            this.SubMenuReportesServicios.Size = new System.Drawing.Size(156, 22);
+            this.SubMenuReportesServicios.Text = "Servicios";
+            this.SubMenuReportesServicios.Click += new System.EventHandler(this.SubMenuReportesServicios_Click);
+            // 
+            // SubMenuReportesMediosDePago
+            // 
+            this.SubMenuReportesMediosDePago.Name = "SubMenuReportesMediosDePago";
+            this.SubMenuReportesMediosDePago.Size = new System.Drawing.Size(156, 22);
+            this.SubMenuReportesMediosDePago.Text = "Medios de Pagos";
+            this.SubMenuReportesMediosDePago.Click += new System.EventHandler(this.SubMenuReportesMediosDePago_Click);
+            // 
             // MenuTitulo
             // 
             this.MenuTitulo.AutoSize = false;
@@ -245,7 +266,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.perfilToolStripMenuItem1});
             this.MenuTitulo.Location = new System.Drawing.Point(0, 0);
             this.MenuTitulo.Name = "MenuTitulo";
-            this.MenuTitulo.Size = new System.Drawing.Size(995, 60);
+            this.MenuTitulo.Size = new System.Drawing.Size(1038, 60);
             this.MenuTitulo.TabIndex = 1;
             this.MenuTitulo.Text = "menuStrip2";
             // 
@@ -313,43 +334,21 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.PanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelPrincipal.Location = new System.Drawing.Point(152, 60);
             this.PanelPrincipal.Name = "PanelPrincipal";
-            this.PanelPrincipal.Size = new System.Drawing.Size(843, 587);
+            this.PanelPrincipal.Size = new System.Drawing.Size(886, 550);
             this.PanelPrincipal.TabIndex = 2;
-            // 
-            // SubMenuReporteReservas
-            // 
-            this.SubMenuReporteReservas.Name = "SubMenuReporteReservas";
-            this.SubMenuReporteReservas.Size = new System.Drawing.Size(180, 22);
-            this.SubMenuReporteReservas.Text = "Reservas";
-            this.SubMenuReporteReservas.Click += new System.EventHandler(this.SubMenuReporteReservas_Click);
-            // 
-            // SubMenuReportesServicios
-            // 
-            this.SubMenuReportesServicios.Name = "SubMenuReportesServicios";
-            this.SubMenuReportesServicios.Size = new System.Drawing.Size(180, 22);
-            this.SubMenuReportesServicios.Text = "Servicios";
-            this.SubMenuReportesServicios.Click += new System.EventHandler(this.SubMenuReportesServicios_Click);
-            // 
-            // SubMenuReportesMediosDePago
-            // 
-            this.SubMenuReportesMediosDePago.Name = "SubMenuReportesMediosDePago";
-            this.SubMenuReportesMediosDePago.Size = new System.Drawing.Size(180, 22);
-            this.SubMenuReportesMediosDePago.Text = "Medios de Pagos";
-            this.SubMenuReportesMediosDePago.Click += new System.EventHandler(this.SubMenuReportesMediosDePago_Click);
             // 
             // FMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 647);
+            this.ClientSize = new System.Drawing.Size(1038, 610);
             this.Controls.Add(this.PanelPrincipal);
             this.Controls.Add(this.MenuIzquierdo);
             this.Controls.Add(this.MenuTitulo);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.MenuIzquierdo;
             this.Name = "FMPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema G. Hotelera";
             this.Load += new System.EventHandler(this.FMInicio_Load);
             this.MenuIzquierdo.ResumeLayout(false);

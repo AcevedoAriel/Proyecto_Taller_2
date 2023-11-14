@@ -42,7 +42,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.TNroHabitacion = new System.Windows.Forms.TextBox();
             this.TPrecio = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.CBCategoriaH = new System.Windows.Forms.ComboBox();
             this.numericCantCamas = new System.Windows.Forms.NumericUpDown();
             this.CBPiso = new System.Windows.Forms.ComboBox();
@@ -170,18 +170,18 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnEliminar
+            // btnDeshabilitar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location = new System.Drawing.Point(519, 61);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 35);
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Mantenimiento";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnDeshabilitar.BackColor = System.Drawing.Color.Red;
+            this.btnDeshabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeshabilitar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(519, 61);
+            this.btnDeshabilitar.Name = "btnDeshabilitar";
+            this.btnDeshabilitar.Size = new System.Drawing.Size(100, 35);
+            this.btnDeshabilitar.TabIndex = 10;
+            this.btnDeshabilitar.Text = "Deshabilitar";
+            this.btnDeshabilitar.UseVisualStyleBackColor = false;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
             // CBCategoriaH
             // 
@@ -223,7 +223,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnGuardarCambios.BackColor = System.Drawing.Color.Lime;
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarCambios.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGuardarCambios.Location = new System.Drawing.Point(172, 82);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(172, 61);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(100, 35);
             this.btnGuardarCambios.TabIndex = 7;
@@ -300,7 +300,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.Controls.Add(this.numericCantCamas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CBCategoriaH);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.TPrecio);
             this.Controls.Add(this.TNroHabitacion);
@@ -336,7 +336,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
         private TextBox TNroHabitacion;
         private TextBox TPrecio;
         private Button btnEditar;
-        private Button btnEliminar;
+        private Button btnDeshabilitar;
         private ComboBox CBCategoriaH;
         private PictureBox pictureBox1;
         private NumericUpDown numericCantCamas;

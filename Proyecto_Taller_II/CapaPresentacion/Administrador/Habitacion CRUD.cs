@@ -1,4 +1,5 @@
-﻿using Proyecto_Taller_II.CapaDatos;
+﻿using iTextSharp.text.pdf.codec.wmf;
+using Proyecto_Taller_II.CapaDatos;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,7 +16,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             RefreshPantalla();
             btnEditar.Enabled = false;
             btnGuardarCambios.Visible = false;
-            btnEliminar.Enabled = false;
+            btnDeshabilitar.Enabled = false;
             CBCategoriaH.SelectedIndex = 0;
             CBPiso.SelectedIndex = 0; ;
         }
@@ -110,7 +111,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
                     // Agregar una nueva fila al datagrid con los valores
                     if (result != 0)
                     {
-                        btnEliminar.Visible = true;
+                        btnDeshabilitar.Visible = true;
                         MessageBox.Show("Se actualizo correctamente", "Actualizado!", MessageBoxButtons.OK);
                         limpiarFormulario();
                         RefreshPantalla();
@@ -130,28 +131,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
                 MessageBox.Show("Debe completar todos los campos", "Error");
             }
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Cambiar estado a Mantenimiento?", "Confirmar Matenimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (filaSeleccionada != null)
-                {
-                    Habitacion habitacion = new Habitacion();
-                    habitacion.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
-                    int result = Habitacion.BajaHabitacion(habitacion);
-                    if (result > 0)
-                    {
-                        MessageBox.Show("La Habitacion fue puesta en Mantenimiento", "Completado", MessageBoxButtons.OK);
-                        RefreshPantalla();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo completar la acción", "Error", MessageBoxButtons.OK);
-
-                    }
-                }
-            }
-        }
+       
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (filaSeleccionada != null)
@@ -220,20 +200,20 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
         {
             // Verifica si al menos una fila está seleccionada
             btnEditar.Enabled = dataGridListaHabitacion.SelectedRows.Count > 0;
-            btnEliminar.Enabled = dataGridListaHabitacion.SelectedRows.Count > 0;
+            btnDeshabilitar.Enabled = dataGridListaHabitacion.SelectedRows.Count > 0;
             if (dataGridListaHabitacion.SelectedRows.Count > 0)
             {
                 // Almacena la fila seleccionada en la variable
                 filaSeleccionada = dataGridListaHabitacion.SelectedRows[0];
-                if (Convert.ToString(filaSeleccionada.Cells["Estado"].Value) == "Mantenimiento")
+                if (Convert.ToString(filaSeleccionada.Cells["Estado"].Value) == "Deshabilitada")
                 {
-                    filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
-                    btnEliminar.Visible = false;
+                    //filaSeleccionada.DefaultCellStyle.BackColor = Color.Red;
+                    btnDeshabilitar.Visible = false;
                     btnAlta.Visible = true;
                 }
                 else
                 {
-                    btnEliminar.Visible = true;
+                    btnDeshabilitar.Visible = true;
                     btnAlta.Visible = false;
                 }
             }
@@ -252,7 +232,6 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
                 dt.Fill(dataset, "Test_table");
                 dataGridListaHabitacion.DataSource = dataset;
                 dataGridListaHabitacion.DataMember = "Test_table";
-
             }
         }
 
@@ -288,5 +267,27 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             }
         }
 
+        private void btnDeshabilitar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseas Deshabilitar la habitacion?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (filaSeleccionada != null)
+                {
+                    Habitacion habitacion = new Habitacion();
+                    habitacion.id = Convert.ToInt32(filaSeleccionada.Cells["ID"].Value);
+                    int result = Habitacion.BajaHabitacion(habitacion);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("La Habitacion se deshabilito", "Deshabilitado", MessageBoxButtons.OK);
+                        RefreshPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo completar la acción", "Error", MessageBoxButtons.OK);
+
+                    }
+                }
+            }
+        }
     }
 }
