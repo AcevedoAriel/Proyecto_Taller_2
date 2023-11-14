@@ -16,7 +16,7 @@ namespace Proyecto_Taller_II
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Proyecto_Taller_II.CapaPresentacion.FMIniciarSesion());
+            Application.Run(new Proyecto_Taller_II.CapaPresentacion.Administrador.ReporteServicios());
         }
     }
 }

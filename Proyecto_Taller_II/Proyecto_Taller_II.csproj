@@ -136,6 +136,12 @@
     <Compile Include="CapaPresentacion\Administrador\ReporteReservas.Designer.cs">
       <DependentUpon>ReporteReservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\Administrador\ReporteServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Administrador\ReporteServicios.Designer.cs">
+      <DependentUpon>ReporteServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Administrador\ReporteReservas.resx">
       <DependentUpon>ReporteReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Administrador\ReporteServicios.resx">
+      <DependentUpon>ReporteServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>

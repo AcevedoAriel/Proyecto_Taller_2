@@ -69,3 +69,9 @@ C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\Boun
 C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\itextsharp.dll
 C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\ariel\source\repos\Proyecto_Taller_II\Proyecto_Taller_II\bin\Debug\itextsharp.xml
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.CapaPresentacion.Administrador.ReporteReservas.resources
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\bin\Debug\itextsharp.dll
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\bin\Debug\itextsharp.xml
+C:\Users\Juanma\source\repos\Proyecto_Taller_2\Proyecto_Taller_II\obj\Debug\Proyecto_Taller_II.CapaPresentacion.Administrador.ReporteServicios.resources

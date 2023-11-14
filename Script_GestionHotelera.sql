@@ -285,3 +285,34 @@ BEGIN
         AND (@categoria IS NULL OR habitacion.categoria = @categoria)
         AND (@cantidadCamas IS NULL OR habitacion.cantidad_camas = @cantidadCamas);
 END;
+
+
+
+
+
+SELECT DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro), COUNT(*) AS CantidadReservas
+                                  FROM reserva
+                                  WHERE fecha_ingreso BETWEEN '2023-11-11' AND '2024-03-27' OR fecha_retiro BETWEEN '2023-11-11' AND '2023-11-27'
+                                  GROUP BY DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro)
+								  
+								  
+								  DATEPART(MONTH, fecha_ingreso)
+
+
+
+
+ SELECT DATEPART(MONTH, fecha_ingreso) as MesIngreso, DATEPART(MONTH, fecha_retiro) as MesRetiro, COUNT (*) AS CantReservas 
+ from reserva
+  where DATEPART(YEAR, fecha_ingreso) = 2023 AND DATEPART(YEAR, fecha_retiro) = 2023
+  GROUP BY DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro)
+
+ 
+ 
+
+
+ SELECT top 1  s.cod_servicio,  s.nombre,  count(*) as ServiciosCantidad 
+ from DetalleServicios ds
+ join servicios s ON ds.cod_servicio = s.cod_servicio
+ GROUP BY s.cod_servicio, s.nombre
+ ORDER BY ServiciosCantidad
+
