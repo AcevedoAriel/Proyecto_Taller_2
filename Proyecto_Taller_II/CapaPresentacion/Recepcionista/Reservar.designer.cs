@@ -71,7 +71,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.dataGridHabitaciones.Name = "dataGridHabitaciones";
             this.dataGridHabitaciones.RowTemplate.Height = 25;
             this.dataGridHabitaciones.Size = new System.Drawing.Size(827, 241);
-            this.dataGridHabitaciones.TabIndex = 0;
+            this.dataGridHabitaciones.TabIndex = 8;
             // 
             // lblCategoria
             // 
@@ -104,7 +104,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.CBcategoria.Location = new System.Drawing.Point(219, 114);
             this.CBcategoria.Name = "CBcategoria";
             this.CBcategoria.Size = new System.Drawing.Size(165, 21);
-            this.CBcategoria.TabIndex = 25;
+            this.CBcategoria.TabIndex = 2;
             // 
             // CBpiso
             // 
@@ -119,7 +119,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.CBpiso.Location = new System.Drawing.Point(219, 78);
             this.CBpiso.Name = "CBpiso";
             this.CBpiso.Size = new System.Drawing.Size(165, 21);
-            this.CBpiso.TabIndex = 26;
+            this.CBpiso.TabIndex = 1;
             // 
             // label3
             // 
@@ -173,7 +173,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.dateTimeFechaDesde.Location = new System.Drawing.Point(454, 78);
             this.dateTimeFechaDesde.Name = "dateTimeFechaDesde";
             this.dateTimeFechaDesde.Size = new System.Drawing.Size(183, 22);
-            this.dateTimeFechaDesde.TabIndex = 31;
+            this.dateTimeFechaDesde.TabIndex = 3;
             this.dateTimeFechaDesde.ValueChanged += new System.EventHandler(this.dateTimeFechaDesde_ValueChanged);
             // 
             // btnReservar
@@ -184,7 +184,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnReservar.Location = new System.Drawing.Point(724, 33);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(75, 44);
-            this.btnReservar.TabIndex = 32;
+            this.btnReservar.TabIndex = 6;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = false;
             this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
@@ -195,7 +195,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.dateTimeFechaHasta.Location = new System.Drawing.Point(454, 115);
             this.dateTimeFechaHasta.Name = "dateTimeFechaHasta";
             this.dateTimeFechaHasta.Size = new System.Drawing.Size(183, 22);
-            this.dateTimeFechaHasta.TabIndex = 34;
+            this.dateTimeFechaHasta.TabIndex = 4;
             this.dateTimeFechaHasta.ValueChanged += new System.EventHandler(this.dateTimeFechaHasta_ValueChanged);
             // 
             // lblHasta
@@ -227,7 +227,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnFiltrar.Location = new System.Drawing.Point(657, 33);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(61, 44);
-            this.btnFiltrar.TabIndex = 38;
+            this.btnFiltrar.TabIndex = 5;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
@@ -246,7 +246,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.txtNCamas.Location = new System.Drawing.Point(678, 119);
             this.txtNCamas.Name = "txtNCamas";
             this.txtNCamas.Size = new System.Drawing.Size(100, 20);
-            this.txtNCamas.TabIndex = 41;
+            this.txtNCamas.TabIndex = 7;
             // 
             // Reservar
             // 

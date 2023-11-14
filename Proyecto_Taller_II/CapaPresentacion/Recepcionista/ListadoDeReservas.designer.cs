@@ -73,7 +73,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.BEditar.Location = new System.Drawing.Point(702, 153);
             this.BEditar.Name = "BEditar";
             this.BEditar.Size = new System.Drawing.Size(113, 45);
-            this.BEditar.TabIndex = 3;
+            this.BEditar.TabIndex = 7;
             this.BEditar.Text = "Editar";
             this.BEditar.UseVisualStyleBackColor = false;
             this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
@@ -86,7 +86,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.BEliminar.Location = new System.Drawing.Point(702, 214);
             this.BEliminar.Name = "BEliminar";
             this.BEliminar.Size = new System.Drawing.Size(113, 45);
-            this.BEliminar.TabIndex = 4;
+            this.BEliminar.TabIndex = 8;
             this.BEliminar.Text = "Eliminar";
             this.BEliminar.UseVisualStyleBackColor = false;
             this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
@@ -126,28 +126,28 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.DTIngreso.Location = new System.Drawing.Point(167, 94);
             this.DTIngreso.Name = "DTIngreso";
             this.DTIngreso.Size = new System.Drawing.Size(160, 23);
-            this.DTIngreso.TabIndex = 19;
+            this.DTIngreso.TabIndex = 1;
             // 
             // DTRetiro
             // 
             this.DTRetiro.Location = new System.Drawing.Point(167, 147);
             this.DTRetiro.Name = "DTRetiro";
             this.DTRetiro.Size = new System.Drawing.Size(160, 23);
-            this.DTRetiro.TabIndex = 20;
+            this.DTRetiro.TabIndex = 2;
             // 
             // NCantidad
             // 
             this.NCantidad.Location = new System.Drawing.Point(586, 150);
             this.NCantidad.Name = "NCantidad";
             this.NCantidad.Size = new System.Drawing.Size(87, 23);
-            this.NCantidad.TabIndex = 22;
+            this.NCantidad.TabIndex = 4;
             // 
             // TBuscar
             // 
             this.TBuscar.Location = new System.Drawing.Point(356, 232);
             this.TBuscar.Name = "TBuscar";
             this.TBuscar.Size = new System.Drawing.Size(192, 23);
-            this.TBuscar.TabIndex = 24;
+            this.TBuscar.TabIndex = 5;
             // 
             // panel1
             // 
@@ -166,7 +166,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.dataGridReserva.RowHeadersWidth = 51;
             this.dataGridReserva.RowTemplate.Height = 25;
             this.dataGridReserva.Size = new System.Drawing.Size(833, 149);
-            this.dataGridReserva.TabIndex = 2;
+            this.dataGridReserva.TabIndex = 9;
             this.dataGridReserva.SelectionChanged += new System.EventHandler(this.dataGridReserva_SelectionChanged);
             // 
             // BGuardar
@@ -177,7 +177,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.BGuardar.Location = new System.Drawing.Point(702, 94);
             this.BGuardar.Name = "BGuardar";
             this.BGuardar.Size = new System.Drawing.Size(113, 45);
-            this.BGuardar.TabIndex = 26;
+            this.BGuardar.TabIndex = 6;
             this.BGuardar.Text = "Guardar Cambios";
             this.BGuardar.UseVisualStyleBackColor = false;
             this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
@@ -210,7 +210,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Recepcionista
             this.txtNroHabitacion.Location = new System.Drawing.Point(513, 96);
             this.txtNroHabitacion.Name = "txtNroHabitacion";
             this.txtNroHabitacion.Size = new System.Drawing.Size(160, 23);
-            this.txtNroHabitacion.TabIndex = 29;
+            this.txtNroHabitacion.TabIndex = 3;
             this.txtNroHabitacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroHabitacion_KeyPress);
             // 
             // label1

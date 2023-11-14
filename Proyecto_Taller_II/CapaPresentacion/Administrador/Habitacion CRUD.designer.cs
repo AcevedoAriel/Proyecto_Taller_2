@@ -67,7 +67,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.dataGridListaHabitacion.Name = "dataGridListaHabitacion";
             this.dataGridListaHabitacion.RowTemplate.Height = 25;
             this.dataGridListaHabitacion.Size = new System.Drawing.Size(653, 143);
-            this.dataGridListaHabitacion.TabIndex = 0;
+            this.dataGridListaHabitacion.TabIndex = 13;
             this.dataGridListaHabitacion.SelectionChanged += new System.EventHandler(this.dataGridListaHabitacion_SelectionChanged);
             // 
             // panel1
@@ -136,7 +136,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnAgregarHabitacion.Location = new System.Drawing.Point(172, 61);
             this.btnAgregarHabitacion.Name = "btnAgregarHabitacion";
             this.btnAgregarHabitacion.Size = new System.Drawing.Size(100, 35);
-            this.btnAgregarHabitacion.TabIndex = 8;
+            this.btnAgregarHabitacion.TabIndex = 6;
             this.btnAgregarHabitacion.Text = "Agregar Habitacion";
             this.btnAgregarHabitacion.UseVisualStyleBackColor = false;
             this.btnAgregarHabitacion.Click += new System.EventHandler(this.btnAgregarHabitacion_Click);
@@ -146,7 +146,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.TNroHabitacion.Location = new System.Drawing.Point(189, 190);
             this.TNroHabitacion.Name = "TNroHabitacion";
             this.TNroHabitacion.Size = new System.Drawing.Size(145, 20);
-            this.TNroHabitacion.TabIndex = 3;
+            this.TNroHabitacion.TabIndex = 2;
             this.TNroHabitacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TNroHabitacion_KeyPress);
             // 
             // TPrecio
@@ -154,7 +154,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.TPrecio.Location = new System.Drawing.Point(501, 144);
             this.TPrecio.Name = "TPrecio";
             this.TPrecio.Size = new System.Drawing.Size(145, 20);
-            this.TPrecio.TabIndex = 5;
+            this.TPrecio.TabIndex = 3;
             this.TPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TPrecio_KeyPress);
             // 
             // btnEditar
@@ -165,7 +165,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnEditar.Location = new System.Drawing.Point(339, 61);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 35);
-            this.btnEditar.TabIndex = 13;
+            this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -178,7 +178,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnEliminar.Location = new System.Drawing.Point(519, 61);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 35);
-            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Mantenimiento";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -194,14 +194,14 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.CBCategoriaH.Location = new System.Drawing.Point(501, 179);
             this.CBCategoriaH.Name = "CBCategoriaH";
             this.CBCategoriaH.Size = new System.Drawing.Size(145, 21);
-            this.CBCategoriaH.TabIndex = 6;
+            this.CBCategoriaH.TabIndex = 4;
             // 
             // numericCantCamas
             // 
             this.numericCantCamas.Location = new System.Drawing.Point(501, 213);
             this.numericCantCamas.Name = "numericCantCamas";
             this.numericCantCamas.Size = new System.Drawing.Size(145, 20);
-            this.numericCantCamas.TabIndex = 7;
+            this.numericCantCamas.TabIndex = 5;
             // 
             // CBPiso
             // 
@@ -216,17 +216,17 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.CBPiso.Location = new System.Drawing.Point(189, 159);
             this.CBPiso.Name = "CBPiso";
             this.CBPiso.Size = new System.Drawing.Size(145, 21);
-            this.CBPiso.TabIndex = 2;
+            this.CBPiso.TabIndex = 1;
             // 
             // btnGuardarCambios
             // 
             this.btnGuardarCambios.BackColor = System.Drawing.Color.Lime;
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarCambios.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGuardarCambios.Location = new System.Drawing.Point(172, 61);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(172, 82);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(100, 35);
-            this.btnGuardarCambios.TabIndex = 20;
+            this.btnGuardarCambios.TabIndex = 7;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
@@ -250,7 +250,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnBuscar.Location = new System.Drawing.Point(629, 18);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(69, 27);
-            this.btnBuscar.TabIndex = 22;
+            this.btnBuscar.TabIndex = 12;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
@@ -259,7 +259,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.txtBuscar.Location = new System.Drawing.Point(471, 23);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(149, 20);
-            this.txtBuscar.TabIndex = 23;
+            this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnAlta
@@ -270,7 +270,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnAlta.Location = new System.Drawing.Point(519, 61);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(100, 35);
-            this.btnAlta.TabIndex = 25;
+            this.btnAlta.TabIndex = 9;
             this.btnAlta.Text = "Habilitar";
             this.btnAlta.UseVisualStyleBackColor = false;
             this.btnAlta.Visible = false;

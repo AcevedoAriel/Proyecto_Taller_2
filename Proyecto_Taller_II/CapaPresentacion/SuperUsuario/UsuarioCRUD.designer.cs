@@ -77,7 +77,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.BEditar.Location = new System.Drawing.Point(702, 125);
             this.BEditar.Name = "BEditar";
             this.BEditar.Size = new System.Drawing.Size(94, 41);
-            this.BEditar.TabIndex = 66;
+            this.BEditar.TabIndex = 14;
             this.BEditar.Text = "Editar";
             this.BEditar.UseVisualStyleBackColor = false;
             this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
@@ -99,7 +99,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.dataGridUsuario.Name = "dataGridUsuario";
             this.dataGridUsuario.RowTemplate.Height = 25;
             this.dataGridUsuario.Size = new System.Drawing.Size(826, 302);
-            this.dataGridUsuario.TabIndex = 44;
+            this.dataGridUsuario.TabIndex = 16;
             this.dataGridUsuario.SelectionChanged += new System.EventHandler(this.dataGridUsuario_SelectionChanged);
             // 
             // DTFechaNac
@@ -108,7 +108,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.DTFechaNac.Location = new System.Drawing.Point(437, 210);
             this.DTFechaNac.Name = "DTFechaNac";
             this.DTFechaNac.Size = new System.Drawing.Size(150, 21);
-            this.DTFechaNac.TabIndex = 64;
+            this.DTFechaNac.TabIndex = 11;
             this.DTFechaNac.ValueChanged += new System.EventHandler(this.DTFechaNac_ValueChanged);
             // 
             // TSexo
@@ -122,7 +122,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.TSexo.Location = new System.Drawing.Point(437, 151);
             this.TSexo.Name = "TSexo";
             this.TSexo.Size = new System.Drawing.Size(150, 23);
-            this.TSexo.TabIndex = 63;
+            this.TSexo.TabIndex = 9;
             // 
             // TTelefono
             // 
@@ -131,7 +131,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.TTelefono.MaxLength = 10;
             this.TTelefono.Name = "TTelefono";
             this.TTelefono.Size = new System.Drawing.Size(150, 21);
-            this.TTelefono.TabIndex = 62;
+            this.TTelefono.TabIndex = 8;
             this.TTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TTelefono_KeyPress);
             // 
             // TCorreo
@@ -140,7 +140,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.TCorreo.Location = new System.Drawing.Point(437, 178);
             this.TCorreo.Name = "TCorreo";
             this.TCorreo.Size = new System.Drawing.Size(150, 21);
-            this.TCorreo.TabIndex = 61;
+            this.TCorreo.TabIndex = 10;
             this.TCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TCorreo_KeyPress);
             // 
             // label4
@@ -191,7 +191,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.BRegistrar.Location = new System.Drawing.Point(702, 77);
             this.BRegistrar.Name = "BRegistrar";
             this.BRegistrar.Size = new System.Drawing.Size(94, 40);
-            this.BRegistrar.TabIndex = 55;
+            this.BRegistrar.TabIndex = 12;
             this.BRegistrar.Text = "Registrar Usuario";
             this.BRegistrar.UseVisualStyleBackColor = false;
             this.BRegistrar.Click += new System.EventHandler(this.BRegistrar_Click);
@@ -208,7 +208,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.CBPerfil.Location = new System.Drawing.Point(437, 94);
             this.CBPerfil.Name = "CBPerfil";
             this.CBPerfil.Size = new System.Drawing.Size(150, 23);
-            this.CBPerfil.TabIndex = 54;
+            this.CBPerfil.TabIndex = 7;
             // 
             // TNombreUsuario
             // 
@@ -216,7 +216,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.TNombreUsuario.Location = new System.Drawing.Point(133, 178);
             this.TNombreUsuario.Name = "TNombreUsuario";
             this.TNombreUsuario.Size = new System.Drawing.Size(151, 21);
-            this.TNombreUsuario.TabIndex = 53;
+            this.TNombreUsuario.TabIndex = 5;
             // 
             // TClave
             // 
@@ -224,7 +224,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.TClave.Location = new System.Drawing.Point(133, 202);
             this.TClave.Name = "TClave";
             this.TClave.Size = new System.Drawing.Size(151, 21);
-            this.TClave.TabIndex = 52;
+            this.TClave.TabIndex = 6;
             this.TClave.UseSystemPasswordChar = true;
             // 
             // TNombre
@@ -233,7 +233,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.TNombre.Location = new System.Drawing.Point(133, 122);
             this.TNombre.Name = "TNombre";
             this.TNombre.Size = new System.Drawing.Size(151, 21);
-            this.TNombre.TabIndex = 51;
+            this.TNombre.TabIndex = 3;
             this.TNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TNombre_KeyPress);
             // 
             // TApellido
@@ -242,7 +242,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.TApellido.Location = new System.Drawing.Point(133, 151);
             this.TApellido.Name = "TApellido";
             this.TApellido.Size = new System.Drawing.Size(151, 21);
-            this.TApellido.TabIndex = 50;
+            this.TApellido.TabIndex = 4;
             this.TApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TApellido_KeyPress);
             // 
             // LContraseña
@@ -314,7 +314,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.txtBuscar.Location = new System.Drawing.Point(486, 14);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(241, 20);
-            this.txtBuscar.TabIndex = 70;
+            this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // lblMensajeClave
@@ -338,10 +338,10 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.BGuardar.BackColor = System.Drawing.Color.Lime;
             this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.BGuardar.Location = new System.Drawing.Point(702, 77);
+            this.BGuardar.Location = new System.Drawing.Point(702, 76);
             this.BGuardar.Name = "BGuardar";
             this.BGuardar.Size = new System.Drawing.Size(94, 41);
-            this.BGuardar.TabIndex = 72;
+            this.BGuardar.TabIndex = 13;
             this.BGuardar.Text = "Guardar Cambios";
             this.BGuardar.UseVisualStyleBackColor = false;
             this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
@@ -362,7 +362,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.txtDNI.Location = new System.Drawing.Point(133, 92);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(151, 21);
-            this.txtDNI.TabIndex = 75;
+            this.txtDNI.TabIndex = 2;
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // lblDniUsuario
@@ -394,7 +394,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.SuperUsuario
             this.BntAlta.Location = new System.Drawing.Point(702, 172);
             this.BntAlta.Name = "BntAlta";
             this.BntAlta.Size = new System.Drawing.Size(94, 41);
-            this.BntAlta.TabIndex = 77;
+            this.BntAlta.TabIndex = 15;
             this.BntAlta.Text = "Dar de Alta";
             this.BntAlta.UseVisualStyleBackColor = false;
             this.BntAlta.Visible = false;

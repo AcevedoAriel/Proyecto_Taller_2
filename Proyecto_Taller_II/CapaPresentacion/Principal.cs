@@ -79,12 +79,12 @@ namespace Proyecto_Taller_II.CapaPresentacion
 
         public void MenuReserva_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new ListadoDeReservas());
+            
         }
 
         public void MenuReservar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new Reservar());
+            
         }
 
         public void FMInicio_Load(object sender, EventArgs e)
@@ -176,6 +176,16 @@ namespace Proyecto_Taller_II.CapaPresentacion
         private void MenuCliente_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new AsignarCliente());
+        }
+
+        private void agregarReservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReserva, new Reservar());
+        }
+
+        private void listadoDeReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReserva, new ListadoDeReservas());
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.Tbuscar.Location = new System.Drawing.Point(147, 57);
             this.Tbuscar.Name = "Tbuscar";
             this.Tbuscar.Size = new System.Drawing.Size(196, 20);
-            this.Tbuscar.TabIndex = 3;
+            this.Tbuscar.TabIndex = 1;
             this.Tbuscar.TextChanged += new System.EventHandler(this.Tbuscar_TextChanged);
             // 
             // panel1
@@ -67,7 +67,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(708, 304);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabIndex = 4;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // btnBuscar
@@ -79,7 +79,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.btnBuscar.Location = new System.Drawing.Point(361, 51);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(67, 29);
-            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
@@ -117,7 +117,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.button1.Location = new System.Drawing.Point(538, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 33);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
