@@ -47,12 +47,9 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.lblHasta = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.udNroCamas = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHabitaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.udNroCamas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -182,7 +179,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnReservar.BackColor = System.Drawing.Color.White;
             this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReservar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnReservar.Location = new System.Drawing.Point(724, 33);
+            this.btnReservar.Location = new System.Drawing.Point(675, 27);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(75, 44);
             this.btnReservar.TabIndex = 6;
@@ -225,37 +222,19 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.Location = new System.Drawing.Point(657, 33);
+            this.btnFiltrar.Location = new System.Drawing.Point(675, 88);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(61, 44);
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 44);
             this.btnFiltrar.TabIndex = 5;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(675, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Nro camas:";
-            // 
-            // udNroCamas
-            // 
-            this.udNroCamas.Location = new System.Drawing.Point(666, 120);
-            this.udNroCamas.Name = "udNroCamas";
-            this.udNroCamas.Size = new System.Drawing.Size(120, 20);
-            this.udNroCamas.TabIndex = 41;
             // 
             // Reservar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 465);
-            this.Controls.Add(this.udNroCamas);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimeFechaHasta);
@@ -277,7 +256,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHabitaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.udNroCamas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +278,5 @@ namespace Proyecto_Taller_II.CapaPresentacion
         private DataGridView dataGridHabitaciones;
         private Label label1;
         private Button btnFiltrar;
-        private Label label2;
-        private NumericUpDown udNroCamas;
     }
 }

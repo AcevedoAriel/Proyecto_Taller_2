@@ -31,27 +31,38 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            DateTime desde = dtFechaDesde.Value;
+            DateTime hasta = dtFechaHasta.Value;
 
-            int ano = Convert.ToInt32(txtAño.Text);
             using (SqlConnection conexion = Conexion.ObtenerConexion())
             {
-                string query = "SELECT DATEPART(MONTH, fecha_ingreso) as MesIngreso, DATEPART(MONTH, fecha_retiro) as MesRetiro, COUNT (*) AS CantReservas " +
+                string query = "SELECT DATEPART(MONTH, fecha_ingreso) AS Nombre_Mes, COUNT (*) AS CantReservas " +
                     " from reserva " +
-                    "where DATEPART(YEAR, fecha_ingreso) = @añoingresado AND DATEPART(YEAR, fecha_retiro) = @añoingresado " +
-                    "GROUP BY DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro) ";
+                    "where(fecha_ingreso BETWEEN @fechadesde AND @fechahasta) OR (fecha_retiro BETWEEN @fechadesde AND @fechahasta) OR (fecha_ingreso < @fechadesde AND fecha_retiro > @fechahasta) " +
+                    "GROUP BY DATEPART(MONTH, fecha_ingreso) " +
+                    "ORDER BY DATEPART(MONTH, fecha_ingreso) ASC ";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@añoingresado", ano);
+                cmd.Parameters.AddWithValue("@fechadesde", desde);
+                cmd.Parameters.AddWithValue("@fechahasta", hasta);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 ChartReservas.Series[0].Points.Clear();
                 while (reader.Read())
                 {
-                    ChartReservas.Series[0].Points.AddXY(reader["MesIngreso"], reader["CantReservas"]);
+                    ChartReservas.Series[0].Points.AddXY(reader["Nombre_Mes"], reader["CantReservas"]);
                 }
             }
         }
 
+        private void dtFechaDesde_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
 
-     }
+        private void dtFechaHasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
     }

@@ -87,6 +87,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 MenuBackup.Visible = false;
                 MenuUsuario.Visible = false;
                 SubMenuAgregarReservas.Visible = false;
+                MenuCliente.Visible = false;
             }
             else if (perfilToolStripMenuItem1.Text == "Recepcionista:")
             {
@@ -97,7 +98,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 MenuServicios.Visible = false;
                 MenuIngresoDePagos.Visible = false;
                 MenuHabitacion.Visible = false;
-                SubMenuListadoReserva.Visible = false;
                 MenuReporte.Visible = false;
             }
             else if (perfilToolStripMenuItem1.Text == "Super Usuario:")
@@ -109,6 +109,8 @@ namespace Proyecto_Taller_II.CapaPresentacion
                 MenuReserva.Visible = false;
                 MenuIngresoDePagos.Visible = false;
                 MenuReporte.Visible = false;
+                MenuCliente.Visible = false;
+
             }
 
         }

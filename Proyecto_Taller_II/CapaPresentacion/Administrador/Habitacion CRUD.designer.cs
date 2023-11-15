@@ -48,10 +48,10 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.CBPiso = new System.Windows.Forms.ComboBox();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListaHabitacion)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericCantCamas)).BeginInit();
@@ -82,7 +82,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             // 
             this.lblPiso.AutoSize = true;
             this.lblPiso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblPiso.Location = new System.Drawing.Point(76, 166);
+            this.lblPiso.Location = new System.Drawing.Point(59, 193);
             this.lblPiso.Name = "lblPiso";
             this.lblPiso.Size = new System.Drawing.Size(29, 15);
             this.lblPiso.TabIndex = 3;
@@ -92,7 +92,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             // 
             this.lblNroHabitacion.AutoSize = true;
             this.lblNroHabitacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblNroHabitacion.Location = new System.Drawing.Point(76, 197);
+            this.lblNroHabitacion.Location = new System.Drawing.Point(59, 224);
             this.lblNroHabitacion.Name = "lblNroHabitacion";
             this.lblNroHabitacion.Size = new System.Drawing.Size(90, 15);
             this.lblNroHabitacion.TabIndex = 4;
@@ -143,7 +143,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             // 
             // TNroHabitacion
             // 
-            this.TNroHabitacion.Location = new System.Drawing.Point(189, 190);
+            this.TNroHabitacion.Location = new System.Drawing.Point(172, 217);
             this.TNroHabitacion.Name = "TNroHabitacion";
             this.TNroHabitacion.Size = new System.Drawing.Size(145, 20);
             this.TNroHabitacion.TabIndex = 2;
@@ -213,7 +213,7 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             "Piso 3",
             "Piso 4",
             "Piso 5"});
-            this.CBPiso.Location = new System.Drawing.Point(189, 159);
+            this.CBPiso.Location = new System.Drawing.Point(172, 186);
             this.CBPiso.Name = "CBPiso";
             this.CBPiso.Size = new System.Drawing.Size(145, 21);
             this.CBPiso.TabIndex = 1;
@@ -242,21 +242,9 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.label1.TabIndex = 21;
             this.label1.Text = "Gestión de Habitaciones";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnBuscar.Location = new System.Drawing.Point(629, 18);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(69, 27);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(471, 23);
+            this.txtBuscar.Location = new System.Drawing.Point(172, 144);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(149, 20);
             this.txtBuscar.TabIndex = 11;
@@ -286,14 +274,23 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 35);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Filtrar por Piso o Categoria :";
+            // 
             // CRUDHabitacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 403);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.CBPiso);
@@ -343,8 +340,8 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
         private ComboBox CBPiso;
         private Button btnGuardarCambios;
         private Label label1;
-        private Button btnBuscar;
         private TextBox txtBuscar;
         private Button btnAlta;
+        private Label label2;
     }
 }

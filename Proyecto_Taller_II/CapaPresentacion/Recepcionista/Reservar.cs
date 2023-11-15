@@ -14,7 +14,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
         {
             InitializeComponent();
             // Recupera los datos de la tabla SQL
-            RefreshPantalla();
 
         }
 
@@ -137,7 +136,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
             DateTime fechaHasta = dateTimeFechaHasta.Value;
             int piso =  CBpiso.SelectedIndex ;
             int categoria =  CBcategoria.SelectedIndex;
-            int cantidadCamas = Convert.ToInt32(udNroCamas.Value);
 
             try
             {
@@ -150,7 +148,6 @@ namespace Proyecto_Taller_II.CapaPresentacion
                     cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
                     cmd.Parameters.AddWithValue("@piso",(object)piso ?? DBNull.Value); // Convertir a DBNull si es nulo
                     cmd.Parameters.AddWithValue("@categoria", (object)categoria ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@cantidadCamas", (object)cantidadCamas ?? DBNull.Value);
 
                     SqlDataAdapter dt = new SqlDataAdapter(cmd);
                     DataSet dataset = new DataSet();

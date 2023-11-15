@@ -22,7 +22,36 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
 
         private void Tbuscar_TextChanged(object sender, EventArgs e)
         {
+            if (Tbuscar.Text != "")
+            {
 
+                try
+                {
+                    using (SqlConnection conexion = Conexion.ObtenerConexion())
+                    {
+                        string query = " select CONCAT(c.nombre, ' ' , c.apellido) as 'A Nombre de',  f.id_reserva as ReservaNro, p.descripcion as Metodo_Pago,  f.fecha_pago as Fecha_Pago, f.costo_habitacion as Costo_Habitacion, f.costo_servicios as Costo_Servicios, f.costo_total as Costo_Total " +
+                    " from factura as f " +
+                    "JOIN tipo_pago as p ON p.id_tipo_pago = f.id_tipo_pago " +
+                    "JOIN cliente as c ON c.id_cliente = f.id_cliente " +
+                          "where f.id_reserva LIKE ('" + Tbuscar.Text + "%') OR c.nombre LIKE ('" + Tbuscar.Text + "%') OR c.apellido LIKE ('" + Tbuscar.Text + "%') ";
+                        SqlCommand cmd = new SqlCommand(query, conexion);
+                        SqlDataAdapter dt = new SqlDataAdapter(query, conexion);
+                        DataSet dataset = new DataSet();
+                        dt.Fill(dataset, "Test_table");
+                        dataGridView1.DataSource = dataset;
+                        dataGridView1.DataMember = "Test_table";
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                RefreshPantalla();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,6 +102,16 @@ namespace Proyecto_Taller_II.CapaPresentacion.Administrador
             {
                 filaSeleccionada = dataGridView1.SelectedRows[0];
             }
+        }
+
+        private void Ingresos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

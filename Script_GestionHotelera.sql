@@ -263,17 +263,18 @@ CREATE PROCEDURE ObtenerHabitacionesDisponiblesConFiltros
     @fechaDesde DATETIME,
     @fechaHasta DATETIME,
     @piso INT = NULL,
-    @categoria INT = NULL,
-    @cantidadCamas INT = NULL
+    @categoria INT = NULL
+    
 AS
 BEGIN
     SELECT
         habitacion.id_habitacion AS ID,
         habitacion.piso AS Piso,
-        habitacion.nro_habitacion AS NroHabitacion,
+        habitacion.nro_habitacion AS 'Nro de Habitacion',
         habitacion.precio AS Precio,
         categoriaHabitacion.descripcion AS Categoria,
-        habitacion.cantidad_camas AS NroCamas
+		habitacion.cantidad_camas AS 'Nro de Camas'
+        
     FROM
         habitacion
         JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria
@@ -282,23 +283,33 @@ BEGIN
         habitacion.id_estado = 2
         AND (r.fecha_ingreso IS NULL OR NOT (@fechaDesde BETWEEN r.fecha_ingreso AND r.fecha_retiro OR @fechaHasta BETWEEN r.fecha_ingreso AND r.fecha_retiro))
         AND (@piso IS NULL OR habitacion.piso = @piso)
-        AND (@categoria IS NULL OR habitacion.categoria = @categoria)
-        AND (@cantidadCamas IS NULL OR habitacion.cantidad_camas = @cantidadCamas);
+        AND (@categoria IS NULL OR habitacion.categoria = @categoria);
 END;
 
 
 
 
 
-SELECT DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro), COUNT(*) AS CantidadReservas
+SELECT DATENAME(MONTH, fecha_ingreso),  COUNT(*) AS CantidadReservas
                                   FROM reserva
                                   WHERE fecha_ingreso BETWEEN '2023-11-11' AND '2024-03-27' OR fecha_retiro BETWEEN '2023-11-11' AND '2023-11-27'
-                                  GROUP BY DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro)
-								  
+                                  GROUP BY DATENAME(MONTH, fecha_ingreso)  
+								  order by DATENAME(MONTH, fecha_ingreso) asc
 								  
 								  DATEPART(MONTH, fecha_ingreso)
 
-
+SELECT 
+    MIN(DATEPART(MONTH, fecha_ingreso)) as MesInicio,
+    MAX(DATEPART(MONTH, fecha_retiro)) as MesFin,
+    COUNT(*) AS CantReservas 
+FROM reserva 
+WHERE 
+    (fecha_ingreso BETWEEN '22-01-2023' AND '22-01-2025' ) OR 
+    (fecha_retiro BETWEEN '22-01-2023' AND '22-01-2025') OR
+    (fecha_ingreso < '22-01-2023' AND fecha_retiro > '22-01-2025')
+GROUP BY 
+    DATEDIFF(MONTH, 0, fecha_ingreso), 
+    DATEDIFF(MONTH, 0, fecha_retiro);
 
 
  SELECT DATEPART(MONTH, fecha_ingreso) as MesIngreso, DATEPART(MONTH, fecha_retiro) as MesRetiro, COUNT (*) AS CantReservas 
@@ -315,4 +326,7 @@ SELECT DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro), COUNT(*) A
  join servicios s ON ds.cod_servicio = s.cod_servicio
  GROUP BY s.cod_servicio, s.nombre
  ORDER BY ServiciosCantidad
+
+
+
 
