@@ -1,9 +1,34 @@
 /*Creacion de la Base de Datos Hotel*/
+/*Creacion de la Base de Datos Hotel*/
 CREATE	DATABASE GESTION_HOTELERA
 
 USE GESTION_HOTELERA
+/*Consulta de Tablas*/
+SELECT * FROM perfil
+SELECT * FROM usuario
+SELECT * FROM estado_habitacion
+SELECT * FROM categoriaHabitacion
+SELECT * FROM cliente
+SELECT * FROM servicios
+SELECT * FROM tipo_pago
+SELECT * FROM habitacion
+SELECT * FROM reserva
+SELECT * FROM DetalleServicios
+SELECT * FROM factura
 
-/*Creacion de Tablas*/
+/*Vaciar Tablas*/
+DELETE FROM perfil
+DELETE FROM usuario
+DELETE FROM estado_habitacion
+DELETE FROM categotiaHabitacion
+DELETE FROM cliente
+DELETE FROM servicios
+DELETE FROM tipo_pago
+DELETE FROM habitacion
+DELETE FROM reserva
+DELETE FROM DetalleServicios
+DELETE FROM factura
+/*----------------------Creacion de Tablas---------------------------------------------*/
 CREATE TABLE perfil(
 	cod_perfil int NOT NULL,
 	nombre VARCHAR(110) NOT NULL,
@@ -26,18 +51,103 @@ CREATE TABLE usuario(
 	CONSTRAINT PK_id_usuario PRIMARY KEY (id_usuario),
 	CONSTRAINT CK_estado CHECK (estado in ('Inactivo','Activo')),
 	CONSTRAINT FK_Usuario_Perfil FOREIGN KEY (usuario_perfil) REFERENCES perfil (cod_perfil)
-	)
+)
+CREATE TABLE estado_habitacion(
+		id_estado int identity (1,1) not null,
+		descripcion varchar (150) not null,
+		constraint pk_id_estado primary key (id_estado)
+)
+CREATE TABLE categoriaHabitacion(
+		id_categoria int identity (1,1) not null,
+		descripcion varchar (150) not null,
+		constraint pk_categoria primary key (id_categoria)
+)
+CREATE TABLE cliente(
+	id_cliente int identity (1,1) not null,
+	dni int not null,
+	apellido varchar (100) not null,
+	nombre varchar (100) not null,
+	telefono varchar (100) not null,
+	constraint pk_idCliente primary key (id_cliente)
+)
+CREATE TABLE servicios(
+		cod_servicio int identity (1,1) not null,
+		nombre	VARCHAR (150) NOT NULL,
+		precio decimal(8,2) NOT NULL,
+		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),
+)
+CREATE TABLE tipo_pago(
+		id_tipo_pago int identity (1,1) not null,
+		descripcion varchar (100) not null,
+		CONSTRAINT PK_idTipoPago PRIMARY KEY (id_tipo_pago)
+)
+CREATE TABLE habitacion(
+	id_habitacion int identity (1,1) not null,
+	piso int not null,
+	nro_habitacion int  not null,
+	id_estado int not null,
+	precio decimal(10,2) not null,
+	categoria int not null,
+	cantidad_camas int not null,
+	constraint pk_idHabitacion primary key (id_habitacion),
+	constraint fk_categoria foreign key (categoria) references categoriaHabitacion (id_categoria),
+	constraint fk_id_estado foreign key (id_estado) references estado_habitacion (id_estado)
+)
+CREATE TABLE reserva(
+	id_reserva int identity (1,1) not null,
+	cant_personas int not null,
+	fecha_ingreso date not null,
+	fecha_retiro date not null,
+	id_habitacion int not null,
+	precio decimal (10,2),
+	constraint pk_idReserva primary key (id_reserva),
+	constraint fk_idHabitacion foreign key (id_habitacion) references habitacion (id_habitacion),
+)
+CREATE TABLE DetalleServicios(
+	id_detalle int identity (1,1) not null,
+	id_reserva int  not null,
+	cod_servicio int not null,
+	constraint pk_id_detalle primary key (id_detalle),
+	constraint fk_idReserva foreign key (id_reserva) references reserva (id_reserva),
+	constraint fk_codServicioa foreign key (cod_servicio) references servicios (cod_servicio)
+)
+CREATE TABLE factura(
+		id_factura int identity (1,1) not null,
+		id_tipo_pago int not null,
+		id_cliente int not null,
+		id_reserva int not null,
+		fecha_pago date not null,
+		costo_habitacion   DECIMAL (10 ,2),
+		costo_servicios   DECIMAL (10 ,2),
+		costo_total   DECIMAL (10 ,2),
+		constraint fk_idCliente foreign key (id_cliente) references cliente (id_cliente),
+		constraint fk_idTipoPago foreign key (id_tipo_pago) references tipo_pago (id_tipo_pago),
+	    constraint fk_id_reserva foreign key (id_reserva) references reserva (id_reserva),
+		CONSTRAINT PK_idFactura PRIMARY KEY (id_factura)
+)
+------------------------------------------------------------------------------------------------------------------------------------------
+select h.nro_habitacion, r.precio, sum(s.precio) as 'Total Servicios', STRING_AGG(s.nombre, ',') as 'Servicios' from reserva as r
+full outer join DetalleServicios as ds on r.id_reserva = ds.id_reserva
+full outer join servicios as s on ds.cod_servicio = s.cod_servicio
+full outer join habitacion as h on r.id_habitacion = h.id_habitacion
+where r.id_reserva = 39
+GROUP BY  h.nro_habitacion, r.precio
 
+select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion 
+as Categoria, habitacion.cantidad_camas as NroCamas
+from habitacion
+JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado
+JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria
+
+
+------------------LOTE-------------------------------------------------------------------------------
 
 /*Lote de Perfi*/
-
 insert into perfil (cod_perfil, nombre) values(1, 'Super Usuario');		
 insert into perfil (cod_perfil, nombre) values(2, 'Administrador');		
 insert into perfil (cod_perfil, nombre) values(3, 'Recepcionista');
 
 /*Lote de Usuario*/
-
-
 INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
 VALUES (37393962, N'Acevedo', N'Ariel', N'Arielo90', N'$2a$12$ABAlkdsDFwYmbMhJ2r3x8.u/vh39jzIS4.aWIYy3cZh/w9zStHdhW', N'37393962', 1, N'ariel@gmail.com', CAST(N'1993-06-16T14:30:00.000' AS DateTime), N'Hombre', N'Activo')
 INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
@@ -53,211 +163,81 @@ VALUES (452345345, N'Fulano', N'Alguien', N'fulano', N'$2a$12$Q0KBnSzKgrEdFvHvrl
 INSERT [dbo].[usuario] ([dni], [apellido], [nombre], [nombreUsuario], [clave], [telefono], [usuario_perfil], [correo], [fechaNAc], [sexo], [estado]) 
 VALUES (2352435, N'asdfasd', N'dsdasf', N'asdfasdf', N'$2a$10$CDOvZsw.v8s9MqKO/idIa.8f6oan3Pm.PcANI1MrnYcEj/KxpOKNi', N'363456', 1, N'sdfgd@d.com', CAST(N'2023-10-27T11:32:49.000' AS DateTime), N'Hombre', N'Activo')
 
+/*Lote de Habitaciones*/
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 101, 2, '10000.00', 1, 1)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (2, 102, 2, '8000.00', 3, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (3, 103, 2, '15000.00', 2, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 104, 2, '9000.00', 1, 3)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (3, 105, 2, '6000.00', 3, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (2, 106, 2, '12000.00', 2, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (4, 107, 2, '8000.00', 3, 1)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (5, 108, 2, '10000.00', 1, 3)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 109, 2, '11000.00', 1, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 110, 2, '7000.00', 2, 3)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 111, 2, '13000.00', 3, 1)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 112, 2, '9000.00', 2, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 113, 2, '10000.00', 3, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 114, 2, '13000.00', 1, 3)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 115, 2, '15000.00', 1, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 116, 2, '12000.00', 2, 1)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 117, 2, '9000.00', 3, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 118, 2, '7000.00', 2, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 119, 2, '11000.00', 1, 3)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 120, 2, '13000.00', 1, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 121, 2, '8000.00', 3, 1)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 122, 2, '10000.00', 2, 1)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 123, 2, '5000.00', 3, 2)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 124, 2, '15000.00', 1, 1)
+INSERT [dbo].[habitacion] ([piso], [nro_habitacion], [id_estado], [precio], [categoria], [cantidad_camas]) 
+VALUES (1, 125, 2, '12000.00', 2, 2)
 
-select * from habitacion
-delete from habitacion
-insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
-values(1, 25, 2, 4200 , 1, 2)
-insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
-values(1, 45, 1, 5500 , 2, 2)
+/*Tipo de Pago*/
+insert into tipo_pago (descripcion) values ('Crédito')
+insert into tipo_pago (descripcion) values ('Débito')
+insert into tipo_pago (descripcion) values ('Efectivo')
 
-select * from estado_habitacion
-insert into estado_habitacion(descripcion) values ('Ocupada')
-insert into estado_habitacion(descripcion) values ('Libre')
-insert into estado_habitacion(descripcion) values ('Mantenimiento')
+/*Lote de Estado Habitacion*/
+insert into estado_habitacion(descripcion) values ('Deshabilitada')
+insert into estado_habitacion(descripcion) values ('Habilitada')
 
-
-drop table factura
-select * from categoriaHabitacion
-delete from DetalleServicios
+/*Lote de Categoria Habitacion*/
 TRUNCATE TABLE categoriaHabitacion;
 DBCC CHECKIDENT ('categoriaHabitacion', RESEED, 0);
 insert into categoriaHabitacion(descripcion) values ('Simple')
 insert into categoriaHabitacion(descripcion) values ('Matrimonial')
 insert into categoriaHabitacion(descripcion) values ('Ejecutivo')
 
+/*Lote de Habitacion*/
+insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
+values(1, 25, 2, 4200 , 1, 2)
+insert into habitacion (piso, nro_habitacion, id_estado, precio, categoria, cantidad_camas)
+values(1, 45, 1, 5500 , 2, 2)
 
-
-
-
-CREATE TABLE habitacion(
-	id_habitacion int identity (1,1) not null,
-	piso int not null,
-	nro_habitacion int  not null,
-	id_estado int not null,
-	precio varchar(20) not null,
-	categoria int not null,
-	cantidad_camas int not null,
-	constraint pk_idHabitacion primary key (id_habitacion),
-	constraint fk_categoria foreign key (categoria) references categoriaHabitacion (id_categoria),
-	constraint fk_id_estado foreign key (id_estado) references estado_habitacion (id_estado)
-)
-
-CREATE TABLE estado_habitacion(
-		id_estado int identity (1,1) not null,
-		descripcion varchar (150) not null,
-		constraint pk_id_estado primary key (id_estado)
-)
-
-
-CREATE TABLE categoriaHabitacion(
-		id_categoria int identity (1,1) not null,
-		descripcion varchar (150) not null,
-		constraint pk_categoria primary key (id_categoria)
-)
-delete from reserva
-delete from factura
-
-alter table factura drop column no_cuotas 
-
-CREATE TABLE cliente(
-	id_cliente int identity (1,1) not null,
-	dni int not null,
-	apellido varchar (100) not null,
-	nombre varchar (100) not null,
-	telefono varchar (100) not null,
-	constraint pk_idCliente primary key (id_cliente)
-)
-
-CREATE TABLE reserva(
-	id_reserva int identity (1,1) not null,
-	cant_personas int not null,
-	fecha_ingreso date not null,
-	fecha_retiro date not null,
-	id_habitacion int not null,
-	precio decimal (10,2),
-	constraint pk_idReserva primary key (id_reserva),
-	constraint fk_idHabitacion foreign key (id_habitacion) references habitacion (id_habitacion),
-
-)
-
-alter table servicios alter column precio decimal(8,2) not null
-
-select h.nro_habitacion, r.precio, sum(s.precio) as 'Total Servicios', STRING_AGG(s.nombre, ',') as 'Servicios' from reserva as r
-full outer join DetalleServicios as ds on r.id_reserva = ds.id_reserva
-full outer join servicios as s on ds.cod_servicio = s.cod_servicio
-full outer join habitacion as h on r.id_habitacion = h.id_habitacion
-where r.id_reserva = 39
-GROUP BY  h.nro_habitacion, r.precio
-
-
-
-delete from DetalleServicios
-select * from servicios
-CREATE TABLE servicios(
-		cod_servicio int identity (1,1) not null,
-		nombre	VARCHAR (150) NOT NULL,
-		precio decimal(8,2) NOT NULL,
-		CONSTRAINT PK_cod_serv PRIMARY KEY (cod_servicio),
-)
-
-CREATE TABLE DetalleServicios(
-	id_detalle int identity (1,1) not null,
-	id_reserva int  not null,
-	cod_servicio int not null,
-	constraint pk_id_detalle primary key (id_detalle),
-	constraint fk_idReserva foreign key (id_reserva) references reserva (id_reserva),
-	constraint fk_codServicioa foreign key (cod_servicio) references servicios (cod_servicio)
-)
-select id_habitacion from habitacion where nro_habitacion = 342 
-
-CREATE TABLE factura(
-		id_factura int identity (1,1) not null,
-		id_tipo_pago int not null,
-		id_cliente int not null,
-		id_reserva int not null,
-		fecha_pago date not null,
-		costo_habitacion   DECIMAL (10 ,2),
-		costo_servicios   DECIMAL (10 ,2),
-		costo_total   DECIMAL (10 ,2),
-		constraint fk_idCliente foreign key (id_cliente) references cliente (id_cliente),
-		constraint fk_idTipoPago foreign key (id_tipo_pago) references tipo_pago (id_tipo_pago),
-	    constraint fk_id_reserva foreign key (id_reserva) references reserva (id_reserva),
-		CONSTRAINT PK_idFactura PRIMARY KEY (id_factura)
-)
-
-CREATE TABLE tipo_pago(
-		id_tipo_pago int identity (1,1) not null,
-		descripcion varchar (100) not null,
-		CONSTRAINT PK_idTipoPago PRIMARY KEY (id_tipo_pago)
-
-)
-
-select * from DetalleServicios where id_reserva = 12
-
-
-select * from perfil
-select * from usuario
-select * from estado_habitacion
-
-
-update estado_habitacion
-set descripcion = 'Deshabilitada'
-where id_estado = 1
-
-
-update estado_habitacion
-set descripcion = 'Habilitada'
-where id_estado = 2
-
-
-delete from estado_habitacion where id_estado = 3
-select * from habitacion
-delete from habitacion
-select * from cliente
-select * from reserva
-delete from reserva
-select * from factura
-delete from factura
-select * from tipo_pago
-select * from DetalleServicios
-delete from DetalleServicios
-
-
-
-select id_tipo_pago, descripcion from tipo_pago
-
-insert into tipo_pago (descripcion) values ('Crédito')
-insert into tipo_pago (descripcion) values ('Débito')
-insert into tipo_pago (descripcion) values ('Efectivo')
-
-
-
-
-select habitacion.id_habitacion as ID, habitacion.piso as Piso, habitacion.nro_habitacion as NroHabitacion, estado_habitacion.descripcion as Estado, habitacion.precio as Precio, categoriaHabitacion.descripcion 
-as Categoria, habitacion.cantidad_camas as NroCamas
-from habitacion
-JOIN estado_habitacion ON habitacion.id_estado = estado_habitacion.id_estado
-JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria
-
-
-
-
-
-
-CREATE PROCEDURE ObtenerHabitacionesDisponibles
-    @fechaDesde DATETIME,
-    @fechaHasta DATETIME
-AS
-BEGIN
-    SELECT
-        habitacion.id_habitacion AS ID,
-        habitacion.piso AS Piso,
-        habitacion.nro_habitacion AS NroHabitacion,
-        habitacion.precio AS Precio,
-        categoriaHabitacion.descripcion AS Categoria,
-        habitacion.cantidad_camas AS NroCamas
-    FROM
-        habitacion
-        JOIN categoriaHabitacion ON habitacion.categoria = categoriaHabitacion.id_categoria
-        LEFT JOIN reserva AS r ON r.id_habitacion = habitacion.id_habitacion
-    WHERE
-        habitacion.id_estado = 2
-        AND (r.fecha_ingreso IS NULL OR NOT (@fechaDesde BETWEEN r.fecha_ingreso AND r.fecha_retiro OR @fechaHasta BETWEEN r.fecha_ingreso AND r.fecha_retiro));
-END;
-
-
-
+------------------------------PROCEDIMIENTO ALMACENADO---------------------------------------------------
 
 CREATE PROCEDURE ObtenerHabitacionesDisponiblesConFiltros
     @fechaDesde DATETIME,
@@ -295,8 +275,6 @@ SELECT DATENAME(MONTH, fecha_ingreso),  COUNT(*) AS CantidadReservas
                                   WHERE fecha_ingreso BETWEEN '2023-11-11' AND '2024-03-27' OR fecha_retiro BETWEEN '2023-11-11' AND '2023-11-27'
                                   GROUP BY DATENAME(MONTH, fecha_ingreso)  
 								  order by DATENAME(MONTH, fecha_ingreso) asc
-								  
-								  DATEPART(MONTH, fecha_ingreso)
 
 SELECT 
     MIN(DATEPART(MONTH, fecha_ingreso)) as MesInicio,
@@ -314,18 +292,9 @@ GROUP BY
 
  SELECT DATEPART(MONTH, fecha_ingreso) as MesIngreso, DATEPART(MONTH, fecha_retiro) as MesRetiro, COUNT (*) AS CantReservas 
  from reserva
-  where DATEPART(YEAR, fecha_ingreso) = 2023 AND DATEPART(YEAR, fecha_retiro) = 2023
-  GROUP BY DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro)
+ where DATEPART(YEAR, fecha_ingreso) = 2023 AND DATEPART(YEAR, fecha_retiro) = 2023
+ GROUP BY DATEPART(MONTH, fecha_ingreso), DATEPART(MONTH, fecha_retiro)
 
- 
- 
-
-
- SELECT top 1  s.cod_servicio,  s.nombre,  count(*) as ServiciosCantidad 
- from DetalleServicios ds
- join servicios s ON ds.cod_servicio = s.cod_servicio
- GROUP BY s.cod_servicio, s.nombre
- ORDER BY ServiciosCantidad
 
 
 
