@@ -44,7 +44,7 @@ namespace Proyecto_Taller_II.CapaPresentacion
             {                             
                     int id_hab = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["ID"].Value);
                     int nro_habitacion = Convert.ToInt32(dataGridHabitaciones.SelectedRows[0].Cells["NroHabitacion"].Value);
-                    int cantidad_camas = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["NroCamas"].Value);
+                    int cantidad_camas = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["Nro de Camas"].Value);
                     string categoria = Convert.ToString(dataGridHabitaciones.SelectedRows[0].Cells["Categoria"].Value);
                     int piso = Convert.ToInt16(dataGridHabitaciones.SelectedRows[0].Cells["Piso"].Value);
                     double precio = Convert.ToDouble(dataGridHabitaciones.SelectedRows[0].Cells["Precio"].Value);
